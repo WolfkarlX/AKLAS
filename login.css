@@ -1,5 +1,5 @@
 body {
-    font-family: sans-serif;
+    font-family: sans-serif; 
     margin: 0;
     padding: 0;
     width: 100%;
@@ -8,9 +8,15 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-
+    background-image: url("isometricwarehouse.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: mymove 5s infinite;
 }
-
+@keyframes mymove {
+    from {background-position: 0%;}
+    to {background-position: 100%;}
+}
 .container {
     width: 45%;
     min-width: 325px;
