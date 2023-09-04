@@ -28,3 +28,25 @@ document.querySelector(".button").addEventListener("click", function () {
 document.querySelector("form").addEventListener("submit", function(event) {
     event.preventDefault();
   });
+
+function ConfirmAll() {
+    swal({
+        title: "¿Estás seguro de hacer genocidio?",
+        text: "¡Una vez realizado el genocidio, no se podrán recuperar las publicaciones!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+    })
+    .then((willDelete) => {
+        if (willDelete) {
+          swal("¡LISTO!, ¡ACABAS DE REALIZAR UN GENOCIDIO!", {
+            icon: "success",
+          });
+        } else {
+          swal("¡VALE!", "no se ha eliminado ninguna publicación");
+        }
+    }); 
+}
+
+
+
