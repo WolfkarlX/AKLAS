@@ -1,0 +1,89 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background:rgba(50, 50, 50, 50);
+
+}
+
+.container {
+    width: 30%;
+    min-width: 400px;
+    background-image: url(img/fondo.gif);
+    margin-right: 20%;
+
+}
+.text-login h1{
+    text-align: center;
+    color: red;
+}
+.form-container {
+    background-color: #76c2af;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+    font-size: 16px;
+}
+
+.input-field {
+    margin-bottom: 10px;
+    width: calc(100% - 20px);
+}
+
+.button {
+    background-color: #000;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #222;
+}
+
+.logo-login {
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.text-login h1{
+    font-size: 50px;
+    padding-left: 150%;
+    color:#fff;
+    text-align: center;
+    font-weight: bold;
+    margin: 10%;
+    min-height: 5vh;
+
+}
+
+.text-login h3{
+    color:#fff;
+    text-align: center;
+    font-style: italic;
+    min-height: 80vh;
+    padding-left: 150%;
+    white-space: nowrap;
+}
