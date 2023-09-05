@@ -1,8 +1,8 @@
 function validateForm() {
     // Validamos la cuenta
     var cuenta = document.querySelector("input[name='cuenta']").value;
-    var emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-    if (!emailRegex.test(cuenta)) {
+    var countRegex = /^\d{8}/;
+    if (!countRegex.test(cuenta)) {
         alert("La cuenta no es válida.");
         return false;
     }
