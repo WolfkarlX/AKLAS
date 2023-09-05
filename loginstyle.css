@@ -8,7 +8,7 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background:rgba(50, 50, 50, 50);
+    background:rgb(54, 67, 73);
 
 }
 
@@ -16,18 +16,43 @@ body {
     width: 30%;
     min-width: 400px;
     background-image: url(img/fondo.gif);
-    margin-right: 20%;
+    margin: 0;
+    position: absolute;
+    display: block;
 
 }
+.text-login {
+    position: absolute;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    width: 100%;
+    height: 20%;
+    top: 0;
+}
 .text-login h1{
+    font-size: 270%;
+    color:#fff;
     text-align: center;
-    color: red;
+    font-weight: bold;
+}
+.text-login h3{
+    color:#fff;
+    font-size: 130%;
+    text-align: center;
+    font-style: italic;
+    min-height: 80vh;
+    margin-top: -2%;
+    white-space: nowrap;
 }
 .form-container {
     background-color: #76c2af;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    display: block;
+    position: sticky;
 }
 
 h1 {
@@ -47,19 +72,45 @@ input {
 .input-field {
     margin-bottom: 10px;
     width: calc(100% - 20px);
+    border-radius: 10px;
+    border: 2px solid white;
+    background: transparent;
+    transition: 0.1s ease;
+    z-index: 1;
+}
+input::selection,
+input:valid{
+    border: 2px solid greenyellow;
 }
 
 .button {
-    background-color: #000;
+    background-color: black;
     color: #fff;
     font-size: 16px;
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
+    border: 2px solid black;
+    z-index: 1;
+    margin: 0;
 }
-
+.Olvidexd {
+    background: transparent;
+    border-color: white;
+    border-radius: 5px;
+    border: 2px solid white;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    cursor: pointer;
+}
+.Olvidexd:hover {
+    border-color: red;
+    color: red;
+}
 .button:hover {
     background-color: #222;
+    border-color: white;
 }
 
 .logo-login {
@@ -68,22 +119,17 @@ input {
     text-align: center;
 }
 
-.text-login h1{
-    font-size: 50px;
-    padding-left: 150%;
-    color:#fff;
-    text-align: center;
-    font-weight: bold;
-    margin: 10%;
-    min-height: 5vh;
-
+@media only screen and (max-width: 600px) { 
+    .container { width: 80%; min-width: 300px; } 
+    .text-login { height: 30%;}
+    .text-login h1 { font-size: 200%; } 
+    .text-login h3 { font-size: 100%; } 
 }
 
-.text-login h3{
-    color:#fff;
-    text-align: center;
-    font-style: italic;
-    min-height: 80vh;
-    padding-left: 150%;
-    white-space: nowrap;
+@media only screen and (max-width: 400px) {
+     .container { width: 90%; min-width: 200px; } 
+     .text-login { height: 15%;}
+     .text-login h1 { font-size: 150%; } 
+     .text-login h3 { font-size: 80%; } 
 }
+
