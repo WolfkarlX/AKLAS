@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-09-2023 a las 19:59:15
+-- Tiempo de generación: 07-09-2023 a las 21:29:46
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -24,12 +24,24 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `area`
+--
+
+CREATE TABLE `area` (
+  `AreaID` int(11) NOT NULL,
+  `NameArea` varchar(50) NOT NULL,
+  `Description` varchar(400) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `categories`
 --
 
 CREATE TABLE `categories` (
   `CategoryID` int(11) NOT NULL,
-  `CategoryName` varchar(25) DEFAULT NULL,
+  `CategoryName` varchar(25) NOT NULL,
   `Description` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -45,8 +57,8 @@ CREATE TABLE `employees` (
   `FirstName` varchar(30) DEFAULT NULL,
   `BirthDate` datetime DEFAULT NULL,
   `Description` varchar(1024) DEFAULT NULL,
-  `IdKey` int(8) DEFAULT NULL,
-  `Passw` varchar(30) DEFAULT NULL
+  `IdKey` int(8) NOT NULL,
+  `Passw` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -60,8 +72,11 @@ CREATE TABLE `products` (
   `ProductName` varchar(50) DEFAULT NULL,
   `SupplierID` int(11) DEFAULT NULL,
   `CategoryID` int(11) DEFAULT NULL,
+  `AreaID` int(11) DEFAULT NULL,
   `Price` decimal(10,0) DEFAULT NULL,
-  `Quantity` int(11) NOT NULL DEFAULT 0
+  `Quantity` int(11) NOT NULL DEFAULT 0,
+  `MaxQuantityLimit` int(11) DEFAULT NULL,
+  `MinQuantityLimit` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -102,7 +117,7 @@ CREATE TABLE `suppliers` (
 CREATE TABLE `tags` (
   `TagID` int(11) NOT NULL,
   `TagName` varchar(50) NOT NULL,
-  `Description` varchar(255) NOT NULL
+  `Description` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -113,8 +128,8 @@ CREATE TABLE `tags` (
 
 CREATE TABLE `transaction` (
   `TransactionID` int(11) NOT NULL,
-  `EmployeeID` int(11) DEFAULT NULL,
-  `OrderDate` datetime DEFAULT NULL
+  `EmployeeID` int(11) NOT NULL,
+  `OrderDate` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -125,8 +140,8 @@ CREATE TABLE `transaction` (
 
 CREATE TABLE `transactiondetails` (
   `TransactionDetailID` int(11) NOT NULL,
-  `TransactionID` int(11) DEFAULT NULL,
-  `ProductID` int(11) DEFAULT NULL,
+  `TransactionID` int(11) NOT NULL,
+  `ProductID` int(11) NOT NULL,
   `PInput` int(11) DEFAULT 0,
   `POutput` int(11) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -134,6 +149,12 @@ CREATE TABLE `transactiondetails` (
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `area`
+--
+ALTER TABLE `area`
+  ADD PRIMARY KEY (`AreaID`);
 
 --
 -- Indices de la tabla `categories`
@@ -153,7 +174,8 @@ ALTER TABLE `employees`
 ALTER TABLE `products`
   ADD PRIMARY KEY (`ProductID`),
   ADD KEY `CategoryID` (`CategoryID`),
-  ADD KEY `SupplierID` (`SupplierID`);
+  ADD KEY `SupplierID` (`SupplierID`),
+  ADD KEY `AreaID` (`AreaID`);
 
 --
 -- Indices de la tabla `products_tags`
@@ -193,6 +215,12 @@ ALTER TABLE `transactiondetails`
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
+
+--
+-- AUTO_INCREMENT de la tabla `area`
+--
+ALTER TABLE `area`
+  MODIFY `AreaID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `categories`
@@ -251,7 +279,8 @@ ALTER TABLE `transactiondetails`
 --
 ALTER TABLE `products`
   ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`CategoryID`) REFERENCES `categories` (`CategoryID`),
-  ADD CONSTRAINT `products_ibfk_2` FOREIGN KEY (`SupplierID`) REFERENCES `suppliers` (`SupplierID`);
+  ADD CONSTRAINT `products_ibfk_2` FOREIGN KEY (`SupplierID`) REFERENCES `suppliers` (`SupplierID`),
+  ADD CONSTRAINT `products_ibfk_3` FOREIGN KEY (`AreaID`) REFERENCES `area` (`AreaID`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `products_tags`
