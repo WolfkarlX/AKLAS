@@ -14,7 +14,7 @@ body {
 .container {
     width: 30%;
     min-width: 400px;
-    background-image: url(img/fondo.gif);
+    background-image: url(../img/fondo.gif);
     margin: 0;
     position: absolute;
     display: block;
