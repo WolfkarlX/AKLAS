@@ -2,7 +2,7 @@
     namespace models;
     use PDO, PDOException;
     class conexion extends PDO{
-        private $servername= "localhost";
+        private $servername= "localhost: 3309";
         private $username= "root";
         private $password= "";
         private $dbname= "aklas";
