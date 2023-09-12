@@ -24,50 +24,60 @@
             <li>
                 <a href="#">
                     <i class='bx bxs-home-alt-2'></i>
-                    <span class="nav-item">Dashboard</span>
+                    <span class="nav-item">Home</span>
                 </a>
-                <span class="tooltip">Dashboard</span>
+                <span class="tooltip">Home</span>
             </li>
             <li>
                 <a href="#">
                     <i class='bx bxs-home-alt-2'></i>
-                    <span class="nav-item">Dashboard</span>
+                    <span class="nav-item">Categories</span>
                 </a>
-                <span class="tooltip">Dashboard</span>
+                <span class="tooltip">Categories</span>
             </li>
             <li>
                 <a href="#">
                     <i class='bx bxs-home-alt-2'></i>
-                    <span class="nav-item">Dashboard</span>
+                    <span class="nav-item">Products</span>
                 </a>
-                <span class="tooltip">Dashboard</span>
+                <span class="tooltip">Products</span>
             </li>
             <li>
                 <a href="#">
                     <i class='bx bxs-home-alt-2'></i>
-                    <span class="nav-item">Dashboard</span>
+                    <span class="nav-item">Tags</span>
                 </a>
-                <span class="tooltip">Dashboard</span>
+                <span class="tooltip">Tags</span>
             </li>
             <li>
                 <a href="#">
                     <i class='bx bxs-home-alt-2'></i>
-                    <span class="nav-item">Dashboard</span>
+                    <span class="nav-item">FAQs</span>
                 </a>
-                <span class="tooltip">Dashboard</span>
+                <span class="tooltip">FAQ</span>
             </li>
             <li>
                 <a href="#">
                     <i class='bx bxs-home-alt-2'></i>
-                    <span class="nav-item">Dashboard</span>
+                    <span class="nav-item">Suppliers</span>
                 </a>
-                <span class="tooltip">Dashboard</span>
+                <span class="tooltip">Suppliers</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-home-alt-2'></i>
+                    <span class="nav-item">Log Out</span>
+                </a>
+                <span class="tooltip">Log Out</span>
             </li>
         </ul>
     </div>
     <div class="main-content">
         <div class="arriba">
-            <span>HOLA</span>
+            <h1>Bienvenid@ </h1>
+        </div>
+        <div class="abajo">
+            <h2>Contenido</h2>
         </div>
     </div>
 </body>
