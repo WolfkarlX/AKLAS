@@ -70,7 +70,7 @@
   text-decoration: none;
   border-radius: 0.8rem;
   position: absolute; 
-  
+  width: 100%;
 }
 .sidebar ul li a:hover {
   background-color: white;
@@ -82,7 +82,7 @@
   height: 50px;
   border-radius: 12px;
   line-height: 50px;
-  transform: translateX(-25%);
+  transform: translateX(0%);
 }
 .sidebar .nav-item {
   opacity: 0;
@@ -174,10 +174,95 @@
   }
   .sidebar ul li a i {
     position: absolute;
-    transform: translateX(0%);
-
+    transform: translateX(-35%);
   }
+  .sidebar.active ul li a i {
+    position: absolute;
+    transform: translateX(0%);
+  }
+  
 }
 @media only screen and (max-width: 500px) {
-
+  .sidebar{
+    width: 100%;
+    z-index: 20;
+  }
+  .sidebar.active {
+    width: 100%;
+    z-index: 20;
+  }
+  .sidebar .nav-item {
+    opacity: 1;
+    pointer-events: none;
+    white-space: nowrap;
+    position: absolute;
+    display: block;
+    transform: translateX(75%);
+  }
+  .sidebar.active .nav-item {
+    opacity: 1;
+    position: absolute;
+    display: block;
+    pointer-events: none;
+    white-space: nowrap;
+    transform: translateX(75%);
+  }
+  .sidebar.active #btn_menu {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .sidebar #btn_menu {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .sidebar ul li {
+    position: relative;
+    list-style-type: none;
+    height: 50px;
+    width: 90%;
+    margin: 0.8rem auto;
+    line-height: 50px;
+  }
+  .sidebar.active ul li {
+    position: relative;
+    list-style-type: none;
+    height: 50px;
+    width: 90%;
+    margin: 0.8rem auto;
+    line-height: 50px;
+  }
+  .sidebar ul li a i {
+    min-width: 100px;
+    text-align: center;
+    height: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+    transform: translateX(-25%);
+  }
+  .sidebar.active ul li a i {
+    min-width: 100px;
+    text-align: center;
+    height: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+    transform: translateX(-25%);
+  }
+  .sidebar ul li a {
+    color: white;
+    display: flex;
+    align-items: left;
+    text-decoration: none;
+    border-radius: 0.8rem;
+    position: absolute; 
+    transform: translateX(25%);
+  }
+  .sidebar.active ul li a {
+    color: white;
+    display: flex;
+    align-items: left;
+    text-decoration: none;
+    border-radius: 0.8rem;
+    position: absolute; 
+    transform: translateX(25%);
+  }
 }
