@@ -1,10 +1,49 @@
 <?php
-    require_once("../models/conexion.php");
-    use models\conexion;
-    $conn = new conexion();
+    require_once("../models/conexion.php"); #importa el archivo conexion de la base de datos
+    use models\conexion;     #usa el archivo conexion de la base de datos 
+    $conn = new conexion();     #instancia la clase conexion del archivo conexion para utilizar sus atributos y metodos y hacer el crud     
+    session_start(); #inicia sesiones para poder hacer variables, modificaciones, etc
 
+    if(isset($_SESSION["commited"])){    #condiciona si tiene la sesion iniciada de "commited"
+?>        
+    <script> alert('Category created successfuly')</script>    <!-- Hace una alerta que frontend puede modificar---> 
+<?php
+        
+        session_unset();   #elimina el valor de la variable de la sesion "commited"
+        session_destroy(); #destruye todas las sesiones
+        header("refresh:0.0000000000001;url=categories.php"); # reenvia en 000000.... de tiempo a la pagina categories
+        exit(); #termina el script
+    }
 ?>
 
+<?php #zona de la insertacion de contenido              
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {         #condiciona si hay una respuesta del servidor del tipo POST
+        try {
+            #zona de asignacion de valores ingresados mediante html
+            $cname = $_POST["categoryname"];
+            $cdescription = $_POST["categorydesc"];
+            $sql = "INSERT INTO categories (CategoryName, Description) VALUES (:cname, :cdescription)";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(':cname', $cname);     #se preparan las variables 
+            $stmt->bindParam(':cdescription', $cdescription);
+            $stmt->execute();
+            header("Location: ccategory.php");      #se reenvia a la misma pagina
+            
+            if( $stmt->execute()){
+                $_SESSION["commited"] = true;           #se condiciona si se logra hacer execute o si se agrego algo a la bd,
+                                                        #se va a crer una variable de sesion llamada "commit" con el valor "true"
+            }
+            
+            exit();      #se termina o cierra el script          
+
+        } catch (PDOException $e) { 
+            echo "Is not possible to make the operation" . $e->getMessage();    #en caso de fallar la conexion con la bd, se imprime el anterior mensaje
+        }
+    }
+    
+?>
+
+<!--Zona HTML-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,23 +61,4 @@
 </body>
 </html>
 
-<?php
-    if (isset($_POST["categoryname"])){
-        if(isset($_POST["categorydesc"])){
-            $cname = $_POST["categoryname"];
-            $cdescription = $_POST["categorydesc"];
-
-            $sql = "INSERT INTO categories (CategoryName, Description) VALUES (:cname, :cdescription)";
-            $stmt = $conn->prepare($sql);
-            $stmt->bindParam(':cname', $cname);
-            $stmt->bindParam(':cdescription', $cdescription);
-            $stmt->execute();
-            exit();
-            // Ejecuta la consulta de inserción
-            #if ($stmt->execute()) {
-            #    echo "Registro insertado correctamente";
-             #   exit();
-            #}
-        }
-    }
-?>
+<!--<script> alert('Category created successfuly')</script>-->  
