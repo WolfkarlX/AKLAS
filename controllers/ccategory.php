@@ -21,15 +21,19 @@
         try {
             #zona de asignacion de valores ingresados mediante html
             $cname = $_POST["categoryname"];
-            $cdescription = $_POST["categorydesc"];
+            if(!empty($_POST["categorydesc"])){ #se valida si lo que se envia desde el html esta vacio y si si lo esta se ingresa un string
+                $cdescription = $_POST["categorydesc"]; 
+            }else{
+                $cdescription = "there is no description";
+            }
             $sql = "INSERT INTO categories (CategoryName, Description) VALUES (:cname, :cdescription)";
             $stmt = $conn->prepare($sql);
-            $stmt->bindParam(':cname', $cname);     #se preparan las variables 
-            $stmt->bindParam(':cdescription', $cdescription);
-            $stmt->execute();
+            $stmt->bindParam(':cname', $cname, PDO::PARAM_STR);     #se preparan las variables 
+            $stmt->bindParam(':cdescription', $cdescription, PDO::PARAM_STR);
+            $killed = $stmt->execute(); #creo una variable para validarla 
             header("Location: ccategory.php");      #se reenvia a la misma pagina
             
-            if( $stmt->execute()){
+            if(isset($killed)){
                 $_SESSION["commited"] = true;           #se condiciona si se logra hacer execute o si se agrego algo a la bd,
                                                         #se va a crer una variable de sesion llamada "commit" con el valor "true"
             }
@@ -55,10 +59,25 @@
     <p> Put the information required </p>
     <form action="ccategory.php" method="POST">
         <input type="text" placeholder="categoryname" name="categoryname" required> <br>
-        <textarea name="categorydesc" cols="30" rows="10" required></textarea>
-        <button type="submit">Create category</button>
+        <textarea name="categorydesc" placeholder="category description" cols="30" rows="10" id="miTextarea"></textarea>
+        <button type="submit" onclick="eliminarEspacios()">Create category</button>
     </form>
 </body>
 </html>
+<script>
+/*Script para eliminar espacios en blanco del html */
+    function eliminarEspacios() {
+        // Obtén el contenido del textarea
+        var textarea = document.getElementById("miTextarea");
+        var contenido = textarea.value;
 
-<!--<script> alert('Category created successfuly')</script>-->  
+        // Reemplaza todos los espacios en blanco con una cadena vacía
+        var contenidoSinEspacios = contenido.replace(/\s+/g, '');
+
+        // Verifica si el contenido después de quitar los espacios es vacío
+        if (contenidoSinEspacios === '') {
+        // Si es vacío, establece el contenido del textarea como vacío
+            textarea.value = '';
+        }
+    }
+</script> <!-- se puede mover a models para importarla y usarla desde aqui -->
