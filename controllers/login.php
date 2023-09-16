@@ -12,15 +12,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     try {
         // Preparamos la consulta para obtener el usuario por su IDKey
-        $consulta = $conn->prepare("SELECT IdKey, Password FROM employees WHERE IdKey = :IdKey LIMIT 1");
+        $consulta = $conn->prepare("SELECT IdKey, Password FROM employees WHERE IdKey = :IdKey");
         $consulta->bindParam(':IdKey', $IdKey);
         $consulta->execute();
         $user = $consulta->fetch(PDO::FETCH_ASSOC);
 
         if ($user) {
             // Verificamos si la contraseña ingresada coincide con la almacenada en la base de datos
-            if (password_verify($password, $user['Password'])) {
-                $_SESSION['user_id'] = $user['Id']; // Almacenamos el ID del usuario en la sesión
+            if (password_verify($password, $user['Password'])) 
+            {
+                $_SESSION['user_id'] = $user['Idkey']; // Almacenamos el ID del usuario en la sesión
                 header('Location: signin.php'); // Redireccionamos al panel de control
                 exit();
             } else {
