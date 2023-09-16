@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Sep 13, 2023 at 01:46 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.1.12
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 16-09-2023 a las 02:52:12
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `aklas`
+-- Base de datos: `aklas`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `area`
+-- Estructura de tabla para la tabla `area`
 --
 
 CREATE TABLE `area` (
@@ -36,7 +36,7 @@ CREATE TABLE `area` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categories`
+-- Estructura de tabla para la tabla `categories`
 --
 
 CREATE TABLE `categories` (
@@ -48,7 +48,7 @@ CREATE TABLE `categories` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `employees`
+-- Estructura de tabla para la tabla `employees`
 --
 
 CREATE TABLE `employees` (
@@ -59,13 +59,20 @@ CREATE TABLE `employees` (
   `Description` varchar(1024) DEFAULT NULL,
   `IdKey` int(8) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `Password` varchar(30) NOT NULL
+  `Password` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `employees`
+--
+
+INSERT INTO `employees` (`EmployeID`, `LastName`, `FirstName`, `BirthDate`, `Description`, `IdKey`, `email`, `Password`) VALUES
+(7, 'Bustamante Bernabe', 'Saúl', NULL, '', 23090001, 'sbustamante@ucol.mx', '$2y$10$089ST.rffLFGeIpTQRzL6uIDjkqZ6NRy20rUIQ1mcb.q/NDDbk/qq');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- Estructura de tabla para la tabla `products`
 --
 
 CREATE TABLE `products` (
@@ -83,7 +90,7 @@ CREATE TABLE `products` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products_tags`
+-- Estructura de tabla para la tabla `products_tags`
 --
 
 CREATE TABLE `products_tags` (
@@ -95,7 +102,7 @@ CREATE TABLE `products_tags` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `suppliers`
+-- Estructura de tabla para la tabla `suppliers`
 --
 
 CREATE TABLE `suppliers` (
@@ -112,7 +119,7 @@ CREATE TABLE `suppliers` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tags`
+-- Estructura de tabla para la tabla `tags`
 --
 
 CREATE TABLE `tags` (
@@ -124,7 +131,7 @@ CREATE TABLE `tags` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `transaction`
+-- Estructura de tabla para la tabla `transaction`
 --
 
 CREATE TABLE `transaction` (
@@ -136,7 +143,7 @@ CREATE TABLE `transaction` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `transactiondetails`
+-- Estructura de tabla para la tabla `transactiondetails`
 --
 
 CREATE TABLE `transactiondetails` (
@@ -148,29 +155,29 @@ CREATE TABLE `transactiondetails` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `area`
+-- Indices de la tabla `area`
 --
 ALTER TABLE `area`
   ADD PRIMARY KEY (`AreaID`);
 
 --
--- Indexes for table `categories`
+-- Indices de la tabla `categories`
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`CategoryID`);
 
 --
--- Indexes for table `employees`
+-- Indices de la tabla `employees`
 --
 ALTER TABLE `employees`
   ADD PRIMARY KEY (`EmployeID`);
 
 --
--- Indexes for table `products`
+-- Indices de la tabla `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`ProductID`),
@@ -179,7 +186,7 @@ ALTER TABLE `products`
   ADD KEY `AreaID` (`AreaID`);
 
 --
--- Indexes for table `products_tags`
+-- Indices de la tabla `products_tags`
 --
 ALTER TABLE `products_tags`
   ADD PRIMARY KEY (`ProductsTagsID`),
@@ -187,26 +194,26 @@ ALTER TABLE `products_tags`
   ADD KEY `TagID` (`TagID`);
 
 --
--- Indexes for table `suppliers`
+-- Indices de la tabla `suppliers`
 --
 ALTER TABLE `suppliers`
   ADD PRIMARY KEY (`SupplierID`);
 
 --
--- Indexes for table `tags`
+-- Indices de la tabla `tags`
 --
 ALTER TABLE `tags`
   ADD PRIMARY KEY (`TagID`);
 
 --
--- Indexes for table `transaction`
+-- Indices de la tabla `transaction`
 --
 ALTER TABLE `transaction`
   ADD PRIMARY KEY (`TransactionID`),
   ADD KEY `EmployeeID` (`EmployeeID`);
 
 --
--- Indexes for table `transactiondetails`
+-- Indices de la tabla `transactiondetails`
 --
 ALTER TABLE `transactiondetails`
   ADD PRIMARY KEY (`TransactionDetailID`),
@@ -214,69 +221,69 @@ ALTER TABLE `transactiondetails`
   ADD KEY `ProductID` (`ProductID`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `area`
+-- AUTO_INCREMENT de la tabla `area`
 --
 ALTER TABLE `area`
   MODIFY `AreaID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `categories`
+-- AUTO_INCREMENT de la tabla `categories`
 --
 ALTER TABLE `categories`
   MODIFY `CategoryID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `employees`
+-- AUTO_INCREMENT de la tabla `employees`
 --
 ALTER TABLE `employees`
-  MODIFY `EmployeID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `EmployeID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `products`
+-- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
   MODIFY `ProductID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `products_tags`
+-- AUTO_INCREMENT de la tabla `products_tags`
 --
 ALTER TABLE `products_tags`
   MODIFY `ProductsTagsID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `suppliers`
+-- AUTO_INCREMENT de la tabla `suppliers`
 --
 ALTER TABLE `suppliers`
   MODIFY `SupplierID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `tags`
+-- AUTO_INCREMENT de la tabla `tags`
 --
 ALTER TABLE `tags`
   MODIFY `TagID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `transaction`
+-- AUTO_INCREMENT de la tabla `transaction`
 --
 ALTER TABLE `transaction`
   MODIFY `TransactionID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `transactiondetails`
+-- AUTO_INCREMENT de la tabla `transactiondetails`
 --
 ALTER TABLE `transactiondetails`
   MODIFY `TransactionDetailID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Constraints for dumped tables
+-- Restricciones para tablas volcadas
 --
 
 --
--- Constraints for table `products`
+-- Filtros para la tabla `products`
 --
 ALTER TABLE `products`
   ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`CategoryID`) REFERENCES `categories` (`CategoryID`),
@@ -284,20 +291,20 @@ ALTER TABLE `products`
   ADD CONSTRAINT `products_ibfk_3` FOREIGN KEY (`AreaID`) REFERENCES `area` (`AreaID`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 --
--- Constraints for table `products_tags`
+-- Filtros para la tabla `products_tags`
 --
 ALTER TABLE `products_tags`
   ADD CONSTRAINT `products_tags_ibfk_1` FOREIGN KEY (`TagID`) REFERENCES `tags` (`TagID`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `products_tags_ibfk_2` FOREIGN KEY (`ProductID`) REFERENCES `products` (`ProductID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `transaction`
+-- Filtros para la tabla `transaction`
 --
 ALTER TABLE `transaction`
   ADD CONSTRAINT `transaction_ibfk_1` FOREIGN KEY (`EmployeeID`) REFERENCES `employees` (`EmployeID`);
 
 --
--- Constraints for table `transactiondetails`
+-- Filtros para la tabla `transactiondetails`
 --
 ALTER TABLE `transactiondetails`
   ADD CONSTRAINT `transactiondetails_ibfk_1` FOREIGN KEY (`TransactionID`) REFERENCES `transaction` (`TransactionID`),
