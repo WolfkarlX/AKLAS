@@ -1,7 +1,7 @@
 <?php
     namespace models;
     use PDO, PDOException;
-    class conexion extends PDO{
+    class conexion extends PDO{ #Clase conexion que exitiende a PDO, es clase padre para una conexion a la base de datos
         private $servername= "localhost";
         private $username= "root";
         private $password= "";
