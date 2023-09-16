@@ -77,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 <h1>Create acount</h1>
     <span>You already have an acount? <a href="login.php">Login</a></span><!--Volver al login-->
 
-    <form action="signin.php" method="POST"><!--Ingresamos los valores que llevara la cuenta-->
+    <form action="register.php" method="POST"><!--Ingresamos los valores que llevara la cuenta-->
         <input type="text" class="input-field" placeholder="Enter the name" name="FirstName" required>
         <input type="text" class="input-field" placeholder="Enter the lastname" name="LastName" required>
         <input type="text" class="input-field" placeholder="Enter the worker number" name="IdKey" required>
