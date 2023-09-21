@@ -3,14 +3,20 @@
     use models\conexion;
     $conn = new conexion();
 
-    $sql = "SELECT * FROM categories";
-    $stmt = $conn ->prepare($sql);
-    $stmt -> execute();
-    $categories = $stmt ->fetchAll();
+    try{
+        $sql = "SELECT * FROM categories";
+        $stmt = $conn ->prepare($sql);
+        $stmt -> execute();
+        $categories = $stmt ->fetchAll();
+
+    }catch(PDOException $e){
+        echo "Is not possible to make the operation" . $e->getMessage();
+    }
 ?>
 
 <?php 
     if(isset($_POST["delete"])){
+        try{
         $id = intval($_POST["delete"]);
         $sql = "DELETE FROM categories WHERE CategoryID = :id";
         $stmt = $conn->prepare($sql);
@@ -18,6 +24,13 @@
         $stmt->execute();
         header("Location:categories.php");
         exit();
+        }catch(PDOException $e){
+            echo "Is not possible to make the operation" . $e->getMessage();
+        }
+    }
+
+    if(isset($_POST["edit"])){
+        header("Location:editcategories.php");
     }
 ?>
 
@@ -36,9 +49,11 @@
         foreach($categories as $r){ ?>
             <h1><?php echo $r["CategoryName"]; ?></h1>
             <p><?php echo $r["Description"]; ?></p>
-            <a href=" <?php $_POST["ID"] = $r["CategoryID"]; ?> ">edit</a>
             <form action="categories.php" method="POST">
                 <button onclick="return confirmarAccion()" id="Delete" name="delete" value="<?php echo $r["CategoryID"];?>"> Delete </button> 
+            </form>
+            <form action="editcategories.php" method="POST">
+                <button value="<?php echo $r["CategoryID"];?>" name="edit">edit</button>
             </form>
             <br>
     

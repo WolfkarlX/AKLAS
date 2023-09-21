@@ -58,7 +58,7 @@
 <body>
     <p> Put the information required </p>
     <form action="ccategory.php" method="POST">
-        <input type="text" placeholder="categoryname" name="categoryname" required> <br>
+        <input type="text" placeholder="categoryname" name="categoryname" id="Name" required> <br>
         <textarea name="categorydesc" placeholder="category description" cols="30" rows="10" id="miTextarea"></textarea>
         <button type="submit" onclick="eliminarEspacios()">Create category</button>
     </form>
@@ -68,16 +68,24 @@
 /*Script para eliminar espacios en blanco del html */
     function eliminarEspacios() {
         // Obtén el contenido del textarea
+        var input = document.getElementById("Name");
         var textarea = document.getElementById("miTextarea");
+        var content = input.value;
         var contenido = textarea.value;
 
         // Reemplaza todos los espacios en blanco con una cadena vacía
+        var contentwithouthspace = content.replace(/\s+/g, '');
         var contenidoSinEspacios = contenido.replace(/\s+/g, '');
 
         // Verifica si el contenido después de quitar los espacios es vacío
         if (contenidoSinEspacios === '') {
         // Si es vacío, establece el contenido del textarea como vacío
             textarea.value = '';
+        }
+
+        if (contentwithouthspace === '') {
+        // Si es vacío, establece el contenido del input como vacío
+            input.value = '';
         }
     }
 </script> <!-- se puede mover a models para importarla y usarla desde aqui -->
