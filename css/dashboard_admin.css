@@ -5,7 +5,7 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .sidebar {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   height: 100%;
@@ -32,9 +32,11 @@
   line-height: 50px;
   transform: translateX(-50%);
   cursor: pointer;
+  z-index: 2;
 }
 .sidebar.active #btn_menu {
   left: 90%;
+  z-index: 2;
 }
 .sidebar .top .logo {
   color: white;
@@ -160,6 +162,147 @@
   margin-bottom: 15px;
   margin-left: 125px;
 }
+.opciones {
+  /*background-color: red;*/
+  display: flex;
+  top: 0;
+  position: absolute;
+  right: 0;
+  height: 20%;
+  width: 95%;
+  margin-top: 10px;
+  margin-right: 25px;
+  margin-bottom: 15px;
+  margin-left: 125px;
+}
+.tabla {
+  /*background-color: yellowgreen;*/
+  display: flex;
+  width: 95%;
+  position: absolute;
+  height: 80%;
+  bottom: 0;
+  right: 0;
+  top: 8%;
+  margin-top: 100px;
+  margin-right: 25px;
+  margin-bottom: 15px;
+  margin-left: 125px;
+}
+.BotonRegistro {
+  width: 200px;
+  height: 65px;
+  padding: 10px;
+  position: absolute;
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  align-items: center;
+  background-color: rgb(0, 0, 90);
+  border-radius: 0.6rem;
+  box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
+  min-width: 200px;
+  color: #eee;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.formulario {
+  z-index: 1;
+  padding: 20px;
+  position: relative;
+  display: block;
+}
+.formulario .formu {
+  z-index: 20;
+  width: 60vh;
+  left: 36%;
+  top: 220%;
+  max-width: 500px;
+  min-width: 300px;
+  margin: 0 auto;
+  padding-bottom: 2em;
+  background-color: rgb(7, 0, 56);
+  display: block;
+  position: absolute;
+  border-radius: 0.6rem;
+  box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
+}
+.formulario .formu label {
+  display: block;
+  margin: 0.5rem 0;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+.formulario .formu fieldset {
+  border: none;
+  padding: 2rem 0;
+  border-bottom: 3px solid rgb(59, 59, 79);
+  display: block;
+  justify-content: center;
+}
+.formulario .formu fieldset:last-of-type {
+  border-bottom: none;
+}
+.formulario .formu input {
+  width: 80%;
+  margin-top: 10px;
+  margin-bottom: 0;
+  margin-right: 0;
+  margin-left: 10%;
+  display: block;
+  min-height: 2em;
+  color: #ffffff;
+  background-color: #0a0a23;
+  border: 1px solid #0a0a23;
+  border-bottom: #0a0a23;
+  border-radius: 0.2rem;
+}
+.formulario .formu button {
+  display: block;
+  width:50%;
+  margin-bottom: 2%;
+  margin: 1em auto;
+  height: 2em;
+  font-size: 1.1rem;
+  background-color: gray;
+  min-width: 200px;
+  color: #eee;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.formulario .formu h1 {
+  display: block;
+  margin: 0.5rem 0;
+  font-size: 2.1rem;
+  color: white;
+  min-width: 200px;
+  text-align: center;
+}
+.formulario .formu input[type="submit"] {
+  display: block;
+  width:60%;
+  margin: 1em auto;
+  height: 2em;
+  font-size: 1.1rem;
+  background-color: #0051ff;
+  min-width: 300px;
+  margin-bottom: 3%;
+  color: #eee;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+
+/*RESPONSIVE*/
 @media only screen and (max-width: 600px) { 
   .sidebar.active .nav-item {
     opacity: 0;
@@ -180,7 +323,6 @@
     position: absolute;
     transform: translateX(0%);
   }
-  
 }
 @media only screen and (max-width: 500px) {
   .sidebar{
