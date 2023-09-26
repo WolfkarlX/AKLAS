@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
                 $consulta->execute();
 
                 // Redireccionamos a la pagina principal (hasta ahora al login porque aun no existe la pagina principal :P)
-                header('Location: login.php');
+                header('Location:../index.html');
                 exit();
             } catch (PDOException $e) 
             {
@@ -75,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 <body>
     
 <h1>Create acount</h1>
-    <span>You already have an acount? <a href="login.php">Login</a></span><!--Volver al login-->
+    <span>You already have an acount? <a href="../index.html">Login</a></span><!--Volver al login-->
 
     <form action="register.php" method="POST"><!--Ingresamos los valores que llevara la cuenta-->
         <input type="text" class="input-field" placeholder="Enter the name" name="FirstName" required>

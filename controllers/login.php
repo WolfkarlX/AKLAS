@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if (password_verify($password, $user['Password'])) 
             {
                 $_SESSION['user_id'] = $user['Idkey']; // Almacenamos el ID del usuario en la sesión
-                header('Location: register.php'); // Redireccionamos al panel de control
+                header('Location: suppliers.php'); // Redireccionamos al panel de control
                 exit();
             } else {
                 echo "Contraseña incorrecta.";
@@ -36,24 +36,39 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log In</title>
+    <title>Login</title>
+    <link rel="stylesheet" href="../views/css/loginstyle.css">
+    <script src="../views/js/loginscript.js" async></script>
+    <link rel="shortcut icon" type="image/x-icon" href="../views/img/favicon.ico.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    
-<h1>Log In</h1>
-    <span>You don't have an account? <a href="signin.php">Creat acount</a></span>
-
-    <form action="login.php" method="POST">
-        <input type="text" class="input-field" placeholder="Enter the worker number" name="IdKey" required>
-        <input type="password" class="input-field" placeholder="Enter the password" name="password" required>
-        <input type="submit" value="Login">
-    </form>
-
+    <div class="text-login">
+        <h1>AKLAS</h1>
+        <h3>Administrando triunfos</h3>
+        <!--<h3>triunfos</h3>-->
+    </div>
+    <div class="container">
+        <div class="logo-login">
+            <img width="150px" src="../views/img/inventary.png" >
+        </div>
+        <div class="form-container">
+            <h1>Iniciar sesión</h1>
+            <form action="login.php" method="POST">
+                <input type="text" class="input-field" placeholder="Enter the worker number" name="IdKey" required>
+                <input type="password" class="input-field" placeholder="Enter the password" name="password" required>
+                <input type="submit" value="Login">
+            </form>
+        </div>
+        
+    </div>
 </body>
+
 </html>
