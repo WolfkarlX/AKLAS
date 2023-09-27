@@ -77,7 +77,15 @@
             <h1>Bienvenid@ </h1>
         </div>
         <div class="abajo">
-            <h2>Contenido</h2>
+            <h2>MENÚ PRINCIPAL</h2>
+            <div>
+                <div class="btn">
+                    <br><br><br><br><br>
+                    <button>CATEGORÍAS</button><br><br><br><br><br>
+                    <button>PROVEEDORES</button></button><br><br><br><br><br>
+                    <button>PRODUCTOS</button></button><br><br><br><br><br>
+                </div>
+            </div>
         </div>
     </div>
 </body>
