@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-09-2023 a las 21:29:46
+-- Tiempo de generación: 16-09-2023 a las 02:52:12
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -52,14 +52,22 @@ CREATE TABLE `categories` (
 --
 
 CREATE TABLE `employees` (
-  `EmployeeID` int(11) NOT NULL,
+  `EmployeID` int(11) NOT NULL,
   `LastName` varchar(30) DEFAULT NULL,
   `FirstName` varchar(30) DEFAULT NULL,
   `BirthDate` datetime DEFAULT NULL,
   `Description` varchar(1024) DEFAULT NULL,
   `IdKey` int(8) NOT NULL,
-  `Passw` varchar(30) NOT NULL
+  `email` varchar(50) NOT NULL,
+  `Password` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `employees`
+--
+
+INSERT INTO `employees` (`EmployeID`, `LastName`, `FirstName`, `BirthDate`, `Description`, `IdKey`, `email`, `Password`) VALUES
+(7, 'Bustamante Bernabe', 'Saúl', NULL, '', 23090001, 'sbustamante@ucol.mx', '$2y$10$089ST.rffLFGeIpTQRzL6uIDjkqZ6NRy20rUIQ1mcb.q/NDDbk/qq');
 
 -- --------------------------------------------------------
 
@@ -166,7 +174,7 @@ ALTER TABLE `categories`
 -- Indices de la tabla `employees`
 --
 ALTER TABLE `employees`
-  ADD PRIMARY KEY (`EmployeeID`);
+  ADD PRIMARY KEY (`EmployeID`);
 
 --
 -- Indices de la tabla `products`
@@ -232,7 +240,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT de la tabla `employees`
 --
 ALTER TABLE `employees`
-  MODIFY `EmployeeID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `EmployeID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `products`
@@ -293,7 +301,7 @@ ALTER TABLE `products_tags`
 -- Filtros para la tabla `transaction`
 --
 ALTER TABLE `transaction`
-  ADD CONSTRAINT `transaction_ibfk_1` FOREIGN KEY (`EmployeeID`) REFERENCES `employees` (`EmployeeID`);
+  ADD CONSTRAINT `transaction_ibfk_1` FOREIGN KEY (`EmployeeID`) REFERENCES `employees` (`EmployeID`);
 
 --
 -- Filtros para la tabla `transactiondetails`
