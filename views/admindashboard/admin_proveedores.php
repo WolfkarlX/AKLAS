@@ -21,7 +21,7 @@
             <i class="bx bx-menu" id="btn_menu"></i>
         </div>
         <ul>
-            <li>
+        <li>
                 <a href="#">
                     <i class='bx bxs-home-alt-2'></i>
                     <span class="nav-item">Home</span>
@@ -30,42 +30,42 @@
             </li>
             <li>
                 <a href="#">
-                    <i class='bx bxs-home-alt-2'></i>
+                    <i class='bx bx-category'></i>
                     <span class="nav-item">Categories</span>
                 </a>
                 <span class="tooltip">Categories</span>
             </li>
             <li>
                 <a href="#">
-                    <i class='bx bxs-home-alt-2'></i>
+                    <i class='bx bx-package'></i>
                     <span class="nav-item">Products</span>
                 </a>
                 <span class="tooltip">Products</span>
             </li>
             <li>
                 <a href="#">
-                    <i class='bx bxs-home-alt-2'></i>
+                    <i class='bx bx-purchase-tag-alt'></i>
                     <span class="nav-item">Tags</span>
                 </a>
                 <span class="tooltip">Tags</span>
             </li>
             <li>
                 <a href="#">
-                    <i class='bx bxs-home-alt-2'></i>
+                    <i class='bx bx-question-mark'></i>
                     <span class="nav-item">FAQs</span>
                 </a>
                 <span class="tooltip">FAQ</span>
             </li>
             <li>
                 <a href="#">
-                    <i class='bx bxs-home-alt-2'></i>
+                    <i class='bx bxs-hand'></i>
                     <span class="nav-item">Suppliers</span>
                 </a>
                 <span class="tooltip">Suppliers</span>
             </li>
             <li>
                 <a href="#">
-                    <i class='bx bxs-home-alt-2'></i>
+                    <i class='bx bx-log-out'></i>
                     <span class="nav-item">Log Out</span>
                 </a>
                 <span class="tooltip">Log Out</span>

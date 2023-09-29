@@ -13,6 +13,7 @@
   background-color: #12171e;
   padding: 0.4rem 0.8rem;
   transition: all 0.5s ease;
+  z-index: 8;
 }
 .sidebar.active ~ .main-content {
   left: 25%;
@@ -26,7 +27,7 @@
 .sidebar #btn_menu {
   position: absolute;
   color: white;
-  top: .4rem;
+  top: .8rem;
   left: 50%;
   font-size: 1.2rem;
   line-height: 50px;
@@ -119,7 +120,7 @@
   white-space: nowrap;
 }
 .main-content {
-  position: absolute;
+  position: fixed;
   background-color: #eee;
   min-height: 100%;
   top: 0;
@@ -303,6 +304,33 @@
 
 
 /*RESPONSIVE*/
+@media only screen and (max-width: 1000px) { 
+  .sidebar ul li a i {
+    position: absolute;
+    transform: translateX(-15%);
+  }
+  .sidebar.active .nav-item {
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+  .sidebar .nav-item {
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+  .sidebar.active .top .logo {
+    opacity: 0;
+  }
+  .sidebar.active #btn_menu {
+    left: 50%;
+  }
+  .sidebar #btn_menu {
+    left: 50%;
+  }
+
+}
+
 @media only screen and (max-width: 600px) { 
   .sidebar.active .nav-item {
     opacity: 0;
