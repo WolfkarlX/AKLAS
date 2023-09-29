@@ -263,7 +263,7 @@
   border-bottom: #0a0a23;
   border-radius: 0.2rem;
 }
-.formulario .formu button {
+.formulario .formu .Cancelar {
   display: block;
   width:50%;
   margin-bottom: 2%;
