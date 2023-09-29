@@ -1,6 +1,6 @@
 function validateForm() {
     // Validamos la cuenta
-    var cuenta = document.querySelector("input[name='cuenta']").value;
+    var cuenta = document.querySelector("input[name='IdKey']").value;
     var countRegex = /^\d{8}/;
     if (!countRegex.test(cuenta)) {
         alert("La cuenta no es válida.");

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin - Proveedores</title>
     <link rel="stylesheet" href="../css/dashboard_admin.css">
-    <script src="loginscript.js" async></script>
+    <script src="../js/vistaProveedores.js" async></script>
     <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="stylesheet">
@@ -81,7 +81,24 @@
                 <button onclick="showForm()" class="BotonRegistro">Nuevo registro</button>
             </div>
             <div class="tabla">
-                <p>sexy</p>
+                <button id="btn-actualizar">Actualizar</button>
+                <table id="vista">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Contact</th>
+                            <th>Address</th>
+                            <th>City</th>
+                            <th>Postal Code</th>
+                            <th>Country</th>
+                            <th>Phone</th>
+                        </tr>
+                    </thead>
+                    <tbody id="vista-cuerpo">
+
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
