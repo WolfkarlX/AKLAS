@@ -120,11 +120,11 @@
   white-space: nowrap;
 }
 .main-content {
-  position: fixed;
+  position: absolute;
   background-color: #eee;
-  min-height: 100%;
   top: 0;
   left: 10%;
+  height: 100vh;
   transition: all 0.5s ease;
   width: calc(100% - 10%);
   padding: 1rem;
@@ -147,11 +147,11 @@
   margin-left: 125px;
 }
 .abajo {
-  display: flex;
+  display: block;
   width: 95%;
   position: absolute;
   z-index: 1;
-  height: 80%;
+  height: 100%;
   bottom: 0;
   right: 0;
   top: 8%;
@@ -165,12 +165,14 @@
 }
 .opciones {
   /*background-color: red;*/
-  display: block;
+  display: flex;
   top: 0;
   position: absolute;
   right: 0;
   height: 20%;
-  width: 95%;
+  left: 2%;
+  /*width: 95%;*/
+  width: calc(100% - 10%);
   margin-top: 10px;
   margin-right: 25px;
   margin-bottom: 15px;
@@ -178,7 +180,7 @@
 }
 .tabla {
   /*background-color: yellowgreen;*/
-  display: flex;
+  display: block;
   width: 95%;
   position: absolute;
   height: 80%;
