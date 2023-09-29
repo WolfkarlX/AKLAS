@@ -79,9 +79,9 @@
         <div class="abajo">
             <div class="opciones">
                 <button onclick="showForm()" class="BotonRegistro">Nuevo registro</button>
+                <button id="btn-actualizar"><i class='bx bx-refresh'></i></button>
             </div>
             <div class="tabla">
-                <button id="btn-actualizar">Actualizar</button>
                 <table id="vista">
                     <thead>
                         <tr>
@@ -106,12 +106,20 @@
         <form class="formu" id="myForm" style="display: none;">
             <h1>NUEVO PROVEEDOR</h1>
             <fieldset>
-                <label for="first-name">Enter Your First Name: 
+                <label for="first-name">Full Name: 
                     <input required id="first-name" type="text" name="first name"/></label>
-                <label for="last-name">Enter Your Last Name: 
-                    <input required id="last-name" type="text" name="last name"/></label>
-                <label for="email">Enter Your Email: 
+                <label for="email">Email: 
                     <input required id="email" type="email" name="e-mail"/></label>
+                <label for="address">Address: 
+                    <input required id="address" type="text" name="address"/></label>
+                <label for="city">City: 
+                    <input required id="city" type="text" name="city"/></label>
+                <label for="cp">Postal Code: 
+                    <input required id="cp" type="number" name="cp"/></label>
+                <label for="nation">Nationality: 
+                    <input required id="nation" type="text" name="nation"/></label>
+                <label for="phone">Phone Number: 
+                    <input required id="phone" type="tel" name="phone"/></label>
             </fieldset>
             <input type="submit"  onclick="submitForm()" value="Registrar"/>
             <button onclick="closeForm()" class="Cancelar">Cancelar Registro</button>

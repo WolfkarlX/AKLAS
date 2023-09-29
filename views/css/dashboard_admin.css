@@ -165,7 +165,7 @@
 }
 .opciones {
   /*background-color: red;*/
-  display: flex;
+  display: block;
   top: 0;
   position: absolute;
   right: 0;
@@ -300,7 +300,57 @@
   font-weight: bold;
   cursor: pointer;
 }
+#btn-actualizar {
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  position: absolute;
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  left: 220px;
+  font-size: 2.1rem;
+  align-items: center;
+  background-color: rgb(30, 0, 255);
+  box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
+  color: #eee;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+}
 
+/* Estilos de la tabla */
+#vista {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+/* Estilos de las celdas */
+#vista th,
+#vista td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #d2d2d2;
+}
+
+/* Estilos de la cabecera */
+#vista thead {
+  background-color: #f3f3f3;
+  font-weight: bold;
+}
+
+/* Estilos de las filas alternas */
+#vista tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+/* Estilos de las filas al pasar el ratón */
+#vista tbody tr:hover {
+  background-color: #eaeaea;
+}
 
 
 /*RESPONSIVE*/
