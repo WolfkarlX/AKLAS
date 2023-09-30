@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if (password_verify($password, $user['Password'])) 
             {
                 $_SESSION['user_id'] = $user['Idkey']; // Almacenamos el ID del usuario en la sesión
-                header('Location: ../views/admindashboard/admin_proveedores.php'); // Redireccionamos al panel de control
+                header('Location: ../views/'); // Redireccionamos al panel de control
                 exit();
             } else {
                 echo "Contraseña incorrecta.";
