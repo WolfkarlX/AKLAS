@@ -1,5 +1,6 @@
 <?php
 session_start(); // Iniciar la sesión
+
 require_once('../models/conexion.php');
 use models\conexion;
 $conn = new conexion();

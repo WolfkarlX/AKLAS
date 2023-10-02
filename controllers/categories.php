@@ -1,4 +1,23 @@
 <?php
+  session_start();
+
+  require_once('../models/conexion.php');
+
+  if (isset($_SESSION['user_id'])) {
+    $records = $conn->prepare('SELECT EmployeID, IdKey, password FROM employees WHERE EmployeID = :EmployeID');
+    $records->bindParam(':EmployeID', $_SESSION['user_id']);
+    $records->execute();
+    $results = $records->fetch(PDO::FETCH_ASSOC);
+
+    $user = null;
+
+    if (count($results) > 0) {
+      $user = $results;
+    }
+  }
+?>
+
+<?php
     require_once('../models/conexion.php');
     use models\conexion;
     $conn = new conexion();
