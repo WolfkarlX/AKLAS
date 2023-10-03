@@ -110,6 +110,10 @@
   opacity: 0;
   white-space: nowrap;
 }
+.sidebar ul li .tooltip:hover {
+  opacity: 0;
+  display: none;
+}
 .sidebar ul li:hover .tooltip {
   opacity: 1;
   white-space: nowrap;
