@@ -1,10 +1,7 @@
-// Obtener el elemento tbody
-const tbody = document.getElementById("vista-cuerpo");
-
 //Funcion para cargar en la tabla los proveedores
-function cargarProveedores() {
+function getTable(url, element) {
     // Hacer una petición fetch al servidor
-    fetch("../../controllers/suppliers.php")
+    fetch(url)
     .then(response => response.json())
     .then(datos => {
     // Iterar por la lista de productos
@@ -12,7 +9,7 @@ function cargarProveedores() {
         // Crear una nueva fila
         const row = document.createElement("tr");
 
-        // Crear 9 celdas
+        // Crear 8 celdas
         for (let j = 0; j < 8; j++) {
         // Crear una nueva celda
         const cell = document.createElement("td");
@@ -25,17 +22,18 @@ function cargarProveedores() {
         }
 
         // Agregar la fila al tbody
-        tbody.appendChild(row);
+        element.appendChild(row);
     }
     });
 }
 
-// Agregar evento para ejecutar la función al cargar la página
-document.addEventListener("DOMContentLoaded", cargarProveedores);
+async function sendForm(url, form) {
+    const formData = new FormData(form);
+    const response = await fetch(url, {
+        method: "POST",
+        body: formData
+    });
+    return await response.json();
+}
 
-// Agregar evento para ejecutar la función al hacer click en el botón
-const botonActualizar = document.querySelector("button[id='btn-actualizar']");
-botonActualizar.addEventListener("click", () => {
-    tbody.innerHTML = "";
-    cargarProveedores();
-});
+export { getTable, sendForm };
