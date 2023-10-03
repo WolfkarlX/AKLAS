@@ -1,5 +1,13 @@
 <?php
-session_start(); // Iniciar la sesión
+    session_start();// Iniciar la sesión
+    if(isset($_SESSION['user_id']))
+    {
+        header("Location:../views/index.php");
+
+    }
+?>
+
+<?php
 
 require_once('../models/conexion.php');
 use models\conexion;

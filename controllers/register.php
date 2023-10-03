@@ -1,4 +1,13 @@
 <?php
+    session_start();
+    if(empty($_SESSION['user_id']))
+    {
+        header("Location:../");
+
+    }
+?>
+
+<?php
 
 require_once('../models/conexion.php');
 use models\conexion;
@@ -49,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
                 // Ejecutamos la consulta
                 $consulta->execute();
 
-                // Redireccionamos a la pagina principal (hasta ahora al login porque aun no existe la pagina principal :P)
+                // Redireccionamos a la pagina principal
                 header('Location:../index.html');
                 exit();
             } catch (PDOException $e) 

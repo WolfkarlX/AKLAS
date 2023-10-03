@@ -1,4 +1,13 @@
 <?php
+    session_start();
+    if(empty($_SESSION['user_id']))
+    {
+        header("Location:../");
+
+    }
+?>
+
+<?php
     require_once('../models/conexion.php');
     use models\conexion;
     $conn = new conexion();
