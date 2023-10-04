@@ -1,3 +1,4 @@
+
 <?php
     require_once("../models/conexion.php"); #importa el archivo conexion de la base de datos
     use models\conexion;     #usa el archivo conexion de la base de datos 

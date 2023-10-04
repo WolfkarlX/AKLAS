@@ -1,5 +1,13 @@
 <?php
-session_start(); // Iniciar la sesión
+    session_start();// Iniciar la sesión
+    if(isset($_SESSION['user_id']))
+    {
+        header("Location:../views/index.php");
+
+    }
+?>
+
+<?php
 
 require_once('../models/conexion.php');
 use models\conexion;
@@ -22,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Verificamos si la contraseña ingresada coincide con la almacenada en la base de datos
             if (password_verify($password, $user['Password'])) 
             {
-                $_SESSION['user_id'] = $user['Idkey']; // Almacenamos el ID del usuario en la sesión
+                $_SESSION['user_id'] = $user['IdKey']; // Almacenamos el ID del usuario en la sesión
                 header('Location: ../views/'); // Redireccionamos al panel de control
                 exit();
             } else {
