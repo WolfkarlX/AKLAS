@@ -18,6 +18,7 @@ body {
     margin: 0;
     position: absolute;
     display: block;
+    border-radius: 5px;
 
 }
 .text-login {
@@ -46,7 +47,7 @@ body {
     white-space: nowrap;
 }
 .form-container {
-    background-color: #76c2af;
+    background-color: #3fa98e;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -66,6 +67,7 @@ input {
     border-bottom: 1px solid #ccc;
     outline: none;
     font-size: 16px;
+    font-weight: bold;
 }
 
 .input-field {
@@ -77,10 +79,12 @@ input {
     transition: 0.1s ease;
     z-index: 1;
 }
-input::selection,
-input:valid{
+
+input:focus{
     border: 2px solid greenyellow;
+    user-select: all;
 }
+
 
 .button {
     background-color: black;
