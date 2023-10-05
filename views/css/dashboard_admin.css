@@ -142,11 +142,12 @@
   background-color: #eee;
   top: 0;
   left: 10%;
-  height: 100vh;
+  height: 100%; 
   transition: all 0.5s ease;
   width: 90%;
   padding: 1rem;
   display: flex;
+  overflow: auto;
 }
 .arriba {
   display: flex;
@@ -169,7 +170,7 @@
   width: 95%;
   position: absolute;
   z-index: 1;
-  height: 70%;
+  /* height: auto; */
   bottom: 0;
   right: 0;
   top: 8%;
@@ -180,6 +181,7 @@
   margin-right: 25px;
   margin-bottom: 15px;
   margin-left: 125px;
+  /* overflow: auto; */
 }
 .opciones {
   /*background-color: red;*/
@@ -200,7 +202,7 @@
   display: block;
   width: 95%;
   position: absolute;
-  height: 80%;
+  height: auto;
   bottom: 0;
   right: 0;
   top: 8%;
@@ -208,6 +210,7 @@
   margin-right: 25px;
   margin-bottom: 15px;
   margin-left: 125px;
+  overflow: auto;
 }
 .BotonRegistro {
   width: 200px;
@@ -381,12 +384,20 @@
   cursor: pointer;
   text-align: center;
 }
+.abajo ~ .tabla {
+  height: auto;
+  overflow: auto;
+}
 
 /* Estilos de la tabla */
 #vista {
   width: 80%;
   margin: 20px auto;
   border-collapse: collapse;
+  height: auto;
+}
+#vista-cuerpo {
+  height: auto;
 }
 
 /* Estilos de las celdas */
@@ -395,17 +406,22 @@
   padding: 10px;
   text-align: left;
   border: 1px solid #d2d2d2;
+  height: auto;
 }
 
 /* Estilos de la cabecera */
 #vista thead {
   background-color: #f3f3f3;
   font-weight: bold;
+  height: auto;
 }
-
+#vista tbody {
+  overflow: auto;
+}
 /* Estilos de las filas alternas */
 #vista tbody tr:nth-child(even) {
   background-color: #fafafa;
+  height: auto;
 }
 
 /* Estilos de las filas al pasar el ratón */
