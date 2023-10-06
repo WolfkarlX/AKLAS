@@ -18,6 +18,7 @@
                 <i class="bx bx-cross">AKLAS</i>
             </div>
             <i class="bx bx-menu" id="btn_menu"></i>
+            
         </div>
         <ul>
             <li>
@@ -77,7 +78,7 @@
         </div>
         <div class="abajo">
             <div class="opciones">
-                <button onclick="showForm()" class="BotonRegistro">Nuevo registro</button>
+                <button onclick="showForm()" class="BotonRegistro" id="btn-registro">Nuevo registro</button>
                 <button id="btn-actualizar"><i class='bx bx-refresh'></i></button>
             </div>
             <div class="tabla">
@@ -105,7 +106,7 @@
         <form class="formu" id="myForm" style="display: none;">
             <div class="formarriba">
                 <h1 class="tituloform">NEW SUPPLIER</h1>
-                <input type="button" value="X" class="CancelX" onclick="closeForm()">
+                <input id="Cerrar_form" type="button" value="X" class="CancelX" onclick="closeForm()">
             </div>
             <fieldset>
                 <label for="first-name">Full Name: </label>
@@ -123,25 +124,12 @@
                 <label for="phone">Phone Number: </label>
                 <input id="phone" type="tel" name="phone" placeholder="+..."/>
             </fieldset>
-            <input type="submit" value="Registrar" class="submitir"/>
-            <input type="button" value="Cancelar Registro" class="Cancelar" onclick="closeForm()">
+            <input type="submit" value="Registrar" class="submitir" id="submit"/>
+            <input type="button" id="Cancelar_registro" value="Cancelar Registro" class="Cancelar" onclick="closeForm()">
         </form>
     </div>
 </body>
-<script>
-    let btn_sidebar = document.querySelector('#btn_menu'); //Guarda una variable del boton del sidebar
-    let sidebar = document.querySelector('.sidebar'); //Guarda una variable del div sidebar completo
-
-    btn_sidebar.onclick = function () { //Funcion para abrir sidebar xD
-        sidebar.classList.toggle('active'); // C abre
-    };
-    function showForm() {
-      document.getElementById("myForm").style.display = "block";
-    }
-    function closeForm() {
-        document.getElementById("myForm").style.display = "none";
-    }
-</script>
+<script src="../js/fun.js" type="module"></script>
 <script src="../js/urlSuppliers.js"></script>
 <script src="../js/app.js" type="module"></script>
 </html>

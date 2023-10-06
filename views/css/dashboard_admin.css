@@ -131,6 +131,11 @@
 .sidebar ul li:hover .tooltip {
   opacity: 1;
   white-space: nowrap;
+  z-index: 4;
+  background-color: #12171e;
+  display: flex;
+  color: white;
+  font-weight: bold;
 }
 .sidebar.active ul li .tooltip {
   display: none;
@@ -147,7 +152,7 @@
   width: 90%;
   padding: 1rem;
   display: flex;
-  overflow: auto;
+  
 }
 .arriba {
   display: flex;
@@ -194,23 +199,26 @@
   /*width: 95%;*/
   margin-top: 10px;
   margin-right: 25px;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   margin-left: 125px;
 }
 .tabla {
   /*background-color: yellowgreen;*/
   display: block;
-  width: 95%;
+  width: auto;
   position: absolute;
-  height: auto;
+  height: 70%;
+  max-height: 70%;
   bottom: 0;
   right: 0;
-  top: 8%;
+  top: 0;
+  left: -75px;
   margin-top: 100px;
   margin-right: 25px;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   margin-left: 125px;
-  overflow: auto;
+  overflow-y: auto;
+  max-width: 95%;
 }
 .BotonRegistro {
   width: 200px;
@@ -221,6 +229,7 @@
   margin-top: 20px;
   margin-bottom: 10px;
   font-size: 1.1rem;
+  left: -10%;
   align-items: center;
   background-color: rgb(0, 0, 90);
   border-radius: 0.6rem;
@@ -365,14 +374,14 @@
   outline-color: #00329d;
 }
 #btn-actualizar {
-  width: 50px;
-  height: 50px;
+  width: 66px;
+  height: 65px;
   padding: 10px;
   position: absolute;
   display: flex;
   margin-top: 20px;
   margin-bottom: 10px;
-  left: 220px;
+  left: 110px;
   font-size: 2.1rem;
   align-items: center;
   background-color: rgb(30, 0, 255);
@@ -382,22 +391,71 @@
   border-radius: 0.5rem;
   font-weight: bold;
   cursor: pointer;
+  justify-content: center;
+}
+
+/*HOME*/
+.abajo .gridcontainer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  margin-top: 30px;
+}
+
+.abajo .homebutton a i {
+  min-width: 200px;
   text-align: center;
+  height: 100px;
+  width: 100%;
+  font-size: 40px;
+  padding-top: 30%;
+  border-radius: 12px;
+  margin-left: -10px;
+  margin-top: -20px;
+  justify-content: center;
+
 }
-.abajo ~ .tabla {
-  height: auto;
-  overflow: auto;
+.abajo .homebutton {
+  padding: 30px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  justify-content: center;
+  width: 80%;
 }
+.abajo .homebutton a {
+  color: white;
+  display: block;
+  font-weight: bold;
+  background-color: yellow;
+  text-decoration: none;
+  border-radius: 0.8rem;
+  position: relative; 
+  font-size: 20px;
+  margin: 10px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  width: 70%;
+  min-width: 70%;
+  height: 100%;
+  background-image: linear-gradient(to right, rgb(1, 0, 63), rgb(255, 115, 0));
+}
+.abajo .homebutton a:hover {
+  background-color: white;
+  color: #12171e;
+}
+
+
+
 
 /* Estilos de la tabla */
 #vista {
-  width: 80%;
-  margin: 20px auto;
+  width: auto;
+  top: 5%;
   border-collapse: collapse;
-  height: auto;
-}
-#vista-cuerpo {
-  height: auto;
+  height: 100%;
+  box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
+  max-width: 90%;
+  max-height: 100%;
 }
 
 /* Estilos de las celdas */
@@ -406,18 +464,34 @@
   padding: 10px;
   text-align: left;
   border: 1px solid #d2d2d2;
-  height: auto;
+  font-weight: bold;
+  border: none;
 }
 
 /* Estilos de la cabecera */
 #vista thead {
-  background-color: #f3f3f3;
+  background-color: rgb(7, 0, 56);
   font-weight: bold;
   height: auto;
+  color: white;
+  white-space: nowrap;
+  position: sticky;
+  top: 0%;
+  padding-top: 15%;
 }
-#vista tbody {
-  overflow: auto;
+#vista thead th{
+  position: sticky;
+  top: 0;
 }
+#vista #vista-cuerpo {
+  top: 1%;
+  max-height: 100px;
+}
+#vista tbody tr{
+  overflow-y: auto;
+  height: auto;
+}
+
 /* Estilos de las filas alternas */
 #vista tbody tr:nth-child(even) {
   background-color: #fafafa;
@@ -426,7 +500,11 @@
 
 /* Estilos de las filas al pasar el ratón */
 #vista tbody tr:hover {
-  background-color: #eaeaea;
+  background-color: rgb(183, 230, 255);
+}
+#vista tbody tr::selection,
+#vista tbody tr:active {
+  background-color: aquamarine;
 }
 
 
@@ -480,16 +558,28 @@
   }
 }
 @media only screen and (max-width: 570px) {
+  .main-content {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    position: absolute;
+    z-index: 1;
+  }
+  
   .sidebar{
-    width: 100%;
-    z-index: 20;
+    width: 10%;
+    z-index: 2;
+    height: 100%;
+    display: block;
   }
   .sidebar.active {
-    width: 100%;
-    z-index: 20;
+    width: 60%;
+    height: 100%;
+    display: block;
+    z-index: 2;
   }
   .sidebar .nav-item {
-    opacity: 1;
+    opacity: 0;
     pointer-events: none;
     white-space: nowrap;
     position: absolute;
@@ -498,19 +588,26 @@
   }
   .sidebar.active .nav-item {
     opacity: 1;
-    position: absolute;
-    display: block;
     pointer-events: none;
     white-space: nowrap;
+    position: absolute;
+    display: block;
     transform: translateX(75%);
   }
-  .sidebar.active #btn_menu {
-    opacity: 0;
-    pointer-events: none;
-  }
+ 
   .sidebar #btn_menu {
-    opacity: 0;
-    pointer-events: none;
+    opacity: 1;
+    position: absolute;
+    display: flex;
+    text-align: center;
+    transform: translateX(-50%);  
+  }
+  .sidebar.active #btn_menu {
+    opacity: 1;
+    position: fixed;
+    display: flex;
+    text-align: center;
+    transform: translateX(60%);  
   }
   .sidebar ul li {
     position: relative;
@@ -534,7 +631,7 @@
     height: 50px;
     border-radius: 12px;
     line-height: 50px;
-    transform: translateX(-25%);
+    transform: translateX(-45%);
   }
   .sidebar.active ul li a i {
     min-width: 100px;

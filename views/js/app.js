@@ -27,8 +27,6 @@ form.addEventListener("submit", function(event) {
             //Recargar la tabla
             tbody.innerHTML = "";
             getTable(urlGetData, tbody);
-            //Cierra el formulario
-            closeForm();
             //Limpia el formulario
             event.target.reset();
         }

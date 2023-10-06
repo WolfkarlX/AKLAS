@@ -84,16 +84,40 @@
             <h1>Home</h1>
         </div>
         <div class="abajo">
-            <h2>Contenido</h2>
+            <div class="gridcontainer">
+                    <div class="homebutton">
+                        <a href="./products/">
+                            <i class='bx bx-package'></i>
+                            <span class="bloque-item">Products</span>
+                        </a>
+                    </div>
+                    <div class="homebutton">
+                        <a href="./suppliers/">
+                            <i class='bx bxs-hand'></i>
+                            <span class="bloque-item">Suppliers</span>
+                        </a>
+                    </div>
+                    <div class="homebutton">
+                        <a href="./categories/">
+                            <i class='bx bx-category'></i>
+                            <span class="bloque-item">Categories</span>
+                        </a>
+                    </div>
+                    <div class="homebutton">
+                        <a href="./tags/">
+                            <i class='bx bx-purchase-tag-alt'></i>
+                            <span class="bloque-item">Tags</span>
+                        </a>
+                    </div>
+                    <div class="homebutton">
+                        <a href="./faqs/">
+                            <i class='bx bx-question-mark'></i>
+                            <span class="bloque-item">FAQs</span>
+                        </a>
+                    </div>
+            </div>
         </div>
     </div>
 </body>
-<script>
-    let btn_sidebar = document.querySelector('#btn_menu'); //Guarda una variable del boton del sidebar
-    let sidebar = document.querySelector('.sidebar'); //Guarda una variable del div sidebar completo
-
-    btn_sidebar.onclick = function () { //Funcion para abrir sidebar xD
-        sidebar.classList.toggle('active'); // C abre
-    };
-</script>
+<script src="./js/fun.js" type="module"></script>
 </html>
