@@ -1,17 +1,27 @@
+<?php
+    session_start(); #inicia sesiones para poder hacer variables, modificaciones, etc
+
+    if(empty($_SESSION['user_id']))
+    {
+        header("Location:../");
+
+    }
+?>
 
 <?php
-    require_once("../models/conexion.php"); #importa el archivo conexion de la base de datos
+   
+   
+   
+   require_once("../models/conexion.php"); #importa el archivo conexion de la base de datos
     use models\conexion;     #usa el archivo conexion de la base de datos 
     $conn = new conexion();     #instancia la clase conexion del archivo conexion para utilizar sus atributos y metodos y hacer el crud     
-    session_start(); #inicia sesiones para poder hacer variables, modificaciones, etc
 
     if(isset($_SESSION["commited"])){    #condiciona si tiene la sesion iniciada de "commited"
 ?>        
     <script> alert('Category created successfuly')</script>    <!-- Hace una alerta que frontend puede modificar---> 
 <?php
         
-        session_unset();   #elimina el valor de la variable de la sesion "commited"
-        session_destroy(); #destruye todas las sesiones
+        unset($_SESSION["commited"]);   #elimina el valor de la variable de la sesion "commited"
         header("refresh:0.0000000000001;url=categories.php"); # reenvia en 000000.... de tiempo a la pagina categories
         exit(); #termina el script
     }
