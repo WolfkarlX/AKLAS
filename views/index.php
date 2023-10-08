@@ -106,13 +106,13 @@
                     <div class="homebutton">
                         <a href="./tags/">
                             <i class='bx bx-purchase-tag-alt'></i>
-                            <span class="bloque-item">Tags</span>
+                            <span class="bloque-item">Tagging</span>
                         </a>
                     </div>
                     <div class="homebutton">
                         <a href="./faqs/">
                             <i class='bx bx-question-mark'></i>
-                            <span class="bloque-item">FAQs</span>
+                            <span class="bloque-item">Support</span>
                         </a>
                     </div>
             </div>
