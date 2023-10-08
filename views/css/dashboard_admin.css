@@ -189,18 +189,17 @@
   /* overflow: auto; */
 }
 .opciones {
-  /*background-color: red;*/
-  display: flex;
+  /* background-color: red; */
   top: 0;
   position: absolute;
   right: 0;
   height: 20%;
-  left: 2%;
-  /*width: 95%;*/
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(6,1fr);
   margin-top: 10px;
-  margin-right: 25px;
   margin-bottom: 5px;
-  margin-left: 125px;
+ 
 }
 .tabla {
   /*background-color: yellowgreen;*/
@@ -220,28 +219,59 @@
   overflow-y: auto;
   max-width: 95%;
 }
-.BotonRegistro {
-  width: 200px;
+.opciones .BotonRegistro {
+  width: 100%;
   height: 65px;
   padding: 10px;
-  position: absolute;
-  display: flex;
+  position: relative;
+  display: block;
   margin-top: 20px;
   margin-bottom: 10px;
   font-size: 1.1rem;
-  left: -10%;
+  
   align-items: center;
   background-color: rgb(0, 0, 90);
   border-radius: 0.6rem;
   box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
-  min-width: 200px;
+  min-width: 100%;
   color: #eee;
   border: none;
   border-radius: 0.5rem;
   font-weight: bold;
+  margin: 20px;
   cursor: pointer;
 }
+.opciones #btn-actualizar {
+  width: 40%;
+  height: 65px;
+  padding: 10px;
+  position: relative;
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 2.1rem;
+  align-items: center;
+  background-color: rgb(30, 0, 255);
+  box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
+  color: #eee;
+  border: none;
+  min-width: 40%;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 20px;
+  justify-content: center;
+}
 
+.opciones .bloque_opciones {
+  padding: 20px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 100%;
+}
 .formulario {
   z-index: 3;
   padding: 20px;
@@ -372,26 +402,6 @@
   font-weight: bold;
   cursor: pointer;
   outline-color: #00329d;
-}
-#btn-actualizar {
-  width: 66px;
-  height: 65px;
-  padding: 10px;
-  position: absolute;
-  display: flex;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  left: 110px;
-  font-size: 2.1rem;
-  align-items: center;
-  background-color: rgb(30, 0, 255);
-  box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
-  color: #eee;
-  border: none;
-  border-radius: 0.5rem;
-  font-weight: bold;
-  cursor: pointer;
-  justify-content: center;
 }
 
 /*HOME*/
@@ -589,6 +599,14 @@
   }
   .abajo {
     overflow-y: auto;
+  }
+  .opciones{
+    grid-template-columns: repeat(4,1fr);
+    width: 100%;
+  }
+  .opciones #btn-actualizar {
+    width: 50%;
+    
   }
 }
 @media only screen and (max-width: 570px) {
