@@ -620,6 +620,9 @@
   .abajo .homebutton a {
     font-size: 10px;
   }
+  .sidebar ul li .tooltip {
+    display: none;
+  }
 
   .sidebar{
     width: 10%;
