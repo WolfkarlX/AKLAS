@@ -170,6 +170,14 @@
   margin-bottom: 15px;
   margin-left: 125px;
 }
+.arriba #clock {
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 45px;
+  position: absolute;
+  display: flex;
+}
 .abajo {
   display: block;
   width: 95%;
@@ -641,37 +649,42 @@
   .abajo .homebutton a {
     font-size: 10px;
   }
-  .sidebar ul li .tooltip {
-    display: none;
+  .sidebar ul li:hover .tooltip {
+    background: transparent;
+    color: transparent;
+    box-shadow: none;
   }
 
   .sidebar{
     width: 10%;
     z-index: 2;
     height: 100%;
-    display: block;
+    
+    position: fixed;
   }
   .sidebar.active {
     width: 60%;
     height: 100%;
-    display: block;
+    position: fixed;
     z-index: 2;
+    display: block;
   }
   .sidebar .nav-item {
     opacity: 0;
     pointer-events: none;
     white-space: nowrap;
     position: absolute;
-    display: block;
-    transform: translateX(75%);
+    transform: translateX(105%);
   }
   .sidebar.active .nav-item {
     opacity: 1;
     pointer-events: none;
     white-space: nowrap;
-    position: absolute;
-    display: block;
-    transform: translateX(75%);
+    
+    transform: translateX(-45%);
+    left: 0;
+    margin-left: 20px;
+    padding-left: 30px;
   }
  
   .sidebar #btn_menu {
@@ -701,7 +714,6 @@
     list-style-type: none;
     height: 50px;
     width: 90%;
-    margin: 0.8rem auto;
     line-height: 50px;
   }
   .sidebar ul li a i {
@@ -711,6 +723,7 @@
     border-radius: 12px;
     line-height: 50px;
     transform: translateX(-45%);
+    
   }
   .sidebar.active ul li a i {
     min-width: 100px;
@@ -718,7 +731,7 @@
     height: 50px;
     border-radius: 12px;
     line-height: 50px;
-    transform: translateX(-25%);
+    transform: translateX(-75%);
   }
   .sidebar ul li a {
     color: white;
@@ -728,14 +741,29 @@
     border-radius: 0.8rem;
     position: absolute; 
     transform: translateX(25%);
+    width: 100%;
+  }
+  .sidebar ul li a:hover {
+    background-color: white;
+    color: #12171e;
   }
   .sidebar.active ul li a {
     color: white;
-    display: flex;
+    display: block;
     align-items: left;
     text-decoration: none;
     border-radius: 0.8rem;
     position: absolute; 
     transform: translateX(25%);
+    width: 100%;
+  }
+  .arriba #clock {
+    font-size: 38px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 35px;
+    margin-left: -25px;
+    position: absolute;
+    display: flex;
   }
 }
