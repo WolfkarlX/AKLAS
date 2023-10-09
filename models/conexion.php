@@ -6,6 +6,7 @@
         private $username= "root";
         private $password= "";
         private $dbname= "aklas";
+        protected $table;
 
         public function __construct()
         {
@@ -16,6 +17,14 @@
             catch(PDOException $e) {
                 echo "Error: " . $e->getMessage();
             }
+        }
+
+        public function select($campos = array('*')) {
+            $campos = implode(", ", $campos);
+            $sql = "SELECT " . $campos . " FROM {$this->table}";
+            $stmt = $this->prepare($sql);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
     }
 ?>

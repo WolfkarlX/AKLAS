@@ -10,12 +10,12 @@ function getTable(url, element) {
         const row = document.createElement("tr");
 
         // Crear 8 celdas
-        for (let j = 0; j < 8; j++) {
+        for (const campo of Object.values(dato)) {
         // Crear una nueva celda
         const cell = document.createElement("td");
 
         // Agregar contenido a la celda
-        cell.textContent = `${dato[j]}`;
+        cell.textContent = `${campo}`;
 
         // Agregar la celda a la fila
         row.appendChild(cell);

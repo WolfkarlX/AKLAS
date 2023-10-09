@@ -10,5 +10,6 @@
 require_once("../autoload.php");
 use models\supplier;
 $supp = new supplier();
-echo $supp->delSupplier(1);
+$supp_list = $supp->select();
+echo json_encode($supp_list);
 ?>
