@@ -216,7 +216,7 @@
   margin-right: 25px;
   margin-bottom: 5px;
   margin-left: 125px;
-  overflow-y: auto;
+  overflow-y: auto; 
   max-width: 95%;
 }
 .opciones .BotonRegistro {
