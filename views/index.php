@@ -82,6 +82,7 @@
     <div class="main-content">
         <div class="arriba">
             <h1>Home</h1>
+            <div id="clock"></div>
         </div>
         <div class="abajo">
             <div class="gridcontainer">
