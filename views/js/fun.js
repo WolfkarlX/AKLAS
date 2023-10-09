@@ -30,24 +30,24 @@ if (btn_registro) {
   btn_cancelarform.onclick = closeForm;
   btn_submitform.onclick = closeForm;
 }
-
+//Funcion para reloj
 function updateTime() {
   var now = new Date();
-  var hours = now.getHours();
-  var minutes = now.getMinutes();
+  var hours = now.getHours();  //Obtiene horas
+  var minutes = now.getMinutes(); //Obtiene minutos
 
   if (hours < 10) {
-    hours = "0" + hours;
+    hours = "0" + hours; //Se resetea horas
   }
 
   if (minutes < 10) {
-    minutes = "0" + minutes;
+    minutes = "0" + minutes;  //Se resetea minutos
   }
 
 
-  var timeString = hours + ":" + minutes;
+  var timeString = hours + ":" + minutes; //Se crea string
 
-  reloj.innerHTML = timeString;
+  reloj.innerHTML = timeString; //Se hace print
 }
 
-setInterval(updateTime, 1000);
+setInterval(updateTime, 1000); //Se actualiza el tiempo
