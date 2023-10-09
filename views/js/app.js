@@ -32,3 +32,25 @@ form.addEventListener("submit", function(event) {
         }
     })
 })
+
+
+/*Script para eliminar espacios en blanco del html */ 
+    function eliminarEspacios() {
+        // Obtén el contenido del textarea
+        var input = document.getElementById("Desc")
+        var textarea = document.getElementById("Name");
+        var contenido = textarea.value;
+        var content = input.value;
+
+        // Reemplaza todos los espacios en blanco con una cadena vacía
+        var contenidoSinEspacios = contenido.replace(/\s+/g, '');
+        var contentwithouthspace = content.replace(/\s+/g, '');
+        // Verifica si el contenido después de quitar los espacios es vacío
+        if (contenidoSinEspacios === '') {
+        // Si es vacío, establece el contenido del textarea como vacío
+            textarea.value = '';
+        }
+        if(contentwithouthspace === ''){
+            input.value = '';
+        }
+    }
