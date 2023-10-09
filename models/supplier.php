@@ -11,8 +11,6 @@ class supplier extends conexion{ //Clase de proveedor que extiende la conexion, 
     private $country;
     private $phone;
 
-    private $table;
-
     public function __construct(){
         parent::__construct();
         $this->table = "suppliers";

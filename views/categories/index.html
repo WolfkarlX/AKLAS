@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CategoriasS</title>
+    <title>Categorias</title>
     <link rel="stylesheet" href="../css/dashboard_admin.css">
     <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
@@ -88,7 +88,9 @@
                 <table id="vista">
                     <thead>
                         <tr>
-                            
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Descripcción</th>
                         </tr>
                     </thead>
                     <tbody id="vista-cuerpo">
@@ -100,14 +102,22 @@
     </div>
     <div class="formulario">
         <form class="formu" id="myForm" style="display: none;">
-            <h1>NUEVA CATEGORIA</h1>
+            <div class="formarriba">
+                <h1 class="tituloform">NUEVA CATEGORIA</h1>
+                <input id="Cerrar_form" type="button" value="X" class="CancelX">
+            </div>
             <fieldset>
-                
+                <label for="name">Name: </label>
+                <input id="name" type="text" name="name" placeholder="Name"/>
+                <label for="description">Description: </label>
+                <textarea id="description" name="description" placeholder="Description"></textarea>
             </fieldset>
-            <input type="submit" value="Registrar"/>
-            <input type="button" value="Cancelar Registro" class="Cancelar" onclick="closeForm()">
+            <input type="submit" value="Registrar" class="submitir" id="submit"/>
+            <input type="button" id="Cancelar_registro" value="Cancelar Registro" class="Cancelar">
         </form>
     </div>
 </body>
 <script src="../js/fun.js" type="module"></script>
+<script src="../js/urlCategories.js"></script>
+<script src="../js/app.js" type="module"></script>
 </html>

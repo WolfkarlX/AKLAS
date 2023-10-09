@@ -8,7 +8,8 @@
 
 <?php
 require_once("../autoload.php");
-use models\supplier;
-$supp = new supplier();
-echo $supp->delSupplier(1);
+use models\category;
+$cat = new category();
+$cat_list = $cat->select();
+echo json_encode($cat_list);
 ?>
