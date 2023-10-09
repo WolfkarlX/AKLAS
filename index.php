@@ -1,3 +1,12 @@
+<?php
+    session_start();// Iniciar la sesión
+    if(isset($_SESSION['user_id']))
+    {
+        header("Location:views/");
+
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
