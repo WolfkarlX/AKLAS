@@ -169,15 +169,28 @@
   margin-right: 25px;
   margin-bottom: 15px;
   margin-left: 125px;
+  background-color: #12171e;
 }
 .arriba #clock {
-  font-size: 48px;
+  font-size: 38px;
   font-weight: bold;
   text-align: center;
   margin-top: 45px;
   position: absolute;
   display: flex;
+  color: white;
+  padding: 20px;
+  margin-left: 10px;
 }
+.arriba h1{
+  position: absolute;
+  display: flex;
+  color: white;
+  padding: 10px 10px;
+  margin-left: 20px;
+  font-size: 3.2rem;
+}
+
 .abajo {
   display: block;
   width: 95%;
