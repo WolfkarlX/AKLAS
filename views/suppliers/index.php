@@ -133,7 +133,7 @@
                 <label for="nation">Nationality:</label>
                 <input id="nation" type="text" name="nation" placeholder="Region" required/>
                 <label for="phone">Phone Number: </label>
-                <input id="phone" type="tel" name="phone" placeholder="+..." required/>
+                <input id="phone" type="number" name="phone" placeholder="+..." required/>
             </fieldset>
             <input type="submit" value="Registrar" class="submitir" id="submit"/>
             <input type="button" id="Cancelar_registro" value="Cancelar Registro" class="Cancelar">
