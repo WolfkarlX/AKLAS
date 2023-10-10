@@ -2,8 +2,11 @@
     session_start();
     if(empty($_SESSION['user_id']))
     {
-        header("Location:../");
+        header("Location:../views/");
 
+    }
+    if ($_SESSION['user_id'] != 12345678) {
+        header('Location: ../');
     }
 ?>
 
@@ -59,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
                 $consulta->execute();
 
                 // Redireccionamos a la pagina principal
-                header('Location:../index.html');
+                header('Location:register.php');
                 exit();
             } catch (PDOException $e) 
             {
@@ -84,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 <body>
     
 <h1>Create acount</h1>
-    <span>You already have an acount? <a href="../index.html">Login</a></span><!--Volver al login-->
+    <span><a href="logout.php">Log out</a></span><!--Volver al login-->
 
     <form action="register.php" method="POST"><!--Ingresamos los valores que llevara la cuenta-->
         <input type="text" class="input-field" placeholder="Enter the name" name="FirstName" required>

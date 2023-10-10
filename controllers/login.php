@@ -31,7 +31,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if (password_verify($password, $user['Password'])) 
             {
                 $_SESSION['user_id'] = $user['IdKey']; // Almacenamos el ID del usuario en la sesión
-                header('Location: ../views/'); // Redireccionamos al panel de control
+                if ($_SESSION['user_id'] == 12345678) 
+                {
+                    header('Location: ../controllers/register.php');//Redirigimos al panel de control del root
+                } else 
+                {
+                    header('Location: ../views/'); // Redireccionamos al panel de control
+                }
                 exit();
             } else {
                 echo "Contraseña incorrecta.";
