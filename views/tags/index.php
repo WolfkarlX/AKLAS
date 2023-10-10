@@ -113,7 +113,10 @@
                 <input id="Cerrar_form" type="button" value="X" class="CancelX">
             </div>
             <fieldset>
-                
+                <label for="name">Name: </label>
+                <input id="name" type="text" name="name" placeholder="Name"/>
+                <label for="description">Description: </label><br>
+                <textarea id="description" name="description" placeholder="Description"></textarea>
             </fieldset>
             <input type="submit" value="Registrar" class="submitir" id="submit"/>
             <input type="button" id="Cancelar_registro" value="Cancelar Registro" class="Cancelar">
@@ -121,4 +124,5 @@
     </div>
 </body>
 <script src="../js/fun.js" type="module"></script>
+<script src="../js/app.js" type="module"></script>
 </html>
