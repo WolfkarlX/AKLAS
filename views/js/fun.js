@@ -28,7 +28,7 @@ if (btn_registro) {
   }
   btn_cerrarform.onclick = closeForm;
   btn_cancelarform.onclick = closeForm;
-  btn_submitform.onclick = closeForm;
+  //btn_submitform.onclick = closeForm;
 }
 //Funcion para reloj
 function updateTime() {

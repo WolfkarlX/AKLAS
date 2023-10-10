@@ -120,19 +120,19 @@
             </div>
             <fieldset>
                 <label for="first-name">Full Name: </label>
-                <input id="first-name" type="text" name="first-name" placeholder="Company"/>
+                <input id="first-name" type="text" name="first-name" placeholder="Company" required/>
                 <label for="contact">Contact: </label>
-                <input id="contact" type="text" name="contact" placeholder="Manager"/>
+                <input id="contact" type="text" name="contact" placeholder="Manager" required/>
                 <label for="address">Address: </label>
-                <input id="address" type="text" name="address" placeholder="Street"/>
+                <input id="address" type="text" name="address" placeholder="Street" required/>
                 <label for="city">City: </label>
-                <input id="city" type="text" name="city" placeholder="Town"/>
+                <input id="city" type="text" name="city" placeholder="Town" required/>
                 <label for="cp">Postal Code: </label>
-                <input id="cp" type="number" name="cp" placeholder="# Code"/>
+                <input id="cp" type="number" name="cp" placeholder="# Code" required/>
                 <label for="nation">Nationality:</label>
-                <input id="nation" type="text" name="nation" placeholder="Region"/>
+                <input id="nation" type="text" name="nation" placeholder="Region" required/>
                 <label for="phone">Phone Number: </label>
-                <input id="phone" type="tel" name="phone" placeholder="+..."/>
+                <input id="phone" type="tel" name="phone" placeholder="+..." required/>
             </fieldset>
             <input type="submit" value="Registrar" class="submitir" id="submit"/>
             <input type="button" id="Cancelar_registro" value="Cancelar Registro" class="Cancelar">

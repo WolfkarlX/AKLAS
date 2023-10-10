@@ -29,6 +29,7 @@ form.addEventListener("submit", function(event) {
             getTable(urlGetData, tbody);
             //Limpia el formulario
             event.target.reset();
+            event.target.style.display = "none";
         }
     })
 })

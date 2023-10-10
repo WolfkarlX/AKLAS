@@ -114,7 +114,7 @@
             </div>
             <fieldset>
                 <label for="name">Name: </label>
-                <input id="name" type="text" name="name" placeholder="Name"/>
+                <input id="name" type="text" name="name" placeholder="Name" required/>
                 <label for="description">Description: </label><br>
                 <textarea id="description" name="description" placeholder="Description"></textarea>
             </fieldset>
