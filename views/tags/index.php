@@ -84,6 +84,7 @@
     <div class="main-content">
         <div class="arriba">
             <h1>Home>Tags</h1>
+            <div id="clock"></div>
         </div>
         <div class="abajo">
             <div class="opciones">
@@ -124,5 +125,6 @@
     </div>
 </body>
 <script src="../js/fun.js" type="module"></script>
+<script src="../js/urlTags.js"></script>
 <script src="../js/app.js" type="module"></script>
 </html>
