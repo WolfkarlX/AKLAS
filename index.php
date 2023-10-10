@@ -35,7 +35,7 @@
                 <input type="text" class="input-field" placeholder="Número de cuenta" name="IdKey" maxlength="8" required>
                 <input type="password" class="input-field" placeholder="Contraseña" name="password" required>
                 <button type="submit" class="button" value="Iniciar sesión">Iniciar Sesión</button>
-                <button type="button" class="Olvidexd" value="Olvide mi pass">Olvide Mi Contraseña</button>
+                <!--<button type="button" class="Olvidexd" value="Olvide mi pass">Olvidé Mi Contraseña</button>-->
             </form> 
         </div>
     </div>

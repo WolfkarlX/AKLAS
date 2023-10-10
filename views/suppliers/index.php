@@ -84,7 +84,7 @@
     </div>
     <div class="main-content">
         <div class="arriba">
-            <h1>Home>Suppliers</h1>
+            <h1>Home → Suppliers</h1>
             <div id="clock"></div>
         </div>
         <div class="abajo">
