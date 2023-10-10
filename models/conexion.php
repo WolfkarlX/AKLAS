@@ -32,15 +32,8 @@
             $columnas = implode(', ', array_keys($valores));            
             $query = "INSERT INTO $tabla ($columnas) VALUES ($keys)"; 
             $stmt = $this->prepare($query);
-    
-            foreach ($valores as $columna => $valor) {
-                // Limpieza y validación contra XSS
-                $valor = strip_tags($valor);
-                // Vincular el valor a la consulta preparada
-                $stmt->bindValue(":" . $columna, $valor, PDO::PARAM_STR);
+            return $stmt->execute(array_values($valores));  
         }
-        return $stmt->execute(array_values($valores));  
-    }
 }
     
 ?>

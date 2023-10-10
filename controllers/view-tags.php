@@ -1,7 +1,4 @@
 <?php
-
-use models\conexion;
-
     session_start();
     if(empty($_SESSION['user_id']))
     {
@@ -10,7 +7,9 @@ use models\conexion;
 ?>
 
 <?php
-    $conn = new conexion();
-    $conn ->select()
-
+require_once("../autoload.php");
+use models\tag;
+$tag = new tag();
+$tag_list = $tag->select();
+echo json_encode($tag_list);
 ?>

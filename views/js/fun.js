@@ -49,5 +49,6 @@ function updateTime() {
 
   reloj.innerHTML = timeString; //Se hace print
 }
-
-setInterval(updateTime, 1000); //Se actualiza el tiempo
+if(reloj){
+  setInterval(updateTime, 1000); //Se actualiza el tiempo
+}
