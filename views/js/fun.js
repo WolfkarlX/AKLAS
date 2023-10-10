@@ -1,6 +1,7 @@
 let btn_sidebar = document.querySelector('#btn_menu'); //Guarda una variable del boton del sidebar
 let sidebar = document.querySelector('.sidebar'); //Guarda una variable del div sidebar completo
 
+let myform = document.querySelector("#myForm");//Formulario
 let btn_registro = document.querySelector("#btn-registro");//Boton para abrir formulario
 let btn_cerrarform = document.querySelector("#Cerrar_form");//Boton X para cerrarlo
 let btn_cancelarform = document.querySelector("#Cancelar_registro");
@@ -19,7 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function closeForm() {
-  document.getElementById("myForm").style.display = "none";
+  myform.style.display = "none";
+  myform.reset();
 }
 
 if (btn_registro) {
