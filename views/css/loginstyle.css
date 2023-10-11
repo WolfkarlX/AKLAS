@@ -14,12 +14,13 @@ body {
 .container {
     width: 30%;
     min-width: 400px;
+    top: 20%;
     background-image: url(../img/fondo.gif);
     margin: 0;
     position: absolute;
     display: block;
     border-radius: 5px;
-
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
 .text-login {
     position: absolute;
@@ -50,7 +51,6 @@ body {
     background-color: #3fa98e;
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     display: block;
     position: sticky;
     text-align: center;
@@ -88,17 +88,28 @@ input:focus{
     user-select: all;
 }
 
-
+.icono{
+    font-size: 30px;
+    position: absolute;
+    display: flex;
+    z-index: 10;
+    font-weight: bold;
+    right:5%;
+    top: 56%;
+    color: white;
+    cursor: pointer;
+}
 .button {
     background-color: black;
     color: #fff;
     font-size: 16px;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 20px;
     cursor: pointer;
     border: 2px solid black;
     z-index: 1;
     margin: 0;
+    width: 100%;
 }
 .Olvidexd {
     background: transparent;

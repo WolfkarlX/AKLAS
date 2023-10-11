@@ -14,7 +14,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HOME</title>
+    <title>INICIO</title>
     <link rel="stylesheet" href="css/dashboard_admin.css">
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
@@ -33,30 +33,30 @@
             <li>
                 <a href="./">
                     <i class='bx bxs-home-alt-2'></i>
-                    <span class="nav-item">Home</span>
+                    <span class="nav-item">Inicio</span>
                 </a>
-                <span class="tooltip">Home</span>
+                <span class="tooltip">Inicio</span>
             </li>
             <li>
                 <a href="./products/">
                     <i class='bx bx-package'></i>
-                    <span class="nav-item">Products</span>
+                    <span class="nav-item">Productos</span>
                 </a>
-                <span class="tooltip">Products</span>
+                <span class="tooltip">Productos</span>
             </li>
             <li>
                 <a href="./suppliers/">
                     <i class='bx bxs-hand'></i>
-                    <span class="nav-item">Suppliers</span>
+                    <span class="nav-item">Proveedores</span>
                 </a>
-                <span class="tooltip">Suppliers</span>
+                <span class="tooltip">Proveedor</span>
             </li>
             <li>
                 <a href="./categories/">
                     <i class='bx bx-category'></i>
-                    <span class="nav-item">Categories</span>
+                    <span class="nav-item">Categorias</span>
                 </a>
-                <span class="tooltip">Categories</span>
+                <span class="tooltip">Categorias</span>
             </li>
             <li>
                 <a href="./tags/">
@@ -70,20 +70,20 @@
                     <i class='bx bx-question-mark'></i>
                     <span class="nav-item">FAQs</span>
                 </a>
-                <span class="tooltip">FAQ</span>
+                <span class="tooltip">FAQs</span>
             </li>
             <li>
                 <a href="../controllers/logout.php">
                     <i class='bx bx-log-out'></i>
-                    <span class="nav-item">Log Out</span>
+                    <span class="nav-item">Cerrar Sesión</span>
                 </a>
-                <span class="tooltip">Log Out</span>
+                <span class="tooltip">Cerrar Sesión</span>
             </li>
         </ul>
     </div>
     <div class="main-content">
         <div class="arriba">
-            <h1>Home</h1>
+            <h1>Inicio</h1>
             <div id="clock"></div>
         </div>
         <div class="abajo">
@@ -91,31 +91,31 @@
                     <div class="homebutton">
                         <a href="./products/">
                             <i class='bx bx-package'></i>
-                            <span class="bloque-item">Products</span>
+                            <span class="bloque-item">Productos</span>
                         </a>
                     </div>
                     <div class="homebutton">
                         <a href="./suppliers/">
                             <i class='bx bxs-hand'></i>
-                            <span class="bloque-item">Suppliers</span>
+                            <span class="bloque-item">Proveedor</span>
                         </a>
                     </div>
                     <div class="homebutton">
                         <a href="./categories/">
                             <i class='bx bx-category'></i>
-                            <span class="bloque-item">Categories</span>
+                            <span class="bloque-item">Categorias</span>
                         </a>
                     </div>
                     <div class="homebutton">
                         <a href="./tags/">
                             <i class='bx bx-purchase-tag-alt'></i>
-                            <span class="bloque-item">Tagging</span>
+                            <span class="bloque-item">Tagging</p>
                         </a>
                     </div>
                     <div class="homebutton">
                         <a href="./faqs/">
                             <i class='bx bx-question-mark'></i>
-                            <span class="bloque-item">Support</span>
+                            <span class="bloque-item">Soporte</span>
                         </a>
                     </div>
             </div>

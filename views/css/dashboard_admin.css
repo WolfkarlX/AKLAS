@@ -452,6 +452,8 @@
   display: grid;
   grid-template-columns: repeat(3,1fr);
   margin-top: 30px;
+  max-width: 100%;
+  min-width: 100%;
 }
 
 .abajo .homebutton a i {
@@ -459,6 +461,7 @@
   text-align: center;
   height: 20%;
   width: 100%;
+  max-width: 100%;
   font-size: 40px;
   padding-top: 30%;
   border-radius: 12px;
@@ -476,11 +479,13 @@
   justify-content: center;
   width: 100%;
   min-width: 100%;
+  max-width: 100%;
 }
 .abajo .homebutton a .bloque-item {
   color: white;
-  width: auto;
-  padding: 10px;
+  width: 100%;
+ 
+  max-width: 100%;
 }
 .abajo .homebutton a {
   color: white;
@@ -493,9 +498,10 @@
   font-size: 20px;
   margin: 10px 10px;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  width: 120%;
-  min-width: 120%;
+  width: 100%;
+  min-width: 100%;
   height: 100%;
+  max-width: 120%;
   background-image: linear-gradient(to right, rgb(1, 0, 63), rgb(255, 115, 0));
 }
 .abajo .homebutton a:hover {
@@ -511,7 +517,7 @@
   width: auto;
   top: 5%;
   border-collapse: collapse;
-  height: 100%;
+  height: 20px;
   box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
   max-width: 90%;
   max-height: 100%;
@@ -525,6 +531,7 @@
   border: 1px solid #d2d2d2;
   font-weight: bold;
   border: none;
+  max-height: 20px;
 }
 
 /* Estilos de la cabecera */
@@ -548,7 +555,8 @@
 }
 #vista tbody tr{
   overflow-y: auto;
-  height: auto;
+  height: 20px;
+  max-height: 20px;
 }
 
 /* Estilos de las filas alternas */
@@ -614,16 +622,33 @@
   .sidebar #btn_menu {
     left: 50%;
   }
+  .arriba h1 {
+    font-size: 40px;
+  }
+  .arriba #clock {
+    font-size: 38px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 35px;
+    margin-left: 10px;
+    position: absolute;
+    display: flex;
+  }
 
 }
 
 @media only screen and (max-width: 600px) { 
+  .formulario .formu {
+    left: 16%;
+    top: 2%;
+  }
+  
   .sidebar.active .nav-item {
-    opacity: 1;
+    opacity: 0;
     white-space: nowrap;
   }
   .sidebar.active .top .logo {
-    opacity: 1;
+    opacity: 0;
   }
   .sidebar.active #btn_menu {
     left: 50%;
@@ -649,6 +674,18 @@
   .opciones #btn-actualizar {
     width: 50%;
     
+  }
+  .arriba h1 {
+    font-size: 30px;
+  }
+  .arriba #clock {
+    font-size: 38px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 35px;
+    margin-left: 5px;
+    position: absolute;
+    display: flex;
   }
 }
 @media only screen and (max-width: 570px) {
@@ -775,8 +812,11 @@
     font-weight: bold;
     text-align: center;
     margin-top: 35px;
-    margin-left: -25px;
+    margin-left: -5px;
     position: absolute;
     display: flex;
+  }
+  .sidebar.active .top .logo {
+    opacity: 1;
   }
 }
