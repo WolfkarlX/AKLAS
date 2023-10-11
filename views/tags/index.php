@@ -115,9 +115,9 @@
             </div>
             <fieldset>
                 <label for="name">Name: </label>
-                <input id="name" type="text" name="name" placeholder="Name" required/>
+                <input id="name" type="text" name="name" placeholder="Name" required minlength="2" maxlength="30"/>
                 <label for="description">Description: </label><br>
-                <textarea id="description" name="description" placeholder="Description"></textarea>
+                <textarea id="description" name="description" placeholder="Description" minlength="5" maxlength="100"></textarea>
             </fieldset>
             <input type="submit" value="Registrar" class="submitir" id="submit"/>
             <input type="button" id="Cancelar_registro" value="Cancelar Registro" class="Cancelar">

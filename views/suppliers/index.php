@@ -121,20 +121,20 @@
             </div>
             <fieldset>
                 <label for="first-name">Full Name: </label>
-                <input id="first-name" type="text" name="first-name" placeholder="Company" required/>
+                <input id="first-name" type="text" name="first-name" placeholder="Company" required minlength="2" maxlength="30"/>
                 <label for="contact">Contact: </label>
-                <input id="contact" type="text" name="contact" placeholder="Manager" required/>
+                <input id="contact" type="text" name="contact" placeholder="Manager" required minlength="2" maxlength="50"/>
                 <label for="address">Address: </label>
-                <input id="address" type="text" name="address" placeholder="Street" required/>
+                <input id="address" type="text" name="address" placeholder="Street" required minlength="2" maxlength="100"/>
                 <label for="city">City: </label>
-                <input id="city" type="text" name="city" placeholder="Town" required/>
+                <input id="city" type="text" name="city" placeholder="Town" required minlength="2" maxlength="100"/>
                 <label for="cp">Postal Code: </label>
-                <input id="cp" type="number" name="cp" placeholder="# Code" required/>
+                <input id="cp" type="text" name="cp" pattern="\d{5,}" title="Input at least 5 digits on Postal Code " oninput="this.value = this.value.replace(/[^0-9]/g, '');" placeholder="# Code" required maxlength="25"/>
                 <label for="nation">Nationality:</label>
-                <input id="nation" type="text" name="nation" placeholder="Region" required/>
+                <input id="nation" type="text" name="nation" placeholder="Region"  required minlength="2" maxlength="100"/>
                 <label for="phone">Phone Number: </label>
-                <input id="phone" type="number" name="phone" placeholder="+..." required/>
-            </fieldset>
+                <input id="phone" type="text" required name="phone" pattern="\d{8,}" title="Input at least 8 digits on Phone Number" oninput="this.value = this.value.replace(/[^0-9]/g, '');" maxlength="13" placeholder="+..."/>
+            </fieldset> 
             <input type="submit" value="Registrar" class="submitir" id="submit"/>
             <input type="button" id="Cancelar_registro" value="Cancelar Registro" class="Cancelar">
         </form>
