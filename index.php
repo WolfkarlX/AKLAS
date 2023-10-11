@@ -42,6 +42,6 @@
         </div>
     </div>
 </body>
-<script src="./views/js/fun.js" type="module"></script>
+<script src="./views/js/loginfun.js" type="module"></script>
 </html>
 

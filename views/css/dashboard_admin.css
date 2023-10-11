@@ -72,7 +72,8 @@
   align-items: center;
   text-decoration: none;
   border-radius: 0.8rem;
-  position: absolute; 
+  
+  display: flex;
   width: 100%;
 }
 .sidebar ul li a:hover {
@@ -578,16 +579,15 @@
 /*RESPONSIVE*/
 @media only screen and (max-width: 1000px) { 
   .sidebar ul li a i {
-    position: absolute;
+   
     transform: translateX(-15%);
-    text-align: center;
-    justify-content: center;
+   
   }
   .sidebar.active ul li a i {
     text-align: center;
     justify-content: center;
   }
-  
+  /*
   .sidebar.active .nav-item {
     opacity: 1;
     transform: translate(40px);
@@ -596,18 +596,18 @@
     padding-left: 10px;
     display: flex;
     
-  }
-/*
+  }*/
+
   .sidebar ul li a {
     color: white;
-    display: flex;
+ 
     align-items: center;
     text-decoration: none;
     border-radius: 0.8rem;
-    position: absolute; 
-    width: 100%;
+ 
+    width: 20%;
   }
-  */
+  
   .sidebar .nav-item {
     opacity: 0;
     pointer-events: none;
@@ -637,6 +637,28 @@
 
 }
 
+@media only screen and (max-width: 800px) { 
+  .sidebar.active .nav-item {
+    transform: translateX(-35%);
+    display: flex;
+  }
+}
+@media only screen and (max-width: 750px) { 
+  .sidebar.active .nav-item {
+    opacity: 0;
+  }
+  .sidebar ul li a i {
+    position: flex;
+    transform: translateX(-25%);
+  }
+  .sidebar.active ul li a i {
+    position: flex;
+    transform: translateX(20%);
+  }
+  .abajo .homebutton a {
+    font-size: 15px;
+  }
+}
 @media only screen and (max-width: 600px) { 
   .formulario .formu {
     left: 16%;
@@ -683,7 +705,7 @@
     font-weight: bold;
     text-align: center;
     margin-top: 35px;
-    margin-left: 5px;
+    margin-left: 10px;
     position: absolute;
     display: flex;
   }
@@ -705,19 +727,11 @@
     box-shadow: none;
   }
 
-  .sidebar{
-    width: 10%;
-    z-index: 2;
-    height: 100%;
-    
-    position: fixed;
-  }
   .sidebar.active {
     width: 60%;
     height: 100%;
-    position: fixed;
     z-index: 2;
-    display: block;
+   
   }
   .sidebar .nav-item {
     opacity: 0;
@@ -730,7 +744,6 @@
     opacity: 1;
     pointer-events: none;
     white-space: nowrap;
-    
     transform: translateX(-45%);
     left: 0;
     margin-left: 20px;
@@ -746,17 +759,16 @@
   }
   .sidebar.active #btn_menu {
     opacity: 1;
-    position: fixed;
+    position: absolute;
     display: flex;
     text-align: center;
-    transform: translateX(60%);  
+    transform: translateX(75px);  
   }
   .sidebar ul li {
     position: relative;
     list-style-type: none;
     height: 50px;
     width: 90%;
-    margin: 0.8rem auto;
     line-height: 50px;
   }
   .sidebar.active ul li {
@@ -785,11 +797,11 @@
   }
   .sidebar ul li a {
     color: white;
-    display: flex;
+    display: block;
     align-items: left;
     text-decoration: none;
     border-radius: 0.8rem;
-    position: absolute; 
+    position: absolute;
     transform: translateX(25%);
     width: 100%;
   }
@@ -812,7 +824,7 @@
     font-weight: bold;
     text-align: center;
     margin-top: 35px;
-    margin-left: -5px;
+    margin-left: 10px;
     position: absolute;
     display: flex;
   }

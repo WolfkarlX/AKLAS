@@ -109,7 +109,7 @@
                     <div class="homebutton">
                         <a href="./tags/">
                             <i class='bx bx-purchase-tag-alt'></i>
-                            <span class="bloque-item">Tagging</p>
+                            <span class="bloque-item">Etiquetas</p>
                         </a>
                     </div>
                     <div class="homebutton">
