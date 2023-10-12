@@ -86,7 +86,7 @@
   height: 50px;
   border-radius: 12px;
   line-height: 50px;
-  transform: translateX(0%);
+  transform: translateX(5%);
 }
 .sidebar .nav-item {
   opacity: 0;
