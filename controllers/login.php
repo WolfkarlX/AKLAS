@@ -15,7 +15,8 @@ $conn = new conexion();
 
 
 // Verifica si se envió el formulario
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') 
+{
     $IdKey = $_POST['IdKey'];
     $password = $_POST['password'];
 
@@ -26,7 +27,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $consulta->execute();
         $user = $consulta->fetch(PDO::FETCH_ASSOC);
 
-        if ($user) {
+        if ($user) 
+        {
             // Verificamos si la contraseña ingresada coincide con la almacenada en la base de datos
             if (password_verify($password, $user['Password'])) 
             {
@@ -39,11 +41,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     header('Location: ../views/'); // Redireccionamos al panel de control
                 }
                 exit();
-            } else {
-                echo "Contraseña incorrecta.";
+            } else 
+            {
+            echo "<script>alert('Incorrect password.'); window.history.back();</script>";
             }
-        } else {
-            echo "Usuario no encontrado.";
+        } else 
+        {
+            echo "<script>alert('User not found.'); window.history.back();</script>";
         }
     } catch (PDOException $e) {
         // En caso de error, muestra un mensaje de error

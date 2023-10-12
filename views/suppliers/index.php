@@ -34,30 +34,30 @@
             <li>
                 <a href="../">
                     <i class='bx bxs-home-alt-2'></i>
-                    <span class="nav-item">Home</span>
+                    <span class="nav-item">Inicio</span>
                 </a>
-                <span class="tooltip">Home</span>
+                <span class="tooltip">Inicio</span>
             </li>
             <li>
                 <a href="../products/">
                     <i class='bx bx-package'></i>
-                    <span class="nav-item">Products</span>
+                    <span class="nav-item">Productos</span>
                 </a>
-                <span class="tooltip">Products</span>
+                <span class="tooltip">Productos</span>
             </li>
             <li>
                 <a href="../suppliers/">
                     <i class='bx bxs-hand'></i>
-                    <span class="nav-item">Suppliers</span>
+                    <span class="nav-item">Proveedor</span>
                 </a>
-                <span class="tooltip">Suppliers</span>
+                <span class="tooltip">Proveedor</span>
             </li>
             <li>
                 <a href="../categories/">
                     <i class='bx bx-category'></i>
-                    <span class="nav-item">Categories</span>
+                    <span class="nav-item">Categorias</span>
                 </a>
-                <span class="tooltip">Categories</span>
+                <span class="tooltip">Categorias</span>
             </li>
             <li>
                 <a href="../tags/">
@@ -71,20 +71,20 @@
                     <i class='bx bx-question-mark'></i>
                     <span class="nav-item">FAQs</span>
                 </a>
-                <span class="tooltip">FAQ</span>
+                <span class="tooltip">FAQs</span>
             </li>
             <li>
                 <a href="../../controllers/logout.php">
                     <i class='bx bx-log-out'></i>
-                    <span class="nav-item">Log Out</span>
+                    <span class="nav-item">Cerrar Sesión</span>
                 </a>
-                <span class="tooltip">Log Out</span>
+                <span class="tooltip">Cerrar Sesión</span>
             </li>
         </ul>
     </div>
     <div class="main-content">
         <div class="arriba">
-            <h1>Home → Suppliers</h1>
+            <h1>Inicio → Proveedor</h1>
             <div id="clock"></div>
         </div>
         <div class="abajo">
@@ -97,13 +97,13 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Name</th>
-                            <th>Contact</th>
-                            <th>Address</th>
-                            <th>City</th>
-                            <th>Postal Code</th>
-                            <th>Country</th>
-                            <th>Phone</th>
+                            <th>Empresa</th>
+                            <th>Manager</th>
+                            <th>Dirección</th>
+                            <th>Ciudad</th>
+                            <th>Código Postal</th>
+                            <th>País</th>
+                            <th>Teléfono</th>
                         </tr>
                     </thead>
                     <tbody id="vista-cuerpo">
@@ -116,24 +116,24 @@
     <div class="formulario">
         <form class="formu" id="myForm" style="display: none;">
             <div class="formarriba">
-                <h1 class="tituloform">NEW SUPPLIER</h1>
+                <h1 class="tituloform">Nuevo Proveedor</h1>
                 <input id="Cerrar_form" type="button" value="X" class="CancelX">
             </div>
             <fieldset>
-                <label for="first-name">Full Name: </label>
-                <input id="first-name" type="text" name="first-name" placeholder="Company" required minlength="2" maxlength="30"/>
-                <label for="contact">Contact: </label>
-                <input id="contact" type="text" name="contact" placeholder="Manager" required minlength="2" maxlength="50"/>
-                <label for="address">Address: </label>
-                <input id="address" type="text" name="address" placeholder="Street" required minlength="2" maxlength="100"/>
-                <label for="city">City: </label>
-                <input id="city" type="text" name="city" placeholder="Town" required minlength="2" maxlength="100"/>
-                <label for="cp">Postal Code: </label>
-                <input id="cp" type="text" name="cp" pattern="\d{5,}" title="Input at least 5 digits on Postal Code " oninput="this.value = this.value.replace(/[^0-9]/g, '');" placeholder="# Code" required maxlength="25"/>
-                <label for="nation">Nationality:</label>
+                <label for="first-name">Empresa: </label>
+                <input id="first-name" type="text" name="first-name" placeholder="Nombre" required minlength="2" maxlength="30"/>
+                <label for="contact">Manager: </label>
+                <input id="contact" type="text" name="contact" placeholder="Nombre" required minlength="2" maxlength="50"/>
+                <label for="address">Dirección: </label>
+                <input id="address" type="text" name="address" placeholder="Calle" required minlength="2" maxlength="100"/>
+                <label for="city">Ciudad: </label>
+                <input id="city" type="text" name="city" placeholder="Nombre" required minlength="2" maxlength="100"/>
+                <label for="cp">Código Postal: </label>
+                <input id="cp" type="text" name="cp" pattern="\d{5,}" title="Ingrese al menos 5 digitos de código postal " oninput="this.value = this.value.replace(/[^0-9]/g, '');" placeholder="# Code" required maxlength="25"/>
+                <label for="nation">País:</label>
                 <input id="nation" type="text" name="nation" placeholder="Region"  required minlength="2" maxlength="100"/>
-                <label for="phone">Phone Number: </label>
-                <input id="phone" type="text" required name="phone" pattern="\d{8,}" title="Input at least 8 digits on Phone Number" oninput="this.value = this.value.replace(/[^0-9]/g, '');" maxlength="13" placeholder="+..."/>
+                <label for="phone">Teléfono: </label>
+                <input id="phone" type="text" required name="phone" pattern="\d{8,}" title="Ingrese al menos 8 digitos en su número " oninput="this.value = this.value.replace(/[^0-9]/g, '');" maxlength="13" placeholder="+..."/>
             </fieldset> 
             <input type="submit" value="Registrar" class="submitir" id="submit"/>
             <input type="button" id="Cancelar_registro" value="Cancelar Registro" class="Cancelar">

@@ -32,46 +32,67 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     $consulta_verificar_email->bindParam(':email', $email);
     $consulta_verificar_email->execute();
     $email_existente = $consulta_verificar_email->fetchColumn();
+
+    // Consulta SQL para verificar si el IdKey ya existe
+    $consulta_verificar_IdKey = $conn->prepare("SELECT COUNT(*) FROM employees WHERE IdKey = :IdKey");
+    $consulta_verificar_IdKey->bindParam(':IdKey', $IdKey);
+    $consulta_verificar_IdKey->execute();
+    $IdKey_existente = $consulta_verificar_IdKey->fetchColumn();
     
     // Comprobamos si el email ya existe
     if($email_existente > 0)
     {
-        echo "El correo electrónico ya está registrado. Por favor, use otro.";
-    }else
+        echo "<script>alert('The email is already registered. Please use another one.');</script>";
+    }
+    // Comprobamos si el IdKey ya existe
+    else if($IdKey_existente > 0)
+    {
+        echo "<script>alert('Worker number already in use.');</script>";
+    }
+    else
     {
      // Verifica si las contraseñas coinciden
         if ($password === $confirm_password) 
         {
-            try {
-
-                // Preparamos la consulta de inserción
-                $consulta = $conn->prepare("INSERT INTO employees (FirstName, LastName, Description, IdKey, email, Password) VALUES (:FirstName, :LastName, :description, :IdKey, :email, :password)");
-
-                // Bind de los parámetros
-                $consulta->bindParam(':FirstName', $FirstName);
-                $consulta->bindParam(':LastName', $LastName);
-                $consulta->bindParam(':IdKey', $IdKey);
-                $consulta->bindParam(':description', $description);
-                $consulta->bindParam(':email', $email);
-                
-                // ciframos la contraseña
-                $hashed_password = password_hash($password, PASSWORD_BCRYPT);
-                $consulta->bindParam(':password', $hashed_password);
-
-                // Ejecutamos la consulta
-                $consulta->execute();
-
-                // Redireccionamos a la pagina principal
-                header('Location:register.php');
-                exit();
-            } catch (PDOException $e) 
+            if(strlen($password) >= 6)
             {
-                // En caso de error, muestra un mensaje de error
-                echo "Error de registro: " . $e->getMessage();
+                try 
+                {
+
+                    // Preparamos la consulta de inserción
+                    $consulta = $conn->prepare("INSERT INTO employees (FirstName, LastName, Description, IdKey, email, Password) VALUES (:FirstName, :LastName, :description, :IdKey, :email, :password)");
+    
+                    // Bind de los parámetros
+                    $consulta->bindParam(':FirstName', $FirstName);
+                    $consulta->bindParam(':LastName', $LastName);
+                    $consulta->bindParam(':IdKey', $IdKey);
+                    $consulta->bindParam(':description', $description);
+                    $consulta->bindParam(':email', $email);
+                    
+                    // ciframos la contraseña
+                    $hashed_password = password_hash($password, PASSWORD_BCRYPT);
+                    $consulta->bindParam(':password', $hashed_password);
+    
+                    // Ejecutamos la consulta
+                    $consulta->execute();
+    
+                    // Redireccionamos a la pagina principal
+                    echo "<script>alert('account created successfully');</script>";
+                    header('Location:register.php');
+                    exit();
+                } catch (PDOException $e) 
+                {
+                    // En caso de error, muestra un mensaje de error
+                    echo "Registration error: " . $e->getMessage();
+                }
+            }else
+            {
+                echo "<script>alert('Password is too short (it most be at least 6 characters)');</script>";
             }
+            
         } else 
         {
-            echo "Las contraseñas no coinciden.";
+            echo "<script>alert('Passwords do not match.');</script>";
         }
     }
 }

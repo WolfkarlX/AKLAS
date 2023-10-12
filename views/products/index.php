@@ -33,30 +33,30 @@
             <li>
                 <a href="../">
                     <i class='bx bxs-home-alt-2'></i>
-                    <span class="nav-item">Home</span>
+                    <span class="nav-item">Inicio</span>
                 </a>
-                <span class="tooltip">Home</span>
+                <span class="tooltip">Inicio</span>
             </li>
             <li>
                 <a href="../products/">
                     <i class='bx bx-package'></i>
-                    <span class="nav-item">Products</span>
+                    <span class="nav-item">Productos</span>
                 </a>
-                <span class="tooltip">Products</span>
+                <span class="tooltip">Productos</span>
             </li>
             <li>
                 <a href="../suppliers/">
                     <i class='bx bxs-hand'></i>
-                    <span class="nav-item">Suppliers</span>
+                    <span class="nav-item">Proveedor</span>
                 </a>
-                <span class="tooltip">Suppliers</span>
+                <span class="tooltip">Proveedor</span>
             </li>
             <li>
                 <a href="../categories/">
                     <i class='bx bx-category'></i>
-                    <span class="nav-item">Categories</span>
+                    <span class="nav-item">Categorias</span>
                 </a>
-                <span class="tooltip">Categories</span>
+                <span class="tooltip">Categorias</span>
             </li>
             <li>
                 <a href="../tags/">
@@ -70,20 +70,20 @@
                     <i class='bx bx-question-mark'></i>
                     <span class="nav-item">FAQs</span>
                 </a>
-                <span class="tooltip">FAQ</span>
+                <span class="tooltip">FAQs</span>
             </li>
             <li>
                 <a href="../../controllers/logout.php">
                     <i class='bx bx-log-out'></i>
-                    <span class="nav-item">Log Out</span>
+                    <span class="nav-item">Cerrar Sesión</span>
                 </a>
-                <span class="tooltip">Log Out</span>
+                <span class="tooltip">Cerrar Sesión</span>
             </li>
         </ul>
     </div>
     <div class="main-content">
         <div class="arriba">
-            <h1>Home → Products</h1>
+            <h1>Inicio → Productos</h1>
             <div id="clock"></div>
         </div>
         <div class="abajo">
