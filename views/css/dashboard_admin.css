@@ -284,6 +284,43 @@
   margin: 20px;
   justify-content: center;
 }
+.opciones #btn-delete {
+ background-color: gray;
+ position: relative;
+ display: block;
+ width: 30%;
+ height: 65px;
+ margin-top: 20px;
+ padding: 10px;
+ font-weight: bold;
+ min-width: 40%;
+ cursor: pointer; 
+ font-size: 1rem;
+ align-items: center;
+ border: none;
+ margin: 20px;
+ border-radius: 0.6rem;
+ box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
+}
+.opciones #btn-delete:enabled {
+  background-color: rgb(255, 0, 0);
+  position: relative;
+  display: block;
+  width: 30%;
+  height: 65px;
+  margin-top: 20px;
+  font-size: 1rem;
+ border: none;
+ align-items: center;
+ color: white;
+  padding: 10px;
+  font-weight: bold;
+  min-width: 40%;
+  margin: 20px;
+  cursor: pointer; 
+  border-radius: 0.6rem;
+  box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
+ }
 
 .opciones .bloque_opciones {
   padding: 20px;
@@ -446,6 +483,7 @@
   cursor: pointer;
   outline-color: #00329d;
 }
+
 
 /*HOME*/
 .abajo .gridcontainer {
