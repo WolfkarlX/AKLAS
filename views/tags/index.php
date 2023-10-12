@@ -90,8 +90,10 @@
             <div class="opciones">
                 <button class="BotonRegistro" id="btn-registro">Nuevo registro</button>
                 <button id="btn-actualizar"><i class='bx bx-refresh'></i></button>
+                <button id="btn-delete" form="form-table" disabled>Eliminar</button>
             </div>
             <div class="tabla">
+                <form id="form-table">
                 <table id="vista">
                     <thead>
                         <tr>
@@ -104,6 +106,7 @@
 
                     </tbody>
                 </table>
+                </form>
             </div>
         </div>
     </div>

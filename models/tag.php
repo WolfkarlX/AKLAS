@@ -2,7 +2,7 @@
 namespace models;
 
 class tag extends conexion {
-    private $id;
+    protected $id;
     private $name;
     private $description;
 
@@ -10,6 +10,7 @@ class tag extends conexion {
     {
         parent::__construct();
         $this->table = "tags";
+        $this->id = "TagID";
     }
 
     public function addTag($Name, $Description){

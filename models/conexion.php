@@ -34,6 +34,18 @@
             $stmt = $this->prepare($query);
             return $stmt->execute(array_values($valores));  
         }
+
+        public function delete($id) {
+            // Preparar una sentencia sql para borrar datos
+            $sql = "DELETE FROM {$this->table} WHERE {$this->id} = ?";
+            $stmt = $this->prepare($sql);
+
+            // Se asigna el id del registro
+            $stmt->bindParam(1, $id);
+
+            // Ejecuta la sentencia
+            return $stmt->execute();
+        }
 }
     
 ?>

@@ -566,6 +566,10 @@
   background-color: aquamarine;
 }
 
+/* Estilo para fila seleccionada */
+#vista-cuerpo input[type=radio]:checked + tr {
+  background-color: rgb(183, 230, 255);
+}
 
 /*RESPONSIVE*/
 @media only screen and (max-width: 1000px) { 

@@ -4,7 +4,9 @@ import { getTable, sendForm } from "./fetchAPI.js";
 // Elementos DOM
 const tbody = document.getElementById("vista-cuerpo");
 const botonActualizar = document.querySelector("button[id='btn-actualizar']");
+const btnEliminar = document.getElementById("btn-delete");
 const form = document.getElementById("myForm");
+const formTable = document.getElementById("form-table");
 
 // Agregar evento para ejecutar la función getTable al cargar la página
 document.addEventListener("DOMContentLoaded", () => getTable(urlGetData, tbody));
@@ -30,10 +32,33 @@ form.addEventListener("submit", function(event) {
             //Limpia el formulario
             event.target.reset();
             event.target.style.display = "none";
+        } else {
+            alert("No se pudo añadir el registro");
         }
     })
 })
 
+// Añadir evento submit al formulario de eliminacion
+formTable.addEventListener("submit", function(event) {
+    event.preventDefault();
+    const registro = event.target.elements.registro.value;
+    if (registro) {
+        if (confirm("Seguro que desea eliminar este registro: " + registro)) {
+            let res = sendForm(urlSendRegister, event.target);
+            res.then(data => {
+                if(data){
+                    alert("Se elimino el registro correctamente");
+                    //Recargar la tabla
+                    tbody.innerHTML = "";
+                    getTable(urlGetData, tbody);
+                    btnEliminar.setAttribute("disabled", "");
+                } else {
+                    alert("No se pudo eliminar el registro");
+                }
+            })
+        }
+    }
+})
 
 /*Script para eliminar espacios en blanco del html */ 
     function eliminarEspacios() {

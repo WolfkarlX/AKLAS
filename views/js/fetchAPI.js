@@ -9,22 +9,42 @@ function getTable(url, element) {
         // Crear una nueva fila
         const row = document.createElement("tr");
 
-        // Crear 8 celdas
+        // Crear celdas con su contenido y añadirlas a la fila
         for (const campo of Object.values(dato)) {
-        // Crear una nueva celda
-        const cell = document.createElement("td");
-
-        // Agregar contenido a la celda
-        cell.textContent = `${campo}`;
-
-        // Agregar la celda a la fila
-        row.appendChild(cell);
+            const cell = document.createElement("td");
+            cell.textContent = `${campo}`;
+            row.appendChild(cell);
         }
 
+        // Se crea radiobutton con id = "rbtn-" + dato.TagID y valor dato.TagID
+        const radio = document.createElement("input");
+        radio.setAttribute("type", "radio");
+        radio.setAttribute("name", "registro");
+        radio.setAttribute("id", "rbtn-" + dato.TagID);
+        radio.value = dato.TagID;
+        radio.style.display = "none";
+
+        row.onclick = () => {
+            focusRadio("rbtn-" + dato.TagID);
+            enableButton("btn-delete", "rbtn-" + dato.TagID);
+        };
+
         // Agregar la fila al tbody
+        element.appendChild(radio);
         element.appendChild(row);
     }
     });
+}
+
+function enableButton(id, id_radio) {
+    const btn = document.getElementById(id);
+    const radio = document.getElementById(id_radio);
+    radio.checked ? btn.removeAttribute("disabled") : btn.setAttribute("disabled", "") ;
+}
+
+function focusRadio(id) {
+    const radio = document.getElementById(id);
+    radio.checked ? radio.checked = false : radio.checked = true;
 }
 
 async function sendForm(url, form) {
