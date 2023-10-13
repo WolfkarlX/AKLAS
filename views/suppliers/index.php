@@ -68,7 +68,7 @@
             </li>
             <li>
                 <a href="../areas/">
-                    <i class='bx bx-question-mark'></i>
+                    <i class='bx bx-area'></i>
                     <span class="nav-item">Areas</span>
                 </a>
                 <span class="tooltip">Areas</span>

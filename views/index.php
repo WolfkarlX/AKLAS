@@ -67,7 +67,7 @@
             </li>
             <li>
                 <a href="./areas/">
-                    <i class='bx bx-question-mark'></i>
+                    <i class='bx bx-area'></i>
                     <span class="nav-item">Areas</span>
                 </a>
                 <span class="tooltip">Areas</span>
@@ -93,12 +93,13 @@
             <h1>Inicio</h1>
             <div id="clock"></div>
         </div>
-        <div class="abajo">
-            <div class="gridcontainer">
+        <div class="abajo" id="abajo">
+            <input class="buscador" type="text" id="myInput" placeholder="Buscar...">
+            <div class="gridcontainer" id="gridcontainer">
                     <div class="homebutton">
                         <a href="./products/">
                             <i class='bx bx-package'></i>
-                            <span class="bloque-item">Productos</span>
+                            <span class="bloque-item">Productos<span>
                         </a>
                     </div>
                     <div class="homebutton">
@@ -116,13 +117,13 @@
                     <div class="homebutton">
                         <a href="./tags/">
                             <i class='bx bx-purchase-tag-alt'></i>
-                            <span class="bloque-item">Etiquetas</p>
+                            <span class="bloque-item">Etiquetas</span>
                         </a>
                     </div>
                     <div class="homebutton">
                         <a href="./areas/">
-                            <i class='bx bx-purchase-tag-alt'></i>
-                            <span class="bloque-item">Areas</p>
+                            <i class='bx bx-area'></i>
+                            <span class="bloque-item">Secciones</span>
                         </a>
                     </div>
                     <div class="homebutton">

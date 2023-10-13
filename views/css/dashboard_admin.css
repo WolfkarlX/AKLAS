@@ -86,7 +86,7 @@
   height: 50px;
   border-radius: 12px;
   line-height: 50px;
-  transform: translateX(5%);
+  transform: translateX(2%);
 }
 .sidebar .nav-item {
   opacity: 0;
@@ -145,7 +145,6 @@
 }
 .main-content {
   position: absolute;
-  background-color: #eee;
   top: 0;
   left: 10%;
   height: 100%; 
@@ -208,6 +207,7 @@
   margin-right: 25px;
   margin-bottom: 15px;
   margin-left: 125px;
+  justify-content: center;
   /* overflow: auto; */
 }
 .opciones {
@@ -486,11 +486,28 @@
 
 
 /*HOME*/
+.abajo .buscador {
+  background-color: rgb(255, 235, 211);
+  position: absolute;
+  display: flex;
+  width: 25%;
+  height: 30px;
+  border: none;
+  border-radius: 0.4rem;
+  padding: 20px 10px;
+  margin-left: 37%;
+  top: 3%;
+  font-size: 20px;
+  font-weight: bold;
+  color:#000000;
+  outline: none;
+}
+
 .abajo .gridcontainer {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3,1fr);
-  margin-top: 30px;
+  margin-top: 50px;
   max-width: 100%;
   min-width: 100%;
 }
