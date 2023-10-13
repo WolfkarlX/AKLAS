@@ -66,6 +66,13 @@
                 <span class="tooltip">Tags</span>
             </li>
             <li>
+                <a href="../areas/">
+                    <i class='bx bx-question-mark'></i>
+                    <span class="nav-item">Areas</span>
+                </a>
+                <span class="tooltip">Areas</span>
+            </li>
+            <li>
                 <a href="#">
                     <i class='bx bx-question-mark'></i>
                     <span class="nav-item">FAQs</span>

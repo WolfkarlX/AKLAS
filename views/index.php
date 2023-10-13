@@ -66,6 +66,13 @@
                 <span class="tooltip">Tags</span>
             </li>
             <li>
+                <a href="../areas/">
+                    <i class='bx bx-question-mark'></i>
+                    <span class="nav-item">Areas</span>
+                </a>
+                <span class="tooltip">Areas</span>
+            </li>
+            <li>
                 <a href="#">
                     <i class='bx bx-question-mark'></i>
                     <span class="nav-item">FAQs</span>
@@ -110,6 +117,12 @@
                         <a href="./tags/">
                             <i class='bx bx-purchase-tag-alt'></i>
                             <span class="bloque-item">Etiquetas</p>
+                        </a>
+                    </div>
+                    <div class="homebutton">
+                        <a href="./areas/">
+                            <i class='bx bx-purchase-tag-alt'></i>
+                            <span class="bloque-item">Areas</p>
                         </a>
                     </div>
                     <div class="homebutton">
