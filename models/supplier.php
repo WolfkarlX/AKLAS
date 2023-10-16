@@ -2,7 +2,7 @@
 namespace models;
 
 class supplier extends conexion{ //Clase de proveedor que extiende la conexion, aqui se encontraran las funciones para manipular la tabla de proveedores
-    private $id;
+    protected $id;
     private $name;
     private $contact;
     private $addres;
@@ -14,6 +14,7 @@ class supplier extends conexion{ //Clase de proveedor que extiende la conexion, 
     public function __construct(){
         parent::__construct();
         $this->table = "suppliers";
+        $this->id = "SupplierID";
     }
 
     //Agrega un provedores a la tabla de la base de datos

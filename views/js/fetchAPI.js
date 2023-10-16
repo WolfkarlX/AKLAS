@@ -16,19 +16,20 @@ function getTable(url, element) {
             row.appendChild(cell);
         }
 
-        // Se crea radiobutton con id = "rbtn-" + dato.TagID y valor dato.TagID
+        // Se crea radiobutton con id = "rbtn-" + Object.values(dato)[0] y valor Object.values(dato)[0]
+        let id = Object.values(dato)[0];
         const radio = document.createElement("input");
         radio.setAttribute("type", "radio");
         radio.setAttribute("name", "registro");
-        radio.setAttribute("id", "rbtn-" + dato.TagID);
-        radio.value = dato.TagID;
+        radio.setAttribute("id", "rbtn-" + id);
+        radio.value = id;
         radio.style.display = "none";
 
         row.onclick = () => {
-            focusRadio("rbtn-" + dato.TagID);
-            enableButton("btn-delete", "rbtn-" + dato.TagID);
+            focusRadio("rbtn-" + id);
+            enableButton("btn-delete", "rbtn-" + id);
         };
-
+        
         // Agregar la fila al tbody
         element.appendChild(radio);
         element.appendChild(row);

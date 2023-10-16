@@ -28,7 +28,6 @@
                 <i class="bx bx-cross">AKLAS</i>
             </div>
             <i class="bx bx-menu" id="btn_menu"></i>
-            
         </div>
         <ul>
             <li>
@@ -98,8 +97,11 @@
             <div class="opciones">
                 <button class="BotonRegistro" id="btn-registro">Nuevo registro</button>
                 <button id="btn-actualizar"><i class='bx bx-refresh'></i></button>
+                <input type="text" id="filter" class="tabla-buscador" placeholder="Filtrar... ">
+                <button id="btn-delete" form="form-table" disabled>Eliminar</button>
             </div>
             <div class="tabla">
+                <form id="form-table">
                 <table id="vista">
                     <thead>
                         <tr>
@@ -117,6 +119,7 @@
 
                     </tbody>
                 </table>
+                </form>
             </div>
         </div>
     </div>
