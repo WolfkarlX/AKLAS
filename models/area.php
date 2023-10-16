@@ -1,14 +1,14 @@
 <?php
 namespace models;
 class area extends conexion{
-
+    protected $id;
     private $name;
     private $description;
-    private $id;
     
     public function __construct() {
         parent::__construct();
         $this->table = "area";
+        $this->id = "AreaID";
     }
 
     public function insertarArea($name, $description){
@@ -19,15 +19,8 @@ class area extends conexion{
         $stmt = $this->prepare($sql);
         $stmt->bindParam(":name", $name);
         $stmt->bindParam(":description", $description);
-       
-        return $stmt ->execute();
         
+        return $stmt ->execute();
     }
-
-}
-    
-    
-    
-    
-    
+}  
 ?> 

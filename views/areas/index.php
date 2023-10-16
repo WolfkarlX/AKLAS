@@ -14,7 +14,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Categorias</title>
+    <title>Areas</title>
     <link rel="stylesheet" href="../css/dashboard_admin.css">
     <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
@@ -97,8 +97,11 @@
             <div class="opciones">
                 <button class="BotonRegistro" id="btn-registro">Nuevo registro</button>
                 <button id="btn-actualizar"><i class='bx bx-refresh'></i></button>
+                <input type="text" id="filter" class="tabla-buscador" placeholder="Filtrar... ">
+                <button id="btn-delete" form="form-table" disabled>Eliminar</button>
             </div>
             <div class="tabla">
+                <form id="form-table">
                 <table id="vista">
                     <thead>
                         <tr>
@@ -111,6 +114,7 @@
 
                     </tbody>
                 </table>
+                </form>
             </div>
         </div>
     </div>
