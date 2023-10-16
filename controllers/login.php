@@ -43,11 +43,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
                 exit();
             } else 
             {
-            echo "<script>alert('Incorrect password.'); window.history.back();</script>";
+            echo "<script>alert('Contraseña incorrecta.'); window.history.back();</script>";
             }
         } else 
         {
-            echo "<script>alert('User not found.'); window.history.back();</script>";
+            echo "<script>alert('Usuario no encontrado.'); window.history.back();</script>";
         }
     } catch (PDOException $e) {
         // En caso de error, muestra un mensaje de error

@@ -3,14 +3,14 @@ function validateForm() {
     var cuenta = document.querySelector("input[name='IdKey']").value;
     var countRegex = /^\d{8}/;
     if (!countRegex.test(cuenta)) {
-        alert("Account must be 8 characters.");
+        alert("La cuenta debe tener 8 caracteres.");
         return false;
     }
 
     // Validamos la contraseña
     var password = document.querySelector("input[name='password']").value;
     if (password.length < 6) {
-        alert("The password must be at least 6 characters.");
+        alert("La contraseña debe tener almenos 6 caracteres.");
         return false;
     }
 

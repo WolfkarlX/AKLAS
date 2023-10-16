@@ -42,12 +42,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     // Comprobamos si el email ya existe
     if($email_existente > 0)
     {
-        echo "<script>alert('The email is already registered. Please use another one.');</script>";
+        echo "<script>alert('Este email ya esta registrado. Por favor utilize otro');</script>";
     }
     // Comprobamos si el IdKey ya existe
     else if($IdKey_existente > 0)
     {
-        echo "<script>alert('Worker number already in use.');</script>";
+        echo "<script>alert('Numero de trabajador ya en uso.');</script>";
     }
     else
     {
@@ -77,22 +77,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
                     $consulta->execute();
     
                     // Redireccionamos a la pagina principal
-                    echo "<script>alert('account created successfully');</script>";
+                    echo "<script>alert('Cuenta creada correctamente');</script>";
                     header('Location:register.php');
                     exit();
                 } catch (PDOException $e) 
                 {
                     // En caso de error, muestra un mensaje de error
-                    echo "Registration error: " . $e->getMessage();
+                    echo "Error de registro: " . $e->getMessage();
                 }
             }else
             {
-                echo "<script>alert('Password is too short (it most be at least 6 characters)');</script>";
+                echo "<script>alert('La contraseña es demasiado corta (debe tener al menos 6 caracteres)');</script>";
             }
             
         } else 
         {
-            echo "<script>alert('Passwords do not match.');</script>";
+            echo "<script>alert('Las contraseñas no coinciden.');</script>";
         }
     }
 }
@@ -111,14 +111,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     <span><a href="logout.php">Log out</a></span><!--Volver al login-->
 
     <form action="register.php" method="POST"><!--Ingresamos los valores que llevara la cuenta-->
-        <input type="text" class="input-field" placeholder="Enter the name" name="FirstName" required>
-        <input type="text" class="input-field" placeholder="Enter the lastname" name="LastName" required>
-        <input type="text" class="input-field" placeholder="Enter the worker number" name="IdKey" required>
-        <input type="text" class="input-field" placeholder="Enter the worker description" name="description">
-        <input type="text" class="input-field" placeholder="Enter the email" name="email" required>
-        <input type="password" class="input-field" placeholder="Enter the password" name="password" required>
-        <input type="password" class="input-field" placeholder="Confirm the password" name="confirm_password" required>
-        <input type="submit" value="Submit"><!--Boton para enviar los datos-->
+        <input type="text" class="input-field" placeholder="Ingrese el nombre" name="FirstName" required>
+        <input type="text" class="input-field" placeholder="Ingrese el apellido" name="LastName" required>
+        <input type="text" class="input-field" placeholder="Numero de empleado" name="IdKey" required>
+        <input type="text" class="input-field" placeholder="Descripción del empleado" name="description">
+        <input type="text" class="input-field" placeholder="Correo electronico" name="email" required>
+        <input type="password" class="input-field" placeholder="Ingrese la contraseña" name="password" required>
+        <input type="password" class="input-field" placeholder="Confirme la contraseña" name="confirm_password" required>
+        <input type="submit" value="Crear"><!--Boton para enviar los datos-->
     </form>
 
 </body>
