@@ -7,6 +7,7 @@ const botonActualizar = document.querySelector("button[id='btn-actualizar']");
 const btnEliminar = document.getElementById("btn-delete");
 const form = document.getElementById("myForm");
 const formTable = document.getElementById("form-table");
+const filter = document.getElementById("filter");
 
 // Agregar evento para ejecutar la función getTable al cargar la página
 document.addEventListener("DOMContentLoaded", () => getTable(urlGetData, tbody));
@@ -59,6 +60,18 @@ formTable.addEventListener("submit", function(event) {
         }
     }
 })
+
+/*Script para filtrar registros en una tabla*/
+    filter.addEventListener("keyup", function(event) {
+        if (event.key == "Escape") event.target.value = "";
+        const registers = document.querySelectorAll("#vista-cuerpo tr");
+        registers.forEach(data => {
+            let rawContent = data.innerHTML.replaceAll("<td>", "").replaceAll("</td>", "");
+            rawContent.toLowerCase().includes(event.target.value.toLowerCase())
+            ?data.style.display = ""
+            :data.style.display = "none";
+        })        
+    })
 
 /*Script para eliminar espacios en blanco del html */ 
     function eliminarEspacios() {

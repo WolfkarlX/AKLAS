@@ -51,6 +51,7 @@ function updateTime() {
 }
 
 //Funcion para buscar
+if(input) {
 input.onkeyup = function search() {
   var filter, i, txtValue, homebutton;
   filter = input.value.toUpperCase();
@@ -63,5 +64,6 @@ input.onkeyup = function search() {
       homebutton[i].style.display = "none";
     }
   }
+}
 }
 

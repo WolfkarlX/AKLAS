@@ -302,6 +302,24 @@
  border-radius: 0.6rem;
  box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
 }
+.abajo .tabla-buscador {
+  background-color: rgb(255, 235, 211);
+  position: relative;
+  display: block;
+  width: 125%;
+  height: 30px;
+  align-items: center;
+  border: none;
+  border-radius: 0.4rem;
+  padding: 20px 10px;
+  left: -40%;
+
+  margin: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color:#000000;
+  outline: none;
+}
 .opciones #btn-delete:enabled {
   background-color: rgb(255, 0, 0);
   position: relative;
@@ -502,6 +520,7 @@
   color:#000000;
   outline: none;
 }
+
 
 .abajo .gridcontainer {
   width: 100%;
