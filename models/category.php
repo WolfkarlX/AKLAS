@@ -2,7 +2,7 @@
 namespace models;
 
 class category extends conexion {
-    private $id;
+    protected $id;
     private $name;
     private $description;
 
@@ -10,6 +10,7 @@ class category extends conexion {
     {
         parent::__construct();
         $this->table = "categories";
+        $this->id = "CategoryID";
     }
 
     public function addCategory($Name, $Description){
