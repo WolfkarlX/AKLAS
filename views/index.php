@@ -94,7 +94,7 @@
             <div id="clock"></div>
         </div>
         <div class="abajo" id="abajo">
-            <input class="buscador" type="text" id="myInput" placeholder="Buscar...">
+            <input class="buscador" type="text" id="myInput" placeholder="Buscar..."><i class='bx bx-search-alt-2'></i>
             <div class="gridcontainer" id="gridcontainer">
                     <div class="homebutton">
                         <a href="./products/">
@@ -102,7 +102,7 @@
                             <span class="bloque-item">Productos<span>
                         </a>
                     </div>
-                    <div class="homebutton">
+                    <div class="homebutton btn-home">
                         <a href="./suppliers/">
                             <i class='bx bxs-hand'></i>
                             <span class="bloque-item">Proveedor</span>

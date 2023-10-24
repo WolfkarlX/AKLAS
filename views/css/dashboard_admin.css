@@ -217,8 +217,8 @@
   right: 0;
   height: 20%;
   left: 0;
-  display: grid;
-  grid-template-columns: repeat(6,1fr);
+  width: 100%;
+  max-width: 100%;
   margin-top: 10px;
   margin-bottom: 5px;
  
@@ -242,78 +242,71 @@
   max-width: 95%;
 }
 .opciones .BotonRegistro {
-  width: 100%;
+  width: calc(15% - 5px);
   height: 65px;
   padding: 10px;
-  position: relative;
-  display: block;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  display: inline-block;
+  margin-top: 40px;
   font-size: 1.1rem;
-  
+  padding-top: 20px;
+  padding-bottom: 10px;
   align-items: center;
   background-color: rgb(0, 0, 90);
   border-radius: 0.6rem;
   box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
-  min-width: 100%;
   color: #eee;
   border: none;
   border-radius: 0.5rem;
   font-weight: bold;
-  margin: 20px;
+  margin: 10px;
   cursor: pointer;
 }
 .opciones #btn-actualizar {
-  width: 40%;
+  width: calc(7% - 5px);
   height: 65px;
   padding: 10px;
-  position: relative;
-  display: flex;
+  display: inline-block;
   margin-top: 20px;
-  margin-bottom: 10px;
   font-size: 2.1rem;
   align-items: center;
   background-color: rgb(30, 0, 255);
   box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
   color: #eee;
   border: none;
-  min-width: 40%;
   border-radius: 0.5rem;
   font-weight: bold;
   cursor: pointer;
-  margin: 20px;
+  margin: 10px;
   justify-content: center;
 }
 .opciones #btn-delete {
  background-color: gray;
- position: relative;
- display: block;
- width: 30%;
+ width: calc(7% - 5px);
+ display: inline-block;
  height: 65px;
  margin-top: 20px;
  padding: 10px;
+ padding-top: 20px;
+ padding-bottom: 10px;
  font-weight: bold;
- min-width: 40%;
  cursor: pointer; 
  font-size: 1rem;
  align-items: center;
  border: none;
- margin: 20px;
+ margin: 10px;
  border-radius: 0.6rem;
+ justify-content: center;
  box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
 }
 .abajo .tabla-buscador {
   background-color: rgb(255, 235, 211);
-  position: relative;
-  display: block;
-  width: 125%;
+  display: inline-block;
+  width: calc(20% - 5px);
   height: 30px;
   align-items: center;
   border: none;
   border-radius: 0.4rem;
   padding: 20px 10px;
-  left: -40%;
-
   margin: 20px;
   font-size: 20px;
   font-weight: bold;
@@ -322,23 +315,25 @@
 }
 .opciones #btn-delete:enabled {
   background-color: rgb(255, 0, 0);
-  position: relative;
-  display: block;
-  width: 30%;
-  height: 65px;
-  margin-top: 20px;
-  font-size: 1rem;
- border: none;
+ width: calc(7% - 5px);
+ display: inline-block;
+ height: 65px;
+ margin-top: 20px;
+ padding: 10px;
+ padding-top: 20px;
+ padding-bottom: 10px;
+ font-weight: bold;
+ cursor: pointer; 
+ font-size: 1rem;
  align-items: center;
- color: white;
-  padding: 10px;
-  font-weight: bold;
-  min-width: 40%;
-  margin: 20px;
-  cursor: pointer; 
-  border-radius: 0.6rem;
-  box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
+ border: none;
+ margin: 10px;
+ border-radius: 0.6rem;
+ justify-content: center;
+ box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
  }
+ 
+
 
 .opciones .bloque_opciones {
   padding: 20px;
@@ -505,13 +500,15 @@
 
 /*HOME*/
 .abajo .buscador {
-  background-color: rgb(255, 235, 211);
+  background-color: rgb(255, 255, 255);
   position: absolute;
+  border-bottom-color: #000000;
   display: flex;
   width: 25%;
   height: 30px;
-  border: none;
-  border-radius: 0.4rem;
+  border-top: none;
+  border-right: none;
+  border-left: none;
   padding: 20px 10px;
   margin-left: 37%;
   top: 3%;
@@ -520,51 +517,62 @@
   color:#000000;
   outline: none;
 }
+.abajo i{
+  font-size: 30px;
+  
+}
 
 
 .abajo .gridcontainer {
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
+  /*display: grid;*/
+  /*grid-template-columns: repeat(3,1fr);*/
   margin-top: 50px;
   max-width: 100%;
-  min-width: 100%;
+  min-width: 200px;
+  place-items: center;
 }
 
 .abajo .homebutton a i {
-  min-width: 100%;
+ 
   text-align: center;
   height: 20%;
   width: 100%;
-  max-width: 100%;
+ 
   font-size: 40px;
   padding-top: 30%;
   border-radius: 12px;
   margin-left: 0;
-  margin-top: -20px;
+  margin-top: -10px;
   align-self: center;
   justify-content: center;
 
 }
 .abajo .homebutton {
   padding: 30px;
-  display: grid;
+  display: inline-block;
   place-items: center;
   text-align: center;
   justify-content: center;
-  width: 100%;
-  min-width: 100%;
-  max-width: 100%;
+  /* width: 25%; */
+  width: calc(25% - 5px);
 }
 .abajo .homebutton a .bloque-item {
   color: white;
   width: 100%;
- 
+  margin-top: -10px;
   max-width: 100%;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.abajo .homebutton a i {
+  padding-top: 50px;
+  padding-bottom: 30px;
 }
 .abajo .homebutton a {
   color: white;
-  display: block;
+  display: inline-block;
   font-weight: bold;
   background-color: yellow;
   text-decoration: none;
@@ -576,7 +584,6 @@
   width: 100%;
   min-width: 100%;
   height: 100%;
-  max-width: 120%;
   background-image: linear-gradient(to right, rgb(1, 0, 63), rgb(255, 115, 0));
 }
 .abajo .homebutton a:hover {
@@ -712,6 +719,18 @@
     position: absolute;
     display: flex;
   }
+  .abajo .homebutton {
+    padding: 30px;
+    place-items: center;
+    text-align: center;
+    display: inline-block;
+    justify-content: center;
+    /* width: 25%; */
+    width: calc(33% - 5px);
+  }
+  .abajo {
+    overflow: auto;
+  }
 
 }
 
@@ -720,6 +739,7 @@
     transform: translateX(-35%);
     display: flex;
   }
+
 }
 @media only screen and (max-width: 750px) { 
   .sidebar.active .nav-item {
@@ -735,6 +755,18 @@
   }
   .abajo .homebutton a {
     font-size: 15px;
+  }
+  .abajo .homebutton {
+    padding: 30px;
+    place-items: center;
+    text-align: center;
+    display: inline-block;
+    justify-content: center;
+    /* width: 25%; */
+    width: calc(50% - 10px);
+  }
+  .abajo {
+    overflow: auto;
   }
 }
 @media only screen and (max-width: 600px) { 
