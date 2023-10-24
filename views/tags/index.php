@@ -93,11 +93,11 @@
             <h1>Inicio → Etiquetas</h1>
             <div id="clock"></div>
         </div>
-        <div class="abajo">
+            <div class="abajo">
             <div class="opciones">
                 <button class="BotonRegistro" id="btn-registro">Nuevo registro</button>
                 <button id="btn-actualizar"><i class='bx bx-refresh'></i></button>
-                <button id="btn-delete" form="form-table" disabled><img src="../img/delete.png"></button>
+                <button id="btn-delete" form="form-table" disabled>Eliminar</button>
                 <input type="text" id="filter" class="tabla-buscador" placeholder="Filtrar... ">
                 
             </div>

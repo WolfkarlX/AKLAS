@@ -94,7 +94,10 @@
             <div id="clock"></div>
         </div>
         <div class="abajo" id="abajo">
-            <input class="buscador" type="text" id="myInput" placeholder="Buscar..."><i class='bx bx-search-alt-2'></i>
+            <div class="opcionesmain">
+                <input class="buscador" type="text" id="myInput" placeholder="Buscar...">
+                <i id="iconobuscador" class='bx bx-search-alt-2'></i>
+            </div>
             <div class="gridcontainer" id="gridcontainer">
                     <div class="homebutton">
                         <a href="./products/">

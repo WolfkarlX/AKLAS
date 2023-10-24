@@ -510,16 +510,29 @@
   border-right: none;
   border-left: none;
   padding: 20px 10px;
-  margin-left: 37%;
   top: 3%;
+  margin-left: 7%;
   font-size: 20px;
   font-weight: bold;
   color:#000000;
   outline: none;
 }
-.abajo i{
+.abajo #iconobuscador{
   font-size: 30px;
-  
+  position: relative;
+  display: inline-block;
+  padding: 10px 10px;
+  margin: 2px;
+  margin-right: 5.2rem;
+
+}
+.abajo .opcionesmain {
+  width: 40%;
+  justify-content: center;
+  margin-left: 30%;
+  margin-top: 10px;
+  text-align: right;
+  align-items: center;
 }
 
 
@@ -527,7 +540,7 @@
   width: 100%;
   /*display: grid;*/
   /*grid-template-columns: repeat(3,1fr);*/
-  margin-top: 50px;
+  margin-top: 20px;
   max-width: 100%;
   min-width: 200px;
   place-items: center;

@@ -94,11 +94,12 @@
             <div id="clock"></div>
         </div>
         <div class="abajo">
-            <div class="opciones">
+        <div class="opciones">
                 <button class="BotonRegistro" id="btn-registro">Nuevo registro</button>
                 <button id="btn-actualizar"><i class='bx bx-refresh'></i></button>
-                <input type="text" id="filter" class="tabla-buscador" placeholder="Filtrar... ">
                 <button id="btn-delete" form="form-table" disabled>Eliminar</button>
+                <input type="text" id="filter" class="tabla-buscador" placeholder="Filtrar... ">
+                
             </div>
             <div class="tabla">
                 <form id="form-table">
