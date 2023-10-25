@@ -98,7 +98,7 @@
                 <button class="BotonRegistro" id="btn-registro">Nuevo registro</button>
                 <button id="btn-actualizar"><i class='bx bx-refresh'></i></button>
                 <button id="btn-delete" form="form-table" disabled>Eliminar</button>
-                <input type="text" id="filter" class="tabla-buscador" placeholder="Filtrar... ">
+                <input type="text" id="filter" class="tabla-buscador" placeholder="Filtrar... "><i id="iconobuscador2" class='bx bx-search-alt-2'></i></input>
                 
             </div>
             <div class="tabla">

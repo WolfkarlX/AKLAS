@@ -259,6 +259,9 @@
   border-radius: 0.5rem;
   font-weight: bold;
   margin: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   cursor: pointer;
 }
 .opciones #btn-actualizar {
@@ -297,21 +300,35 @@
  border-radius: 0.6rem;
  justify-content: center;
  box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
+ overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .abajo .tabla-buscador {
-  background-color: rgb(255, 235, 211);
+  background-color: rgb(255, 255, 255);
   display: inline-block;
   width: calc(20% - 5px);
   height: 30px;
   align-items: center;
-  border: none;
-  border-radius: 0.4rem;
-  padding: 20px 10px;
-  margin: 20px;
+  border-bottom-color: #000000;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  padding: 10px 10px;
+  margin: 10px;
   font-size: 20px;
   font-weight: bold;
   color:#000000;
   outline: none;
+}
+.abajo #iconobuscador2{
+  font-size: 30px;
+  position: relative;
+  display: inline-block;
+  padding: 10px 10px;
+  margin: 2px;
+  margin-left: -1.1rem;
+
 }
 .opciones #btn-delete:enabled {
   background-color: rgb(255, 0, 0);
@@ -331,6 +348,9 @@
  border-radius: 0.6rem;
  justify-content: center;
  box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
+ overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
  }
  
 
@@ -526,6 +546,7 @@
   margin-right: 5.2rem;
 
 }
+
 .abajo .opcionesmain {
   width: 40%;
   justify-content: center;
@@ -953,5 +974,67 @@
   }
   .sidebar.active .top .logo {
     opacity: 1;
+  }
+  .opciones #btn-actualizar {
+    width: calc(15% - 5px);
+    height: 65px;
+    padding: 10px;
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 2.1rem;
+    align-items: center;
+    background-color: rgb(30, 0, 255);
+    box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
+    color: #eee;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 10px;
+    justify-content: center;
+  }
+  .opciones #btn-delete {
+   background-color: gray;
+   width: calc(15% - 5px);
+   display: inline-block;
+   height: 65px;
+   margin-top: 20px;
+   padding: 10px;
+   padding-top: 20px;
+   padding-bottom: 10px;
+   font-weight: bold;
+   cursor: pointer; 
+   font-size: 1rem;
+   align-items: center;
+   border: none;
+   margin: 10px;
+   border-radius: 0.6rem;
+   justify-content: center;
+   box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
+   overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  }
+  .opciones .BotonRegistro {
+    width: calc(15% - 5px);
+    height: 65px;
+    padding: 10px;
+    display: inline-block;
+    margin-top: 80px;
+    font-size: 1.1rem;
+    padding-top: 26px;
+    align-items: center;
+    background-color: rgb(0, 0, 90);
+    border-radius: 0.6rem;
+    box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
+    color: #eee;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    margin: 10px;
+    cursor: pointer;
+    overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   }
 }
