@@ -117,12 +117,15 @@
     </div>
     <div class="formulario">
         <form class="formu" id="myForm" style="display: none;">
-            <h1>NUEVO PRODUCTO</h1>
+            <div class="formarriba">
+                <h1 class="tituloform">Nuevo Producto</h1>
+                <input id="Cerrar_form" type="button" value="X" class="CancelX">
+            </div>
             <fieldset>
                 
             </fieldset>
-            <input type="submit" value="Registrar"/>
-            <input type="button" value="Cancelar Registro" class="Cancelar" onclick="closeForm()">
+            <input type="submit" value="Registrar" class="submitir" id="submit"/>
+            <input type="button" id="Cancelar_registro" value="Cancelar Registro" class="Cancelar">
         </form>
     </div>
 </body>
