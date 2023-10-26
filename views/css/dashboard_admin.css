@@ -190,6 +190,37 @@
   margin-left: 20px;
   font-size: 3.2rem;
 }
+.arribaopciones #UsuarioBoton {
+  background-color: none;
+  background-color:transparent;
+  color:white;
+  width:30%;
+  border:none;
+  font-size:3.2rem;
+  cursor: pointer;  
+}
+.arribaopciones #ConfiguracionBoton {
+  background-color: none;
+  background-color:transparent;
+  color:white;
+  width:30%;
+  font-size:3.2rem;
+  border:none;
+  cursor: pointer;
+}
+.arriba .arribaopciones{
+  font-size: 4.1rem;
+  color: rgb(0, 0, 0);
+  display: flex;
+  position:absolute;
+  z-index: 2;
+  width:20%;
+  height:50%;
+  padding:10px 1px;
+  margin: 30px;
+  margin-left: 80%;
+}
+
 
 .abajo {
   display: block;
@@ -524,7 +555,7 @@
   position: absolute;
   border-bottom-color: #000000;
   display: flex;
-  width: 25%;
+  width: 45%;
   height: 30px;
   border-top: none;
   border-right: none;
@@ -539,11 +570,11 @@
 }
 .abajo #iconobuscador{
   font-size: 30px;
-  position: relative;
-  display: inline-block;
+  position: absolute;
+  display: flex;
   padding: 10px 10px;
   margin: 2px;
-  margin-right: 5.2rem;
+  margin-right: 10.2%;
 
 }
 
@@ -554,6 +585,7 @@
   margin-top: 10px;
   text-align: right;
   align-items: center;
+  position: fixed;
 }
 
 
@@ -561,7 +593,7 @@
   width: 100%;
   /*display: grid;*/
   /*grid-template-columns: repeat(3,1fr);*/
-  margin-top: 20px;
+  margin-top: 40px;
   max-width: 100%;
   min-width: 200px;
   place-items: center;
@@ -765,6 +797,15 @@
   .abajo {
     overflow: auto;
   }
+  .abajo #iconobuscador{
+    font-size: 30px;
+    position: absolute;
+    display: flex;
+    padding: 10px 10px;
+    margin: 2px;
+    margin-right: 1.2%;
+  
+  }
 
 }
 
@@ -801,6 +842,15 @@
   }
   .abajo {
     overflow: auto;
+  }
+  .abajo #iconobuscador{
+    font-size: 30px;
+    position: absolute;
+    display: flex;
+    padding: 10px 10px;
+    margin: 2px;
+    margin-right: -10.2%;
+  
   }
 }
 @media only screen and (max-width: 600px) { 
@@ -1036,5 +1086,14 @@
     overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  }
+  .abajo #iconobuscador{
+    font-size: 30px;
+    position: absolute;
+    display: flex;
+    padding: 10px 10px;
+    margin: 2px;
+    margin-left: -20.8px;
+  
   }
 }
