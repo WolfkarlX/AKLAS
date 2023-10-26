@@ -98,6 +98,7 @@
             <button class="BotonRegistro" id="btn-registro">Nuevo registro</button>
                 <button id="btn-actualizar"><i class='bx bx-refresh'></i></button>
                 <button id="btn-delete" form="form-table" disabled>Eliminar</button>
+                <button id="btn-edit" disabled>Editar</button>
                 <input type="text" id="filter" class="tabla-buscador" placeholder="Filtrar... "><i id="iconobuscador2" class='bx bx-search-alt-2'></i></input>
                 
             </div>
@@ -148,6 +149,33 @@
             </fieldset> 
             <input type="submit" value="Registrar" class="submitir" id="submit"/>
             <input type="button" id="Cancelar_registro" value="Cancelar Registro" class="Cancelar">
+        </form>
+    </div>
+    <div class="formulario">
+        <form class="formu" id="edit-form" style="display: none;">
+            <div class="formarriba">
+                <h1 class="tituloform">Editar proovedor</h1>
+                <input id="Cerrar_form" type="button" value="X" class="CancelX">
+            </div>
+            <fieldset>
+                <input type="hidden" id="input1">
+                <label for="first-name">Empresa: </label>
+                <input id="input2" type="text" name="first-name" placeholder="Nombre" required minlength="2" maxlength="30"/>
+                <label for="contact">Manager: </label>
+                <input id="input3" type="text" name="contact" placeholder="Nombre" required minlength="2" maxlength="50"/>
+                <label for="address">Dirección: </label>
+                <input id="input4" type="text" name="address" placeholder="Calle" required minlength="2" maxlength="100"/>
+                <label for="city">Ciudad: </label>
+                <input id="input5" type="text" name="city" placeholder="Nombre" required minlength="2" maxlength="100"/>
+                <label for="cp">Código Postal: </label>
+                <input id="input6" type="text" name="cp" pattern="\d{5,}" title="Ingrese al menos 5 digitos de código postal " oninput="this.value = this.value.replace(/[^0-9]/g, '');" placeholder="# Code" required maxlength="25"/>
+                <label for="nation">País:</label>
+                <input id="input7" type="text" name="nation" placeholder="Region"  required minlength="2" maxlength="100"/>
+                <label for="phone">Teléfono: </label>
+                <input id="input8" type="text" required name="phone" pattern="\d{8,}" title="Ingrese al menos 8 digitos en su número " oninput="this.value = this.value.replace(/[^0-9]/g, '');" maxlength="13" placeholder="+..."/>
+            </fieldset> 
+            <input type="submit" value="Editar" class="submitir" id="submit"/>
+            <input type="button" id="Cancelar_edicion" value="Cancelar Edicion" class="Cancelar">
         </form>
     </div>
 </body>

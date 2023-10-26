@@ -98,23 +98,24 @@
         <button class="BotonRegistro" id="btn-registro">Nuevo registro</button>
                 <button id="btn-actualizar"><i class='bx bx-refresh'></i></button>
                 <button id="btn-delete" form="form-table" disabled>Eliminar</button>
+                <button id="btn-edit" disabled>Editar</button>
                 <input type="text" id="filter" class="tabla-buscador" placeholder="Filtrar... "><i id="iconobuscador2" class='bx bx-search-alt-2'></i></input>
                 
             </div>
             <div class="tabla">
                 <form id="form-table">
-                <table id="vista">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Nombre</th>
-                            <th>Descripción</th>
-                        </tr>
-                    </thead>
-                    <tbody id="vista-cuerpo">
+                    <table id="vista">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Descripción</th>
+                            </tr>
+                        </thead>
+                        <tbody id="vista-cuerpo">
 
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
                 </form>
             </div>
         </div>
@@ -133,6 +134,23 @@
             </fieldset>
             <input type="submit" value="Registrar" class="submitir" id="submit"/>
             <input type="button" id="Cancelar_registro" value="Cancelar Registro" class="Cancelar">
+        </form>
+    </div>
+    <div class="formulario">
+        <form class="formu" id="edit-form" style="display: none;">
+            <div class="formarriba">
+                <h1 class="tituloform">Editar Categoria</h1>
+                <input id="Cerrar_form" type="button" value="X" class="CancelX">
+            </div>
+            <fieldset>
+                <input id="input1" type="hidden">
+                <label for="name">Nombre: </label>
+                <input id="input2" type="text" name="name" placeholder="Nombre" required minlength="2" maxlength="30"/>
+                <label for="description">Descripción: </label><br>
+                <textarea id="input3" name="description" placeholder="Descripción" minlenght="5"></textarea>
+            </fieldset>
+            <input type="submit" value="Editar" class="submitir" id="submit"/>
+            <input type="button" id="Cancelar_registro" value="Cancelar edicion" class="Cancelar">
         </form>
     </div>
 </body>

@@ -28,6 +28,7 @@ function getTable(url, element) {
         row.onclick = () => {
             focusRadio("rbtn-" + id);
             enableButton("btn-delete", "rbtn-" + id);
+            enableButton("btn-edit", "rbtn-" + id);
         };
         
         // Agregar la fila al tbody
