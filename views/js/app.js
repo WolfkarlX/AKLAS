@@ -8,6 +8,10 @@ const btnEliminar = document.getElementById("btn-delete");
 const form = document.getElementById("myForm");
 const formTable = document.getElementById("form-table");
 const filter = document.getElementById("filter");
+const tabla = document.getElementById('vista');
+const btnEdit = document.getElementById("btn-edit");
+var celdas = ""
+
 
 // Agregar evento para ejecutar la función getTable al cargar la página
 document.addEventListener("DOMContentLoaded", () => getTable(urlGetData, tbody));
@@ -58,6 +62,35 @@ formTable.addEventListener("submit", function(event) {
                 }
             })
         }
+    }
+})
+
+//Script para obtener los valores de la fila de la tabla
+// Agrega un evento 'click' a la tabla
+tabla.addEventListener('click', function(e) {
+  // Asegúrate de que se haya hecho clic en una fila (tr)
+  if (e.target.tagName === 'TD') {
+    // Obtén la fila (tr) que contiene la celda (td) en la que se hizo clic
+    let fila = e.target.parentElement;
+
+    // Obtiene todas las celdas (td) de la fila seleccionada
+    celdas = fila.getElementsByTagName('td');
+    
+    // Recorre las celdas para obtener los valores
+    /*for (let i = 0; i < celdas.length; i++) {
+      let valor = celdas[i].textContent;
+      let object = document.getElementById("input" + (i+1));
+      object.value = valor;
+    }*/
+  }
+});
+
+btnEdit.addEventListener("click", ()=>{
+    // Recorre las celdas para obtener los valores
+    for (let i = 0; i < celdas.length; i++) {
+        let valor = celdas[i].textContent;
+        let object = document.getElementById("input" + (i+1));
+        object.value = valor;
     }
 })
 
