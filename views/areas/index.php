@@ -92,6 +92,10 @@
         <div class="arriba">
             <h1>Inicio → Areas</h1>
             <div id="clock"></div>
+            <div class="arribaopciones">
+                <button id="UsuarioBoton"> <i class='bx bx-user-circle'></i></button>
+                <button id="ConfiguracionBoton"> <i class='bx bx-cog' ></i></button>
+            </div>
         </div>
         <div class="abajo">
             <div class="opciones">
@@ -136,7 +140,7 @@
             <input type="button" id="Cancelar_registro" value="Cancelar Registro" class="Cancelar">
         </form>
     </div>
-    <div class="formulario">
+    <div class="formulario" id="form-editado">
         <form class="formu" id="edit-form" style="display: none;">
             <div class="formarriba">
                 <h1 class="tituloform">Editar Area</h1>

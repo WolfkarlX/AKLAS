@@ -335,6 +335,32 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.opciones #btn-edit {
+    background-color: gray;
+  width: calc(7% - 5px);
+  display: inline-block;
+  height: 65px;
+  margin-top: 20px;
+  padding: 10px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  font-weight: bold;
+  cursor: pointer; 
+  font-size: 1rem;
+  align-items: center;
+  border: none;
+  margin: 10px;
+  border-radius: 0.6rem;
+  justify-content: center;
+  box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.opciones #btn-edit:enabled {
+  background-color: rgb(7, 0, 56);
+}
+
 .abajo .tabla-buscador {
   background-color: rgb(255, 255, 255);
   display: inline-block;
@@ -397,6 +423,13 @@
 }
 .formulario {
   z-index: 3;
+  padding: 20px;
+  position: relative;
+  display: block;
+}
+
+#form-editado:not([style*="display:block"]){
+  z-index: 2;
   padding: 20px;
   position: relative;
   display: block;
@@ -501,7 +534,7 @@
 .formulario .formu .formarriba .CancelX {
   display: block;
   width: 10%;
-  z-index: 3;
+  z-index: 10;
   position: absolute;
   margin: auto;
   height: 20px;
@@ -515,6 +548,9 @@
   right: 10px;
   margin-top: -40px;
 }
+
+
+
 
 .formulario .formu .Cancelar {
   display: block;
