@@ -75,9 +75,9 @@
             <li>
                 <a href="#">
                     <i class='bx bx-question-mark'></i>
-                    <span class="nav-item">FAQs</span>
+                    <span class="nav-item">Ayuda</span>
                 </a>
-                <span class="tooltip">FAQs</span>
+                <span class="tooltip">Ayuda</span>
             </li>
             <li>
                 <a href="../../controllers/logout.php">
