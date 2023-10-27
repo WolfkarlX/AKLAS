@@ -10,6 +10,7 @@ const formTable = document.getElementById("form-table");
 const filter = document.getElementById("filter");
 const tabla = document.getElementById('vista');
 const btnEdit = document.getElementById("btn-edit");
+const form_edit = document.getElementById("edit-form");
 var celdas = ""
 
 
@@ -57,12 +58,35 @@ formTable.addEventListener("submit", function(event) {
                     tbody.innerHTML = "";
                     getTable(urlGetData, tbody);
                     btnEliminar.setAttribute("disabled", "");
+                    btnEdit.setAttribute("disabled", "")
                 } else {
                     alert("No se pudo eliminar el registro");
                 }
             })
         }
     }
+})
+
+form_edit.addEventListener("submit", function(event){
+    event.preventDefault();
+    let res = sendForm(UrlsendEdit, event.target);
+    res.then( data => {
+        if(data){
+            alert("Se edito correctamente");
+                    //Recargar la tabla
+                    tbody.innerHTML = "";
+                    getTable(urlGetData, tbody);
+                    btnEdit.setAttribute("disabled", "");
+                    btnEliminar.setAttribute("disabled", "");
+                    event.target.reset();
+                    event.target.style.display = "none";
+                } else {
+                    alert("No se pudo editar el registro");
+                }
+        }
+
+    )
+
 })
 
 //Script para obtener los valores de la fila de la tabla
