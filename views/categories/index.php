@@ -124,7 +124,8 @@
             </div>
         </div>
     </div>
-    <div class="formulario">
+    
+    <div class="formulario" id="form-normal">
         <form class="formu" id="myForm" style="display: none;">
             <div class="formarriba">
                 <h1 class="tituloform">NUEVA CATEGORIA</h1>
@@ -157,6 +158,7 @@
             <input type="button" id="Cancelar_registro" value="Cancelar edicion" class="Cancelar">
         </form>
     </div>
+    <div id="difuminado"></div>
 </body>
 <script src="../js/fun.js" type="module"></script>
 <script src="../js/urlCategories.js"></script>

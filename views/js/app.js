@@ -11,6 +11,7 @@ const filter = document.getElementById("filter");
 const tabla = document.getElementById('vista');
 const btnEdit = document.getElementById("btn-edit");
 const form_edit = document.getElementById("edit-form");
+
 var celdas = ""
 
 
@@ -38,6 +39,7 @@ form.addEventListener("submit", function(event) {
             //Limpia el formulario
             event.target.reset();
             event.target.style.display = "none";
+            document.getElementById(difuminado).style.backdropFilter = "none";
         } else {
             alert("No se pudo añadir el registro");
         }
@@ -80,6 +82,8 @@ form_edit.addEventListener("submit", function(event){
                     btnEliminar.setAttribute("disabled", "");
                     event.target.reset();
                     event.target.style.display = "none";
+                    document.getElementById("difuminado").style.backdropFilter = "none";
+                    document.getElementById("difuminado").style.display = "none";
                 } else {
                     alert("No se pudo editar el registro");
                 }
