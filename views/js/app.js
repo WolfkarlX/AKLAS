@@ -11,6 +11,9 @@ const filter = document.getElementById("filter");
 const tabla = document.getElementById('vista');
 const btnEdit = document.getElementById("btn-edit");
 const form_edit = document.getElementById("edit-form");
+const difuminado = document.getElementById("difuminado");
+const formNormal = document.querySelector("#form-normal"); //div del formulario
+const formeditado = document.querySelector("#form-editado"); //div del formulario editado
 
 var celdas = ""
 
@@ -39,7 +42,9 @@ form.addEventListener("submit", function(event) {
             //Limpia el formulario
             event.target.reset();
             event.target.style.display = "none";
-            document.getElementById(difuminado).style.backdropFilter = "none";
+            difuminado.style.display = "none"
+            formNormal.style.display = "block";
+            formeditado.style.display = "block";
         } else {
             alert("No se pudo añadir el registro");
         }
@@ -82,8 +87,9 @@ form_edit.addEventListener("submit", function(event){
                     btnEliminar.setAttribute("disabled", "");
                     event.target.reset();
                     event.target.style.display = "none";
-                    document.getElementById("difuminado").style.backdropFilter = "none";
-                    document.getElementById("difuminado").style.display = "none";
+                    difuminado.style.display = "none";
+                    formNormal.style.display = "block";
+                    formeditado.style.display = "block";
                 } else {
                     alert("No se pudo editar el registro");
                 }
