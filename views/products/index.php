@@ -149,6 +149,7 @@
             <input type="button" id="Cancelar_registro" value="Cancelar Registro" class="Cancelar">
         </form>
     </div>
+    <div id="difuminado"></div>
 </body>
 <script src="../js/fun.js" type="module"></script>
 </html>

@@ -157,6 +157,7 @@
             <input type="button" id="Cancelar_registro" value="Cancelar edicion" class="Cancelar">
         </form>
     </div>
+    <div id="difuminado"></div>
 </body>
 <script src="../js/fun.js" type="module"></script>
 <script src="../js/urlArea.js"></script>

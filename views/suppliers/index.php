@@ -182,6 +182,7 @@
             <input type="button" id="Cancelar_edicion" value="Cancelar Edicion" class="Cancelar">
         </form>
     </div>
+    <div id="difuminado"></div>
 </body>
 <script src="../js/fun.js" type="module"></script>
 <script src="../js/urlSuppliers.js"></script>
