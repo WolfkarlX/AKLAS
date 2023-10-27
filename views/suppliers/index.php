@@ -129,7 +129,7 @@
             </div>
         </div>
     </div>
-    <div class="formulario">
+    <div class="formulario" id="form-normal">
         <form class="formu" id="myForm" style="display: none;">
             <div class="formarriba">
                 <h1 class="tituloform">Nuevo Proveedor</h1>
