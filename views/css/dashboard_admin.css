@@ -615,11 +615,11 @@
 .abajo .opcionesmain {
   width: 40%;
   justify-content: center;
-  margin-left: 30%;
+  margin-left: 38%;
   margin-top: 10px;
   text-align: right;
   align-items: center;
-  position: fixed;
+  position: absolute;
 }
 
 
