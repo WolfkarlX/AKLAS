@@ -147,7 +147,7 @@
                 <input id="Cerrar_form" type="button" value="X" class="CancelX">
             </div>
             <fieldset>
-                <input type="hidden" id="input1">
+                <input type="hidden" id="input1" name="Key">
                 <label for="name">Nombre: </label>
                 <input id="input2" type="text" name="name" placeholder="Nombre" required minlength="2" maxlength="30"/>
                 <label for="description">Descripción: </label><br>

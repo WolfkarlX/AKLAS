@@ -1,17 +1,16 @@
 <?php
-    session_start();
-    if(empty($_SESSION['user_id']))
-    {
-        header("Location:../");
-    }
-?>
 
-<?php
+session_start();
+if(empty($_SESSION['user_id']))
+{
+    header("Location:../");
+}
+
 require_once("../autoload.php");
 
-use models\category;
+use models\area;
 
-$cat = new category();
+$area = new area();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     //Obtiene los valores
@@ -19,18 +18,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST["name"];
     $description = $_POST["description"];
 
-    $tabla = "categories";
+    $tabla = "area";
     $consult = array(
-    "CategoryName" => $name,
+    "NameArea" => $name,
     "Description" => $description, 
     );
 
     //Ejecuta la funcion para agregar
-    $result = $cat ->edit($tabla, $consult, $id);
+    $result = $area ->edit($tabla, $consult, $id);
     
     //Devuelve el resultado
     echo json_encode($result);
 } else {
-    header("Location: ../views/categories");
+    header("Location: ../views/areas");
 }
 ?>

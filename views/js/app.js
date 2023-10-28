@@ -25,6 +25,8 @@ document.addEventListener("DOMContentLoaded", () => getTable(urlGetData, tbody))
 botonActualizar.addEventListener("click", () => {
     tbody.innerHTML = "";
     getTable(urlGetData, tbody);
+    btnEliminar.setAttribute("disabled", "");
+    btnEdit.setAttribute("disabled", "");
 });
 
 // Añadir un evento submit al formulario
@@ -65,7 +67,7 @@ formTable.addEventListener("submit", function(event) {
                     tbody.innerHTML = "";
                     getTable(urlGetData, tbody);
                     btnEliminar.setAttribute("disabled", "");
-                    btnEdit.setAttribute("disabled", "")
+                    btnEdit.setAttribute("disabled", "");
                 } else {
                     alert("No se pudo eliminar el registro");
                 }
