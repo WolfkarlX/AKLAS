@@ -49,19 +49,19 @@
 
         public function edit($tabla, $datosActualizar, $id) { 
             $consulta = "UPDATE $tabla SET ";
-        
+            
             $valores = [];
             foreach ($datosActualizar as $campo => $valor) {
                 $valores[] = "$campo = :$campo";
             }
         
             $consulta .= implode(', ', $valores);
-            $consulta .= " WHERE CategoryID = :id";
+            $consulta .= " WHERE {$this->id} = :LS";
         
             $stmt = $this->prepare($consulta);
         
             // Asignamos los valores a los marcadores de posición.
-            $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+            $stmt->bindValue(':LS', $id, PDO::PARAM_INT);
             foreach ($datosActualizar as $campo => $valor) {
                 $stmt->bindValue(":$campo", $valor);
             }

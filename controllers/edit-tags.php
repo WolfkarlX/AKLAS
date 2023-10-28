@@ -8,29 +8,28 @@
 
 <?php
 require_once("../autoload.php");
+use models\tag;
 
-use models\category;
-
-$cat = new category();
-
+$tag = new tag();
+//Comprueba si hay una peticion POST
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     //Obtiene los valores
     $id = $_POST["Key"];
     $name = $_POST["name"];
     $description = $_POST["description"];
 
-    $tabla = "categories";
+    $tabla = "tags";
     $consult = array(
-    "CategoryName" => $name,
+    "TagName" => $name,
     "Description" => $description, 
     );
 
     //Ejecuta la funcion para agregar
-    $result = $cat ->edit($tabla, $consult, $id);
+    $result = $tag ->edit($tabla, $consult, $id);
     
     //Devuelve el resultado
     echo json_encode($result);
 } else {
-    header("Location: ../views/categories");
+    header("Location: ../views/tags");
 }
 ?>
