@@ -18,11 +18,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST["name"];
     $description = $_POST["description"];
 
-    $tabla = "area";
-    $consult = array(
-    "NameArea" => $name,
-    "Description" => $description, 
-    );
+    $tabla = $area->getTable();
+    $consult = $area->getArray($name, $description);
 
     //Ejecuta la funcion para agregar
     $result = $area ->edit($tabla, $consult, $id);

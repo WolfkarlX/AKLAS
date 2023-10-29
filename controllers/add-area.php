@@ -8,23 +8,20 @@
 
 <?php
 require_once("../autoload.php");
-use models\conexion;
+use models\area;
 
-$conn = new conexion();
+$area = new area();
 //Comprueba si hay una peticion POST
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     //Obtiene los valores
     $name = $_POST["name"];
     $description = $_POST["description"];
 
-    $tabla = "area";
-    $consult = array(
-    "NameArea" => $name,
-    "Description" => $description, 
-    );
+    $tabla = $area->getTable();
+    $consult = $area->getArray($name, $description);
 
     //Ejecuta la funcion para agregar
-    $result = $conn ->insertar($tabla, $consult);
+    $result = $area ->insertar($tabla, $consult);
     
     //Devuelve el resultado
     echo json_encode($result);

@@ -2,15 +2,17 @@
 namespace models;
 
 class category extends conexion {
-    protected $id;
+    protected $id, $attribute, $attribute1;
     private $name;
     private $description;
 
     public function __construct()
-    {
-        parent::__construct();
+    {   parent::__construct();
         $this->table = "categories";
         $this->id = "CategoryID";
+        $this->attribute = "CategoryName";
+        $this->attribute1 = "Description";
+        $this->table = "categories";
     }
 
     public function addCategory($Name, $Description){
@@ -24,6 +26,15 @@ class category extends conexion {
         $stmt->bindParam(':Description', $Description);
 
         return $stmt->execute();
+    }
+
+    public function getTable(){
+        return $this->table;
+    }
+
+    public function getArray($Vname, $Vdescription){
+        $array = array($this->attribute => $Vname, $this->attribute1 => $Vdescription);
+        return $array;
     }
 }
 ?>

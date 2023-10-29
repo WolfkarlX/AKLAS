@@ -8,23 +8,20 @@
 
 <?php
 require_once("../autoload.php");
-use models\conexion;
+use models\tag;
 
-$conn = new conexion();
+$tag = new tag();
 //Comprueba si hay una peticion POST
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     //Obtiene los valores
     $name = $_POST["name"];
     $description = $_POST["description"];
 
-    $tabla = "tags";
-    $consult = array(
-    "TagName" => $name,
-    "Description" => $description, 
-    );
+    $tabla = $tag->getTable();
+    $consult = $tag->getArray($name, $description);
 
     //Ejecuta la funcion para agregar
-    $result = $conn ->insertar($tabla, $consult);
+    $result = $tag ->insertar($tabla, $consult);
     
     //Devuelve el resultado
     echo json_encode($result);

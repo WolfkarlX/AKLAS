@@ -8,23 +8,21 @@
 
 <?php
 require_once("../autoload.php");
-use models\conexion;
 
-$conn = new conexion();
+use models\category;
+
+$cat = new category();
 //Comprueba si hay una peticion POST
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     //Obtiene los valores
     $name = $_POST["name"];
     $description = $_POST["description"];
 
-    $tabla = "categories";
-    $consult = array(
-    "CategoryName" => $name,
-    "Description" => $description, 
-    );
+    $tabla = $cat->getTable();
+    $consult = $cat->getArray($name, $description);
 
     //Ejecuta la funcion para agregar
-    $result = $conn ->insertar($tabla, $consult);
+    $result = $cat ->insertar($tabla, $consult);
     
     //Devuelve el resultado
     echo json_encode($result);

@@ -2,7 +2,7 @@
 namespace models;
 
 class tag extends conexion {
-    protected $id;
+    protected $id, $attribute, $attribute1;
     private $name;
     private $description;
 
@@ -11,6 +11,8 @@ class tag extends conexion {
         parent::__construct();
         $this->table = "tags";
         $this->id = "TagID";
+        $this->attribute = "TagName";
+        $this->attribute1 = "Description";
     }
 
     public function addTag($Name, $Description){
@@ -24,6 +26,15 @@ class tag extends conexion {
         $stmt->bindParam(':Description', $Description);
 
         return $stmt->execute();
+    }
+    
+    public function getTable(){
+        return $this->table;
+    }
+    
+    public function getArray($Vname, $Vdescription){
+        $array = array($this->attribute => $Vname, $this->attribute1 => $Vdescription);
+        return $array;
     }
 }
 ?>
