@@ -54,9 +54,9 @@
             <li>
                 <a href="../categories/">
                     <i class='bx bx-category'></i>
-                    <span class="nav-item">Categorias</span>
+                    <span class="nav-item">Categorías</span>
                 </a>
-                <span class="tooltip">Categorias</span>
+                <span class="tooltip">Categorías</span>
             </li>
             <li>
                 <a href="../tags/">
@@ -68,9 +68,9 @@
             <li>
                 <a href="../areas/">
                     <i class='bx bx-area'></i>
-                    <span class="nav-item">Areas</span>
+                    <span class="nav-item">Áreas</span>
                 </a>
-                <span class="tooltip">Areas</span>
+                <span class="tooltip">Áreas</span>
             </li>
             <li>
                 <a href="#">

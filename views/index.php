@@ -75,9 +75,9 @@
             <li>
                 <a href="#">
                     <i class='bx bx-question-mark'></i>
-                    <span class="nav-item">FAQs</span>
+                    <span class="nav-item">Ayuda</span>
                 </a>
-                <span class="tooltip">FAQs</span>
+                <span class="tooltip">Ayuda</span>
             </li>
             <li>
                 <a href="../controllers/logout.php">
@@ -93,6 +93,8 @@
             <h1>Inicio</h1>
             <div id="clock"></div>
             <div class="arribaopciones">
+                <!--<i class='bx bx-sun' onclick='Claro()'></i>
+                <i class='bx bx-moon' onclick='Oscuro'></i>-->
                 <button id="UsuarioBoton"> <i class='bx bx-user-circle'></i></button>
                 <button id="ConfiguracionBoton"> <i class='bx bx-cog' ></i></button>
             </div>
