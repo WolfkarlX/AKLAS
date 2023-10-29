@@ -145,7 +145,7 @@
                         </a>
                     </div>
                     <div class="homebutton">
-                        <a href="#">
+                        <a href="./help/">
                             <i class='bx bx-question-mark'></i>
                             <span class="bloque-item">Ayuda</span>
                         </a>
