@@ -19,6 +19,8 @@
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="stylesheet">
+    <!-- ICONS CDN FONTAWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 </head>
 <body>
@@ -61,9 +63,9 @@
             <li>
                 <a href="./tags/">
                     <i class='bx bx-purchase-tag-alt'></i>
-                    <span class="nav-item">Ayuda</span>
+                    <span class="nav-item">Tags</span>
                 </a>
-                <span class="tooltip">Ayuda</span>
+                <span class="tooltip">Tags</span>
             </li>
             <li>
                 <a href="./areas/">
@@ -73,7 +75,7 @@
                 <span class="tooltip">Áreas</span>
             </li>
             <li>
-                <a href="#">
+                <a href="./help/">
                     <i class='bx bx-question-mark'></i>
                     <span class="nav-item">Ayuda</span>
                 </a>
@@ -93,8 +95,15 @@
             <h1>Inicio</h1>
             <div id="clock"></div>
             <div class="arribaopciones">
-                <!--<i class='bx bx-sun' onclick='Claro()'></i>
-                <i class='bx bx-moon' onclick='Oscuro'></i>-->
+                <!--<i id="oscuro" class='bx bx-moon' onclick='Oscuro()'></i>
+                <i id="claro" class='bx bx-sun' onclick='Claro()'></i>-->
+            <div class="btn">
+                <div class="btn__indicator">
+                    <div class="btn__icon-container">
+                        <i class="btn__icon fa-solid"></i>
+                    </div>
+                </div>
+            </div>
                 <button id="UsuarioBoton"> <i class='bx bx-user-circle'></i></button>
                 <button id="ConfiguracionBoton"> <i class='bx bx-cog' ></i></button>
             </div>
@@ -136,7 +145,7 @@
                         </a>
                     </div>
                     <div class="homebutton">
-                        <a href="./faqs/">
+                        <a href="#">
                             <i class='bx bx-question-mark'></i>
                             <span class="bloque-item">Ayuda</span>
                         </a>
@@ -146,4 +155,5 @@
     </div>
 </body>
 <script src="./js/fun.js" type="module"></script>
+<script src="js/moonSun.js"></script>
 </html>
