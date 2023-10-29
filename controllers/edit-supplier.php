@@ -13,7 +13,7 @@ $supp = new supplier();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     //Obtiene los valores
     $id = $_POST["Key"];
-    $tabla = "suppliers";
+    $tabla = $supp->getTable();
     $firstname = $_POST["first-name"];
     $contact = $_POST["contact"];
     $address = $_POST["address"];
@@ -22,15 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nation = $_POST["nation"];
     $phone = $_POST["phone"];
 
-    $consult = array(
-        "SupplierName" => $firstname,
-        "ContactName"  => $contact,
-        "Address" => $address,
-        "City" => $city,
-        "PostalCode" => $cp,
-        "Country" => $nation,
-        "Phone" => $phone,
-    );
+    $consult = $supp ->getArray($firstname, $contact, $address, $city, $cp, $nation, $phone); 
 
     //Ejecuta la funcion para agregar
     $result = $supp ->edit($tabla, $consult, $id);

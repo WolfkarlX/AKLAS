@@ -9,10 +9,11 @@
 <?php
 require_once("../autoload.php");
 
-use models\conexion;
+use models\supplier;
+
 //use models\supplier;
 //$supp = new supplier();
-$conn = new conexion();
+$supp = new supplier();
 //Comprueba si hay una peticion POST
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     //Obtiene los valores
@@ -24,21 +25,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nation = $_POST["nation"];
     $phone = $_POST["phone"];
 
-    $table = "suppliers";
-    
-    $consult = array(
-        "SupplierName" => $firstname,
-        "ContactName"  => $contact,
-        "Address" => $address,
-        "City" => $city,
-        "PostalCode" => $cp,
-        "Country" => $nation,
-        "Phone" => $phone,
-    );
+    $table = $supp -> getTable();
+    $consult = $supp->getArray($firstname, $contact, $address, $city, $cp, $nation, $phone);
 
-    $result = $conn->insertar($table,$consult);
+    $result = $supp->insertar($table,$consult);
     //Ejecuta la funcion para agregar
-    //$result = $supp->addSupplier($firstname, $contact, $address, $city, $cp, $nation, $phone);
     //Devuelve el resultado
     echo json_encode($result);
 } else {

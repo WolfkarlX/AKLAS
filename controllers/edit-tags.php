@@ -17,12 +17,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id = $_POST["Key"];
     $name = $_POST["name"];
     $description = $_POST["description"];
+    $tabla = $tag->getTable();
 
-    $tabla = "tags";
-    $consult = array(
-    "TagName" => $name,
-    "Description" => $description, 
-    );
+    $consult = $tag->getArray($name, $description);
 
     //Ejecuta la funcion para agregar
     $result = $tag ->edit($tabla, $consult, $id);
