@@ -54,9 +54,9 @@
             <li>
                 <a href="../categories/">
                     <i class='bx bx-category'></i>
-                    <span class="nav-item">Categorias</span>
+                    <span class="nav-item">Categorías</span>
                 </a>
-                <span class="tooltip">Categorias</span>
+                <span class="tooltip">Categorías</span>
             </li>
             <li>
                 <a href="../tags/">
@@ -68,16 +68,16 @@
             <li>
                 <a href="../areas/">
                     <i class='bx bx-area'></i>
-                    <span class="nav-item">Areas</span>
+                    <span class="nav-item">Áreas</span>
                 </a>
-                <span class="tooltip">Areas</span>
+                <span class="tooltip">Áreas</span>
             </li>
             <li>
                 <a href="#">
                     <i class='bx bx-question-mark'></i>
-                    <span class="nav-item">FAQs</span>
+                    <span class="nav-item">Ayuda</span>
                 </a>
-                <span class="tooltip">FAQs</span>
+                <span class="tooltip">Ayuda</span>
             </li>
             <li>
                 <a href="../../controllers/logout.php">
@@ -136,7 +136,7 @@
     <div class="formulario" id="form-editado">
         <form class="formu" id="edit-form" style="display: none;">
             <div class="formarriba">
-                <h1 class="tituloform">Editar Categoria</h1>
+                <h1 class="tituloform">Editar Categoría</h1>
                 <input id="Cerrar_form" type="button" value="X" class="CancelX">
             </div>
             <fieldset>

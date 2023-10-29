@@ -1,0 +1,1 @@
+//oscuro -> Es el nombre en el css que cambiara los colores a oscuros

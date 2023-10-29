@@ -54,30 +54,30 @@
             <li>
                 <a href="./categories/">
                     <i class='bx bx-category'></i>
-                    <span class="nav-item">Categorias</span>
+                    <span class="nav-item">Categorías</span>
                 </a>
-                <span class="tooltip">Categorias</span>
+                <span class="tooltip">Categorías</span>
             </li>
             <li>
                 <a href="./tags/">
                     <i class='bx bx-purchase-tag-alt'></i>
-                    <span class="nav-item">Tags</span>
+                    <span class="nav-item">Ayuda</span>
                 </a>
-                <span class="tooltip">Tags</span>
+                <span class="tooltip">Ayuda</span>
             </li>
             <li>
                 <a href="./areas/">
                     <i class='bx bx-area'></i>
-                    <span class="nav-item">Areas</span>
+                    <span class="nav-item">Áreas</span>
                 </a>
-                <span class="tooltip">Areas</span>
+                <span class="tooltip">Áreas</span>
             </li>
             <li>
                 <a href="#">
                     <i class='bx bx-question-mark'></i>
-                    <span class="nav-item">FAQs</span>
+                    <span class="nav-item">Ayuda</span>
                 </a>
-                <span class="tooltip">FAQs</span>
+                <span class="tooltip">Ayuda</span>
             </li>
             <li>
                 <a href="../controllers/logout.php">
@@ -93,6 +93,8 @@
             <h1>Inicio</h1>
             <div id="clock"></div>
             <div class="arribaopciones">
+                <!--<i class='bx bx-sun' onclick='Claro()'></i>
+                <i class='bx bx-moon' onclick='Oscuro'></i>-->
                 <button id="UsuarioBoton"> <i class='bx bx-user-circle'></i></button>
                 <button id="ConfiguracionBoton"> <i class='bx bx-cog' ></i></button>
             </div>
@@ -118,7 +120,7 @@
                     <div class="homebutton">
                         <a href="./categories/">
                             <i class='bx bx-category'></i>
-                            <span class="bloque-item">Categorias</span>
+                            <span class="bloque-item">Categorías</span>
                         </a>
                     </div>
                     <div class="homebutton">
@@ -130,13 +132,13 @@
                     <div class="homebutton">
                         <a href="./areas/">
                             <i class='bx bx-area'></i>
-                            <span class="bloque-item">Secciones</span>
+                            <span class="bloque-item">Áreas</span>
                         </a>
                     </div>
                     <div class="homebutton">
                         <a href="./faqs/">
                             <i class='bx bx-question-mark'></i>
-                            <span class="bloque-item">Soporte</span>
+                            <span class="bloque-item">Ayuda</span>
                         </a>
                     </div>
             </div>

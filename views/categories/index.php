@@ -14,7 +14,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Categorias</title>
+    <title>Categorías</title>
     <link rel="stylesheet" href="../css/dashboard_admin.css">
     <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
@@ -54,9 +54,9 @@
             <li>
                 <a href="../categories/">
                     <i class='bx bx-category'></i>
-                    <span class="nav-item">Categorias</span>
+                    <span class="nav-item">Categorías</span>
                 </a>
-                <span class="tooltip">Categorias</span>
+                <span class="tooltip">Categorías</span>
             </li>
             <li>
                 <a href="../tags/">
@@ -68,16 +68,16 @@
             <li>
                 <a href="../areas/">
                     <i class='bx bx-area'></i>
-                    <span class="nav-item">Areas</span>
+                    <span class="nav-item">Áreas</span>
                 </a>
-                <span class="tooltip">Areas</span>
+                <span class="tooltip">Áreas</span>
             </li>
             <li>
                 <a href="#">
                     <i class='bx bx-question-mark'></i>
-                    <span class="nav-item">FAQs</span>
+                    <span class="nav-item">Ayuda</span>
                 </a>
-                <span class="tooltip">FAQs</span>
+                <span class="tooltip">Ayuda</span>
             </li>
             <li>
                 <a href="../../controllers/logout.php">
@@ -90,7 +90,7 @@
     </div>
     <div class="main-content">
         <div class="arriba">
-            <h1>Inicio → Categorias</h1>
+            <h1>Inicio → Categorías</h1>
             <div id="clock"></div>
             <div class="arribaopciones">
                 <button id="UsuarioBoton"> <i class='bx bx-user-circle'></i></button>
@@ -128,7 +128,7 @@
     <div class="formulario" id="form-normal">
         <form class="formu" id="myForm" style="display: none;">
             <div class="formarriba">
-                <h1 class="tituloform">NUEVA CATEGORIA</h1>
+                <h1 class="tituloform">NUEVA CATEGORÍA</h1>
                 <input id="Cerrar_form" type="button" value="X" class="CancelX">
             </div>
             <fieldset>
@@ -144,7 +144,7 @@
     <div class="formulario" id="form-editado">
         <form class="formu" id="edit-form" style="display: none;">
             <div class="formarriba">
-                <h1 class="tituloform">Editar Categoria</h1>
+                <h1 class="tituloform">Editar Categoría</h1>
                 <input id="Cerrar_form" type="button" value="X" class="CancelX">
             </div>
             <fieldset>

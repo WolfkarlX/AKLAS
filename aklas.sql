@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-10-2023 a las 19:36:26
+-- Tiempo de generación: 17-10-2023 a las 17:16:44
 -- Versión del servidor: 11.2.0-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -38,7 +38,7 @@ CREATE TABLE `area` (
 --
 
 INSERT INTO `area` (`AreaID`, `NameArea`, `Description`) VALUES
-(1, 'Area 1', 'Ciel Mineralizada es una marca de agua mineralizada y carbonatada que entrÃ³ al mercado mexicano en el 2001. Es una opciÃ³n baja en sodio que puede contribuir a la hidrataciÃ³n y que tambiÃ©n puede ser disfrutada como base de otras bebidas como naranjadas y limonadas. Ciel Mineralizada es una marca de agua mineralizada y carbonatada que entrÃ³ al mercado mexicano en el 2001. Es una opciÃ³n baja en sodio que puede contribuir a la hidrataciÃ³n y que tambiÃ©n puede ser disfrutada como base de otras bebidas como naranjadas y limonadas. Coca-Cola es la bebida mÃ¡s vendida en la historia desde 1886. Es la marca mÃ¡s famosa del mundo. Bien frÃ­a, hace disfrutar cada instante de la vida ya que aÃ±ade magia a cada momento.');
+(1, 'Area 1', 'BEBIDAS CARBONATADAS');
 
 -- --------------------------------------------------------
 
@@ -51,6 +51,18 @@ CREATE TABLE `categories` (
   `CategoryName` varchar(25) NOT NULL,
   `Description` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `categories`
+--
+
+INSERT INTO `categories` (`CategoryID`, `CategoryName`, `Description`) VALUES
+(7, 'BEBIDAS CARBONATADAS', 'Coca-Cola es la bebida mÃ¡s vendida en la historia desde 1886. Es la marca mÃ¡s famosa del mundo. Bien frÃ­a, hace disfrutar cada instante de la vida ya que aÃ±ade magia a cada momento.'),
+(8, 'AGUA GASIFICADA', 'Ciel Mineralizada es una marca de agua mineralizada y carbonatada que entrÃ³ al mercado mexicano en el 2001. Es una opciÃ³n baja en sodio que puede contribuir a la hidrataciÃ³n y que tambiÃ©n puede ser disfrutada como base de otras bebidas como naranjadas y limonadas.'),
+(9, 'AGUA DE SABORES', 'El nuevo integrante de la familia Ciel, exprime todo el sabor de las frutas y las hojas para ofrecerte cuatro sabores que te invitan a descubrir mÃ¡s.'),
+(10, 'BEBIDA A BASE DE FRUTAS', 'Delaware Punch es un refresco sabor a frutas. Su fÃ³rmula utiliza una mezcla de sabores de frutas, siendo uva la mÃ¡s destacada.'),
+(11, 'BEBIDAS DEPORTIVAS', 'Innovadora bebida para deportistas que te da todos los beneficios de la tecnologÃ­a ION4 con gran sabor. La tecnologÃ­a ION4 repone 4 de los minerales que se pierden al sudar: Sodio(NA), Potasio(K), Calcio(Ca) y Magnesio(Mg).'),
+(12, 'AGUA PURIFICADA', 'Tu cerebro se deshidrata incluso antes de que te des cuenta. Mantente hidratado. Ciel conecta mente y cuerpo.');
 
 -- --------------------------------------------------------
 
@@ -125,6 +137,14 @@ CREATE TABLE `suppliers` (
   `Phone` varchar(15) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `suppliers`
+--
+
+INSERT INTO `suppliers` (`SupplierID`, `SupplierName`, `ContactName`, `Address`, `City`, `PostalCode`, `Country`, `Phone`) VALUES
+(3, 'SportX', 'JosÃ© Joshua Rodriguez Ãvila', 'Los Patos, calle Itzora #108', 'Manzanillo', '28200', 'MÃ©xico', '3141232927'),
+(4, 'Coca Cola', 'James Quincey', 'RubÃ©n DarÃ­o 115 Col. Bosque de Chapultepec', 'Ciudad de MÃ©xico', '11580', 'MÃ©xico', '8007044400');
+
 -- --------------------------------------------------------
 
 --
@@ -136,6 +156,16 @@ CREATE TABLE `tags` (
   `TagName` varchar(50) NOT NULL,
   `Description` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `tags`
+--
+
+INSERT INTO `tags` (`TagID`, `TagName`, `Description`) VALUES
+(4, 'Rehidratante', 'Recupera sales y minerales que pierdes al sudar'),
+(5, 'Exceso de azÃºcares', 'Contenidp alto en azÃºcar'),
+(6, 'Light', 'DietÃ©tica y ligera'),
+(7, 'Energizante', 'ObtÃ©n energÃ­a en seguida');
 
 -- --------------------------------------------------------
 
@@ -243,7 +273,7 @@ ALTER TABLE `area`
 -- AUTO_INCREMENT de la tabla `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `CategoryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `CategoryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `employees`
@@ -267,13 +297,13 @@ ALTER TABLE `products_tags`
 -- AUTO_INCREMENT de la tabla `suppliers`
 --
 ALTER TABLE `suppliers`
-  MODIFY `SupplierID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `SupplierID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `tags`
 --
 ALTER TABLE `tags`
-  MODIFY `TagID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `TagID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `transaction`
