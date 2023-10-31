@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-10-2023 a las 17:16:44
+-- Tiempo de generación: 31-10-2023 a las 15:29:28
 -- Versión del servidor: 11.2.0-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -38,7 +38,8 @@ CREATE TABLE `area` (
 --
 
 INSERT INTO `area` (`AreaID`, `NameArea`, `Description`) VALUES
-(1, 'Area 1', 'BEBIDAS CARBONATADAS');
+(1, 'Ãrea 1A', 'BEBIDAS CARBONATADAS: Coca cola'),
+(2, 'Ãrea 1B ', 'BEBIDAS CARBONATADAS: Pepsi ');
 
 -- --------------------------------------------------------
 
@@ -62,7 +63,8 @@ INSERT INTO `categories` (`CategoryID`, `CategoryName`, `Description`) VALUES
 (9, 'AGUA DE SABORES', 'El nuevo integrante de la familia Ciel, exprime todo el sabor de las frutas y las hojas para ofrecerte cuatro sabores que te invitan a descubrir mÃ¡s.'),
 (10, 'BEBIDA A BASE DE FRUTAS', 'Delaware Punch es un refresco sabor a frutas. Su fÃ³rmula utiliza una mezcla de sabores de frutas, siendo uva la mÃ¡s destacada.'),
 (11, 'BEBIDAS DEPORTIVAS', 'Innovadora bebida para deportistas que te da todos los beneficios de la tecnologÃ­a ION4 con gran sabor. La tecnologÃ­a ION4 repone 4 de los minerales que se pierden al sudar: Sodio(NA), Potasio(K), Calcio(Ca) y Magnesio(Mg).'),
-(12, 'AGUA PURIFICADA', 'Tu cerebro se deshidrata incluso antes de que te des cuenta. Mantente hidratado. Ciel conecta mente y cuerpo.');
+(12, 'AGUA PURIFICADA', 'Tu cerebro se deshidrata incluso antes de que te des cuenta. Mantente hidratado. Ciel conecta mente y cuerpo.'),
+(13, 'CATEGORÃA DE PRUEBA', 'Esta categorÃ­a se usa para ver si el CRUD estÃ¡ bien o si jala mal, en cualquiera de los casos es para probar cÃ³mo vamos con esto, asÃ­ que se pone un texto largo para ver cÃ³mo se acomoda en la tabla y para ver que permita ingresar los caracteres que se quieran o requieran por el usuario, veamos cÃ³mo es que se acomoda y cÃ³mo es que se imprime en general el texto en el CRUD de CATEGORÃAS. ');
 
 -- --------------------------------------------------------
 
@@ -143,7 +145,8 @@ CREATE TABLE `suppliers` (
 
 INSERT INTO `suppliers` (`SupplierID`, `SupplierName`, `ContactName`, `Address`, `City`, `PostalCode`, `Country`, `Phone`) VALUES
 (3, 'SportX', 'JosÃ© Joshua Rodriguez Ãvila', 'Los Patos, calle Itzora #108', 'Manzanillo', '28200', 'MÃ©xico', '3141232927'),
-(4, 'Coca Cola', 'James Quincey', 'RubÃ©n DarÃ­o 115 Col. Bosque de Chapultepec', 'Ciudad de MÃ©xico', '11580', 'MÃ©xico', '8007044400');
+(4, 'Coca Cola', 'James Quincey', 'RubÃ©n DarÃ­o 115 Col. Bosque de Chapultepec', 'Ciudad de MÃ©xico', '11580', 'MÃ©xico', '8007044400'),
+(5, 'Pepsico MÃ©xico', 'Felipe Rafael Arvizu De La Luz', 'Ixtapaluca, Edificio B, 3er. Piso.', 'Ciudad de MÃ©xico', '28280', 'MÃ©xico', '5550360000');
 
 -- --------------------------------------------------------
 
@@ -267,13 +270,13 @@ ALTER TABLE `transactiondetails`
 -- AUTO_INCREMENT de la tabla `area`
 --
 ALTER TABLE `area`
-  MODIFY `AreaID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `AreaID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `CategoryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `CategoryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `employees`
@@ -297,7 +300,7 @@ ALTER TABLE `products_tags`
 -- AUTO_INCREMENT de la tabla `suppliers`
 --
 ALTER TABLE `suppliers`
-  MODIFY `SupplierID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `SupplierID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `tags`
