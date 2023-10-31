@@ -102,15 +102,18 @@
                 <button id="ConfiguracionBoton"> <i class='bx bx-cog' ></i></button>
             </div>
         </div>
-        <div class="configuracion_tab" style="display: none">
+        <div class="configuracion_tab" style="display: none" id="config_tab">
+        <span>Configuración de la página</span>    
                 <div class="btn">
                     <div class="btn__indicator">
                         <div class="btn__icon-container">
-                            <i class="btn__icon fa-solid"></i>
+                            <i class="btn__icon fa-solid" id="btm_fondoscolor"></i>
                         </div>
                     </div>
+                   
                 </div>
-            </div>
+                <span>Modo Claro</span>
+        </div>
         <div class="abajo" id="abajo">
             <div class="opcionesmain">
                 <input class="buscador" type="text" id="myInput" placeholder="Buscar...">

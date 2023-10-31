@@ -779,16 +779,20 @@
   --light-icon-color: #FFDE59;
 }
 .configuracion_tab {
-  background-color: gray;
+  background-color: rgb(50, 49, 49);
   position: absolute;
   display: block;
-  width: 20%;
-  height: 30%;
+  width: 15rem;
+  height: 12rem;
   right: 0%;
-  top: 10rem;
+  top: 7rem;
   padding: 10px;
   margin: 20px;
+  justify-content: center;
   z-index: 2;
+  color: white;
+  font-weight: bold;
+  
 }
 
 /* -------------- BUTTON -------------- */
@@ -796,6 +800,7 @@
   background-color: #fff;
   width: 4%;
   height: 8%;
+  margin: 1.2rem;
   border-radius: 10em;
   padding: 0 0.5em;
 

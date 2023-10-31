@@ -13,6 +13,7 @@ let gridcontainer = document.getElementById("gridcontainer");
 let edit_form = document.querySelector("#edit-form");
 let btn_edit = document.getElementById("btn-edit");
 let difuminado = document.getElementById("difuminado");
+let btn_fondo = document.querySelector("#ConfiguracionBoton");
 
 
 if(reloj){
@@ -85,6 +86,19 @@ if(btn_edit){
     event.preventDefault();
     showForm(edit_form.id, difuminado.id);
   });
+}
+
+if(btn_fondo){
+  btn_fondo.addEventListener("click", (event)=>{
+    var cuadro = document.getElementById("config_tab");
+    if(cuadro.style.display === "none") {
+      cuadro.style.display = "block";
+    }
+    else {
+      cuadro.style.display = "none"
+    }
+    
+  })
 }
 
 //Funcion para reloj
