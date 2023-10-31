@@ -132,9 +132,9 @@
             </div>
             <fieldset>
                 <label for="name">Nombre: </label>
-                <input id="name" type="text" name="name" placeholder="Nombre" required minlength="2" maxlength="30"pattern="[A-Za-z0-9]"/>
+                <input id="name" type="text" name="name" placeholder="Nombre" required minlength="2" maxlength="30"pattern="^[^\s].*$"/>
                 <label for="description">Descripción: </label><br>
-                <textarea id="description" name="description" placeholder="Descripción" minlength="5" maxlength="100" pattern="[A-Za-z0-9]"></textarea>
+                <textarea id="description" name="description" placeholder="Descripción" minlength="5" maxlength="100" pattern="^[^\s].*$"></textarea>
             </fieldset>
             <input type="submit" value="Registrar" class="submitir" id="submit"/>
             <input type="button" id="Cancelar_registro" value="Cancelar Registro" class="Cancelar">
@@ -149,9 +149,9 @@
             <fieldset>
                 <input type="hidden" id="input1" name="Key">
                 <label for="name">Nombre: </label>
-                <input id="input2" type="text" name="name" placeholder="Nombre" required minlength="2" maxlength="30" pattern="[A-Za-z0-9]"/>
+                <input id="input2" type="text" name="name" placeholder="Nombre" required minlength="2" maxlength="30" pattern="^[^\s].*$"/>
                 <label for="description">Descripción: </label><br>
-                <textarea id="input3" name="description" placeholder="Descripción" minlenght="5" pattern="[A-Za-z0-9]"></textarea>
+                <textarea id="input3" name="description" placeholder="Descripción" minlenght="5" pattern="^[^\s].*$"></textarea>
             </fieldset>
             <input type="submit" value="Editar" class="submitir" id="submit"/>
             <input type="button" id="Cancelar_registro" value="Cancelar Edicion" class="Cancelar">

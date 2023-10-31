@@ -137,17 +137,17 @@
             </div>
             <fieldset>
                 <label for="first-name">Empresa: </label>
-                <input id="first-name" type="text" name="first-name" placeholder="Nombre" required minlength="2" maxlength="30" pattern="[A-Za-z0-9]"/>
+                <input id="first-name" type="text" name="first-name" placeholder="Nombre" required minlength="2" maxlength="30" pattern="^[^\s].*$"/>
                 <label for="contact">Manager: </label>
-                <input id="contact" type="text" name="contact" placeholder="Nombre" required minlength="2" maxlength="50" pattern="[A-Za-z]"/>
+                <input id="contact" type="text" name="contact" placeholder="Nombre" required minlength="2" maxlength="50" pattern="^[^\s].*$"/>
                 <label for="address">Dirección: </label>
-                <input id="address" type="text" name="address" placeholder="Calle" required minlength="2" maxlength="100" pattern="[A-Za-z0-9]"/>
+                <input id="address" type="text" name="address" placeholder="Calle" required minlength="2" maxlength="100" pattern="^[^\s].*$"/>
                 <label for="city">Ciudad: </label>
-                <input id="city" type="text" name="city" placeholder="Nombre" required minlength="2" maxlength="100" pattern="[A-Za-z0-9]"/>
+                <input id="city" type="text" name="city" placeholder="Nombre" required minlength="2" maxlength="100" pattern="^[^\s].*$"/>
                 <label for="cp">Código Postal: </label>
                 <input id="cp" type="text" name="cp" pattern="\d{5,}" title="Ingrese al menos 5 digitos de código postal " oninput="this.value = this.value.replace(/[^0-9]/g, '');" placeholder="# Code" required maxlength="25"/>
                 <label for="nation">País:</label>
-                <input id="nation" type="text" name="nation" placeholder="Region"  required minlength="2" maxlength="100" pattern="[A-Za-z]"/>
+                <input id="nation" type="text" name="nation" placeholder="Region"  required minlength="2" maxlength="100" pattern="^[^\s].*$"/>
                 <label for="phone">Teléfono: </label>
                 <input id="phone" type="text" required name="phone" pattern="\d{8,}" title="Ingrese al menos 8 digitos en su número " oninput="this.value = this.value.replace(/[^0-9]/g, '');" maxlength="13" placeholder="+..."/>
             </fieldset> 
@@ -164,17 +164,17 @@
             <fieldset>
                 <input type="hidden" id="input1" name="Key">
                 <label for="first-name">Empresa: </label>
-                <input id="input2" type="text" name="first-name" placeholder="Nombre" required minlength="2" maxlength="30" pattern="[A-Za-z0-9]"/>
+                <input id="input2" type="text" name="first-name" placeholder="Nombre" required minlength="2" maxlength="30" pattern="^[^\s].*$"/>
                 <label for="contact">Manager: </label>
-                <input id="input3" type="text" name="contact" placeholder="Nombre" required minlength="2" maxlength="50" pattern="[A-Za-z]"/>
+                <input id="input3" type="text" name="contact" placeholder="Nombre" required minlength="2" maxlength="50" pattern="^[^\s].*$"/>
                 <label for="address">Dirección: </label>
-                <input id="input4" type="text" name="address" placeholder="Calle" required minlength="2" maxlength="100" pattern="[A-Za-z0-9]"/>
+                <input id="input4" type="text" name="address" placeholder="Calle" required minlength="2" maxlength="100" pattern="^[^\s].*$"/>
                 <label for="city">Ciudad: </label>
-                <input id="input5" type="text" name="city" placeholder="Nombre" required minlength="2" maxlength="100" pattern="[A-Za-z0-9]"/>
+                <input id="input5" type="text" name="city" placeholder="Nombre" required minlength="2" maxlength="100" pattern="^[^\s].*$"/>
                 <label for="cp">Código Postal: </label>
                 <input id="input6" type="text" name="cp" pattern="\d{5,}" title="Ingrese al menos 5 digitos de código postal " oninput="this.value = this.value.replace(/[^0-9]/g, '');" placeholder="# Code" required maxlength="25"/>
                 <label for="nation">País:</label>
-                <input id="input7" type="text" name="nation" placeholder="Region"  required minlength="2" maxlength="100" pattern="[A-Za-z0-9]"/>
+                <input id="input7" type="text" name="nation" placeholder="Region"  required minlength="2" maxlength="100" pattern="^[^\s].*$"/>
                 <label for="phone">Teléfono: </label>
                 <input id="input8" type="text" required name="phone" pattern="\d{8,}" title="Ingrese al menos 8 digitos en su número " oninput="this.value = this.value.replace(/[^0-9]/g, '');" maxlength="13" placeholder="+..."/>
             </fieldset> 
