@@ -151,9 +151,8 @@ input:focus{
     align-items: center;
     margin: 0;
     width: 80rem;
-    height: 1rem;
     color: white;
-    bottom: 0;
+    bottom: 2rem;
     border-radius: 10px;
 
 }
@@ -173,6 +172,8 @@ input:focus{
     .text-login { height: 30%;}
     .text-login h1 { font-size: 200%; } 
     .text-login h3 { font-size: 100%; } 
+    .copy {width: 80%;}
+    .copy span {margin-left: 38%;}
 }
 
 @media only screen and (max-width: 400px) {
@@ -180,5 +181,7 @@ input:focus{
      .text-login { height: 15%;}
      .text-login h1 { font-size: 150%; } 
      .text-login h3 { font-size: 80%; } 
+     .copy {width: 80%;}
+     .copy span {margin-left: 30%;}
 }
 
