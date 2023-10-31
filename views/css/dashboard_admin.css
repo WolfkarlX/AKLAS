@@ -778,6 +778,18 @@
   --light-color: #f7f7f7;
   --light-icon-color: #FFDE59;
 }
+.configuracion_tab {
+  background-color: gray;
+  position: absolute;
+  display: block;
+  width: 20%;
+  height: 30%;
+  right: 0%;
+  top: 10rem;
+  padding: 10px;
+  margin: 20px;
+  z-index: 2;
+}
 
 /* -------------- BUTTON -------------- */
 .btn{

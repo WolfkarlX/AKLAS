@@ -97,17 +97,20 @@
             <div class="arribaopciones">
                 <!--<i id="oscuro" class='bx bx-moon' onclick='Oscuro()'></i>
                 <i id="claro" class='bx bx-sun' onclick='Claro()'></i>-->
-            <div class="btn">
-                <div class="btn__indicator">
-                    <div class="btn__icon-container">
-                        <i class="btn__icon fa-solid"></i>
-                    </div>
-                </div>
-            </div>
+            
                 <button id="UsuarioBoton"> <i class='bx bx-user-circle'></i></button>
                 <button id="ConfiguracionBoton"> <i class='bx bx-cog' ></i></button>
             </div>
         </div>
+        <div class="configuracion_tab" style="display: none">
+                <div class="btn">
+                    <div class="btn__indicator">
+                        <div class="btn__icon-container">
+                            <i class="btn__icon fa-solid"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
         <div class="abajo" id="abajo">
             <div class="opcionesmain">
                 <input class="buscador" type="text" id="myInput" placeholder="Buscar...">
