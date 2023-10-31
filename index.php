@@ -42,6 +42,9 @@
             </form> 
         </div>
     </div>
+    <div class="copy">
+        <span> © 2023, AKLAS</span>
+    </div>
 </body>
     <script src="./views/js/loginfun.js" type="module"></script>
     <script src="views/js/particles.min.js"></script>
