@@ -154,7 +154,7 @@ input:focus{
     color: white;
     bottom: 2rem;
     border-radius: 10px;
-
+    background-color: transparent;
 }
 .copy span {
     font-size: 0.9rem;

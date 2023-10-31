@@ -798,11 +798,11 @@
 /* -------------- BUTTON -------------- */
 .btn{
   background-color: #fff;
-  width: 4%;
-  height: 8%;
-  margin: 1.2rem;
+  width: 4em;
+  height: 2em;
+  margin: 0.4rem;
   border-radius: 10em;
-  padding: 0 0.5em;
+  padding: 0 0.9em;
 
   box-shadow: inset 0 8px 60px rgba(0,0,0, .1),
               inset 0 8px 8px rgba(0,0,0, .1),
@@ -826,7 +826,7 @@
 
   box-shadow: 0 8px 40px rgba(0,0,0, .2);
 
-  transition: transform .3s ease;
+  transition: transform .9s ease;
 }
 
 .btn__icon-container{
@@ -840,12 +840,12 @@
 
 .btn__icon{
   color: var(--light-icon-color);
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 /* -------------- ANIMATION ------------ */
 .btn__icon.animated{
-  animation: spin 1.0s;
+  animation: spin 0.6s;
 }
 
 @keyframes spin{
