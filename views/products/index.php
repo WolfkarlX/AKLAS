@@ -127,7 +127,12 @@
                 <input id="Cerrar_form" type="button" value="X" class="CancelX">
             </div>
             <fieldset>
-                
+                <label for="name">Nombre: </label>
+                <input id="name" type="text" name="name" placeholder="Nombre" required minlength="2" maxlength="30"/>
+                <label for="price">Precio: </label>
+                <input id="price" type="text" name="price" placeholder="Precio" required minlength="2" maxlength="30"/>
+                <label for="quantity">Cantidad: </label>
+                <input id="quantity" type="text" name="quantity" placeholder="Cantidad" required minlength="2" maxlength="30"/>
             </fieldset>
             <input type="submit" value="Registrar" class="submitir" id="submit"/>
             <input type="button" id="Cancelar_registro" value="Cancelar Registro" class="Cancelar">

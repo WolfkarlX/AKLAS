@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 31-10-2023 a las 15:29:28
--- Versión del servidor: 11.2.0-MariaDB
+-- Tiempo de generación: 01-11-2023 a las 01:30:52
+-- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -30,6 +30,8 @@ SET time_zone = "+00:00";
 CREATE TABLE `area` (
   `AreaID` int(11) NOT NULL,
   `NameArea` varchar(50) NOT NULL,
+  `RacksQ` int(11) NOT NULL,
+  `Rackf` int(11) NOT NULL,
   `Description` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -37,9 +39,9 @@ CREATE TABLE `area` (
 -- Volcado de datos para la tabla `area`
 --
 
-INSERT INTO `area` (`AreaID`, `NameArea`, `Description`) VALUES
-(1, 'Ãrea 1A', 'BEBIDAS CARBONATADAS: Coca cola'),
-(2, 'Ãrea 1B ', 'BEBIDAS CARBONATADAS: Pepsi ');
+INSERT INTO `area` (`AreaID`, `NameArea`, `RacksQ`, `Rackf`, `Description`) VALUES
+(1, 'Área 1A', 0, 0, 'BEBIDAS CARBONATADAS: Coca cola'),
+(2, 'Área 1B ', 0, 0, 'BEBIDAS CARBONATADAS: Pepsi ');
 
 -- --------------------------------------------------------
 
@@ -64,7 +66,8 @@ INSERT INTO `categories` (`CategoryID`, `CategoryName`, `Description`) VALUES
 (10, 'BEBIDA A BASE DE FRUTAS', 'Delaware Punch es un refresco sabor a frutas. Su fÃ³rmula utiliza una mezcla de sabores de frutas, siendo uva la mÃ¡s destacada.'),
 (11, 'BEBIDAS DEPORTIVAS', 'Innovadora bebida para deportistas que te da todos los beneficios de la tecnologÃ­a ION4 con gran sabor. La tecnologÃ­a ION4 repone 4 de los minerales que se pierden al sudar: Sodio(NA), Potasio(K), Calcio(Ca) y Magnesio(Mg).'),
 (12, 'AGUA PURIFICADA', 'Tu cerebro se deshidrata incluso antes de que te des cuenta. Mantente hidratado. Ciel conecta mente y cuerpo.'),
-(13, 'CATEGORÃA DE PRUEBA', 'Esta categorÃ­a se usa para ver si el CRUD estÃ¡ bien o si jala mal, en cualquiera de los casos es para probar cÃ³mo vamos con esto, asÃ­ que se pone un texto largo para ver cÃ³mo se acomoda en la tabla y para ver que permita ingresar los caracteres que se quieran o requieran por el usuario, veamos cÃ³mo es que se acomoda y cÃ³mo es que se imprime en general el texto en el CRUD de CATEGORÃAS. ');
+(13, 'CATEGORÃA DE PRUEBA', 'Esta categorÃ­a se usa para ver si el CRUD estÃ¡ bien o si jala mal, en cualquiera de los casos es para probar cÃ³mo vamos con esto, asÃ­ que se pone un texto largo para ver cÃ³mo se acomoda en la tabla y para ver que permita ingresar los caracteres que se quieran o requieran por el usuario, veamos cÃ³mo es que se acomoda y cÃ³mo es que se imprime en general el texto en el CRUD de CATEGORÃAS. '),
+(14, 'fff', '');
 
 -- --------------------------------------------------------
 
@@ -77,6 +80,7 @@ CREATE TABLE `employees` (
   `LastName` varchar(30) DEFAULT NULL,
   `FirstName` varchar(30) DEFAULT NULL,
   `BirthDate` datetime DEFAULT NULL,
+  `rol` int(11) NOT NULL,
   `Description` varchar(1024) DEFAULT NULL,
   `IdKey` int(8) NOT NULL,
   `email` varchar(50) NOT NULL,
@@ -87,10 +91,10 @@ CREATE TABLE `employees` (
 -- Volcado de datos para la tabla `employees`
 --
 
-INSERT INTO `employees` (`EmployeID`, `LastName`, `FirstName`, `BirthDate`, `Description`, `IdKey`, `email`, `Password`) VALUES
-(1, 'root', 'root', NULL, 'root', 12345678, 'asanmillan@ucol.mx', '$2y$10$Pwtg/t9M6Q68clotNE6u3OF4VDylwAib..OlULwXDmV0tQQxXbk9C'),
-(7, 'Bustamante Bernabe', 'Saúl', NULL, '', 23090001, 'sbustamante@ucol.mx', '$2y$10$089ST.rffLFGeIpTQRzL6uIDjkqZ6NRy20rUIQ1mcb.q/NDDbk/qq'),
-(10, 'San Millan Ramos', 'Alan Adolfo', NULL, 'Backend', 23100002, 'alansanmillanr@gmail.com', '$2y$10$MO9FRH.AuepLeGbWCjKhLutyTcp3EmqOPPqLJo93a81kDLovm.gsa');
+INSERT INTO `employees` (`EmployeID`, `LastName`, `FirstName`, `BirthDate`, `rol`, `Description`, `IdKey`, `email`, `Password`) VALUES
+(1, 'root', 'root', NULL, 0, 'root', 12345678, 'asanmillan@ucol.mx', '$2y$10$Pwtg/t9M6Q68clotNE6u3OF4VDylwAib..OlULwXDmV0tQQxXbk9C'),
+(7, 'Bustamante Bernabe', 'Saúl', NULL, 0, '', 23090001, 'sbustamante@ucol.mx', '$2y$10$089ST.rffLFGeIpTQRzL6uIDjkqZ6NRy20rUIQ1mcb.q/NDDbk/qq'),
+(10, 'San Millan Ramos', 'Alan Adolfo', NULL, 0, 'Backend', 23100002, 'alansanmillanr@gmail.com', '$2y$10$MO9FRH.AuepLeGbWCjKhLutyTcp3EmqOPPqLJo93a81kDLovm.gsa');
 
 -- --------------------------------------------------------
 
@@ -104,6 +108,7 @@ CREATE TABLE `products` (
   `SupplierID` int(11) DEFAULT NULL,
   `CategoryID` int(11) DEFAULT NULL,
   `AreaID` int(11) DEFAULT NULL,
+  `Storagep` varchar(50) NOT NULL,
   `Price` decimal(10,0) DEFAULT NULL,
   `Quantity` int(11) NOT NULL DEFAULT 0,
   `MaxQuantityLimit` int(11) DEFAULT NULL,
@@ -166,9 +171,12 @@ CREATE TABLE `tags` (
 
 INSERT INTO `tags` (`TagID`, `TagName`, `Description`) VALUES
 (4, 'Rehidratante', 'Recupera sales y minerales que pierdes al sudar'),
-(5, 'Exceso de azÃºcares', 'Contenidp alto en azÃºcar'),
+(5, 'Exceso de azÃºcares', '  '),
 (6, 'Light', 'DietÃ©tica y ligera'),
-(7, 'Energizante', 'ObtÃ©n energÃ­a en seguida');
+(7, 'Energizante', 'ObtÃ©n energÃ­a en seguida'),
+(8, '   ', '         '),
+(9, '   ', '            '),
+(10, 'fff', '');
 
 -- --------------------------------------------------------
 
@@ -179,7 +187,8 @@ INSERT INTO `tags` (`TagID`, `TagName`, `Description`) VALUES
 CREATE TABLE `transaction` (
   `TransactionID` int(11) NOT NULL,
   `EmployeeID` int(11) NOT NULL,
-  `OrderDate` datetime NOT NULL DEFAULT current_timestamp()
+  `OrderDate` datetime NOT NULL DEFAULT current_timestamp(),
+  `Reason` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -276,7 +285,7 @@ ALTER TABLE `area`
 -- AUTO_INCREMENT de la tabla `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `CategoryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `CategoryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `employees`
@@ -306,7 +315,7 @@ ALTER TABLE `suppliers`
 -- AUTO_INCREMENT de la tabla `tags`
 --
 ALTER TABLE `tags`
-  MODIFY `TagID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `TagID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `transaction`
