@@ -26,6 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     $description = $_POST['description'];
     $password = $_POST['password'];
     $confirm_password = $_POST['confirm_password'];
+    $rol = $_POST['puesto'];
 
     // Consulta SQL para verificar si el email ya existe
     $consulta_verificar_email = $conn->prepare("SELECT COUNT(*) FROM employees WHERE email = :email");
@@ -60,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
                 {
 
                     // Preparamos la consulta de inserción
-                    $consulta = $conn->prepare("INSERT INTO employees (FirstName, LastName, Description, IdKey, email, Password) VALUES (:FirstName, :LastName, :description, :IdKey, :email, :password)");
+                    $consulta = $conn->prepare("INSERT INTO employees (FirstName, LastName, Description, IdKey, email, Password, rol) VALUES (:FirstName, :LastName, :description, :IdKey, :email, :password, :rol)");
     
                     // Bind de los parámetros
                     $consulta->bindParam(':FirstName', $FirstName);
@@ -68,6 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
                     $consulta->bindParam(':IdKey', $IdKey);
                     $consulta->bindParam(':description', $description);
                     $consulta->bindParam(':email', $email);
+                    $consulta->bindParam(':rol', $rol);
                     
                     // ciframos la contraseña
                     $hashed_password = password_hash($password, PASSWORD_BCRYPT);
@@ -118,6 +120,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
         <input type="text" class="input-field" placeholder="Correo electronico" name="email" required>
         <input type="password" class="input-field" placeholder="Ingrese la contraseña" name="password" required>
         <input type="password" class="input-field" placeholder="Confirme la contraseña" name="confirm_password" required>
+        <select id="puesto" name="puesto">
+          <option value="" disabled selected hidden>Seleccione el puesto</option>
+          <option value="jefe">Jefe de área</option>
+          <option value="empleado">Empleado</option>
+        </select>
         <input type="submit" value="Crear"><!--Boton para enviar los datos-->
     </form>
 
