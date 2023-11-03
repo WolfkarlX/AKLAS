@@ -1,3 +1,4 @@
+import { createSelectors } from "./fetchAPI.js";
 let btn_sidebar = document.querySelector('#btn_menu'); //Guarda una variable del boton del sidebar
 let sidebar = document.querySelector('.sidebar'); //Guarda una variable del div sidebar completo
 let myform = document.querySelector("#myForm");//Formulario
@@ -14,6 +15,9 @@ let edit_form = document.querySelector("#edit-form");
 let btn_edit = document.getElementById("btn-edit");
 let difuminado = document.getElementById("difuminado");
 let btn_fondo = document.querySelector("#ConfiguracionBoton");
+const selectorforarea = document.getElementById("Sarea");
+const selectorforcategory = document.getElementById("Scate");
+const selectorforsupplier = document.getElementById("Sproovedor");
 
 
 if(reloj){
@@ -76,6 +80,11 @@ if(btn_registro){
   btn_registro.addEventListener("click", (event)=>{
     document.getElementById("form-editado").style.display = "none";
     event.preventDefault();
+    if(selectorforarea && selectorforcategory && selectorforsupplier){
+      createSelectors(urlgetSelects_supplier,  selectorforsupplier);
+      createSelectors(urlgetSelects_area, selectorforarea);
+      createSelectors(urlgetSelects_category, selectorforcategory);
+    }
     showForm(myform.id, difuminado.id);
   });
 }

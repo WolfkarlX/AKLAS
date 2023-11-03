@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 31-10-2023 a las 15:29:28
--- Versión del servidor: 11.2.0-MariaDB
+-- Tiempo de generación: 03-11-2023 a las 07:58:37
+-- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -30,6 +30,9 @@ SET time_zone = "+00:00";
 CREATE TABLE `area` (
   `AreaID` int(11) NOT NULL,
   `NameArea` varchar(50) NOT NULL,
+  `RacksQ` int(11) NOT NULL,
+  `Rackf` int(11) NOT NULL,
+  `Storaget` varchar(15) NOT NULL,
   `Description` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -37,9 +40,8 @@ CREATE TABLE `area` (
 -- Volcado de datos para la tabla `area`
 --
 
-INSERT INTO `area` (`AreaID`, `NameArea`, `Description`) VALUES
-(1, 'Ãrea 1A', 'BEBIDAS CARBONATADAS: Coca cola'),
-(2, 'Ãrea 1B ', 'BEBIDAS CARBONATADAS: Pepsi ');
+INSERT INTO `area` (`AreaID`, `NameArea`, `RacksQ`, `Rackf`, `Storaget`, `Description`) VALUES
+(1, 'Vinos y licores', 40, 10, 'BODEGA', 'Bodega que almacena todo tipo de vinos y licores');
 
 -- --------------------------------------------------------
 
@@ -58,13 +60,7 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`CategoryID`, `CategoryName`, `Description`) VALUES
-(7, 'BEBIDAS CARBONATADAS', 'Coca-Cola es la bebida mÃ¡s vendida en la historia desde 1886. Es la marca mÃ¡s famosa del mundo. Bien frÃ­a, hace disfrutar cada instante de la vida ya que aÃ±ade magia a cada momento.'),
-(8, 'AGUA GASIFICADA', 'Ciel Mineralizada es una marca de agua mineralizada y carbonatada que entrÃ³ al mercado mexicano en el 2001. Es una opciÃ³n baja en sodio que puede contribuir a la hidrataciÃ³n y que tambiÃ©n puede ser disfrutada como base de otras bebidas como naranjadas y limonadas.'),
-(9, 'AGUA DE SABORES', 'El nuevo integrante de la familia Ciel, exprime todo el sabor de las frutas y las hojas para ofrecerte cuatro sabores que te invitan a descubrir mÃ¡s.'),
-(10, 'BEBIDA A BASE DE FRUTAS', 'Delaware Punch es un refresco sabor a frutas. Su fÃ³rmula utiliza una mezcla de sabores de frutas, siendo uva la mÃ¡s destacada.'),
-(11, 'BEBIDAS DEPORTIVAS', 'Innovadora bebida para deportistas que te da todos los beneficios de la tecnologÃ­a ION4 con gran sabor. La tecnologÃ­a ION4 repone 4 de los minerales que se pierden al sudar: Sodio(NA), Potasio(K), Calcio(Ca) y Magnesio(Mg).'),
-(12, 'AGUA PURIFICADA', 'Tu cerebro se deshidrata incluso antes de que te des cuenta. Mantente hidratado. Ciel conecta mente y cuerpo.'),
-(13, 'CATEGORÃA DE PRUEBA', 'Esta categorÃ­a se usa para ver si el CRUD estÃ¡ bien o si jala mal, en cualquiera de los casos es para probar cÃ³mo vamos con esto, asÃ­ que se pone un texto largo para ver cÃ³mo se acomoda en la tabla y para ver que permita ingresar los caracteres que se quieran o requieran por el usuario, veamos cÃ³mo es que se acomoda y cÃ³mo es que se imprime en general el texto en el CRUD de CATEGORÃAS. ');
+(1, 'Limpieza', '');
 
 -- --------------------------------------------------------
 
@@ -77,6 +73,7 @@ CREATE TABLE `employees` (
   `LastName` varchar(30) DEFAULT NULL,
   `FirstName` varchar(30) DEFAULT NULL,
   `BirthDate` datetime DEFAULT NULL,
+  `rol` int(11) NOT NULL,
   `Description` varchar(1024) DEFAULT NULL,
   `IdKey` int(8) NOT NULL,
   `email` varchar(50) NOT NULL,
@@ -87,10 +84,9 @@ CREATE TABLE `employees` (
 -- Volcado de datos para la tabla `employees`
 --
 
-INSERT INTO `employees` (`EmployeID`, `LastName`, `FirstName`, `BirthDate`, `Description`, `IdKey`, `email`, `Password`) VALUES
-(1, 'root', 'root', NULL, 'root', 12345678, 'asanmillan@ucol.mx', '$2y$10$Pwtg/t9M6Q68clotNE6u3OF4VDylwAib..OlULwXDmV0tQQxXbk9C'),
-(7, 'Bustamante Bernabe', 'Saúl', NULL, '', 23090001, 'sbustamante@ucol.mx', '$2y$10$089ST.rffLFGeIpTQRzL6uIDjkqZ6NRy20rUIQ1mcb.q/NDDbk/qq'),
-(10, 'San Millan Ramos', 'Alan Adolfo', NULL, 'Backend', 23100002, 'alansanmillanr@gmail.com', '$2y$10$MO9FRH.AuepLeGbWCjKhLutyTcp3EmqOPPqLJo93a81kDLovm.gsa');
+INSERT INTO `employees` (`EmployeID`, `LastName`, `FirstName`, `BirthDate`, `rol`, `Description`, `IdKey`, `email`, `Password`) VALUES
+(1, 'root', 'root', NULL, 0, 'root', 12345678, 'aklasventas@gmail.com', '$2y$10$Pwtg/t9M6Q68clotNE6u3OF4VDylwAib..OlULwXDmV0tQQxXbk9C'),
+(2, 'Ponce', 'alan Gabriel', NULL, 0, 'Es God', 23090001, 'avargas39@ucol.mx ', '$2y$10$zmj/qWTzRvut4Y1Iv/LGueZGkAVm3WVrz5Jnzxr3gW.CtpDEWNrEi');
 
 -- --------------------------------------------------------
 
@@ -104,11 +100,21 @@ CREATE TABLE `products` (
   `SupplierID` int(11) DEFAULT NULL,
   `CategoryID` int(11) DEFAULT NULL,
   `AreaID` int(11) DEFAULT NULL,
+  `StorageR` int(15) NOT NULL,
+  `StorageRF` int(16) NOT NULL,
   `Price` decimal(10,0) DEFAULT NULL,
   `Quantity` int(11) NOT NULL DEFAULT 0,
+  `Description` text NOT NULL,
   `MaxQuantityLimit` int(11) DEFAULT NULL,
   `MinQuantityLimit` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `products`
+--
+
+INSERT INTO `products` (`ProductID`, `ProductName`, `SupplierID`, `CategoryID`, `AreaID`, `StorageR`, `StorageRF`, `Price`, `Quantity`, `Description`, `MaxQuantityLimit`, `MinQuantityLimit`) VALUES
+(1, 'Cheto limpiador que emborracha', 1, 1, 1, 3, 2, 22, 30, 'Producto de prueba', 40, 10);
 
 -- --------------------------------------------------------
 
@@ -144,9 +150,7 @@ CREATE TABLE `suppliers` (
 --
 
 INSERT INTO `suppliers` (`SupplierID`, `SupplierName`, `ContactName`, `Address`, `City`, `PostalCode`, `Country`, `Phone`) VALUES
-(3, 'SportX', 'JosÃ© Joshua Rodriguez Ãvila', 'Los Patos, calle Itzora #108', 'Manzanillo', '28200', 'MÃ©xico', '3141232927'),
-(4, 'Coca Cola', 'James Quincey', 'RubÃ©n DarÃ­o 115 Col. Bosque de Chapultepec', 'Ciudad de MÃ©xico', '11580', 'MÃ©xico', '8007044400'),
-(5, 'Pepsico MÃ©xico', 'Felipe Rafael Arvizu De La Luz', 'Ixtapaluca, Edificio B, 3er. Piso.', 'Ciudad de MÃ©xico', '28280', 'MÃ©xico', '5550360000');
+(1, 'CHEETOS', 'tommy', 'Los patos 22', 'Manzanillo', '28400', 'Mexico', '31418322');
 
 -- --------------------------------------------------------
 
@@ -165,10 +169,7 @@ CREATE TABLE `tags` (
 --
 
 INSERT INTO `tags` (`TagID`, `TagName`, `Description`) VALUES
-(4, 'Rehidratante', 'Recupera sales y minerales que pierdes al sudar'),
-(5, 'Exceso de azÃºcares', 'Contenidp alto en azÃºcar'),
-(6, 'Light', 'DietÃ©tica y ligera'),
-(7, 'Energizante', 'ObtÃ©n energÃ­a en seguida');
+(1, 'Glamour', '');
 
 -- --------------------------------------------------------
 
@@ -179,7 +180,8 @@ INSERT INTO `tags` (`TagID`, `TagName`, `Description`) VALUES
 CREATE TABLE `transaction` (
   `TransactionID` int(11) NOT NULL,
   `EmployeeID` int(11) NOT NULL,
-  `OrderDate` datetime NOT NULL DEFAULT current_timestamp()
+  `OrderDate` datetime NOT NULL DEFAULT current_timestamp(),
+  `Reason` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -270,25 +272,25 @@ ALTER TABLE `transactiondetails`
 -- AUTO_INCREMENT de la tabla `area`
 --
 ALTER TABLE `area`
-  MODIFY `AreaID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `AreaID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `CategoryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `CategoryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `employees`
 --
 ALTER TABLE `employees`
-  MODIFY `EmployeID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `EmployeID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `ProductID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ProductID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `products_tags`
@@ -300,13 +302,13 @@ ALTER TABLE `products_tags`
 -- AUTO_INCREMENT de la tabla `suppliers`
 --
 ALTER TABLE `suppliers`
-  MODIFY `SupplierID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `SupplierID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `tags`
 --
 ALTER TABLE `tags`
-  MODIFY `TagID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `TagID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `transaction`

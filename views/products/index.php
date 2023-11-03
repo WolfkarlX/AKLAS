@@ -107,16 +107,29 @@
                 
             </div>
             <div class="tabla">
+            <form id="form-table">
                 <table id="vista">
                     <thead>
                         <tr>
-                            
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Proovedor</th>
+                            <th>Categoría</th>
+                            <th>Área</th>
+                            <th>Rack</th>
+                            <th>Fila</th>
+                            <th>Precio</th>
+                            <th>Cantidad</th>
+                            <th>Descripción</th>
+                            <th>Cantidad Míninima</th>
+                            <th>Cantidad Máxima</th>
                         </tr>
                     </thead>
                     <tbody id="vista-cuerpo">
 
                     </tbody>
                 </table>
+                </form>
             </div>
         </div>
     </div>
@@ -127,7 +140,35 @@
                 <input id="Cerrar_form" type="button" value="X" class="CancelX">
             </div>
             <fieldset>
+                <label for="name">Nombre: </label>
+                <input id="na" type="text" name="name" placeholder="Nombre" required minlength="2" maxlength="30"/>
+                <label for="Sproovedor">Proovedor: </label><br>
+                <select name="supplier" id="Sproovedor">
                 
+                </select><br>
+                <label for="Scate">Categoría: </label><br>
+                <select name="category" id="Scate">
+
+                </select><br>
+                <label for="are">Area: </label><br>
+                <select name="area" id="Sarea">
+
+                </select><br>
+
+                <label for="RN">n# Rack: </label>
+                <input id="RN" type="number" name="rackn" placeholder="Numero de Rack" required minlength="1" maxlength="30"/>
+                <label for="file">Fila Rack: </label>
+                <input id="file" type="number" name="fila" placeholder="Numero De Fila Del Rack" required minlength="1" maxlength="30"/>
+                <label for="price">Precio: </label>
+                <input id="price" type="text" name="price" placeholder="Precio" required minlength="2" maxlength="30"/>
+                <label for="quantity">Cantidad: </label>
+                <input id="quantity" type="number" name="quantity" placeholder="Cantidad" required minlength="2" maxlength="30"/>
+                <label for="max">Cantidad Máxima: </label>
+                <input id="maxq" type="number" name="max" placeholder="Cantidad" required minlength="2" maxlength="30"/>
+                <label for="min">Cantidad Minima: </label>
+                <input id="minq" type="number" name="min" placeholder="Cantidad" required minlength="2" maxlength="30"/>
+                <label for="description">Descripción: </label><br>
+                <textarea id="description" name="description" placeholder="Descripción" minlenght="5" pattern="^[^\s].*$"></textarea>
             </fieldset>
             <input type="submit" value="Registrar" class="submitir" id="submit"/>
             <input type="button" id="Cancelar_registro" value="Cancelar Registro" class="Cancelar">
@@ -152,4 +193,6 @@
     <div id="difuminado"></div>
 </body>
 <script src="../js/fun.js" type="module"></script>
+<script src="../js/urlProducts.js"></script>
+<script src="../js/app.js" type="module"></script>
 </html>

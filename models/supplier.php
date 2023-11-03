@@ -119,5 +119,11 @@ class supplier extends conexion{ //Clase de proveedor que extiende la conexion, 
         $this->a7 => $Vphone);
         return $array;
     }
+
+    public function getSelectors(){
+        $array = array($this->id, $this->a1);
+        $selectors = $this->select($array);
+        return $selectors;
+    }
 }
 ?>

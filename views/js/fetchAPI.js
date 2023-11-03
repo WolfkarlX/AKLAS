@@ -49,6 +49,25 @@ function focusRadio(id) {
     radio.checked ? radio.checked = false : radio.checked = true;
 }
 
+function createSelectors(url, element){
+    // Hacer una petición fetch al servidor
+    fetch(url)
+    .then(response => response.json())
+    .then(data => {
+        // Iterar por la lista de productos
+        data.forEach(registro => {
+            const keys = Object.keys(registro);
+            const option = document.createElement('option');
+    
+            // Elige la primera clave como valor y texto
+            option.value = registro[keys[0]];
+            option.text = registro[keys[1]];
+            /*option.value = registro.SupplierID; // Primera columna
+            option.text = registro.SupplierName;  // Segunda columna
+            */element.appendChild(option);
+        });
+    });
+}
 async function sendForm(url, form) {
     const formData = new FormData(form);
     const response = await fetch(url, {
@@ -58,4 +77,4 @@ async function sendForm(url, form) {
     return await response.json();
 }
 
-export { getTable, sendForm };
+export { getTable, sendForm, createSelectors };

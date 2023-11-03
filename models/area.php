@@ -4,7 +4,7 @@ class area extends conexion{
     protected $id;
     private $name;
     private $description;
-    protected $attribute, $attribute1;
+    protected $attribute, $attribute1, $attribute2, $attribute3, $attribute4;
     
 
 
@@ -13,7 +13,11 @@ class area extends conexion{
         $this->table = "area";
         $this->id = "AreaID";
         $this -> attribute = "NameArea";
-        $this -> attribute1 = "Description";
+        $this -> attribute1 = "RacksQ";
+        $this -> attribute2 = "Rackf";
+        $this -> attribute3 = "Storaget";
+        $this -> attribute4 = "Description";
+        
     }
 
     public function insertarArea($name, $description){
@@ -32,9 +36,15 @@ class area extends conexion{
         return $this->table;
     }
     
-    public function getArray($Vname, $Vdescription){
-        $array = array($this->attribute => $Vname, $this->attribute1 =>$Vdescription);
+    public function getArray($Vname, $Vrq, $Vrf, $Vtype, $Vdescription){
+        $array = array($this->attribute => $Vname, $this->attribute1 =>$Vrq, $this->attribute2 =>$Vrf, $this->attribute3 =>$Vtype ,$this->attribute4 =>$Vdescription);
         return $array;
+    }
+
+    public function getSelectors(){
+        $array = array($this->id, $this->attribute);
+        $selectors = $this->select($array);
+        return $selectors;
     }
 }  
 ?> 

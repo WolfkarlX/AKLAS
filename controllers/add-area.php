@@ -15,10 +15,13 @@ $area = new area();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     //Obtiene los valores
     $name = $_POST["name"];
+    $racksn = $_POST["racksn"];
+    $racksf = $_POST["racksf"];
+    $type = $_POST["type"];
     $description = $_POST["description"];
 
     $tabla = $area->getTable();
-    $consult = $area->getArray($name, $description);
+    $consult = $area->getArray($name, $racksn, $racksf, $type, $description);
 
     //Ejecuta la funcion para agregar
     $result = $area ->insertar($tabla, $consult);
