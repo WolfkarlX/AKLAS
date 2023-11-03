@@ -14,9 +14,7 @@ const form_edit = document.getElementById("edit-form");
 const difuminado = document.getElementById("difuminado");
 const formNormal = document.querySelector("#form-normal"); //div del formulario
 const formeditado = document.querySelector("#form-editado"); //div del formulario editado
-
-var celdas = ""
-
+var celdas = "";
 
 // Agregar evento para ejecutar la función getTable al cargar la página
 document.addEventListener("DOMContentLoaded", () => getTable(urlGetData, tbody));
@@ -110,14 +108,7 @@ tabla.addEventListener('click', function(e) {
     let fila = e.target.parentElement;
 
     // Obtiene todas las celdas (td) de la fila seleccionada
-    celdas = fila.getElementsByTagName('td');
-    
-    // Recorre las celdas para obtener los valores
-    /*for (let i = 0; i < celdas.length; i++) {
-      let valor = celdas[i].textContent;
-      let object = document.getElementById("input" + (i+1));
-      object.value = valor;
-    }*/
+    celdas = fila.getElementsByTagName('td'); 
   }
 });
 

@@ -12,7 +12,6 @@ class category extends conexion {
         $this->id = "CategoryID";
         $this->attribute = "CategoryName";
         $this->attribute1 = "Description";
-        $this->table = "categories";
     }
 
     public function addCategory($Name, $Description){
@@ -36,5 +35,12 @@ class category extends conexion {
         $array = array($this->attribute => $Vname, $this->attribute1 => $Vdescription);
         return $array;
     }
+
+    public function getSelectors(){
+        $array = array($this->id, $this->attribute);
+        $selectors = $this->select($array);
+        return $selectors;
+    }
+
 }
 ?>

@@ -113,6 +113,9 @@
                         <tr>
                             <th>ID</th>
                             <th>Nombre</th>
+                            <th>Racks</th>
+                            <th>Filas Rack</th>
+                            <th>Tipo</th>
                             <th>Descripción</th>
                         </tr>
                     </thead>
@@ -133,6 +136,15 @@
             <fieldset>
                 <label for="name">Nombre: </label>
                 <input id="name" type="text" name="name" placeholder="Nombre" required minlength="2" maxlength="30" pattern="^[^\s].*$"/>
+                <label for="racksn">Cantidad Total De Racks: </label>
+                <input id="racksn" type="number" name="racksn" placeholder="Numero De Racks" required minlength="2" maxlength="30" pattern="^[^\s].*$"/>
+                <label for="racksf">Cantidad Total De Filas Por Cada Rack: </label>
+                <input id="racksf" type="number" name="racksf" placeholder="Numero De Filas Por Rack" required minlength="2" maxlength="30" pattern="^[^\s].*$"/>
+                <label for="tipo">Tipo De Area:</label><br>
+                    <select name="type" id="tipo">
+                        <option value="BODEGA">BODEGA</option>
+                        <option value="STOCK">STOCK</option>
+                    </select><br>
                 <label for="description">Descripción: </label><br>
                 <textarea id="description" name="description" placeholder="Descripción" minlenght="5" pattern="^[^\s].*$"></textarea>
             </fieldset>
@@ -150,8 +162,17 @@
                 <input type="hidden" id="input1" name="Key">
                 <label for="name">Nombre: </label>
                 <input id="input2" type="text" name="name" placeholder="Nombre" required minlength="2" maxlength="30" pattern="^[^\s].*$"/>
+                <label for="racksn">Cantidad Total De Racks: </label>
+                <input id="input3" type="number" name="racksn" placeholder="Numero De Racks" required minlength="2" maxlength="30" pattern="^[^\s].*$"/>
+                <label for="racksf">Cantidad Total De Filas Por Cada Rack: </label>
+                <input id="input4" type="number" name="racksf" placeholder="Numero De Filas Por Rack" required minlength="2" maxlength="30" pattern="^[^\s].*$"/>
+                <label for="tipo">Tipo De Area:</label><br>
+                    <select name="type" id="input5">
+                        <option value="BODEGA">BODEGA</option>
+                        <option value="STOCK">STOCK</option>
+                    </select><br>
                 <label for="description">Descripción: </label><br>
-                <textarea id="input3" name="description" placeholder="Descripción" minlenght="5" pattern="^[^\s].*$"></textarea>
+                <textarea id="input6" name="description" placeholder="Descripción" minlenght="5" pattern="^[^\s].*$"></textarea>
             </fieldset>
             <input type="submit" value="Editar" class="submitir" id="submit"/>
             <input type="button" id="Cancelar_registro" value="Cancelar edicion" class="Cancelar">
