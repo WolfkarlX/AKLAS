@@ -160,7 +160,9 @@ CREATE TABLE `suppliers` (
 --
 
 INSERT INTO `suppliers` (`SupplierID`, `SupplierName`, `ContactName`, `Address`, `City`, `PostalCode`, `Country`, `Phone`) VALUES
-(1, 'CHEETOS', 'tommy', 'Los patos 22', 'Manzanillo', '28400', 'Mexico', '31418322');
+(1, 'SportX', 'José Joshua Rodriguez Ávila', 'Los Patos, calle Itzora #108', 'Manzanillo', '28200', 'México', '3141232927'),
+(2, 'Coca Cola', 'James Quincey', 'Rubén Darí­o 115 Col. Bosque de Chapultepec', 'Ciudad de México', '11580', 'México', '8007044400'),
+(3, 'Pepsico México', 'Felipe Rafael Arvizu De La Luz', 'Ixtapaluca, Edificio B, 3er. Piso.', 'Ciudad de México', '28280', 'México', '5550360000');
 
 -- --------------------------------------------------------
 
@@ -179,7 +181,10 @@ CREATE TABLE `tags` (
 --
 
 INSERT INTO `tags` (`TagID`, `TagName`, `Description`) VALUES
-(1, 'Glamour', '');
+(1, 'Rehidratante', 'Recupera sales y minerales que pierdes al sudar'),
+(2, 'Exceso de azÃºcares', '  '),
+(3, 'Light', 'DietÃ©tica y ligera'),
+(4, 'Energizante', 'ObtÃ©n energÃ­a en seguida');
 
 -- --------------------------------------------------------
 
