@@ -140,9 +140,9 @@
                 <input id="Cerrar_form" type="button" value="X" class="CancelX">
             </div>
             <fieldset>
-                <label for="name">Nombre: </label>
+                <label for="na">Nombre: </label>
                 <input id="na" type="text" name="name" placeholder="Nombre" required minlength="2" maxlength="30"/>
-                <label for="Sproovedor">Proovedor: </label><br>
+                <label for="Sproovedor">Proovedor: </label> <br>
                 <select name="supplier" id="Sproovedor">
                 
                 </select><br>
@@ -150,7 +150,7 @@
                 <select name="category" id="Scate">
 
                 </select><br>
-                <label for="are">Area: </label><br>
+                <label for="Sarea">Area: </label><br>
                 <select name="area" id="Sarea">
 
                 </select><br>
@@ -163,9 +163,9 @@
                 <input id="price" type="text" name="price" placeholder="Precio" required minlength="2" maxlength="30"/>
                 <label for="quantity">Cantidad: </label>
                 <input id="quantity" type="number" name="quantity" placeholder="Cantidad" required minlength="2" maxlength="30"/>
-                <label for="max">Cantidad Máxima: </label>
+                <label for="maxq">Cantidad Máxima: </label>
                 <input id="maxq" type="number" name="max" placeholder="Cantidad" required minlength="2" maxlength="30"/>
-                <label for="min">Cantidad Minima: </label>
+                <label for="minq">Cantidad Minima: </label>
                 <input id="minq" type="number" name="min" placeholder="Cantidad" required minlength="2" maxlength="30"/>
                 <label for="description">Descripción: </label><br>
                 <textarea id="description" name="description" placeholder="Descripción" minlenght="5" pattern="^[^\s].*$"></textarea>
@@ -181,10 +181,36 @@
                 <input id="Cerrar_form" type="button" value="X" class="CancelX">
             </div>
             <fieldset>
-                <label for="name">Nombre: </label>
-                <input id="name" type="text" name="name" placeholder="Nombre" required minlength="2" maxlength="30"/>
-                <label for="description">Descripción: </label><br>
-                <textarea id="description" name="description" placeholder="Descripción" minlenght="5"></textarea>
+                <input type="hidden" id="input1" name="key">
+                <label for="input2">Nombre: </label>
+                <input id="input2" type="text" name="name" placeholder="Nombre" required minlength="2" maxlength="30"/>
+                <label for="selectS">Proovedor: </label> <br>
+                <select name="supplier" id="selectS">
+                
+                </select><br>
+                <label for="selectC">Categoría: </label><br>
+                <select name="category" id="selectC">
+
+                </select><br>
+                <label for="selectA">Area: </label><br>
+                <select name="area" id="selectA">
+
+                </select><br>
+
+                <label for="input6">n# Rack: </label>
+                <input id="input6" type="number" name="rackn" placeholder="Numero de Rack" required minlength="1" maxlength="30"/>
+                <label for="input7"`>Fila Rack: </label>
+                <input id="input7" type="number" name="fila" placeholder="Numero De Fila Del Rack" required minlength="1" maxlength="30"/>
+                <label for="input8">Precio: </label>
+                <input id="input8" type="text" name="price" placeholder="Precio" required minlength="2" maxlength="30"/>
+                <label for="input9">Cantidad: </label>
+                <input id="input9" type="number" name="quantity" placeholder="Cantidad" required minlength="2" maxlength="30"/>
+                <label for="input12">Cantidad Máxima: </label>
+                <input id="input12" type="number" name="max" placeholder="Cantidad maxima" required minlength="2" maxlength="30"/>
+                <label for="input11">Cantidad Minima: </label>
+                <input id="input11" type="number" name="min" placeholder="Cantidad minima" required minlength="2" maxlength="30"/>
+                <label for="input10">Descripción: </label>
+                <textarea id="input10" name="description" placeholder="Descripción" minlenght="5" pattern="^[^\s].*$"></textarea>
             </fieldset>
             <input type="submit" value="Registrar" class="submitir" id="submit"/>
             <input type="button" id="Cancelar_registro" value="Cancelar Registro" class="Cancelar">

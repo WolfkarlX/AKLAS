@@ -60,9 +60,9 @@ class product extends conexion{
 
     public function JOIN(){
         $sql = "select p.ProductID, p.ProductName, s.SupplierName, c.CategoryName, a.NameArea, p.StorageR, p.StorageRF, p.Price, p.Quantity, p.Description, p.MinQuantityLimit, p.MaxQuantityLimit from products p  
-        inner join area a on p.AreaID = a.AreaID
-        inner join  suppliers s on p.SupplierID = s.SupplierID
-        inner join Categories c on p.CategoryID = c.CategoryID ORDER BY p.ProductID;";
+        left join area a on p.AreaID = a.AreaID
+        left join  suppliers s on p.SupplierID = s.SupplierID
+        left join Categories c on p.CategoryID = c.CategoryID ORDER BY p.ProductID;";
         $stmt = $this->prepare($sql);
         $stmt->execute();
         $datos = $stmt->fetchAll(PDO::FETCH_ASSOC);

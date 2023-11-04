@@ -50,6 +50,10 @@ function focusRadio(id) {
 }
 
 function createSelectors(url, element){
+    //elimina options si es que los hay dentro del elemento select
+    while (element.firstChild) {
+        element.removeChild(element.firstChild);
+    }
     // Hacer una petición fetch al servidor
     fetch(url)
     .then(response => response.json())
@@ -69,12 +73,16 @@ function createSelectors(url, element){
     });
 }
 async function sendForm(url, form) {
-    const formData = new FormData(form);
-    const response = await fetch(url, {
-        method: "POST",
-        body: formData
-    });
-    return await response.json();
+    try{
+        const formData = new FormData(form);
+        const response = await fetch(url, {
+            method: "POST",
+            body: formData
+        });
+        return await response.json();
+    }catch(error){
+        alert("No es posible realizar la accion en este momento");
+    }
 }
 
 export { getTable, sendForm, createSelectors };

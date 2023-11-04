@@ -15,9 +15,14 @@ let edit_form = document.querySelector("#edit-form");
 let btn_edit = document.getElementById("btn-edit");
 let difuminado = document.getElementById("difuminado");
 let btn_fondo = document.querySelector("#ConfiguracionBoton");
-const selectorforarea = document.getElementById("Sarea");
-const selectorforcategory = document.getElementById("Scate");
-const selectorforsupplier = document.getElementById("Sproovedor");
+let selectorforarea = document.getElementById("Sarea");
+let selectorforcategory = document.getElementById("Scate");
+let selectorforsupplier = document.getElementById("Sproovedor");
+let Sarea = document.getElementById("selectA");
+let Scategory = document.getElementById("selectC");
+let Ssupplier = document.getElementById("selectS");
+
+
 
 
 if(reloj){
@@ -93,6 +98,11 @@ if(btn_edit){
   btn_edit.addEventListener("click", (event)=>{
     document.getElementById("form-normal").style.display = "none";
     event.preventDefault();
+    if(Sarea && Scategory && Ssupplier){
+      createSelectors(urlgetSelects_supplier, Ssupplier);
+      createSelectors(urlgetSelects_area, Sarea);
+      createSelectors(urlgetSelects_category, Scategory);
+    }
     showForm(edit_form.id, difuminado.id);
   });
 }

@@ -13,7 +13,11 @@ $area = new area();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if(isset($_POST['registro'])){
         $registro = $_POST['registro'];
-        $result = $area->delete($registro);
+        try{
+            $result = $area->delete($registro);
+        }catch(\Throwable $th){
+            $result = false;
+        }
     } else {
         $result = false;
     }

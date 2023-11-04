@@ -8,16 +8,13 @@
 
 <?php
 require_once("../autoload.php");
-use models\supplier;
-$supp = new supplier();
+
+use models\product;
+$produc = new product();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if(isset($_POST['registro'])){
         $registro = $_POST['registro'];
-        try{
-            $result = $supp->delete($registro);
-        }catch(\Throwable $th){
-            $result = false;
-        }
+        $result = $produc->delete($registro);
     } else {
         $result = false;
     }

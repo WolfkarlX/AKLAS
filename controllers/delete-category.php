@@ -13,7 +13,11 @@ $cat = new category();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if(isset($_POST['registro'])){
         $registro = $_POST['registro'];
-        $result = $cat->delete($registro);
+        try{
+            $result = $cat->delete($registro);
+        }catch(\Throwable $th){
+            $result = false;
+        }
     } else {
         $result = false;
     }

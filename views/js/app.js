@@ -1,5 +1,5 @@
 // Importar funciones de API
-import { getTable, sendForm } from "./fetchAPI.js";
+import { getTable, sendForm, createSelectors } from "./fetchAPI.js";
 
 // Elementos DOM
 const tbody = document.getElementById("vista-cuerpo");
@@ -14,6 +14,13 @@ const form_edit = document.getElementById("edit-form");
 const difuminado = document.getElementById("difuminado");
 const formNormal = document.querySelector("#form-normal"); //div del formulario
 const formeditado = document.querySelector("#form-editado"); //div del formulario editado
+let selectorforarea = document.getElementById("Sarea");
+let selectorforcategory = document.getElementById("Scate");
+let selectorforsupplier = document.getElementById("Sproovedor");
+let Sarea = document.getElementById("input5");
+let Scategory = document.getElementById("input4");
+let Ssupplier = document.getElementById("input3");
+
 var celdas = "";
 
 // Agregar evento para ejecutar la función getTable al cargar la página
@@ -103,12 +110,12 @@ form_edit.addEventListener("submit", function(event){
 // Agrega un evento 'click' a la tabla
 tabla.addEventListener('click', function(e) {
   // Asegúrate de que se haya hecho clic en una fila (tr)
-  if (e.target.tagName === 'TD') {
+    if (e.target.tagName === 'TD') {
     // Obtén la fila (tr) que contiene la celda (td) en la que se hizo clic
-    let fila = e.target.parentElement;
+        let fila = e.target.parentElement;
 
-    // Obtiene todas las celdas (td) de la fila seleccionada
-    celdas = fila.getElementsByTagName('td'); 
+        // Obtiene todas las celdas (td) de la fila seleccionada
+        celdas = fila.getElementsByTagName('td');
   }
 });
 
@@ -116,8 +123,11 @@ btnEdit.addEventListener("click", ()=>{
     // Recorre las celdas para obtener los valores
     for (let i = 0; i < celdas.length; i++) {
         let valor = celdas[i].textContent;
+        //se obtienen los objetos y se rellenan con sus respectivos campos
         let object = document.getElementById("input" + (i+1));
-        object.value = valor;
+        if(object){
+            object.value = valor;
+        }
     }
 })
 
