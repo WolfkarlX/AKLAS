@@ -843,6 +843,16 @@
   color: #12171e;
 }
 
+
+/*Ayuda*/
+.abajo .logo-help {
+  padding: 10px 5px;
+  margin: 20px;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+
 /* Estilos de la tabla */
 #vista {
   width: auto;
@@ -1009,8 +1019,12 @@
 }
 
 /* -------------- DARKMODE -------------- */
-body.darkmode{
+.main-content.darkmode{
   background-color: var(--dark-color);
+}
+
+.darkmode .logo-help{
+  color: white;
 }
 
 .darkmode .btn{

@@ -18,6 +18,8 @@
     <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 <body>
     <div class="sidebar">
@@ -95,6 +97,18 @@
                 <button id="ConfiguracionBoton"> <i class='bx bx-cog' ></i></button>
             </div>
         </div>
+        <div class="configuracion_tab" style="display: none" id="config_tab">
+        <span>Configuración de la página</span>    
+                <div class="btn">
+                    <div class="btn__indicator">
+                        <div class="btn__icon-container">
+                            <i class="btn__icon fa-solid" id="btm_fondoscolor"></i>
+                        </div>
+                    </div>
+                   
+                </div>
+                <span id="opcion"></span>
+        </div>
         <div class="abajo" id="abajo">
             <!--<div class="opcionesmain">
                 <input class="buscador" type="text" id="myInput" placeholder="Buscar...">
@@ -131,4 +145,5 @@
 </body>
     <script src="../js/fun.js" type="module"></script>
     <script src="../js/app.js" type="module"></script>
+    <script src="../js/moonSun.js" type="module"></script>
 </html>
