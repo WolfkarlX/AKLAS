@@ -13,6 +13,7 @@ function Claro() {
 const body = document.querySelector('.main-content');
 const btn = document.querySelector('.btn');
 const icon = document.querySelector('.btn__icon');
+const opcion = document.getElementById("opcion");
 
 //to save the dark mode use the object "local storage".
 
@@ -29,11 +30,14 @@ function load(){
   if(!darkmode){
     store(false);
     icon.classList.add('fa-sun');
+    opcion.innerHTML = "Modo Oscuro";
   } else if( darkmode == 'true'){ //if the dark mode is activated
     body.classList.add('darkmode');
     icon.classList.add('fa-moon');
+    opcion.innerHTML = "Modo Claro";
   } else if(darkmode == 'false'){ //if the dark mode exists but is disabled
     icon.classList.add('fa-sun');
+    opcion.innerHTML = "Modo Oscuro";
   }
 }
 
@@ -51,9 +55,11 @@ btn.addEventListener('click', () => {
   if(body.classList.contains('darkmode')){
     icon.classList.remove('fa-sun');
     icon.classList.add('fa-moon');
+    opcion.innerHTML = "Modo Claro";
   }else{
     icon.classList.remove('fa-moon');
     icon.classList.add('fa-sun');
+    opcion.innerHTML = "Modo Oscuro";
   }
 
   setTimeout( () => {

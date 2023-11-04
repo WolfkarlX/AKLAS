@@ -133,7 +133,7 @@ try {
                     </div>
                    
                 </div>
-                <span>Modo Claro</span>
+                <span id="opcion"></span>
         </div>
         <div class="abajo">
             <div class="opciones">

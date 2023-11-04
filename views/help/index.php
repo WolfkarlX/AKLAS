@@ -107,7 +107,7 @@
                     </div>
                    
                 </div>
-                <span>Modo Claro</span>
+                <span id="opcion"></span>
         </div>
         <div class="abajo" id="abajo">
             <!--<div class="opcionesmain">
