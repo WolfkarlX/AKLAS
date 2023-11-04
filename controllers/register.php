@@ -1,19 +1,36 @@
 <?php
-    session_start();
-    if(empty($_SESSION['user_id']))
-    {
-        header("Location:../views/");
-
-    }
-    if ($_SESSION['user_id'] != 12345678) {
-        header('Location: ../');
-    }
-?>
-
-<?php
-
+session_start();
 require_once('../models/conexion.php');
 use models\conexion;
+$conn = new conexion();
+
+if(empty($_SESSION['user_id']))
+{
+    header("Location:../views/");
+}
+
+try {
+    // Preparamos la consulta para obtener el usuario por su IDKey
+    $consulta = $conn->prepare("SELECT IdKey, Password, rol FROM employees WHERE IdKey = :IdKey");
+    $consulta->bindParam(':IdKey', $_SESSION['user_id']);
+    $consulta->execute();
+    $user = $consulta->fetch(PDO::FETCH_ASSOC);
+
+    if ($user && $user['rol'] != 'root')
+    {
+        // Redireccionamos al usuario a la pagina principal en caso de que no sea root
+        header('Location: ../views/');
+        exit();
+    }
+} catch (PDOException $e) {
+    // En caso de error, muestra un mensaje de error
+    echo "Error de inicio de sesión: " . $e->getMessage();
+}
+?>
+
+
+<?php
+require_once('../models/conexion.php');
 $conn = new conexion();
 
 // Verificamos si se envió el formulario

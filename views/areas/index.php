@@ -1,11 +1,35 @@
 <?php
-    session_start();
-    if(empty($_SESSION['user_id']))
-    {
-        header("Location:../../");
+session_start();
+require_once('../../models/conexion.php');
+use models\conexion;
+$conn = new conexion();
 
+if(empty($_SESSION['user_id']))
+{
+    header("Location:../../");
+}
+
+try {
+    // Preparamos la consulta para obtener el usuario por su IDKey
+    $consulta = $conn->prepare("SELECT IdKey, Password, rol FROM employees WHERE IdKey = :IdKey");
+    $consulta->bindParam(':IdKey', $_SESSION['user_id']);
+    $consulta->execute();
+    $user = $consulta->fetch(PDO::FETCH_ASSOC);
+
+    if ($user) 
+    {
+        if ($user['rol'] != 'root' && $user['rol'] != 'jefe') 
+        {
+          // Redireccionamos al usuario a la pagina principal en caso de que no sea root
+            header('Location: ../');
+            exit();
+        }
     }
-    
+   
+} catch (PDOException $e) {
+    // En caso de error, muestra un mensaje de error
+    echo "Error de inicio de sesión: " . $e->getMessage();
+}
 ?>
 
 <!DOCTYPE html>
