@@ -40,9 +40,8 @@
                 <button type="submit" class="button" value="Iniciar sesión">Iniciar Sesión</button>
                 <!--<button type="button" class="Olvidexd" value="Olvide mi pass">Olvidé Mi Contraseña</button>-->
             </form>
-            <h1></h1>
             <form action=" controllers/forgotpass.php">
-              <button type="submit" class="button" value="Olvide mi pass">Olvidé Mi Contraseña</button>
+              <button type="submit" class="buttonpass" value="Olvide mi pass">Olvidé Mi Contraseña</button>
             </form> 
         </div>
     </div>
