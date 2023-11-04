@@ -161,5 +161,5 @@
     </div>
 </body>
 <script src="./js/fun.js" type="module"></script>
-<script src="js/moonSun.js"></script>
+<script src="js/moonSun.js" type="module"></script>
 </html>

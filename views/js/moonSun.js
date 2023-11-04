@@ -10,7 +10,7 @@ function Claro() {
     element.className = "claro";
 } */
 
-const body = document.querySelector('body');
+const body = document.querySelector('.main-content');
 const btn = document.querySelector('.btn');
 const icon = document.querySelector('.btn__icon');
 
@@ -21,7 +21,7 @@ function store(value){
   localStorage.setItem('darkmode', value);
 }
 
-//function that indicates if the "darkmode" property exists. It loads the page as we had left it.
+//funcion que se fija si existe ña clase darkmode en la pagina 
 function load(){
   const darkmode = localStorage.getItem('darkmode');
 
