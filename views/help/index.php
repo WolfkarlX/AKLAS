@@ -80,7 +80,7 @@
                 <span class="tooltip">Ayuda</span>
             </li>
             <li>
-                <a href="../../controllers/logout.php">
+                <a href="../../controllers/logout.php" id="logout-link">
                     <i class='bx bx-log-out'></i>
                     <span class="nav-item">Cerrar Sesión</span>
                 </a>
@@ -144,6 +144,5 @@
     </div>
 </body>
     <script src="../js/fun.js" type="module"></script>
-    <script src="../js/app.js" type="module"></script>
     <script src="../js/moonSun.js" type="module"></script>
 </html>

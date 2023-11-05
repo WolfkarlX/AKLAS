@@ -106,7 +106,7 @@ try {
                 <span class="tooltip">Ayuda</span>
             </li>
             <li>
-                <a href="../../controllers/logout.php">
+                <a href="../../controllers/logout.php" id="logout-link">
                     <i class='bx bx-log-out'></i>
                     <span class="nav-item">Cerrar Sesión</span>
                 </a>

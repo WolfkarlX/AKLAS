@@ -82,7 +82,7 @@
                 <span class="tooltip">Ayuda</span>
             </li>
             <li>
-                <a href="../controllers/logout.php">
+                <a href="../controllers/logout.php" id="logout-link">
                     <i class='bx bx-log-out'></i>
                     <span class="nav-item">Cerrar Sesión</span>
                 </a>
@@ -112,7 +112,7 @@
                     </div>
                    
                 </div>
-                <span>Modo Claro</span>
+                <span id="opcion"></span>
         </div>
         <div class="abajo" id="abajo">
             <div class="opcionesmain">

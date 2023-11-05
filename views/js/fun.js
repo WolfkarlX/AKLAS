@@ -21,6 +21,7 @@ let selectorforsupplier = document.getElementById("Sproovedor");
 let Sarea = document.getElementById("selectA");
 let Scategory = document.getElementById("selectC");
 let Ssupplier = document.getElementById("selectS");
+let logout_link = document.getElementById("logout-link");
 
 
 
@@ -147,3 +148,9 @@ input.onkeyup = function search() {
 }
 }
 
+//Función para preguntar el cierre de sesión
+logout_link.addEventListener("click", function(event){
+  let res = confirm("¿Seguro que quiere cerrar sesión?");
+  if(!res)
+    event.preventDefault();
+});
