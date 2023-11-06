@@ -1,5 +1,8 @@
 <?php
 namespace models;
+
+use PDO;
+
 class area extends conexion{
     protected $id;
     private $name;
@@ -45,6 +48,24 @@ class area extends conexion{
         $array = array($this->id, $this->attribute);
         $selectors = $this->select($array);
         return $selectors;
+    }
+
+    public function getNracks($id){
+        $sql = "SELECT {$this->attribute1} FROM {$this->table} WHERE {$this->id} = ?";
+        $stmt = $this->prepare($sql);
+        $stmt->bindParam(1, $id);   
+        $stmt->execute();
+        $datos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $datos;
+    }
+
+    public function getNfiles($id){
+        $sql = "SELECT {$this->attribute2} FROM {$this->table} WHERE {$this->id} = ?";
+        $stmt = $this->prepare($sql);
+        $stmt->bindParam(1, $id);   
+        $stmt->execute();
+        $datos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $datos;
     }
 }  
 ?> 

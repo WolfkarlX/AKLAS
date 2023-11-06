@@ -160,26 +160,26 @@
                 </div>
                 <div class="campo">
                     <label for="Sproovedor">Proovedor: </label><br>
-                    <select name="supplier" id="Sproovedor">
+                    <select name="supplier" id="Sproovedor" required>
                     </select><br>
                 </div>
                 <div class="campo">
                     <label for="Scate">Categoría: </label><br>
-                    <select name="category" id="Scate">
+                    <select name="category" id="Scate" required>
                     </select><br>
                 </div>
                 <div class="campo">
                     <label for="area">Area: </label><br>
-                    <select name="area" id="Sarea">
+                    <select name="area" id="Sarea" required>
                     </select><br>
                 </div>
                 <div class="campo">
                     <label for="RN">n# Rack: </label>
-                    <input id="RN" type="number" name="rackn" placeholder="Numero de Rack" required minlength="1" maxlength="30"/>
+                    <input id="RN" type="number" name="rackn" disabled min="1" placeholder="Numero de Rack" required />
                 </div>
                 <div class="campo">
                     <label for="file">Fila Rack: </label>
-                    <input id="file" type="number" name="fila" placeholder="Numero De Fila Del Rack" required minlength="1" maxlength="30"/>
+                    <input id="file" type="number" name="fila" min="1" disabled placeholder="Numero De Fila Del Rack" required/>
                 </div>
                 <div class="campo">
                     <label for="price">Precio: </label>
@@ -221,17 +221,17 @@
                 </div>
                 <div class="campo">
                     <label for="selectS">Proovedor: </label><br>
-                    <select name="supplier" id="selectS">
+                    <select name="supplier" id="selectS" required>
                     </select><br>
                 </div>
                 <div class="campo">
                     <label for="selectC">Categoría: </label><br>
-                    <select name="category" id="selectC">
+                    <select name="category" id="selectC" required>
                     </select><br>
                 </div>
                 <div class="campo">
                     <label for="selectA">Area: </label><br>
-                    <select name="area" id="selectA">
+                    <select name="area" id="selectA" required>
                     </select><br>
                 </div>
                 <div class="campo">
@@ -240,7 +240,7 @@
                 </div>
                 <div class="campo">
                     <label for="input7">Fila Rack: </label>
-                    <input id="input7" type="number" name="fila" placeholder="Numero De Fila Del Rack" required minlength="1" maxlength="30"/>
+                    <input id="input7" type="number" name="fila" placeholder="Numero De Fila Del Rack" required minlength="1" maxlength="10"/>
                 </div>
                 <div class="campo">
                     <label for="input8">Precio: </label>
@@ -265,6 +265,9 @@
             </div>
             <input type="submit" value="Registrar" class="submitir" id="submit"/>
             <input type="button" id="Cancelar_registro" value="Cancelar Registro" class="Cancelar">
+        </form>
+        <form id="getnrackA" hidden>
+            <input type="hidden" id="ar" name="value">
         </form>
     </div>
     <div id="difuminado"></div>

@@ -72,6 +72,27 @@ function createSelectors(url, element){
         });
     });
 }
+
+
+async function LimitInputs(form, element, url) {
+    const formData = new FormData(form);
+    const response = await fetch(url, {
+        method: "POST",
+        body: formData
+    });
+    if (element && element.tagName.toLowerCase() === "input" && element.type.toLowerCase() === "number") {
+        if (element.getAttribute("name") === "rackn" || element.getAttribute("name") === "fila") {
+            const data = await response.json();
+            for (const dato of data) {
+                for (const campo of Object.values(dato)) {
+                    element.setAttribute("max", `${campo}`);
+                }
+            }
+        }
+    }
+}
+
+
 async function sendForm(url, form) {
     try{
         const formData = new FormData(form);
@@ -85,4 +106,4 @@ async function sendForm(url, form) {
     }
 }
 
-export { getTable, sendForm, createSelectors };
+export { getTable, sendForm, createSelectors, LimitInputs};

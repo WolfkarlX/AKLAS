@@ -1,4 +1,4 @@
-import { createSelectors } from "./fetchAPI.js";
+import { createSelectors, LimitInputs, sendForm } from "./fetchAPI.js";
 let btn_sidebar = document.querySelector('#btn_menu'); //Guarda una variable del boton del sidebar
 let sidebar = document.querySelector('.sidebar'); //Guarda una variable del div sidebar completo
 let myform = document.querySelector("#myForm");//Formulario
@@ -22,7 +22,12 @@ let Sarea = document.getElementById("selectA");
 let Scategory = document.getElementById("selectC");
 let Ssupplier = document.getElementById("selectS");
 let logout_link = document.getElementById("logout-link");
-
+let formforarea = document.getElementById("getnrackA");
+let inputForarea = document.getElementById("ar");
+let nracks = document.getElementById("RN");
+let nfilas = document.getElementById("file");
+let nracksE = document.getElementById("input6");
+let nfilesE = document.getElementById("input7");
 
 
 
@@ -119,6 +124,21 @@ if(btn_fondo){
     }
     
   })
+}
+
+if(selectorforarea){
+    selectorforarea.addEventListener("click", function (event){
+      if (selectorforarea.value !== "") {
+        nracks.removeAttribute("disabled");
+        nfilas.removeAttribute("disabled");
+
+        let value = selectorforarea.value;
+        inputForarea.value = value;
+        LimitInputs(formforarea,nracks, urlGetnracks);
+        LimitInputs(formforarea, nfilas, urlGetnfiles);
+      }
+    });
+
 }
 
 //Funcion para reloj
