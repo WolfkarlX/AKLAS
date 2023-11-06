@@ -1,5 +1,5 @@
 // Importar funciones de API
-import { getTable, sendForm, createSelectors } from "./fetchAPI.js";
+import { getTable, sendForm, createSelectors, LimitInputs } from "./fetchAPI.js";
 
 // Elementos DOM
 const tbody = document.getElementById("vista-cuerpo");

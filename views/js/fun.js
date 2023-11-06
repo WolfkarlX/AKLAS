@@ -141,6 +141,20 @@ if(selectorforarea){
 
 }
 
+if(Sarea){
+  Sarea.addEventListener("click", function (event){
+    if (Sarea.value !== "") {
+      nracksE.removeAttribute("disabled");
+      nfilesE.removeAttribute("disabled");
+
+      let value = Sarea.value;
+      inputForarea.value = value;
+      LimitInputs(formforarea,nracksE, urlGetnracks);
+      LimitInputs(formforarea, nfilesE, urlGetnfiles);
+    }
+  });
+}
+
 //Funcion para reloj
 function updateTime() {
 
