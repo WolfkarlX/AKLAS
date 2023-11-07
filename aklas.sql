@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-11-2023 a las 07:58:37
+-- Tiempo de generación: 07-11-2023 a las 16:59:31
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -41,7 +41,7 @@ CREATE TABLE `area` (
 --
 
 INSERT INTO `area` (`AreaID`, `NameArea`, `RacksQ`, `Rackf`, `Storaget`, `Description`) VALUES
-(1, 'Vinos y licores', 40, 10, 'BODEGA', 'Bodega que almacena todo tipo de vinos y licores');
+(1, 'Vinos y licores', 9, 8, 'BODEGA', 'Bodega que almacena todo tipo de vinos y licores');
 
 -- --------------------------------------------------------
 
@@ -60,7 +60,13 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`CategoryID`, `CategoryName`, `Description`) VALUES
-(1, 'Limpieza', '');
+(1, 'BEBIDAS CARBONATADAS', 'Coca-Cola es la bebida mÃ¡s vendida en la historia desde 1886. Es la marca mÃ¡s famosa del mundo. Bien frÃ­a, hace disfrutar cada instante de la vida ya que aÃ±ade magia a cada momento.'),
+(2, 'AGUA GASIFICADA', 'Ciel Mineralizada es una marca de agua mineralizada y carbonatada que entrÃ³ al mercado mexicano en el 2001. Es una opciÃ³n baja en sodio que puede contribuir a la hidrataciÃ³n y que tambiÃ©n puede ser disfrutada como base de otras bebidas como naranjadas y limonadas.'),
+(3, 'AGUA DE SABORES', 'El nuevo integrante de la familia Ciel, exprime todo el sabor de las frutas y las hojas para ofrecerte cuatro sabores que te invitan a descubrir mÃ¡s.'),
+(4, 'BEBIDA A BASE DE FRUTAS', 'Delaware Punch es un refresco sabor a frutas. Su fÃ³rmula utiliza una mezcla de sabores de frutas, siendo uva la mÃ¡s destacada.'),
+(5, 'BEBIDAS DEPORTIVAS', 'Innovadora bebida para deportistas que te da todos los beneficios de la tecnologÃ­a ION4 con gran sabor. La tecnologÃ­a ION4 repone 4 de los minerales que se pierden al sudar: Sodio(NA), Potasio(K), Calcio(Ca) y Magnesio(Mg).'),
+(6, 'AGUA PURIFICADA', 'Tu cerebro se deshidrata incluso antes de que te des cuenta. Mantente hidratado. Ciel conecta mente y cuerpo.'),
+(7, 'CATEGORÃA DE PRUEBA', 'Esta categorÃ­a se usa para ver si el CRUD estÃ¡ bien o si jala mal, en cualquiera de los casos es para probar cÃ³mo vamos con esto, asÃ­ que se pone un texto largo para ver cÃ³mo se acomoda en la tabla y para ver que permita ingresar los caracteres que se quieran o requieran por el usuario, veamos cÃ³mo es que se acomoda y cÃ³mo es que se imprime en general el texto en el CRUD de CATEGORÃAS. ');
 
 -- --------------------------------------------------------
 
@@ -73,20 +79,23 @@ CREATE TABLE `employees` (
   `LastName` varchar(30) DEFAULT NULL,
   `FirstName` varchar(30) DEFAULT NULL,
   `BirthDate` datetime DEFAULT NULL,
-  `rol` int(11) NOT NULL,
   `Description` varchar(1024) DEFAULT NULL,
   `IdKey` int(8) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `Password` varchar(60) NOT NULL
+  `Password` varchar(60) NOT NULL,
+  `rol` varchar(50) NOT NULL,
+  `code` mediumint(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `employees`
 --
 
-INSERT INTO `employees` (`EmployeID`, `LastName`, `FirstName`, `BirthDate`, `rol`, `Description`, `IdKey`, `email`, `Password`) VALUES
-(1, 'root', 'root', NULL, 0, 'root', 12345678, 'aklasventas@gmail.com', '$2y$10$Pwtg/t9M6Q68clotNE6u3OF4VDylwAib..OlULwXDmV0tQQxXbk9C'),
-(2, 'Ponce', 'alan Gabriel', NULL, 0, 'Es God', 23090001, 'avargas39@ucol.mx ', '$2y$10$zmj/qWTzRvut4Y1Iv/LGueZGkAVm3WVrz5Jnzxr3gW.CtpDEWNrEi');
+INSERT INTO `employees` (`EmployeID`, `LastName`, `FirstName`, `BirthDate`, `Description`, `IdKey`, `email`, `Password`, `rol`, `code`) VALUES
+(1, 'root', 'root', NULL, 'root', 12345678, 'aklasventas@gmail.com', '$2y$10$Pwtg/t9M6Q68clotNE6u3OF4VDylwAib..OlULwXDmV0tQQxXbk9C', 'root', NULL),
+(2, 'Ponce', 'alan Gabriel', NULL, 'Es God', 23090001, 'avargas39@ucol.mx ', '$2y$10$zmj/qWTzRvut4Y1Iv/LGueZGkAVm3WVrz5Jnzxr3gW.CtpDEWNrEi', 'jefe', NULL),
+(3, 'San Millan Ramos', 'Alan Adolfo', NULL, 'Jefe de area', 23090002, 'asanmillan@ucol.mx', '$2y$10$GmlSpkTC5i9mQjAh2PLPoeRCv.7y0yGWuXeG1LbwxYUz.wFhwPIGa', 'jefe', NULL),
+(4, 'Ramírez Márquez', 'karla Karina', NULL, 'Ing. de software', 23101327, 'kramirez32@ucol.mx', '$2y$10$ZcV48MUkQRHkUwhQ8zxpAur7JVEFV5nWOqd6T8y.AxG0ZgUzVH0OG', 'jefe', NULL);
 
 -- --------------------------------------------------------
 
@@ -114,7 +123,7 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`ProductID`, `ProductName`, `SupplierID`, `CategoryID`, `AreaID`, `StorageR`, `StorageRF`, `Price`, `Quantity`, `Description`, `MaxQuantityLimit`, `MinQuantityLimit`) VALUES
-(1, 'Cheto limpiador que emborracha', 1, 1, 1, 3, 2, 22, 30, 'Producto de prueba', 40, 10);
+(1, 'Cheto limpiador que emborracha', 1, 1, 1, 1, 3, 11, 30, 'Producto de prueba', 40, 10);
 
 -- --------------------------------------------------------
 
@@ -150,7 +159,9 @@ CREATE TABLE `suppliers` (
 --
 
 INSERT INTO `suppliers` (`SupplierID`, `SupplierName`, `ContactName`, `Address`, `City`, `PostalCode`, `Country`, `Phone`) VALUES
-(1, 'CHEETOS', 'tommy', 'Los patos 22', 'Manzanillo', '28400', 'Mexico', '31418322');
+(1, 'SportX', 'José Joshua Rodriguez Ávila', 'Los Patos, calle Itzora #108', 'Manzanillo', '28200', 'México', '3141232927'),
+(2, 'Coca Cola', 'James Quincey', 'Rubén Darí­o 115 Col. Bosque de Chapultepec', 'Ciudad de México', '11580', 'México', '8007044400'),
+(3, 'Pepsico México', 'Felipe Rafael Arvizu De La Luz', 'Ixtapaluca, Edificio B, 3er. Piso.', 'Ciudad de México', '28280', 'México', '5550360000');
 
 -- --------------------------------------------------------
 
@@ -169,7 +180,9 @@ CREATE TABLE `tags` (
 --
 
 INSERT INTO `tags` (`TagID`, `TagName`, `Description`) VALUES
-(1, 'Glamour', '');
+(1, 'Rehidratante', 'Recupera sales y minerales que pierdes al sudar'),
+(2, 'Exceso de azÃºcares', '  '),
+(3, 'Light', 'DietÃ©tica y ligera');
 
 -- --------------------------------------------------------
 
@@ -272,25 +285,25 @@ ALTER TABLE `transactiondetails`
 -- AUTO_INCREMENT de la tabla `area`
 --
 ALTER TABLE `area`
-  MODIFY `AreaID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `AreaID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `CategoryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `CategoryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `employees`
 --
 ALTER TABLE `employees`
-  MODIFY `EmployeID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `EmployeID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `ProductID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ProductID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT de la tabla `products_tags`
@@ -302,13 +315,13 @@ ALTER TABLE `products_tags`
 -- AUTO_INCREMENT de la tabla `suppliers`
 --
 ALTER TABLE `suppliers`
-  MODIFY `SupplierID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `SupplierID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `tags`
 --
 ALTER TABLE `tags`
-  MODIFY `TagID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `TagID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `transaction`
@@ -330,9 +343,9 @@ ALTER TABLE `transactiondetails`
 -- Filtros para la tabla `products`
 --
 ALTER TABLE `products`
-  ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`CategoryID`) REFERENCES `categories` (`CategoryID`),
-  ADD CONSTRAINT `products_ibfk_2` FOREIGN KEY (`SupplierID`) REFERENCES `suppliers` (`SupplierID`),
-  ADD CONSTRAINT `products_ibfk_3` FOREIGN KEY (`AreaID`) REFERENCES `area` (`AreaID`) ON DELETE SET NULL ON UPDATE CASCADE;
+  ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`CategoryID`) REFERENCES `categories` (`CategoryID`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT `products_ibfk_2` FOREIGN KEY (`SupplierID`) REFERENCES `suppliers` (`SupplierID`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT `products_ibfk_3` FOREIGN KEY (`AreaID`) REFERENCES `area` (`AreaID`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `products_tags`
