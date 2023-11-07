@@ -968,6 +968,21 @@
   font-weight: bold;
   
 }
+.user_tab {
+  background-color: rgb(50, 49, 49);
+  position: absolute;
+  display: block;
+  width: 15rem;
+  height: 12rem;
+  right: 5.2rem;
+  top: 7rem;
+  padding: 10px;
+  margin: 20px;
+  justify-content: center;
+  z-index: 2;
+  color: white;
+  font-weight: bold;
+}
 
 /* -------------- BUTTON -------------- */
 .btn{
@@ -1144,6 +1159,9 @@
     transform: translateX(-35%);
     display: flex;
   }
+  .arriba .arribaopciones {
+    margin-left: 75%;
+  }
 
 }
 @media only screen and (max-width: 750px) { 
@@ -1182,6 +1200,24 @@
     margin-right: -10.2%;
   
   }
+  .arriba .arribaopciones {
+    margin-left: 70%;
+  }
+  .opciones #btn-actualizar {
+    width: 10%;
+  }
+  .opciones #btn-edit {
+    width: 10%;
+  }
+  .opciones #btn-delete {
+    width: 10%;
+  }
+  .opciones .BotonRegistro {
+    width: 15%;
+  }
+  .opciones .tabla-buscador {
+    width: 15%;
+  }
 }
 @media only screen and (max-width: 600px) { 
   .formulario .formu {
@@ -1207,6 +1243,9 @@
     position: absolute;
     transform: translateX(0%);
   }
+  .arriba .arribaopciones {
+    margin-left: 60%;
+  }
   .abajo .gridcontainer {
     grid-template-columns: repeat(2,1fr);
   }
@@ -1214,12 +1253,23 @@
     overflow-y: auto;
   }
   .opciones{
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(6,1fr);
     width: 100%;
   }
   .opciones #btn-actualizar {
-    width: 50%;
-    
+    width: 10%;
+  }
+  .opciones #btn-edit {
+    width: 10%;
+  }
+  .opciones #btn-delete {
+    width: 10%;
+  }
+  .opciones .BotonRegistro {
+    width: 10%;
+  }
+  .opciones .tabla-buscador {
+    width: 25%;
   }
   .arriba h1 {
     font-size: 30px;

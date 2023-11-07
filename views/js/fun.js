@@ -28,7 +28,7 @@ let nracks = document.getElementById("RN");
 let nfilas = document.getElementById("file");
 let nracksE = document.getElementById("input6");
 let nfilesE = document.getElementById("input7");
-
+let btn_user = document.getElementById("UsuarioBoton");
 
 
 if(reloj){
@@ -134,14 +134,29 @@ if(btn_edit){
 if(btn_fondo){
   btn_fondo.addEventListener("click", (event)=>{
     var cuadro = document.getElementById("config_tab");
+    var cuadrouser = document.getElementById("user_tab");
     if(cuadro.style.display === "none") {
       cuadro.style.display = "block";
+      cuadrouser.style.display = "none";
     }
     else {
       cuadro.style.display = "none"
     }
     
   })
+}
+if(btn_user){
+  btn_user.addEventListener("click", (evemt)=>{
+    var cuadrouser = document.getElementById("user_tab");
+    var cuadro = document.getElementById("config_tab");
+    if(cuadrouser.style.display === "none") {
+      cuadrouser.style.display = "block";
+      cuadro.style.display = "none";
+    }
+    else {
+      cuadrouser.style.display = "none"
+    }
+  } )
 }
 
 
