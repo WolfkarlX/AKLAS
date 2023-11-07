@@ -60,14 +60,13 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`CategoryID`, `CategoryName`, `Description`) VALUES
-(1, 'BEBIDAS CARBONATADAS', 'Coca-Cola es la bebida mÃ¡s vendida en la historia desde 1886. Es la marca mÃ¡s famosa del mundo. Bien frÃ­a, hace disfrutar cada instante de la vida ya que aÃ±ade magia a cada momento.'),
-(2, 'AGUA GASIFICADA', 'Ciel Mineralizada es una marca de agua mineralizada y carbonatada que entrÃ³ al mercado mexicano en el 2001. Es una opciÃ³n baja en sodio que puede contribuir a la hidrataciÃ³n y que tambiÃ©n puede ser disfrutada como base de otras bebidas como naranjadas y limonadas.'),
-(3, 'AGUA DE SABORES', 'El nuevo integrante de la familia Ciel, exprime todo el sabor de las frutas y las hojas para ofrecerte cuatro sabores que te invitan a descubrir mÃ¡s.'),
-(4, 'BEBIDA A BASE DE FRUTAS', 'Delaware Punch es un refresco sabor a frutas. Su fÃ³rmula utiliza una mezcla de sabores de frutas, siendo uva la mÃ¡s destacada.'),
-(5, 'BEBIDAS DEPORTIVAS', 'Innovadora bebida para deportistas que te da todos los beneficios de la tecnologÃ­a ION4 con gran sabor. La tecnologÃ­a ION4 repone 4 de los minerales que se pierden al sudar: Sodio(NA), Potasio(K), Calcio(Ca) y Magnesio(Mg).'),
+(1, 'BEBIDAS CARBONATADAS', 'Coca-Cola es la bebida más vendida en la historia desde 1886. Es la marca más famosa del mundo. Bien fría, hace disfrutar cada instante de la vida ya que añade magia a cada momento.'),
+(2, 'AGUA GASIFICADA', 'Ciel Mineralizada es una marca de agua mineralizada y carbonatada que entró al mercado mexicano en el 2001. Es una opción baja en sodio que puede contribuir a la hidratación y que también puede ser disfrutada como base de otras bebidas como naranjadas y limonadas.'),
+(3, 'AGUA DE SABORES', 'El nuevo integrante de la familia Ciel, exprime todo el sabor de las frutas y las hojas para ofrecerte cuatro sabores que te invitan a descubrir más.'),
+(4, 'BEBIDA A BASE DE FRUTAS', 'Delaware Punch es un refresco sabor a frutas. Su fórmula utiliza una mezcla de sabores de frutas, siendo uva la más destacada.'),
+(5, 'BEBIDAS DEPORTIVAS', 'Innovadora bebida para deportistas que te da todos los beneficios de la tecnología ION4 con gran sabor. La tecnología ION4 repone 4 de los minerales que se pierden al sudar: Sodio(NA), Potasio(K), Calcio(Ca) y Magnesio(Mg).'),
 (6, 'AGUA PURIFICADA', 'Tu cerebro se deshidrata incluso antes de que te des cuenta. Mantente hidratado. Ciel conecta mente y cuerpo.'),
-(7, 'CATEGORÃA DE PRUEBA', 'Esta categorÃ­a se usa para ver si el CRUD estÃ¡ bien o si jala mal, en cualquiera de los casos es para probar cÃ³mo vamos con esto, asÃ­ que se pone un texto largo para ver cÃ³mo se acomoda en la tabla y para ver que permita ingresar los caracteres que se quieran o requieran por el usuario, veamos cÃ³mo es que se acomoda y cÃ³mo es que se imprime en general el texto en el CRUD de CATEGORÃAS. '),
-(8, 'fff', '');
+(7, 'CATEGORÍA DE PRUEBA', 'Esta categoría se usa para ver si el CRUD está bien o si jala mal, en cualquiera de los casos es para probar cómo vamos con esto, así que se pone un texto largo para ver cómo se acomoda en la tabla y para ver que permita ingresar los carácteres que se quieran o requieran por el usuario, veamos cómo es que se acomoda y cómo es que se imprime en general el texto en el CRUD de CATEGORÍAS. ');
 
 -- --------------------------------------------------------
 
@@ -94,7 +93,7 @@ CREATE TABLE `employees` (
 
 INSERT INTO `employees` (`EmployeID`, `LastName`, `FirstName`, `BirthDate`, `Description`, `IdKey`, `email`, `Password`, `rol`, `code`) VALUES
 (1, 'root', 'root', NULL, 'root', 12345678, 'aklasventas@gmail.com', '$2y$10$Pwtg/t9M6Q68clotNE6u3OF4VDylwAib..OlULwXDmV0tQQxXbk9C', 'root', NULL),
-(2, 'Ponce', 'alan Gabriel', NULL, 'Es God', 23090001, 'avargas39@ucol.mx ', '$2y$10$zmj/qWTzRvut4Y1Iv/LGueZGkAVm3WVrz5Jnzxr3gW.CtpDEWNrEi', 'empleado', NULL),
+(2, 'Ponce', 'alan Gabriel', NULL, 'Es God', 23090001, 'avargas39@ucol.mx ', '$2y$10$zmj/qWTzRvut4Y1Iv/LGueZGkAVm3WVrz5Jnzxr3gW.CtpDEWNrEi', 'jefe', NULL),
 (3, 'San Millan Ramos', 'Alan Adolfo', NULL, 'Jefe de area', 23090002, 'asanmillan@ucol.mx', '$2y$10$GmlSpkTC5i9mQjAh2PLPoeRCv.7y0yGWuXeG1LbwxYUz.wFhwPIGa', 'jefe', NULL),
 (4, 'Ramírez Márquez', 'karla Karina', NULL, 'Ing. de software', 23101327, 'kramirez32@ucol.mx', '$2y$10$ZcV48MUkQRHkUwhQ8zxpAur7JVEFV5nWOqd6T8y.AxG0ZgUzVH0OG', 'jefe', NULL);
 
@@ -161,7 +160,7 @@ CREATE TABLE `suppliers` (
 
 INSERT INTO `suppliers` (`SupplierID`, `SupplierName`, `ContactName`, `Address`, `City`, `PostalCode`, `Country`, `Phone`) VALUES
 (1, 'SportX', 'José Joshua Rodriguez Ávila', 'Los Patos, calle Itzora #108', 'Manzanillo', '28200', 'México', '3141232927'),
-(2, 'Coca Cola', 'James Quincey', 'Rubén Darí­o 115 Col. Bosque de Chapultepec', 'Ciudad de México', '11580', 'México', '8007044400'),
+(2, 'Coca Cola', 'James Quincey', 'Rubén Darío 115 Col. Bosque de Chapultepec', 'Ciudad de México', '11580', 'México', '8007044400'),
 (3, 'Pepsico México', 'Felipe Rafael Arvizu De La Luz', 'Ixtapaluca, Edificio B, 3er. Piso.', 'Ciudad de México', '28280', 'México', '5550360000');
 
 -- --------------------------------------------------------
@@ -182,9 +181,9 @@ CREATE TABLE `tags` (
 
 INSERT INTO `tags` (`TagID`, `TagName`, `Description`) VALUES
 (1, 'Rehidratante', 'Recupera sales y minerales que pierdes al sudar'),
-(2, 'Exceso de azÃºcares', '  '),
-(3, 'Light', 'DietÃ©tica y ligera'),
-(4, 'Energizante', 'ObtÃ©n energÃ­a en seguida');
+(2, 'Exceso de azúcares', '  '),
+(3, 'Light', 'Dietética y ligera'),
+(4, 'Energizante', 'Obtén energía en seguida');
 
 -- --------------------------------------------------------
 
