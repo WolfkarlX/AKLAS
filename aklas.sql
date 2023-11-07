@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-11-2023 a las 04:16:23
--- Versión del servidor: 11.2.0-MariaDB
+-- Tiempo de generación: 07-11-2023 a las 16:59:31
+-- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -41,7 +41,7 @@ CREATE TABLE `area` (
 --
 
 INSERT INTO `area` (`AreaID`, `NameArea`, `RacksQ`, `Rackf`, `Storaget`, `Description`) VALUES
-(1, 'Vinos y licores', 40, 10, 'BODEGA', 'Bodega que almacena todo tipo de vinos y licores');
+(1, 'Vinos y licores', 9, 8, 'BODEGA', 'Bodega que almacena todo tipo de vinos y licores');
 
 -- --------------------------------------------------------
 
@@ -66,8 +66,7 @@ INSERT INTO `categories` (`CategoryID`, `CategoryName`, `Description`) VALUES
 (4, 'BEBIDA A BASE DE FRUTAS', 'Delaware Punch es un refresco sabor a frutas. Su fÃ³rmula utiliza una mezcla de sabores de frutas, siendo uva la mÃ¡s destacada.'),
 (5, 'BEBIDAS DEPORTIVAS', 'Innovadora bebida para deportistas que te da todos los beneficios de la tecnologÃ­a ION4 con gran sabor. La tecnologÃ­a ION4 repone 4 de los minerales que se pierden al sudar: Sodio(NA), Potasio(K), Calcio(Ca) y Magnesio(Mg).'),
 (6, 'AGUA PURIFICADA', 'Tu cerebro se deshidrata incluso antes de que te des cuenta. Mantente hidratado. Ciel conecta mente y cuerpo.'),
-(7, 'CATEGORÃA DE PRUEBA', 'Esta categorÃ­a se usa para ver si el CRUD estÃ¡ bien o si jala mal, en cualquiera de los casos es para probar cÃ³mo vamos con esto, asÃ­ que se pone un texto largo para ver cÃ³mo se acomoda en la tabla y para ver que permita ingresar los caracteres que se quieran o requieran por el usuario, veamos cÃ³mo es que se acomoda y cÃ³mo es que se imprime en general el texto en el CRUD de CATEGORÃAS. '),
-(8, 'fff', '');
+(7, 'CATEGORÃA DE PRUEBA', 'Esta categorÃ­a se usa para ver si el CRUD estÃ¡ bien o si jala mal, en cualquiera de los casos es para probar cÃ³mo vamos con esto, asÃ­ que se pone un texto largo para ver cÃ³mo se acomoda en la tabla y para ver que permita ingresar los caracteres que se quieran o requieran por el usuario, veamos cÃ³mo es que se acomoda y cÃ³mo es que se imprime en general el texto en el CRUD de CATEGORÃAS. ');
 
 -- --------------------------------------------------------
 
@@ -94,7 +93,7 @@ CREATE TABLE `employees` (
 
 INSERT INTO `employees` (`EmployeID`, `LastName`, `FirstName`, `BirthDate`, `Description`, `IdKey`, `email`, `Password`, `rol`, `code`) VALUES
 (1, 'root', 'root', NULL, 'root', 12345678, 'aklasventas@gmail.com', '$2y$10$Pwtg/t9M6Q68clotNE6u3OF4VDylwAib..OlULwXDmV0tQQxXbk9C', 'root', NULL),
-(2, 'Ponce', 'alan Gabriel', NULL, 'Es God', 23090001, 'avargas39@ucol.mx ', '$2y$10$zmj/qWTzRvut4Y1Iv/LGueZGkAVm3WVrz5Jnzxr3gW.CtpDEWNrEi', 'empleado', NULL),
+(2, 'Ponce', 'alan Gabriel', NULL, 'Es God', 23090001, 'avargas39@ucol.mx ', '$2y$10$zmj/qWTzRvut4Y1Iv/LGueZGkAVm3WVrz5Jnzxr3gW.CtpDEWNrEi', 'jefe', NULL),
 (3, 'San Millan Ramos', 'Alan Adolfo', NULL, 'Jefe de area', 23090002, 'asanmillan@ucol.mx', '$2y$10$GmlSpkTC5i9mQjAh2PLPoeRCv.7y0yGWuXeG1LbwxYUz.wFhwPIGa', 'jefe', NULL),
 (4, 'Ramírez Márquez', 'karla Karina', NULL, 'Ing. de software', 23101327, 'kramirez32@ucol.mx', '$2y$10$ZcV48MUkQRHkUwhQ8zxpAur7JVEFV5nWOqd6T8y.AxG0ZgUzVH0OG', 'jefe', NULL);
 
@@ -124,7 +123,7 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`ProductID`, `ProductName`, `SupplierID`, `CategoryID`, `AreaID`, `StorageR`, `StorageRF`, `Price`, `Quantity`, `Description`, `MaxQuantityLimit`, `MinQuantityLimit`) VALUES
-(1, 'Cheto limpiador que emborracha', 1, 1, 1, 3, 2, 22, 30, 'Producto de prueba', 40, 10);
+(1, 'Cheto limpiador que emborracha', 1, 1, 1, 1, 3, 11, 30, 'Producto de prueba', 40, 10);
 
 -- --------------------------------------------------------
 
@@ -183,8 +182,7 @@ CREATE TABLE `tags` (
 INSERT INTO `tags` (`TagID`, `TagName`, `Description`) VALUES
 (1, 'Rehidratante', 'Recupera sales y minerales que pierdes al sudar'),
 (2, 'Exceso de azÃºcares', '  '),
-(3, 'Light', 'DietÃ©tica y ligera'),
-(4, 'Energizante', 'ObtÃ©n energÃ­a en seguida');
+(3, 'Light', 'DietÃ©tica y ligera');
 
 -- --------------------------------------------------------
 
@@ -287,13 +285,13 @@ ALTER TABLE `transactiondetails`
 -- AUTO_INCREMENT de la tabla `area`
 --
 ALTER TABLE `area`
-  MODIFY `AreaID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `AreaID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `CategoryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `CategoryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `employees`
@@ -305,7 +303,7 @@ ALTER TABLE `employees`
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `ProductID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ProductID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT de la tabla `products_tags`
@@ -317,13 +315,13 @@ ALTER TABLE `products_tags`
 -- AUTO_INCREMENT de la tabla `suppliers`
 --
 ALTER TABLE `suppliers`
-  MODIFY `SupplierID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `SupplierID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `tags`
 --
 ALTER TABLE `tags`
-  MODIFY `TagID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `TagID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `transaction`
