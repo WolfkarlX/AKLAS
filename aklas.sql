@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-11-2023 a las 04:16:23
--- Versión del servidor: 11.2.0-MariaDB
+-- Tiempo de generación: 03-11-2023 a las 07:58:37
+-- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -60,13 +60,7 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`CategoryID`, `CategoryName`, `Description`) VALUES
-(1, 'BEBIDAS CARBONATADAS', 'Coca-Cola es la bebida más vendida en la historia desde 1886. Es la marca más famosa del mundo. Bien fría, hace disfrutar cada instante de la vida ya que añade magia a cada momento.'),
-(2, 'AGUA GASIFICADA', 'Ciel Mineralizada es una marca de agua mineralizada y carbonatada que entró al mercado mexicano en el 2001. Es una opción baja en sodio que puede contribuir a la hidratación y que también puede ser disfrutada como base de otras bebidas como naranjadas y limonadas.'),
-(3, 'AGUA DE SABORES', 'El nuevo integrante de la familia Ciel, exprime todo el sabor de las frutas y las hojas para ofrecerte cuatro sabores que te invitan a descubrir más.'),
-(4, 'BEBIDA A BASE DE FRUTAS', 'Delaware Punch es un refresco sabor a frutas. Su fórmula utiliza una mezcla de sabores de frutas, siendo uva la más destacada.'),
-(5, 'BEBIDAS DEPORTIVAS', 'Innovadora bebida para deportistas que te da todos los beneficios de la tecnología ION4 con gran sabor. La tecnología ION4 repone 4 de los minerales que se pierden al sudar: Sodio(NA), Potasio(K), Calcio(Ca) y Magnesio(Mg).'),
-(6, 'AGUA PURIFICADA', 'Tu cerebro se deshidrata incluso antes de que te des cuenta. Mantente hidratado. Ciel conecta mente y cuerpo.'),
-(7, 'CATEGORÍA DE PRUEBA', 'Esta categoría se usa para ver si el CRUD está bien o si jala mal, en cualquiera de los casos es para probar cómo vamos con esto, así que se pone un texto largo para ver cómo se acomoda en la tabla y para ver que permita ingresar los carácteres que se quieran o requieran por el usuario, veamos cómo es que se acomoda y cómo es que se imprime en general el texto en el CRUD de CATEGORÍAS. ');
+(1, 'Limpieza', '');
 
 -- --------------------------------------------------------
 
@@ -79,23 +73,20 @@ CREATE TABLE `employees` (
   `LastName` varchar(30) DEFAULT NULL,
   `FirstName` varchar(30) DEFAULT NULL,
   `BirthDate` datetime DEFAULT NULL,
+  `rol` int(11) NOT NULL,
   `Description` varchar(1024) DEFAULT NULL,
   `IdKey` int(8) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `Password` varchar(60) NOT NULL,
-  `rol` varchar(50) NOT NULL,
-  `code` mediumint(20) DEFAULT NULL
+  `Password` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `employees`
 --
 
-INSERT INTO `employees` (`EmployeID`, `LastName`, `FirstName`, `BirthDate`, `Description`, `IdKey`, `email`, `Password`, `rol`, `code`) VALUES
-(1, 'root', 'root', NULL, 'root', 12345678, 'aklasventas@gmail.com', '$2y$10$Pwtg/t9M6Q68clotNE6u3OF4VDylwAib..OlULwXDmV0tQQxXbk9C', 'root', NULL),
-(2, 'Ponce', 'alan Gabriel', NULL, 'Es God', 23090001, 'avargas39@ucol.mx ', '$2y$10$zmj/qWTzRvut4Y1Iv/LGueZGkAVm3WVrz5Jnzxr3gW.CtpDEWNrEi', 'jefe', NULL),
-(3, 'San Millan Ramos', 'Alan Adolfo', NULL, 'Jefe de area', 23090002, 'asanmillan@ucol.mx', '$2y$10$GmlSpkTC5i9mQjAh2PLPoeRCv.7y0yGWuXeG1LbwxYUz.wFhwPIGa', 'jefe', NULL),
-(4, 'Ramírez Márquez', 'karla Karina', NULL, 'Ing. de software', 23101327, 'kramirez32@ucol.mx', '$2y$10$ZcV48MUkQRHkUwhQ8zxpAur7JVEFV5nWOqd6T8y.AxG0ZgUzVH0OG', 'jefe', NULL);
+INSERT INTO `employees` (`EmployeID`, `LastName`, `FirstName`, `BirthDate`, `rol`, `Description`, `IdKey`, `email`, `Password`) VALUES
+(1, 'root', 'root', NULL, 0, 'root', 12345678, 'aklasventas@gmail.com', '$2y$10$Pwtg/t9M6Q68clotNE6u3OF4VDylwAib..OlULwXDmV0tQQxXbk9C'),
+(2, 'Ponce', 'alan Gabriel', NULL, 0, 'Es God', 23090001, 'avargas39@ucol.mx ', '$2y$10$zmj/qWTzRvut4Y1Iv/LGueZGkAVm3WVrz5Jnzxr3gW.CtpDEWNrEi');
 
 -- --------------------------------------------------------
 
@@ -159,9 +150,7 @@ CREATE TABLE `suppliers` (
 --
 
 INSERT INTO `suppliers` (`SupplierID`, `SupplierName`, `ContactName`, `Address`, `City`, `PostalCode`, `Country`, `Phone`) VALUES
-(1, 'SportX', 'José Joshua Rodriguez Ávila', 'Los Patos, calle Itzora #108', 'Manzanillo', '28200', 'México', '3141232927'),
-(2, 'Coca Cola', 'James Quincey', 'Rubén Darío 115 Col. Bosque de Chapultepec', 'Ciudad de México', '11580', 'México', '8007044400'),
-(3, 'Pepsico México', 'Felipe Rafael Arvizu De La Luz', 'Ixtapaluca, Edificio B, 3er. Piso.', 'Ciudad de México', '28280', 'México', '5550360000');
+(1, 'CHEETOS', 'tommy', 'Los patos 22', 'Manzanillo', '28400', 'Mexico', '31418322');
 
 -- --------------------------------------------------------
 
@@ -180,10 +169,7 @@ CREATE TABLE `tags` (
 --
 
 INSERT INTO `tags` (`TagID`, `TagName`, `Description`) VALUES
-(1, 'Rehidratante', 'Recupera sales y minerales que pierdes al sudar'),
-(2, 'Exceso de azúcares', '  '),
-(3, 'Light', 'Dietética y ligera'),
-(4, 'Energizante', 'Obtén energía en seguida');
+(1, 'Glamour', '');
 
 -- --------------------------------------------------------
 
@@ -298,7 +284,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT de la tabla `employees`
 --
 ALTER TABLE `employees`
-  MODIFY `EmployeID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `EmployeID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `products`
@@ -344,9 +330,9 @@ ALTER TABLE `transactiondetails`
 -- Filtros para la tabla `products`
 --
 ALTER TABLE `products`
-  ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`CategoryID`) REFERENCES `categories` (`CategoryID`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `products_ibfk_2` FOREIGN KEY (`SupplierID`) REFERENCES `suppliers` (`SupplierID`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `products_ibfk_3` FOREIGN KEY (`AreaID`) REFERENCES `area` (`AreaID`) ON DELETE NO ACTION ON UPDATE CASCADE;
+  ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`CategoryID`) REFERENCES `categories` (`CategoryID`),
+  ADD CONSTRAINT `products_ibfk_2` FOREIGN KEY (`SupplierID`) REFERENCES `suppliers` (`SupplierID`),
+  ADD CONSTRAINT `products_ibfk_3` FOREIGN KEY (`AreaID`) REFERENCES `area` (`AreaID`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `products_tags`
