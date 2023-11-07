@@ -114,8 +114,8 @@
             <div class="opciones">
                 <button class="BotonRegistro" id="btn-registro" title="Hacer un registro nuevo">Nuevo registro</button>
                 <button id="btn-actualizar" title="Actualizar"><i class='bx bx-refresh'></i></button>
-                <button id="btn-delete" form="form-table" title="Eliminar" disabled>Eliminar</button>
-                <button id="btn-edit" title="Editar" disabled>Editar</button>
+                <button id="btn-delete" form="form-table" title="Eliminar" disabled><i class='bx bx-trash'></i></button>
+                <button id="btn-edit" title="Editar" disabled><i class='bx bx-pencil'></i></button>
                 <input type="text" id="filter" class="tabla-buscador" placeholder="Filtrar... "><i id="iconobuscador2" class='bx bx-search-alt-2'></i></input>
                 
             </div>

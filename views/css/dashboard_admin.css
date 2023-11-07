@@ -323,13 +323,12 @@
  width: calc(7% - 5px);
  display: inline-block;
  height: 65px;
+ color: white;
  margin-top: 20px;
  padding: 10px;
- padding-top: 20px;
- padding-bottom: 10px;
  font-weight: bold;
  cursor: pointer; 
- font-size: 1rem;
+ font-size: 1.8rem;
  align-items: center;
  border: none;
  margin: 10px;
@@ -347,11 +346,10 @@
   height: 65px;
   margin-top: 20px;
   padding: 10px;
-  padding-top: 20px;
-  padding-bottom: 10px;
+  color: white;
   font-weight: bold;
   cursor: pointer; 
-  font-size: 1rem;
+  font-size: 1.8rem;
   align-items: center;
   border: none;
   margin: 10px;
@@ -367,7 +365,7 @@
 }
 
 .abajo .tabla-buscador {
-  background-color: rgb(255, 255, 255);
+  background-color: transparent;
   display: inline-block;
   width: calc(20% - 5px);
   height: 30px;
@@ -399,11 +397,9 @@
  height: 65px;
  margin-top: 20px;
  padding: 10px;
- padding-top: 20px;
- padding-bottom: 10px;
  font-weight: bold;
  cursor: pointer; 
- font-size: 1rem;
+ font-size: 1.8rem;
  align-items: center;
  border: none;
  margin: 10px;
@@ -1024,6 +1020,9 @@
 }
 
 .darkmode .logo-help{
+  color: white;
+}
+.darkmode .abajo #iconobuscador2 {
   color: white;
 }
 

@@ -141,6 +141,7 @@ if(btn_fondo){
   })
 }
 
+
 if(selectorforarea){
     selectorforarea.addEventListener("click", function (event){
       if (selectorforarea.value !== "") {
