@@ -67,6 +67,7 @@ function closeForm(form, difuminado) {
 
 //funcion que abre y muestra el formulario que se desee
 function showForm(form, difuminado){
+  document.getElementById("sidebarid").style.zIndex = "-1";
   document.getElementById(form).style.display = "block";
   document.getElementById(difuminado).style.backdropFilter = "blur(5px)";
   document.getElementById(difuminado).style.display = "flex";
@@ -81,6 +82,7 @@ function showForm(form, difuminado){
     document.getElementById(difuminado).style.backdropFilter = "none";
     document.getElementById("form-editado").style.display = "block";
     document.getElementById("form-normal").style.display = "block";
+    document.getElementById("sidebarid").style.zIndex = "8";
     closeForm(form, difuminado);  
     };
   }
@@ -91,6 +93,7 @@ function showForm(form, difuminado){
     document.getElementById(difuminado).style.backdropFilter = "none";
     document.getElementById("form-editado").style.display = "block";
     document.getElementById("form-normal").style.display = "block";
+    document.getElementById("sidebarid").style.zIndex = "8";
     closeForm(form, difuminado);  
     };
   }

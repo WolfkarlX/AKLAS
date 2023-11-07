@@ -48,7 +48,7 @@ try {
 </head>
 </head>
 <body>
-    <div class="sidebar">
+    <div class="sidebar" id="sidebarid">
         <div class="top">
             <div class="logo">
                 <i class="bx bx-cross">AKLAS</i>
@@ -205,7 +205,7 @@ try {
                 <label for="racksf">Cantidad Total De Filas Por Cada Rack: </label>
                 <input id="input4" type="number" name="racksf" placeholder="Numero De Filas Por Rack" required minlength="2" maxlength="30" pattern="^[^\s].*$"/>
                 <label for="tipo">Tipo De Area:</label><br>
-                    <select name="type" id="input5">
+                    <select name="type" id="input5" class="seleccionform">
                         <option value="BODEGA">BODEGA</option>
                         <option value="STOCK">STOCK</option>
                     </select><br>

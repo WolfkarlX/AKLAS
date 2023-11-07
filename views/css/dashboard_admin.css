@@ -507,6 +507,20 @@
   margin-bottom: 6px;
   background-color: rgb(225, 220, 255);
 }
+.formulario .formu select{
+  position: relative;
+  right: -45px;
+  margin: 0;
+  padding: 0;
+  width: 80%;
+  height: 30px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 15px;
+  justify-content: center;
+}
 .formulario .formu .formarriba h1{
   font-weight: bold;
   text-align: center;

@@ -24,6 +24,7 @@ let selectorforsupplier = document.getElementById("Sproovedor");
 let Sarea = document.getElementById("input5");
 let Scategory = document.getElementById("input4");
 let Ssupplier = document.getElementById("input3");
+let sidebar = document.getElementById("sidebarid");
 
 var celdas = "";
 
@@ -67,6 +68,7 @@ form.addEventListener("submit", function(event) {
                 difuminado.style.display = "none"
                 formNormal.style.display = "block";
                 formeditado.style.display = "block";
+                sidebar.style.zIndex = "8";
             } else {
                 alert("No se pudo añadir el registro");
             }
@@ -122,6 +124,7 @@ form_edit.addEventListener("submit", function(event){
                         difuminado.style.display = "none";
                         formNormal.style.display = "block";
                         formeditado.style.display = "block";
+                        sidebar.style.zIndex = "8";
                     } else {
                         alert("No se pudo editar el registro");
                     }

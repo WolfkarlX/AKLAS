@@ -24,7 +24,7 @@
 </head>
 </head>
 <body>
-    <div class="sidebar">
+    <div class="sidebar" id="sidebarid">
         <div class="top">
             <div class="logo">
                 <i class="bx bx-cross">AKLAS</i>
