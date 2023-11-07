@@ -236,11 +236,11 @@
                 </div>
                 <div class="campo">
                     <label for="input6">n# Rack: </label>
-                    <input id="input6" type="number" name="rackn" placeholder="Numero de Rack" disabled required min="1" />
+                    <input id="input6" type="number" name="rackn" placeholder="Numero de Rack"  required min="1" />
                 </div>
                 <div class="campo">
                     <label for="input7">Fila Rack: </label>
-                    <input id="input7" type="number" name="fila" placeholder="Numero De Fila Del Rack" disabled required min="1"/>
+                    <input id="input7" type="number" name="fila" placeholder="Numero De Fila Del Rack"  required min="1"/>
                 </div>
                 <div class="campo">
                     <label for="input8">Precio: </label>

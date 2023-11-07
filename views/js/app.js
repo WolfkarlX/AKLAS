@@ -14,6 +14,10 @@ const form_edit = document.getElementById("edit-form");
 const difuminado = document.getElementById("difuminado");
 const formNormal = document.querySelector("#form-normal"); //div del formulario
 const formeditado = document.querySelector("#form-editado"); //div del formulario editado
+let nracks = document.getElementById("RN");
+let nfilas = document.getElementById("file");
+let nracksE = document.getElementById("input6");
+let nfilesE = document.getElementById("input7");
 let selectorforarea = document.getElementById("Sarea");
 let selectorforcategory = document.getElementById("Scate");
 let selectorforsupplier = document.getElementById("Sproovedor");
@@ -38,24 +42,36 @@ botonActualizar.addEventListener("click", () => {
 form.addEventListener("submit", function(event) {
     // Prevenir el comportamiento por defecto del formulario
     event.preventDefault();
-    //Enviar solicitud
-    let res = sendForm(urlSendData, event.target);
-    res.then(data => {
-        if(data){
-            alert("El registro se agrego exitosamente");
-            //Recargar la tabla
-            tbody.innerHTML = "";
-            getTable(urlGetData, tbody);
-            //Limpia el formulario
-            event.target.reset();
-            event.target.style.display = "none";
-            difuminado.style.display = "none"
-            formNormal.style.display = "block";
-            formeditado.style.display = "block";
-        } else {
-            alert("No se pudo añadir el registro");
+    if(nracks && nfilas){
+        if (nracks.hasAttribute("disabled")  || nfilas.hasAttribute("disabled")){
+          alert("Seleccione un Área");
+        }else{
+            var res = sendForm(urlSendData, event.target);
+            nracks.setAttribute("disabled", "true");
+            nfilas.setAttribute("disabled", "true");
         }
-    })
+    }else{
+        var res = sendForm(urlSendData, event.target);
+    }  
+    //Enviar solicitud
+    if(res){
+        res.then(data => {
+            if(data){
+                alert("El registro se agrego exitosamente");
+                //Recargar la tabla
+                tbody.innerHTML = "";
+                getTable(urlGetData, tbody);
+                //Limpia el formulario
+                event.target.reset();
+                event.target.style.display = "none";
+                difuminado.style.display = "none"
+                formNormal.style.display = "block";
+                formeditado.style.display = "block";
+            } else {
+                alert("No se pudo añadir el registro");
+            }
+        })
+    }
 })
 
 // Añadir evento submit al formulario de eliminacion
@@ -83,28 +99,38 @@ formTable.addEventListener("submit", function(event) {
 
 form_edit.addEventListener("submit", function(event){
     event.preventDefault();
-    let res = sendForm(UrlsendEdit, event.target);
-    res.then( data => {
-        if(data){
-            alert("Se edito correctamente");
-                    //Recargar la tabla
-                    tbody.innerHTML = "";
-                    getTable(urlGetData, tbody);
-                    btnEdit.setAttribute("disabled", "");
-                    btnEliminar.setAttribute("disabled", "");
-                    event.target.reset();
-                    event.target.style.display = "none";
-                    difuminado.style.display = "none";
-                    formNormal.style.display = "block";
-                    formeditado.style.display = "block";
-                } else {
-                    alert("No se pudo editar el registro");
-                }
+    if(nracksE && nfilesE){
+        if (nracksE.hasAttribute("disabled")  || nfilesE.hasAttribute("disabled")){
+          alert("Seleccione un Área");
+        }else{
+            var res = sendForm(UrlsendEdit, event.target);
         }
+    }else{
+        var res = sendForm(UrlsendEdit, event.target);
+    }
+    if(res){
+        res.then( data => {
+            if(data){
+                alert("Se edito correctamente");
+                        //Recargar la tabla
+                        tbody.innerHTML = "";
+                        getTable(urlGetData, tbody);
+                        btnEdit.setAttribute("disabled", "");
+                        btnEliminar.setAttribute("disabled", "");
+                        event.target.reset();
+                        event.target.style.display = "none";
+                        difuminado.style.display = "none";
+                        formNormal.style.display = "block";
+                        formeditado.style.display = "block";
+                    } else {
+                        alert("No se pudo editar el registro");
+                    }
+            }
 
-    )
-
+        )
+    }
 })
+
 
 //Script para obtener los valores de la fila de la tabla
 // Agrega un evento 'click' a la tabla

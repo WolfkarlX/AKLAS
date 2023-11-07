@@ -52,6 +52,17 @@ function closeForm(form, difuminado) {
   form.style.display = "none";
   difuminado.style.display = "none";
   form.reset();
+  if(nracks && nfilas){
+    nracks.setAttribute("disabled", "true");
+    nfilas.setAttribute("disabled", "true");
+  }
+
+  if(nracksE && nfilesE){
+    if(nracksE.getAttribute("name") === "rackn" && nfilesE.getAttribute("name") === "fila"){
+      nracksE.setAttribute("disabled", "true");
+      nfilesE.setAttribute("disabled", "true");
+    }
+  }
 }
 
 //funcion que abre y muestra el formulario que se desee
@@ -109,6 +120,10 @@ if(btn_edit){
       createSelectors(urlgetSelects_area, Sarea);
       createSelectors(urlgetSelects_category, Scategory);
     }
+    if(Sarea){
+      nracksE.setAttribute("disabled", "true");
+      nfilesE.setAttribute("disabled", "true");
+    }
     showForm(edit_form.id, difuminado.id);
   });
 }
@@ -143,11 +158,11 @@ if(selectorforarea){
 
 if(Sarea){
   Sarea.addEventListener("click", function (event){
-    if (Sarea.value !== "") {
+    if (event.target.value !== "") {
       nracksE.removeAttribute("disabled");
       nfilesE.removeAttribute("disabled");
 
-      let value = Sarea.value;
+      let value = event.target.value;
       inputForarea.value = value;
       LimitInputs(formforarea,nracksE, urlGetnracks);
       LimitInputs(formforarea, nfilesE, urlGetnfiles);
