@@ -220,18 +220,18 @@
                     <input id="input2" type="text" name="name" placeholder="Nombre" required minlength="2" maxlength="30"/>
                 </div>
                 <div class="campo">
-                    <label for="selectS">Proovedor: </label><br>
-                    <select name="supplier" id="selectS" required>
+                    <label for="input3">Proovedor: </label><br>
+                    <select name="supplier" id="input3" required>
                     </select><br>
                 </div>
                 <div class="campo">
-                    <label for="selectC">Categoría: </label><br>
-                    <select name="category" id="selectC" required>
+                    <label for="input4">Categoría: </label><br>
+                    <select name="category" id="input4" required>
                     </select><br>
                 </div>
                 <div class="campo">
-                    <label for="selectA">Area: </label><br>
-                    <select name="area" id="selectA" required>
+                    <label for="input5">Area: </label><br>
+                    <select name="area" id="input5" required>
                     </select><br>
                 </div>
                 <div class="campo">

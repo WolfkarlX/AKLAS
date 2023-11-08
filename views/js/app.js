@@ -25,6 +25,9 @@ let Sarea = document.getElementById("input5");
 let Scategory = document.getElementById("input4");
 let Ssupplier = document.getElementById("input3");
 let sidebar = document.getElementById("sidebarid");
+let inputForarea = document.getElementById("ar");
+let formforarea = document.getElementById("getnrackA");
+
 
 var celdas = "";
 
@@ -152,12 +155,35 @@ btnEdit.addEventListener("click", ()=>{
     // Recorre las celdas para obtener los valores
     for (let i = 0; i < celdas.length; i++) {
         let valor = celdas[i].textContent;
+        if(celdas[4]){
+            var indxA = celdas[4].textContent.toString();
+            var indxC = celdas[3].textContent.toString();
+            var indxS = celdas[2].textContent.toString();
+        }
         //se obtienen los objetos y se rellenan con sus respectivos campos
         let object = document.getElementById("input" + (i+1));
         if(object){
             object.value = valor;
+            if(object.tagName === "SELECT"){
+                let objectid = object.id;
+                switch(objectid){
+                    case "input3": createSelectors(urlgetSelects_supplier, object, indxS); break;
+                    case "input4": createSelectors(urlgetSelects_category, object, indxC); break;
+                    case "input5": createSelectors(urlgetSelects_area, object, indxA); break;
+                }
+            }
         }
     }
+    /*if(Sarea){
+        if(Sarea.tagName === "SELECT"){
+            if(Sarea.name === "area"){
+                    let value = Sarea.value;
+                    inputForarea.value = value;
+                    LimitInputs(formforarea, nracksE, urlGetnracks);
+                    LimitInputs(formforarea, nfilesE, urlGetnfiles);
+            }
+        }
+    }*/
 })
 
 /*Script para filtrar registros en una tabla*/
