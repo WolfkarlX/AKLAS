@@ -69,6 +69,14 @@ class product extends conexion{
         return $datos;
     }
 
+    public function getTags() {
+        //SQL para obtener las etiquetas de cada producto
+        $sql = "select ProductID, TagID, TagName from products_tags natural join tags";
+        $stmt = $this->prepare($sql);
+        // Ejecuta la sentencia
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 } 
 
 

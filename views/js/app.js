@@ -1,5 +1,6 @@
 // Importar funciones de API
 import { getTable, sendForm, createSelectors, LimitInputs } from "./fetchAPI.js";
+import { getTags } from "./tags-controlls.js";
 
 // Elementos DOM
 const tbody = document.getElementById("vista-cuerpo");
@@ -26,15 +27,21 @@ let Scategory = document.getElementById("input4");
 let Ssupplier = document.getElementById("input3");
 let sidebar = document.getElementById("sidebarid");
 
+async function cargarTabla(){
+    tbody.innerHTML = "";
+    await getTable(urlGetData, tbody);
+    if(typeof urlGetTags !== 'undefined')
+        getTags();
+}
+
 var celdas = "";
 
 // Agregar evento para ejecutar la función getTable al cargar la página
-document.addEventListener("DOMContentLoaded", () => getTable(urlGetData, tbody));
+document.addEventListener("DOMContentLoaded", cargarTabla);
 
 // Agregar evento para ejecutar la función getTable al hacer click en el botón
 botonActualizar.addEventListener("click", () => {
-    tbody.innerHTML = "";
-    getTable(urlGetData, tbody);
+    cargarTabla();
     btnEliminar.setAttribute("disabled", "");
     btnEdit.setAttribute("disabled", "");
 });
@@ -60,8 +67,7 @@ form.addEventListener("submit", function(event) {
             if(data){
                 alert("El registro se agrego exitosamente");
                 //Recargar la tabla
-                tbody.innerHTML = "";
-                getTable(urlGetData, tbody);
+                cargarTabla();
                 //Limpia el formulario
                 event.target.reset();
                 event.target.style.display = "none";
@@ -87,8 +93,7 @@ formTable.addEventListener("submit", function(event) {
                 if(data){
                     alert("Se elimino el registro correctamente");
                     //Recargar la tabla
-                    tbody.innerHTML = "";
-                    getTable(urlGetData, tbody);
+                    cargarTabla();
                     btnEliminar.setAttribute("disabled", "");
                     btnEdit.setAttribute("disabled", "");
                 } else {
@@ -115,8 +120,7 @@ form_edit.addEventListener("submit", function(event){
             if(data){
                 alert("Se edito correctamente");
                         //Recargar la tabla
-                        tbody.innerHTML = "";
-                        getTable(urlGetData, tbody);
+                        cargarTabla();
                         btnEdit.setAttribute("disabled", "");
                         btnEliminar.setAttribute("disabled", "");
                         event.target.reset();

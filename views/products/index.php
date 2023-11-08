@@ -137,6 +137,7 @@
                             <th>Descripción</th>
                             <th>Cantidad Míninima</th>
                             <th>Cantidad Máxima</th>
+                            <th>Etiquetas</th>
                         </tr>
                     </thead>
                     <tbody id="vista-cuerpo">
@@ -275,5 +276,6 @@
 <script src="../js/fun.js" type="module"></script>
 <script src="../js/urlProducts.js"></script>
 <script src="../js/app.js" type="module"></script>
+<script src="../js/tags-controlls.js" type="module"></script>
 <script src="../js/moonSun.js" type="module"></script>
 </html>
