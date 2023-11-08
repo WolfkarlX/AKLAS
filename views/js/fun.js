@@ -18,9 +18,9 @@ let btn_fondo = document.querySelector("#ConfiguracionBoton");
 let selectorforarea = document.getElementById("Sarea");
 let selectorforcategory = document.getElementById("Scate");
 let selectorforsupplier = document.getElementById("Sproovedor");
-let Sarea = document.getElementById("selectA");
-let Scategory = document.getElementById("selectC");
-let Ssupplier = document.getElementById("selectS");
+let Sarea = document.getElementById("input5");
+let Scategory = document.getElementById("input4");
+let Ssupplier = document.getElementById("input3");
 let logout_link = document.getElementById("logout-link");
 let formforarea = document.getElementById("getnrackA");
 let inputForarea = document.getElementById("ar");
@@ -57,16 +57,31 @@ function closeForm(form, difuminado) {
     nfilas.setAttribute("disabled", "true");
   }
 
-  if(nracksE && nfilesE){
+  /*if(nracksE && nfilesE){
     if(nracksE.getAttribute("name") === "rackn" && nfilesE.getAttribute("name") === "fila"){
       nracksE.setAttribute("disabled", "true");
       nfilesE.setAttribute("disabled", "true");
     }
-  }
+  }*/
 }
 
 //funcion que abre y muestra el formulario que se desee
 function showForm(form, difuminado){
+  if(Sarea){
+    if(Sarea.tagName === "SELECT"){
+      console.log("es select");
+     if(Sarea.name === "area"){
+      console.log("su nombre es area");
+        if (Sarea.value !== "") {
+          console.log("tiene valor");
+          let value = Sarea.value;
+          inputForarea.value = value;
+          LimitInputs(formforarea, nracksE, urlGetnracks);
+          LimitInputs(formforarea, nfilesE, urlGetnfiles);
+        }
+      }
+    }
+  }
   document.getElementById("sidebarid").style.zIndex = "-1";
   document.getElementById(form).style.display = "block";
   document.getElementById(difuminado).style.backdropFilter = "blur(5px)";
@@ -118,15 +133,6 @@ if(btn_edit){
   btn_edit.addEventListener("click", (event)=>{
     document.getElementById("form-normal").style.display = "none";
     event.preventDefault();
-    if(Sarea && Scategory && Ssupplier){
-      createSelectors(urlgetSelects_supplier, Ssupplier);
-      createSelectors(urlgetSelects_area, Sarea);
-      createSelectors(urlgetSelects_category, Scategory);
-    }
-    if(Sarea){
-      nracksE.setAttribute("disabled", "true");
-      nfilesE.setAttribute("disabled", "true");
-    }
     showForm(edit_form.id, difuminado.id);
   });
 }
@@ -176,17 +182,19 @@ if(selectorforarea){
 }
 
 if(Sarea){
-  Sarea.addEventListener("click", function (event){
-    if (event.target.value !== "") {
-      nracksE.removeAttribute("disabled");
-      nfilesE.removeAttribute("disabled");
+  if(Sarea.tagName === "SELECT"){
+   if(Sarea.name === "area"){
+      Sarea.addEventListener("click", function (event){
+        if (event.target.value !== "") {
 
-      let value = event.target.value;
-      inputForarea.value = value;
-      LimitInputs(formforarea,nracksE, urlGetnracks);
-      LimitInputs(formforarea, nfilesE, urlGetnfiles);
+          let value = event.target.value;
+          inputForarea.value = value;
+          LimitInputs(formforarea, nracksE, urlGetnracks);
+          LimitInputs(formforarea, nfilesE, urlGetnfiles);
+        }
+      });
     }
-  });
+  }
 }
 
 //Funcion para reloj

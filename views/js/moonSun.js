@@ -15,27 +15,27 @@ const btn = document.querySelector('.btn');
 const icon = document.querySelector('.btn__icon');
 const opcion = document.getElementById("opcion");
 
-//to save the dark mode use the object "local storage".
+//para guardar el modo oscuro use el objeto "local storage".
 
-//function that stores the value true if the dark mode is activated or false if it's not.
+//función que almacena el valor verdadero si el modo oscuro está activado o falso si no lo está.
 function store(value){
   localStorage.setItem('darkmode', value);
 }
 
-//funcion que se fija si existe ña clase darkmode en la pagina 
+//Función que indica si existe la propiedad "darkmode". Carga la página como la habíamos dejado 
 function load(){
   const darkmode = localStorage.getItem('darkmode');
 
-  //if the dark mode was never activated
+  //si el modo oscuro nunca fue activado
   if(!darkmode){
     store(false);
     icon.classList.add('fa-sun');
     opcion.innerHTML = "Modo Oscuro";
-  } else if( darkmode == 'true'){ //if the dark mode is activated
+  } else if( darkmode == 'true'){ //si el modo oscuro está activado
     body.classList.add('darkmode');
     icon.classList.add('fa-moon');
     opcion.innerHTML = "Modo Claro";
-  } else if(darkmode == 'false'){ //if the dark mode exists but is disabled
+  } else if(darkmode == 'false'){ //si el modo oscuro existe pero está deshabilitado
     icon.classList.add('fa-sun');
     opcion.innerHTML = "Modo Oscuro";
   }
@@ -49,7 +49,7 @@ btn.addEventListener('click', () => {
   body.classList.toggle('darkmode');
   icon.classList.add('animated');
 
-  //save true or false
+  //Guardar verdadero o falso
   store(body.classList.contains('darkmode'));
 
   if(body.classList.contains('darkmode')){

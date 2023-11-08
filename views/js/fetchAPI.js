@@ -64,28 +64,65 @@ function focusRadio(id) {
     radio.checked ? radio.checked = false : radio.checked = true;
 }
 
-function createSelectors(url, element){
+function createSelectors(url, element, edit = false){
     //elimina options si es que los hay dentro del elemento select
-    while (element.firstChild) {
-        element.removeChild(element.firstChild);
-    }
-    // Hacer una petición fetch al servidor
-    fetch(url)
-    .then(response => response.json())
-    .then(data => {
-        // Iterar por la lista de productos
-        data.forEach(registro => {
-            const keys = Object.keys(registro);
-            const option = document.createElement('option');
-    
-            // Elige la primera clave como valor y texto
-            option.value = registro[keys[0]];
-            option.text = registro[keys[1]];
-            /*option.value = registro.SupplierID; // Primera columna
-            option.text = registro.SupplierName;  // Segunda columna
-            */element.appendChild(option);
+    if(element.tagName === "SELECT"){
+        while (element.firstChild) {
+            element.removeChild(element.firstChild);
+        }
+
+        if(edit === false){
+            let opt = document.createElement("option");
+            opt.setAttribute("selected", "");
+            opt.value = "";
+            opt.setAttribute("disabled", "");
+            opt.innerText = "Seleccione una Opcion";
+            element.appendChild(opt);
+
+            // Hacer una petición fetch al servidor
+            fetch(url)
+            .then(response => response.json())
+            .then(data => {
+            // Iterar por la lista de productos
+            data.forEach(registro => {
+                const keys = Object.keys(registro);
+                const option = document.createElement('option');
+        
+                // Elige la primera clave como valor y texto
+                option.value = registro[keys[0]];
+                option.text = registro[keys[1]];
+                /*option.value = registro.SupplierID; // Primera columna
+                option.text = registro.SupplierName;  // Segunda columna
+                */element.appendChild(option);
+            });
         });
-    });
+        }
+        else{
+            // Hacer una petición fetch al servidor
+            fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                // Iterar por la lista de productos
+                data.forEach(registro => {
+                    var keys = Object.keys(registro);
+                    var option = document.createElement('option');
+            
+                    // Elige la primera clave como valor y texto
+                    option.value = registro[keys[0]];
+                    option.text = registro[keys[1]];
+                    if(option.text.toString() == edit){
+                        option.setAttribute("selected", "");
+                        //vlue = option.value;
+                    } 
+                    /*option.value = registro.SupplierID; // Primera columna
+                    option.text = registro.SupplierName;  // Segunda columna
+                    */element.appendChild(option);
+                });
+            });
+        }
+    }else{
+        return false;
+    }
 }
 
 
@@ -106,7 +143,6 @@ async function LimitInputs(form, element, url) {
         }
     }
 }
-
 
 async function sendForm(url, form) {
     try{

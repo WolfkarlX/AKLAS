@@ -107,7 +107,7 @@
                 <div class="btn">
                     <div class="btn__indicator">
                         <div class="btn__icon-container">
-                            <i class="btn__icon fa-solid" id="btm_fondoscolor"></i>
+                            <div class="btn__icon fa-solid" id="btm_fondoscolor"></div>
                         </div>
                     </div>
                    

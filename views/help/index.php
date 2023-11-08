@@ -116,7 +116,7 @@
             </div>-->
             <div class="logo-help">
                 <div><h2><i><strong>PRIVACIDAD</strong></i><br></h2></div>
-                <img src="../img/inventary.png" width="140" height="" alt="Logo AKLAS" title="Logo de AKLAS"/>
+                <img src="../img/logo.png" width="140" height="" alt="Logo AKLAS" title="Logo de AKLAS"/>
                 <br><br>
                 <i><strong>Copyright 2023, AKLAS, administrando triunfos, todos losderechos reservados</strong></i><br>
                 <strong>Contacto: <a href="mailto:aklas@gmail.com" title="Enviar correo a AKLAS">aklas@gmail.com</a></strong><br><br>
@@ -135,7 +135,7 @@
                 <i>
                     Si tiene alguna duda o comentario, contacte a la Ing. Karla Ramírez Marquéz, al correo 
                     <a href="mailto:kramirez32@ucol.mx" title="Enviar correo a la Ing. Karla Ramírez Marquéz">kramirez32@ucol.mx</a> 
-                    o al 314 352 0638, de igual manera puede asistir de manera presencial al domicilio El Naranjo, 
+                    o al 314 352 0638, de igual manera puede asistir de forma presencial al domicilio El Naranjo, 
                     Carretera Manzanillo-Cihuatlan Km. 20, 28860 Manzanillo, Colima. Teléfono: 314 331 1207.
                 </i>
 

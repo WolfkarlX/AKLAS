@@ -28,7 +28,7 @@
     </div>
     <div class="container">
         <div class="logo-login">
-            <img width="150px" src="views/img/inventary.png" >
+            <img width="150px" src="views/img/logo.png" >
         </div>
         <div class="form-container">
             <h1>Iniciar sesión</h1>
@@ -38,7 +38,6 @@
                     <div class="icono"><i class='bx bx-lock-alt' id="togglePassword"></i> </div>
                 </input>
                 <button type="submit" class="button" value="Iniciar sesión">Iniciar Sesión</button>
-                <!--<button type="button" class="Olvidexd" value="Olvide mi pass">Olvidé Mi Contraseña</button>-->
             </form>
             <form action=" controllers/forgotpass.php">
               <button type="submit" class="buttonpass" value="Olvide mi pass">Olvidé Mi Contraseña</button>
@@ -46,7 +45,7 @@
         </div>
     </div>
     <div class="copy">
-        <span> © 2023, AKLAS</span>
+        <span> © 2023, AKLAS Inc.</span>
     </div>
 </body>
     <script src="./views/js/loginfun.js" type="module"></script>
