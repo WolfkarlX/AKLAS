@@ -7,3 +7,4 @@ const urlSendRegister = "../../controllers/delete-product.php";
 const UrlsendEdit = "../../controllers/edit-products.php";
 const urlGetnracks = "../../controllers/nracks-product.php";
 const urlGetnfiles = "../../controllers/nfiles-product.php";
+const urlGetTags = "../../controllers/tags-product.php";
