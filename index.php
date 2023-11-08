@@ -41,7 +41,7 @@
             </form>
             <form action=" controllers/forgotpass.php">
               <button type="submit" class="buttonpass" value="Olvide mi pass">Olvidé Mi Contraseña</button>
-            </form> dlfvf
+            </form>
         </div>
     </div>
     <div class="copy">

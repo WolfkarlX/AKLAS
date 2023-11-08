@@ -111,6 +111,15 @@
                 </div>
                 <span id="opcion"></span>
         </div>
+        <div class="user_tab" style="display: none" id="user_tab">
+            <span>Usuario</span>
+            <div class="usuario">
+                <span>Alison Gayle</span>
+            </div>
+            <div class="user-boton">
+                <button class="logoutuser"><i class='bx bx-log-out'></i> Cerrar Sesión</button>
+            </div>
+        </div>
         <div class="abajo">
         <div class="opciones">
         <button class="BotonRegistro" id="btn-registro" title="Hacer un registro nuevo">Nuevo registro</button>
@@ -119,7 +128,7 @@
                 <button id="btn-edit" title="Editar" disabled><i class='bx bx-pencil'></i></button>
                 <input type="text" id="filter" class="tabla-buscador" placeholder="Filtrar... "><i id="iconobuscador2" class='bx bx-search-alt-2'></i></input>
                 
-            </div>
+        </div>
             <div class="tabla">
                 <form id="form-table">
                     <table id="vista">
