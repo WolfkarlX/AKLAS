@@ -234,7 +234,7 @@
   height:50%;
   padding:3px;
   margin: 25px;
-  margin-left: 62rem;
+  margin-left: 76%;
 }
 
 
@@ -1237,6 +1237,9 @@ overflow: hidden;
 /* -------------- DARKMODE -------------- */
 .main-content.darkmode{
   background-color: var(--dark-color);
+}
+.darkmode .btn__icon {
+  margin-left: 3.5rem;
 }
 
 .darkmode .logo-help{

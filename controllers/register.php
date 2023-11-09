@@ -122,28 +122,74 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create acount</title>
+    <link rel="stylesheet" href="../views//css/style_root.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Root - Cuentas</title>
 </head>
 <body>
-    
-<h1>Create acount</h1>
+<div class="main_content">
+        <div class="arriba">
+            <h1>Visualización de cuentas</h1>
+            <div id="clock"></div>
+            <div class="arribaopciones">
+                <button id="UsuarioBoton"> <i class='bx bx-user-circle'></i></button>
+                <button id="notificacion"> <i class='bx bx-bell' ></i></button>
+                <button id="ConfiguracionBoton"> <i class='bx bx-cog' ></i></button>
+            </div>
+        </div>
+        <div class="configuracion_tab" style="display: none" id="config_tab">
+        <span>Configuración de la página</span>    
+                <div class="btn">
+                    <div class="btn__indicator">
+                        <div class="btn__icon-container">
+                            <i class="btn__icon fa-solid" id="btm_fondoscolor"></i>
+                        </div>
+                    </div>
+                   
+                </div>
+                <span id="opcion"></span>
+        </div>
+        <div class="user_tab" style="display: none" id="user_tab">
+            <span>Usuario</span>
+            <div class="usuario">
+                <span>Alison Gayle</span>
+            </div>
+            <div class="user-boton">
+                <button class="logoutuser"><i class='bx bx-log-out'></i> Cerrar Sesión</button>
+            </div>
+        </div>
+        <div class="notif_tab" style="display: none" id="notif_tab">
+            <span>Notificaciones</span>
+            <div class="Notif">
+                <span>Ejemplo</span>
+            </div>
+        </div>
+        <div class="abajo">
+            <form action="register.php" method="POST"><!--Ingresamos los valores que llevara la cuenta-->
+            <input type="text" class="input-field" placeholder="Ingrese el nombre" name="FirstName" required>
+            <input type="text" class="input-field" placeholder="Ingrese el apellido" name="LastName" required>
+            <input type="text" class="input-field" placeholder="Numero de empleado" name="IdKey" required>
+            <input type="text" class="input-field" placeholder="Descripción del empleado" name="description">
+            <input type="text" class="input-field" placeholder="Correo electronico" name="email" required>
+            <input type="password" class="input-field" placeholder="Ingrese la contraseña" name="password" required>
+            <input type="password" class="input-field" placeholder="Confirme la contraseña" name="confirm_password" required>
+            <select id="puesto" name="puesto">
+            <option value="" disabled selected hidden>Seleccione el puesto</option>
+            <option value="jefe">Jefe de área</option>
+            <option value="empleado">Empleado</option>
+            </select>
+            <input type="submit" value="Crear"><!--Boton para enviar los datos-->
+            </form>
+        </div>
+</div>
     <span><a href="logout.php">Log out</a></span><!--Volver al login-->
 
-    <form action="register.php" method="POST"><!--Ingresamos los valores que llevara la cuenta-->
-        <input type="text" class="input-field" placeholder="Ingrese el nombre" name="FirstName" required>
-        <input type="text" class="input-field" placeholder="Ingrese el apellido" name="LastName" required>
-        <input type="text" class="input-field" placeholder="Numero de empleado" name="IdKey" required>
-        <input type="text" class="input-field" placeholder="Descripción del empleado" name="description">
-        <input type="text" class="input-field" placeholder="Correo electronico" name="email" required>
-        <input type="password" class="input-field" placeholder="Ingrese la contraseña" name="password" required>
-        <input type="password" class="input-field" placeholder="Confirme la contraseña" name="confirm_password" required>
-        <select id="puesto" name="puesto">
-          <option value="" disabled selected hidden>Seleccione el puesto</option>
-          <option value="jefe">Jefe de área</option>
-          <option value="empleado">Empleado</option>
-        </select>
-        <input type="submit" value="Crear"><!--Boton para enviar los datos-->
-    </form>
+    
 
 </body>
+<script src="../js/fun.js" type="module"></script>
+<script src="../js/moonSun.js" type="module"></script>
 </html>
