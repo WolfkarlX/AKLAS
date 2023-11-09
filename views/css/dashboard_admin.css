@@ -447,8 +447,6 @@ overflow: hidden;
   background-color: #00329d;
 }
  
-
-
 .opciones .bloque_opciones {
   padding: 20px;
   display: grid;
@@ -1212,7 +1210,7 @@ overflow: hidden;
 .btn__icon-container{
   width: 100%;
   height: 100%;
-
+  background:#ccc;
   display: flex;
   justify-content: center;
   align-items: center;

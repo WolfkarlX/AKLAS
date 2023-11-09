@@ -30,6 +30,8 @@ function getTable(url, element) {
                 focusRadio("rbtn-" + id);
                 enableButton("btn-delete", "rbtn-" + id);
                 enableButton("btn-edit", "rbtn-" + id);
+                if(document.getElementById("btn-tags"))
+                    enableButton("btn-tags", "rbtn-" + id);
             };
             
             // Agregar la fila al tbody

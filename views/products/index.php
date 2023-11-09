@@ -290,8 +290,8 @@
         </form>
     </div>
         
-    <div class="formulario-tags" id="form-normal">
-        <form class="formu-tags" id="myForm" style="display: none;">
+    <div class="formulario-tags" id="form-tags">
+        <form class="formu-tags" id="tagsForm" style="display: none;">
             <div class="formarriba">
                 <h1 class="tituloform">Administrar Tags</h1>
                 <input id="Cerrar_form" type="button" value="X" class="CancelX">

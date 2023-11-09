@@ -30,7 +30,8 @@ let nracksE = document.getElementById("input7");
 let nfilesE = document.getElementById("input8");
 let btn_user = document.getElementById("UsuarioBoton");
 let btn_noti = document.getElementById("notificacion");
-
+let btn_tags = document.getElementById("btn-tags");
+let tagsForm = document.getElementById("tagsForm");
 
 if(reloj){
   setInterval(updateTime, 1000); //Se actualiza el tiempo
@@ -120,6 +121,12 @@ if(btn_edit){
     document.getElementById("form-normal").style.display = "none";
     event.preventDefault();
     showForm(edit_form.id, difuminado.id);
+  });
+}
+
+if(btn_tags){
+  btn_tags.addEventListener("click", (event)=>{
+    showForm(tagsForm.id, difuminado.id);
   });
 }
 
