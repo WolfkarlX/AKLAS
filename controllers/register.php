@@ -208,7 +208,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
             <label>Contraseña:</label>
             </div>
             <div class="campo">
-            <input type="password" class="input-field" placeholder="Ingrese la contraseña del empleado" name="password" required>
+            <input type="password" class="input-field" placeholder="Ingrese la contraseña" name="password" required>
             </div>
             <div class="campo">
             <label>Confirmar Contraseña: </label>
@@ -226,7 +226,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
             <option value="empleado">Empleado</option>
             </select>
             </div>
-            <input type="submit" value="Crear"><!--Boton para enviar los datos-->
+            <input type="submit" value="Crear" class="submit"><!--Boton para enviar los datos-->
             </div>
             </form>
             </div>
