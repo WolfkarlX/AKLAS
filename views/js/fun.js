@@ -29,6 +29,7 @@ let nfilas = document.getElementById("file");
 let nracksE = document.getElementById("input6");
 let nfilesE = document.getElementById("input7");
 let btn_user = document.getElementById("UsuarioBoton");
+let btn_noti = document.getElementById("notificacion");
 
 
 if(reloj){
@@ -141,9 +142,11 @@ if(btn_fondo){
   btn_fondo.addEventListener("click", (event)=>{
     var cuadro = document.getElementById("config_tab");
     var cuadrouser = document.getElementById("user_tab");
+    var cuadronoti = document.getElementById("notif_tab");
     if(cuadro.style.display === "none") {
       cuadro.style.display = "block";
       cuadrouser.style.display = "none";
+      cuadronoti.style.display = "none";
     }
     else {
       cuadro.style.display = "none"
@@ -155,12 +158,29 @@ if(btn_user){
   btn_user.addEventListener("click", (evemt)=>{
     var cuadrouser = document.getElementById("user_tab");
     var cuadro = document.getElementById("config_tab");
+    var cuadronoti = document.getElementById("notif_tab");
     if(cuadrouser.style.display === "none") {
       cuadrouser.style.display = "block";
       cuadro.style.display = "none";
+      cuadronoti.style.display = "none";
     }
     else {
-      cuadrouser.style.display = "none"
+      cuadrouser.style.display = "none";
+    }
+  } )
+}
+if(btn_noti){
+  btn_noti.addEventListener("click", (evemt)=>{
+    var cuadrouser = document.getElementById("user_tab");
+    var cuadronoti = document.getElementById("notif_tab");
+    var cuadro = document.getElementById("config_tab");
+    if(cuadronoti.style.display === "none") {
+      cuadronoti.style.display = "block";
+      cuadro.style.display = "none";
+      cuadrouser.style.display = "none";
+    }
+    else {
+      cuadronoti.style.display = "none";
     }
   } )
 }

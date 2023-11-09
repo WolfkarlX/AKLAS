@@ -96,6 +96,7 @@
             <div id="clock"></div>
             <div class="arribaopciones">
                 <button id="UsuarioBoton"> <i class='bx bx-user-circle'></i></button>
+                <button id="notificacion"> <i class='bx bx-bell' ></i></button>
                 <button id="ConfiguracionBoton"> <i class='bx bx-cog' ></i></button>
             </div>
         </div>
@@ -120,12 +121,19 @@
                 <button class="logoutuser"><i class='bx bx-log-out'></i> Cerrar Sesión</button>
             </div>
         </div>
+        <div class="notif_tab" style="display: none" id="notif_tab">
+            <span>Notificaciones</span>
+            <div class="Notif">
+                <span>Ejemplo</span>
+            </div>
+        </div>
         <div class="abajo">
         <div class="opciones">
         <button class="BotonRegistro" id="btn-registro" title="Hacer un registro nuevo">Nuevo registro</button>
                 <button id="btn-actualizar" title="Actualizar"><i class='bx bx-refresh'></i></button>
                 <button id="btn-delete" form="form-table" title="Eliminar" disabled><i class='bx bx-trash'></i></button>
                 <button id="btn-edit" title="Editar" disabled><i class='bx bx-pencil'></i></button>
+                <button id="btn-tags" title="Administrar Tags" disabled>Administrar Tags</button>
                 <input type="text" id="filter" class="tabla-buscador" placeholder="Filtrar... "><i id="iconobuscador2" class='bx bx-search-alt-2'></i></input>
                 
             </div>
@@ -279,6 +287,25 @@
         <form id="getnrackA" hidden>
             <input type="hidden" id="ar" name="value">
         </form>
+    </div>
+        
+    <div class="formulario-tags" id="form-normal">
+        <form class="formu-tags" id="myForm" style="display: none;">
+            <div class="formarriba">
+                <h1 class="tituloform">Administrar Tags</h1>
+                <input id="Cerrar_form" type="button" value="X" class="CancelX">
+            </div>
+            <fieldset>
+                <label for="first-name">Tag: </label>
+                <input id="first-name" type="text" name="first-name" placeholder="Nombre" required minlength="2" maxlength="30" pattern="^[^\s].*$"/>
+                
+            </fieldset> 
+            <form>
+            <input type="button" value="Agregar" class="submitir" id="submit"/>
+            <input type="button" id="Cancelar_registro" value="Cancelar" class="Cancelar">
+            </form>
+        </form>
+        
     </div>
     <div id="difuminado"></div>
 </body>
