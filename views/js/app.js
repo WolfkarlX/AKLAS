@@ -35,6 +35,11 @@ async function cargarTabla(){
     await getTable(urlGetData, tbody);
     if(typeof urlGetTags !== 'undefined')
         getTags();
+
+    btnEliminar.setAttribute("disabled", "");
+    btnEdit.setAttribute("disabled", "");
+    if(btnTags)
+        btnTags.setAttribute("disabled", "");
 }
 
 var celdas = "";
@@ -45,10 +50,6 @@ document.addEventListener("DOMContentLoaded", cargarTabla);
 // Agregar evento para ejecutar la función getTable al hacer click en el botón
 botonActualizar.addEventListener("click", () => {
     cargarTabla();
-    btnEliminar.setAttribute("disabled", "");
-    btnEdit.setAttribute("disabled", "");
-    if(btnTags)
-        btnTags.setAttribute("disabled", "");
 });
 
 // Añadir un evento submit al formulario
@@ -99,10 +100,6 @@ formTable.addEventListener("submit", function(event) {
                     alert("Se elimino el registro correctamente");
                     //Recargar la tabla
                     cargarTabla();
-                    btnEliminar.setAttribute("disabled", "");
-                    btnEdit.setAttribute("disabled", "");
-                    if(btnTags)
-                        btnTags.setAttribute("disabled", "");
                 } else {
                     alert("No se pudo eliminar el registro");
                 }
@@ -128,11 +125,6 @@ form_edit.addEventListener("submit", function(event){
                 alert("Se edito correctamente");
                         //Recargar la tabla
                         cargarTabla();
-                        btnEdit.setAttribute("disabled", "");
-                        btnEliminar.setAttribute("disabled", "");
-                        if(btnTags)
-                            btnTags.setAttribute("disabled", "");
-                        event.target.reset();
                         event.target.style.display = "none";
                         difuminado.style.display = "none";
                         formNormal.style.display = "block";
