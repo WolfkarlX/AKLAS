@@ -61,9 +61,9 @@
             <li>
                 <a href="../tags/">
                     <i class='bx bx-purchase-tag-alt'></i>
-                    <span class="nav-item">Tags</span>
+                    <span class="nav-item">Etiquetas</span>
                 </a>
-                <span class="tooltip">Tags</span>
+                <span class="tooltip">Etiquetas</span>
             </li>
             <li>
                 <a href="../areas/">
@@ -94,6 +94,7 @@
             <div id="clock"></div>
             <div class="arribaopciones">
                 <button id="UsuarioBoton"> <i class='bx bx-user-circle'></i></button>
+                <button id="notificacion"> <i class='bx bx-bell' ></i></button>
                 <button id="ConfiguracionBoton"> <i class='bx bx-cog' ></i></button>
             </div>
         </div>
@@ -116,6 +117,12 @@
             </div>
             <div class="user-boton">
                 <button class="logoutuser"><i class='bx bx-log-out'></i> Cerrar Sesión</button>
+            </div>
+        </div>
+        <div class="notif_tab" style="display: none" id="notif_tab">
+            <span>Notificaciones</span>
+            <div class="Notif">
+                <span>Ejemplo</span>
             </div>
         </div>
         <div class="abajo" id="abajo">

@@ -63,9 +63,9 @@
             <li>
                 <a href="../tags/">
                     <i class='bx bx-purchase-tag-alt'></i>
-                    <span class="nav-item">Tags</span>
+                    <span class="nav-item">Etiquetas</span>
                 </a>
-                <span class="tooltip">Tags</span>
+                <span class="tooltip">Etiquetas</span>
             </li>
             <li>
                 <a href="../areas/">
