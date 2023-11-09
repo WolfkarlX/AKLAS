@@ -28,7 +28,7 @@ let Ssupplier = document.getElementById("input3");
 let sidebar = document.getElementById("sidebarid");
 let inputForarea = document.getElementById("ar");
 let formforarea = document.getElementById("getnrackA");
-
+let btnTags = document.getElementById("btn-tags");
 
 async function cargarTabla(){
     tbody.innerHTML = "";
@@ -47,6 +47,8 @@ botonActualizar.addEventListener("click", () => {
     cargarTabla();
     btnEliminar.setAttribute("disabled", "");
     btnEdit.setAttribute("disabled", "");
+    if(btnTags)
+        btnTags.setAttribute("disabled", "");
 });
 
 // Añadir un evento submit al formulario
@@ -99,6 +101,8 @@ formTable.addEventListener("submit", function(event) {
                     cargarTabla();
                     btnEliminar.setAttribute("disabled", "");
                     btnEdit.setAttribute("disabled", "");
+                    if(btnTags)
+                        btnTags.setAttribute("disabled", "");
                 } else {
                     alert("No se pudo eliminar el registro");
                 }
@@ -126,6 +130,8 @@ form_edit.addEventListener("submit", function(event){
                         cargarTabla();
                         btnEdit.setAttribute("disabled", "");
                         btnEliminar.setAttribute("disabled", "");
+                        if(btnTags)
+                            btnTags.setAttribute("disabled", "");
                         event.target.reset();
                         event.target.style.display = "none";
                         difuminado.style.display = "none";
