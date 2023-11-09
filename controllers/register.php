@@ -168,21 +168,72 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
             </div>
         </div>
         <div class="abajo">
-            <form action="register.php" method="POST"><!--Ingresamos los valores que llevara la cuenta-->
-            <input type="text" class="input-field" placeholder="Ingrese el nombre" name="FirstName" required>
+            <div class="formulario">
+            <form action="register.php" method="POST" class="formusuarios"><!--Ingresamos los valores que llevara la cuenta-->
+            <div class="formarriba">
+                <h1 class="tituloform">Nuevo Empleado</h1>
+            </div>
+            <div class="datos">
+            <div class="campo">
+            <label>Nombres: </label>
+            </div>
+            <div class="campo">
+            <input type="text" class="input-field" placeholder="Ingrese los nombres" name="FirstName" required>
+            </div>
+            <div class="campo">
+            <label>Apellidos: </label>
+            </div>
+            <div class="campo">
             <input type="text" class="input-field" placeholder="Ingrese el apellido" name="LastName" required>
+            </div>
+            <div class="campo">
+            <label>Numero de Empleado: </label>
+            </div>
+            <div class="campo">
             <input type="text" class="input-field" placeholder="Numero de empleado" name="IdKey" required>
+            </div>
+            <div class="campo">
+            <label>Descripción: </label>
+            </div>
+            <div class="campo">
             <input type="text" class="input-field" placeholder="Descripción del empleado" name="description">
+            </div>
+            <div class="campo">
+            <label>E-mail: </label>
+            </div>
+            <div class="campo">
             <input type="text" class="input-field" placeholder="Correo electronico" name="email" required>
-            <input type="password" class="input-field" placeholder="Ingrese la contraseña" name="password" required>
+            </div>
+            <div class="campo">
+            <label>Contraseña:</label>
+            </div>
+            <div class="campo">
+            <input type="password" class="input-field" placeholder="Ingrese la contraseña del empleado" name="password" required>
+            </div>
+            <div class="campo">
+            <label>Confirmar Contraseña: </label>
+            </div>
+            <div class="campo">
             <input type="password" class="input-field" placeholder="Confirme la contraseña" name="confirm_password" required>
+            </div>
+            <div class="campo">
+            <label>Puesto de Empleado: </label>
+            </div>
+            <div class="campo">
             <select id="puesto" name="puesto">
             <option value="" disabled selected hidden>Seleccione el puesto</option>
             <option value="jefe">Jefe de área</option>
             <option value="empleado">Empleado</option>
             </select>
+            </div>
             <input type="submit" value="Crear"><!--Boton para enviar los datos-->
+            </div>
             </form>
+            </div>
+            <div class="tabla">
+
+            </div>
+            
         </div>
 </div>
     <span><a href="logout.php">Log out</a></span><!--Volver al login-->

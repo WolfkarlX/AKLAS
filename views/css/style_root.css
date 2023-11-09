@@ -1,0 +1,158 @@
+.arriba {
+    display: flex;
+    top: 0;
+    position: absolute;
+    right: 0;
+    z-index: 2;
+    height: 20%;
+    width: 95%;
+    max-width: 95%;
+    /*background-color: yellowgreen;*/
+    border-radius: 0.6rem;
+    box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+    margin-right: 25px;
+    margin-bottom: 15px;
+    background-color: #12171e;
+  }
+  .arriba #clock {
+    font-size: 38px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 45px;
+    position: absolute;
+    display: flex;
+    color: white;
+    padding: 20px;
+    margin-left: 10px;
+  }
+  .arriba h1{
+    position: absolute;
+    display: flex;
+    color: white;
+    padding: 10px 10px;
+    margin-left: 20px;
+    font-size: 3.2rem;
+  }
+  .arribaopciones #UsuarioBoton {
+    background-color: none;
+    background-color:transparent;
+    color:white;
+    width:30%;
+    border:none;
+    margin: 15px;
+    font-size:3.2rem;
+    cursor: pointer;  
+  }
+  .arribaopciones #ConfiguracionBoton {
+    background-color: none;
+    background-color:transparent;
+    color:white;
+    width:30%;
+    font-size:3.2rem;
+    margin: 15px;
+    border:none;
+    cursor: pointer;
+  }
+  .arribaopciones #notificacion {
+    background-color: none;
+    background-color:transparent;
+    color:white;
+    width:30%;
+    font-size:3.2rem;
+    margin: 15px;
+    border:none;
+    cursor: pointer;
+  }
+  .arriba .arribaopciones{
+    font-size: 4.1rem;
+    color: rgb(0, 0, 0);
+    display: flex;
+    position:absolute;
+    z-index: 2;
+    width:20%;
+    max-width: 20%;
+    height:50%;
+    padding:3px;
+    margin: 25px;
+    margin-left: 76%;
+  }
+  .abajo {
+    height: 73%;
+    max-width: 95%;
+    width: 95%;
+    top: 9rem;
+    background-color: rgb(137, 97, 97);
+    position: absolute;
+    display: flex;
+    right: 0;
+    margin-right: 25px;
+    margin-top: 1.5rem;
+    padding: 10px;
+  }
+  .abajo .formulario{
+    max-width: 30%;
+    width: 30%;
+    background-color: aliceblue;
+    padding: 20px;
+    position: relative;
+    display: block;
+    justify-content: center;
+  }
+  .abajo .formulario .formusuarios{
+    background-color: rgb(7, 0, 56);
+    position: absolute;
+    display: block;
+    justify-content: center;
+    border-radius: 0.6rem;
+    width: 90%;
+    max-width: 90%;
+    box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
+  }
+  .formulario .formusuarios .datos {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .formulario .formusuarios .datos .campo {
+    width: calc(85% / 2);
+    margin: 0;
+    padding-left: 10px;
+    margin-left: 10px;
+    padding-top: 10px;
+  }
+  .formulario .formusuarios .datos .campo select {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    width: 80%;
+    height: 30px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .formulario .formusuarios .datos .campo label{
+    color: rgb(7, 0, 56);
+    font-weight: bold;
+    padding: 0 2px;
+    white-space: nowrap;
+    pointer-events: none;
+    transition: .5s;
+    border-radius: 10px;
+    padding: 0 10px;
+  
+    background-color: rgb(225, 220, 255);
+  }
+  .formulario .formarriba h1{
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    color: white;
+    font-size: 30px;
+    z-index: 2;
+    display: flex;
+    margin-right: 20px;
+    justify-content: center;
+  }
