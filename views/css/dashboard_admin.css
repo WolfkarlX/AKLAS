@@ -476,7 +476,7 @@ overflow: hidden;
   position: relative;
   display: block;
   max-width: 60vh;
-  margin-left: 37rem;
+  margin-left: 35rem;
 }
 
 .formulario .formu {
@@ -512,6 +512,7 @@ overflow: hidden;
   width: 60vh;
   max-width: 500px;
   min-width: 300px;
+  top: 100%;
   margin: 0 auto;
   padding-bottom: 2em;
   background-color: rgb(7, 0, 56);

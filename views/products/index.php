@@ -306,7 +306,6 @@
             <input type="button" id="Cancelar_registro" value="Cancelar" class="Cancelar">
             </form>
         </form>
-        
     </div>
     <div id="difuminado"></div>
 </body>

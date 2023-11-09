@@ -74,9 +74,9 @@ function showForm(form, difuminado){
   document.getElementById(difuminado).style.backdropFilter = "blur(5px)";
   document.getElementById(difuminado).style.display = "flex";
   document.getElementById(difuminado).style.zIndex = "2";
-  document.getElementById(difuminado).style.position = "fixed";
+  document.getElementById(difuminado).style.position = "absolute";
   document.getElementById(difuminado).style.width = "100%";
-  document.getElementById(difuminado).style.marginTop = "-2.5rem";
+  document.getElementById(difuminado).style.top = "0";
   document.getElementById(difuminado).style.height = "100%";
   for (var i = 0; i < btn_cerrarform.length; i++) {
     btn_cerrarform[i].onclick = (event)=>{ 
