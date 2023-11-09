@@ -139,6 +139,7 @@
                             <th>Proovedor</th>
                             <th>Categoría</th>
                             <th>Área</th>
+                            <th>Tipo Área</th>
                             <th>Rack</th>
                             <th>Fila</th>
                             <th>Precio</th>
@@ -245,32 +246,32 @@
                     </select><br>
                 </div>
                 <div class="campo">
-                    <label for="input6">n# Rack: </label>
-                    <input id="input6" type="number" name="rackn" placeholder="Numero de Rack"  required min="1" />
+                    <label for="input7">n# Rack: </label>
+                    <input id="input7" type="number" name="rackn" placeholder="Numero de Rack"  required min="1" />
                 </div>
                 <div class="campo">
-                    <label for="input7">Fila Rack: </label>
-                    <input id="input7" type="number" name="fila" placeholder="Numero De Fila Del Rack"  required min="1"/>
+                    <label for="input8">Fila Rack: </label>
+                    <input id="input8" type="number" name="fila" placeholder="Numero De Fila Del Rack"  required min="1"/>
                 </div>
                 <div class="campo">
-                    <label for="input8">Precio: </label>
-                    <input id="input8" type="text" name="price" placeholder="Precio" required minlength="2" maxlength="30"/>
+                    <label for="input9">Precio: </label>
+                    <input id="input9" type="text" name="price" placeholder="Precio" required minlength="2" maxlength="30"/>
                 </div>
                 <div class="campo">
-                    <label for="input9">Cantidad: </label>
-                    <input id="input9" type="number" name="quantity" placeholder="Cantidad" required minlength="2" maxlength="30"/>
+                    <label for="input10">Cantidad: </label>
+                    <input id="input10" type="number" name="quantity" placeholder="Cantidad" required minlength="2" maxlength="30"/>
                 </div>
                 <div class="campo">
-                    <label for="input12">Cantidad Máxima: </label>
-                    <input id="input12" type="number" name="max" placeholder="Cantidad" required minlength="2" maxlength="30"/>
+                    <label for="input13">Cantidad Máxima: </label>
+                    <input id="input13" type="number" name="max" placeholder="Cantidad" required minlength="2" maxlength="30"/>
                 </div>
                 <div class="campo">
-                    <label for="input11">Cantidad Minima: </label>
-                    <input id="input11" type="number" name="min" placeholder="Cantidad" required minlength="2" maxlength="30"/>
+                    <label for="input12">Cantidad Minima: </label>
+                    <input id="input12" type="number" name="min" placeholder="Cantidad" required minlength="2" maxlength="30"/>
                 </div>
                 <div class="campo">
-                    <label for="input10">Descripción: </label><br>
-                    <textarea id="input10" name="description" placeholder="Descripción" minlenght="5" pattern="^[^\s].*$"></textarea>
+                    <label for="input11">Descripción: </label><br>
+                    <textarea id="input11" name="description" placeholder="Descripción" minlenght="5" pattern="^[^\s].*$"></textarea>
                 </div>
             </div>
             <input type="submit" value="Registrar" class="submitir" id="submit"/>

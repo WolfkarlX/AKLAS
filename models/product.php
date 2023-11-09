@@ -59,7 +59,7 @@ class product extends conexion{
     }   
 
     public function JOIN(){
-        $sql = "select p.ProductID, p.ProductName, s.SupplierName, c.CategoryName, a.NameArea, p.StorageR, p.StorageRF, p.Price, p.Quantity, p.Description, p.MinQuantityLimit, p.MaxQuantityLimit from products p  
+        $sql = "select p.ProductID, p.ProductName, s.SupplierName, c.CategoryName, a.NameArea, a.Storaget as Storagetype, p.StorageR, p.StorageRF, p.Price, p.Quantity, p.Description, p.MinQuantityLimit, p.MaxQuantityLimit from products p  
         left join area a on p.AreaID = a.AreaID
         left join  suppliers s on p.SupplierID = s.SupplierID
         left join Categories c on p.CategoryID = c.CategoryID ORDER BY p.ProductID;";
