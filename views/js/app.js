@@ -17,8 +17,8 @@ const formNormal = document.querySelector("#form-normal"); //div del formulario
 const formeditado = document.querySelector("#form-editado"); //div del formulario editado
 let nracks = document.getElementById("RN");
 let nfilas = document.getElementById("file");
-let nracksE = document.getElementById("input6");
-let nfilesE = document.getElementById("input7");
+let nracksE = document.getElementById("input7");
+let nfilesE = document.getElementById("input8");
 let selectorforarea = document.getElementById("Sarea");
 let selectorforcategory = document.getElementById("Scate");
 let selectorforsupplier = document.getElementById("Sproovedor");
@@ -173,7 +173,7 @@ btnEdit.addEventListener("click", ()=>{
                 switch(objectid){
                     case "input3": createSelectors(urlgetSelects_supplier, object, indxS); break;
                     case "input4": createSelectors(urlgetSelects_category, object, indxC); break;
-                    case "input5": createSelectors(urlgetSelects_area, object, indxA); break;
+                    case "input5": createSelectors(urlgetSelects_area, object, indxA, nfilesE, nracksE, inputForarea, formforarea, urlGetnracks, urlGetnfiles, 1); break;
                 }
             }
         }

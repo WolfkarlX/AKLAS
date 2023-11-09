@@ -45,7 +45,7 @@ class area extends conexion{
     }
 
     public function getSelectors(){
-        $array = array($this->id, $this->attribute);
+        $array = array($this->id, $this->attribute, $this->attribute3);
         $selectors = $this->select($array);
         return $selectors;
     }

@@ -26,8 +26,8 @@ let formforarea = document.getElementById("getnrackA");
 let inputForarea = document.getElementById("ar");
 let nracks = document.getElementById("RN");
 let nfilas = document.getElementById("file");
-let nracksE = document.getElementById("input6");
-let nfilesE = document.getElementById("input7");
+let nracksE = document.getElementById("input7");
+let nfilesE = document.getElementById("input8");
 let btn_user = document.getElementById("UsuarioBoton");
 let btn_noti = document.getElementById("notificacion");
 
@@ -68,21 +68,6 @@ function closeForm(form, difuminado) {
 
 //funcion que abre y muestra el formulario que se desee
 function showForm(form, difuminado){
-  if(Sarea){
-    if(Sarea.tagName === "SELECT"){
-      console.log("es select");
-     if(Sarea.name === "area"){
-      console.log("su nombre es area");
-        if (Sarea.value !== "") {
-          console.log("tiene valor");
-          let value = Sarea.value;
-          inputForarea.value = value;
-          LimitInputs(formforarea, nracksE, urlGetnracks);
-          LimitInputs(formforarea, nfilesE, urlGetnfiles);
-        }
-      }
-    }
-  }
   document.getElementById("sidebarid").style.zIndex = "-1";
   document.getElementById(form).style.display = "block";
   document.getElementById(difuminado).style.backdropFilter = "blur(5px)";
@@ -123,7 +108,7 @@ if(btn_registro){
     event.preventDefault();
     if(selectorforarea && selectorforcategory && selectorforsupplier){
       createSelectors(urlgetSelects_supplier,  selectorforsupplier);
-      createSelectors(urlgetSelects_area, selectorforarea);
+      createSelectors(urlgetSelects_area, selectorforarea,false, null, null, null, null, null, null, true);
       createSelectors(urlgetSelects_category, selectorforcategory);
     }
     showForm(myform.id, difuminado.id);
@@ -200,6 +185,16 @@ if(selectorforarea){
     });
 
 }
+
+/*Sarea.addEventListener("click", function (event){
+  if (event.target.value !== "") {
+    alert("Se clickeo");
+    let value = event.target.value;
+    inputForarea.value = value;
+    LimitInputs(formforarea, nracksE, urlGetnracks);
+    LimitInputs(formforarea, nfilesE, urlGetnfiles);
+  }
+});*/
 
 if(Sarea){
   if(Sarea.tagName === "SELECT"){
