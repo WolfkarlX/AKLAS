@@ -49,11 +49,11 @@ async function cargarNotificaciones() {
     list_noti.innerHTML = "";
     for (const product of notifyProducts) {
         if(product.Falta || product.Sobra){
-            const span = document.createElement("li");
-            span.textContent = product.ProductName;
-            if(product.Falta) span.textContent += " hace Falta producto";
-            if(product.Sobra) span.textContent += " Sobra producto";
-            list_noti.appendChild(span);
+            const li = document.createElement("li");
+            li.textContent = product.ProductName;
+            if(product.Falta) li.textContent += " hace Falta producto";
+            if(product.Sobra) li.textContent += " Sobra producto";
+            list_noti.appendChild(li);
         }
     }
 }
