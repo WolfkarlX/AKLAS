@@ -74,6 +74,7 @@ async function createSelectors(url, element, edit = false, elementF=null, elemen
         }
 
         if(edit === false){
+            var count = 0;
             let opt = document.createElement("option");
             opt.setAttribute("selected", "");
             opt.value = "";
@@ -99,10 +100,15 @@ async function createSelectors(url, element, edit = false, elementF=null, elemen
                         option.text = registro[keys[1]].toString() + " -> " + registro[keys[2]].toString();
                     }
                     element.appendChild(option);
+                    count ++;
                 });
+                if(count < 1){
+                    showempty(element);
+                }
             });
         }else{
             if(gettype === false ){
+                var count = 0;
                 // Hacer una petición fetch al servidor
                 fetch(url)
                 .then(response => response.json())
@@ -124,10 +130,15 @@ async function createSelectors(url, element, edit = false, elementF=null, elemen
                             }
                         } 
                         element.appendChild(option);
+                        count ++;
                     });
+                    if(count < 1){
+                        showempty(element);
+                    }
                 });
             }else
-            {
+            {   
+                var count = 0;
                 fetch(url)
                 .then(response => response.json())
                 .then(data => {
@@ -149,9 +160,12 @@ async function createSelectors(url, element, edit = false, elementF=null, elemen
                             }
                         } 
                         element.appendChild(option);
+                        count ++;
                     });
+                    if(count < 1){
+                        showempty(element);
+                    }
                 });
-
             }
         }
     }else{
@@ -178,6 +192,18 @@ async function LimitInputs(form, element, url) {
     }
 }
 
+async function showempty(element){
+    element.setAttribute("disabled", "");
+        switch(element.id){ 
+            case"Sarea" || "input5": alert("No hay areas disponibles"); 
+            window.location.href = "../../views/areas/"; break;
+            case"Sproovedor" || "input3": alert("No hay proovedores disponibles");
+            window.location.href = "../../views/suppliers/"; break;
+            case"Scate" || "input4": alert("No hay categorías disponibles"); 
+            window.location.href = "../../views/categories/"; break;
+        }
+}
+
 async function sendForm(url, form) {
     try{
         const formData = new FormData(form);
@@ -192,4 +218,4 @@ async function sendForm(url, form) {
     }
 }
 
-export { getTable, sendForm, createSelectors, LimitInputs, getData };
+export { getTable, sendForm, createSelectors, LimitInputs, getData};
