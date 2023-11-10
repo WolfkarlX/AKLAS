@@ -1172,6 +1172,7 @@ overflow: hidden;
   z-index: 2;
   color: white;
   font-weight: bold;
+  overflow-y: auto;
 }
 
 /* -------------- BUTTON - PARA EL CAMBIO DE TEMA ENTRE CLARO Y OSCURO -------------- */
