@@ -297,9 +297,9 @@
                 <input id="Cerrar_form" type="button" value="X" class="CancelX">
             </div>
             <fieldset>
-                <label for="first-name">Tag: </label>
-                <input id="first-name" type="text" name="first-name" placeholder="Nombre" required minlength="2" maxlength="30" pattern="^[^\s].*$"/>
-                
+                <ol id="tag-list">
+                    
+                </ol>
             </fieldset> 
             <form>
             <input type="button" value="Agregar" class="submitir" id="submit"/>

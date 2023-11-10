@@ -1,5 +1,5 @@
 // Importar funciones de API
-import { getTable, sendForm, createSelectors, LimitInputs } from "./fetchAPI.js";
+import { getTable, sendForm, createSelectors, LimitInputs , getData } from "./fetchAPI.js";
 import { getTags } from "./tags-controlls.js";
 
 // Elementos DOM
@@ -29,6 +29,8 @@ let sidebar = document.getElementById("sidebarid");
 let inputForarea = document.getElementById("ar");
 let formforarea = document.getElementById("getnrackA");
 let btnTags = document.getElementById("btn-tags");
+let btn_noti = document.getElementById("notificacion");
+let list_noti = document.querySelector(".Notif");
 
 async function cargarTabla(){
     tbody.innerHTML = "";
@@ -42,10 +44,29 @@ async function cargarTabla(){
         btnTags.setAttribute("disabled", "");
 }
 
+async function cargarNotificaciones() {
+    const notifyProducts = await getData("../../controllers/notify-products.php");
+    list_noti.innerHTML = "";
+    for (const product of notifyProducts) {
+        if(product.Falta || product.Sobra){
+            const li = document.createElement("li");
+            li.textContent = product.ProductName;
+            if(product.Falta) li.textContent += " hace Falta producto";
+            if(product.Sobra) li.textContent += " Sobra producto";
+            list_noti.appendChild(li);
+        }
+    }
+}
+
 var celdas = "";
 
 // Agregar evento para ejecutar la función getTable al cargar la página
-document.addEventListener("DOMContentLoaded", cargarTabla);
+document.addEventListener("DOMContentLoaded", ()=>{
+    cargarTabla();
+    cargarNotificaciones();
+});
+
+btn_noti.addEventListener("click", cargarNotificaciones);
 
 // Agregar evento para ejecutar la función getTable al hacer click en el botón
 botonActualizar.addEventListener("click", () => {
