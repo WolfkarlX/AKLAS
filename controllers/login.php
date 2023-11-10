@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
             }
         } else 
         {
-            echo "<script>alert('Usuario no encontrado.'); window.history.back();</script>";
+            echo "<script>alert('Los datos ingresados son incorrectos.'); window.history.back();</script>";
         }
     } catch (PDOException $e) {
         // En caso de error, muestra un mensaje de error
