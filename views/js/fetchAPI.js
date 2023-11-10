@@ -55,6 +55,27 @@ function getData(url) {
     });
 }
 
+function sendData(url, obj) {
+    // Crear un objeto FormData vacío
+    let formData = new FormData();
+    // Recorrer las propiedades del objeto obj
+    for (let key in obj) {
+      // Agregar cada par clave-valor al objeto FormData
+        formData.append(key, obj[key]);
+    }
+  
+    // Enviar una solicitud POST a la url con el objeto FormData como el cuerpo
+    return fetch(url, {
+        method: "POST",
+        headers: {
+            "Content-Type": "multipart/form-data"
+        },
+        body: formData
+    })
+    .then((response) => response.json())
+    .then((data) => data);
+}
+
 function enableButton(id, id_radio) {
     const btn = document.getElementById(id);
     const radio = document.getElementById(id_radio);
@@ -218,4 +239,4 @@ async function sendForm(url, form) {
     }
 }
 
-export { getTable, sendForm, createSelectors, LimitInputs, getData};
+export { getTable, sendForm, createSelectors, LimitInputs, getData, sendData };

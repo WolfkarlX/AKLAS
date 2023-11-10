@@ -77,6 +77,15 @@ class product extends conexion{
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function getNotify() {
+        //SQL para obtener las si falta y sobre cantidad de los productos
+        $sql = "select ProductID, ProductName, (Quantity < MinQuantityLimit) as Falta, (Quantity > MaxQuantityLimit) as Sobra from $this->table";
+        $stmt = $this->prepare($sql);
+        // Ejecuta la sentencia
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 } 
 
 
