@@ -37,10 +37,12 @@ if(reloj){
   setInterval(updateTime, 1000); //Se actualiza el tiempo
 }
 
+if(btn_sidebar) {
 btn_sidebar.onclick = function () { //Funcion para abrir sidebar xD
     sidebar.classList.toggle('active'); // C abre
     localStorage.setItem("sidebar", sidebar.classList.contains('active'));
 };
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   if (localStorage.getItem("sidebar") === "true") {

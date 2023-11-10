@@ -123,14 +123,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../views//css/style_root.css">
-    <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../views/img/favicon.ico.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Root - Cuentas</title>
 </head>
 <body>
-<div class="main_content">
+<div class="main-content">
         <div class="arriba">
             <h1>Visualización de cuentas</h1>
             <div id="clock"></div>
@@ -230,17 +230,37 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
             </div>
             </form>
             </div>
-            <div class="tabla">
+            <div class="alado">
+                <div class="opciones">
+                    <button id="btn-actualizar" title="Actualizar"><i class='bx bx-refresh'></i></button>
+                    <button id="btn-delete" form="form-table" title="Eliminar" disabled><i class='bx bx-trash'></i></button>
+                    <button id="btn-edit" title="Editar" disabled><i class='bx bx-pencil'></i></button>
+                    <input type="text" id="filter" class="tabla-buscadoruser" placeholder="Filtrar... "><i id="iconobuscador2" class='bx bx-search-alt-2'></i></input>
+                </div>
+                <div class="tabla">
+                <form id="form-table">
+                    <table id="vista">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Apellidos</th>
+                                <th>Descripción</th>
+                                <th>Num. Cuenta</th>
+                                <th>E-mail</th>
+                            </tr>
+                        </thead>
+                        <tbody id="vista-cuerpo">
 
+                        </tbody>
+                    </table>
+                    </form>
+                </div>
             </div>
-            
         </div>
 </div>
-    <span><a href="logout.php">Log out</a></span><!--Volver al login-->
-
-    
-
+   
 </body>
-<script src="../js/fun.js" type="module"></script>
-<script src="../js/moonSun.js" type="module"></script>
+<script src="../views/js/fun.js" type="module"></script>
+<script src="../views/js/moonSun.js" type="module"></script>
 </html>

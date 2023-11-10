@@ -3,7 +3,14 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-
+.main-content {
+  position: absolute;
+  top: 0;
+  height: 100%; 
+  width: 100%;
+  left: 0;
+  background-color: var(--light-color);
+}
 .arriba {
     display: flex;
     top: 0;
@@ -38,7 +45,7 @@
     color: white;
     padding: 10px 10px;
     margin-left: 20px;
-    font-size: 3.2rem;
+    font-size: 2.2rem;
   }
   .arribaopciones #UsuarioBoton {
     background-color: none;
@@ -191,4 +198,385 @@
     font-weight: bold;
     cursor: pointer;
     outline-color: #00329d;
+  }
+  .configuracion_tab {
+    background-color: rgb(50, 49, 49);
+    position: absolute;
+    display: block;
+    width: 15rem;
+    height: 12rem;
+    right: 0%;
+    top: 7rem;
+    padding: 10px;
+    margin: 20px;
+    justify-content: center;
+    z-index: 2;
+    color: white;
+    font-weight: bold;
+    
+  }
+  .user_tab {
+    background-color: rgb(50, 49, 49);
+    position: absolute;
+    display: block;
+    width: 15rem;
+    height: 12rem;
+    right: 8rem;
+    top: 7rem;
+    padding: 10px;
+    margin: 20px;
+    justify-content: center;
+    z-index: 2;
+    color: white;
+    font-weight: bold;
+  }
+  .notif_tab {
+    background-color: rgb(50, 49, 49);
+    position: absolute;
+    display: block;
+    width: 15rem;
+    height: 12rem;
+    right: 5.2rem;
+    top: 7rem;
+    padding: 10px;
+    margin: 20px;
+    justify-content: center;
+    z-index: 2;
+    color: white;
+    font-weight: bold;
+  }
+  .alado {
+    display: block;
+    width: 65%;
+    position: relative;
+    z-index: 1;
+    padding: 10px;
+    /* height: auto; */
+    right: 0;
+    border-radius: 0.6rem;
+    box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
+    justify-content: center;
+    /* overflow: auto; */
+  }
+  .opciones {
+    background-color: #12171e;
+    top: 0;
+    position: absolute;
+    height: 20%;
+    width: 98%;
+    max-width: 98%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border-radius: 1rem;
+  }
+  .opciones #btn-actualizar {
+    width: calc(7% - 5px);
+    height: 65px;
+    padding: 10px;
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 2.1rem;
+    align-items: center;
+    background-color: rgb(30, 0, 255);
+    box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
+    color: #eee;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 10px;
+    justify-content: center;
+  }
+  .opciones #btn-delete {
+   background-color: gray;
+   width: calc(7% - 5px);
+   display: inline-block;
+   height: 65px;
+   color: white;
+   margin-top: 20px;
+   padding: 10px;
+   font-weight: bold;
+   cursor: pointer; 
+   font-size: 1.8rem;
+   align-items: center;
+   border: none;
+   margin: 10px;
+   border-radius: 0.6rem;
+   justify-content: center;
+   box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
+   overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .opciones #btn-edit {
+      background-color: gray;
+    width: calc(7% - 5px);
+    display: inline-block;
+    height: 65px;
+    margin-top: 20px;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer; 
+    font-size: 1.8rem;
+    align-items: center;
+    border: none;
+    margin: 10px;
+    border-radius: 0.6rem;
+    justify-content: center;
+    box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+  }
+  .opciones #btn-edit:enabled {
+    background-color: rgb(7, 0, 56);
+  }
+  
+  .abajo .tabla-buscadoruser {
+    background-color: transparent;
+    display: inline-block;
+    width: calc(20% - 5px);
+    height: 20px;
+    align-items: center;
+    border-bottom-color: #000000;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    padding: 10px 10px;
+    margin: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color:#000000;
+    outline: none;
+    margin-left: 50px;
+  }
+  .abajo #iconobuscador2{
+    font-size: 30px;
+    position: relative;
+    display: inline-block;
+    padding: 10px 10px;
+    margin: 2px;
+    margin-left: -1.1rem;
+    color: white;
+  
+  }
+  .opciones #btn-delete:enabled {
+    background-color: rgb(255, 0, 0);
+
+   }
+  .tabla {
+    width: 100%;
+    position: absolute;
+    height: 70%;
+    max-height: 70%;
+    margin-top: 8rem;
+    overflow-y: auto; 
+    max-width: 100%;
+  }
+  #vista {
+    width: auto;
+    top: 5%;
+    border-collapse: collapse;
+    height: 20px;
+    box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
+    max-width: 90%;
+    max-height: 100%;
+  }
+  
+  /* Estilos de las celdas */
+  #vista th,
+  #vista td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #d2d2d2;
+    font-weight: bold;
+    border: none;
+    max-height: 20px;
+  }
+  
+  /* Estilos de la cabecera */
+  #vista thead {
+    background-color: rgb(7, 0, 56);
+    font-weight: bold;
+    height: auto;
+    color: white;
+  
+    position: sticky;
+    top: 0%;
+    padding-top: 15%;
+    max-width: 90%;
+  }
+  #vista thead th{
+    position: sticky;
+    top: 0;
+  }
+  #vista #vista-cuerpo {
+    top: 1%;
+    max-height: 100px;
+  }
+  #vista tbody tr{
+    overflow-y: auto;
+    height: 20px;
+    max-height: 20px;
+  }
+  
+  /* Estilos de las filas alternas */
+  #vista tbody tr:nth-child(even) {
+    background-color: #fafafa;
+    height: auto;
+  }
+  
+  /* Estilos de las filas al pasar el ratón */
+  #vista tbody tr:hover {
+    background-color: rgb(183, 230, 255);
+    cursor: pointer;
+  }
+  #vista tbody tr::selection,
+  #vista tbody tr:active {
+    background-color: aquamarine;
+  }
+  
+  /* Estilo para fila seleccionada */
+  #vista-cuerpo input[type=radio]:checked + tr {
+    background-color: rgb(183, 230, 255);
+  }
+  
+
+
+
+  /* ------------ VARIABLES ------------ */
+:root{
+  /* COLORS */
+  --color: #9176FF;
+  --dark-color: #2b2b2b;
+  --dark-icon-color: #fff;
+  --light-color: #f7f7f7;
+  --light-icon-color: #FFDE59;
+}
+
+  .btn{
+    background-color: #fff;
+    width: 2em;
+    height: 2em;
+    margin: 0.4rem;
+    border-radius: 10em;
+    padding: 0 0.9em;
+  
+    box-shadow: inset 0 8px 60px rgba(0,0,0, .1),
+                inset 0 8px 8px rgba(0,0,0, .1),
+                inset 0 -4px 4px rgba(0,0,0, .1);
+  
+    position: relative;
+  
+    display: flex;
+    align-items: center;
+  
+    cursor: pointer;
+  }
+  
+  .btn__indicator{
+    background-color: #fff;
+    width: 7%;
+    height: 7%;
+    border-radius: 50%;
+  
+    position: absolute;
+  
+    box-shadow: 0 8px 40px rgba(0,0,0, .2);
+  
+    transition: transform .9s ease;
+  }
+  
+  .btn__icon-container{
+    width: 100%;
+    height: 100%;
+    background:#ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .btn__icon{
+    color: var(--light-icon-color);
+    font-size: 2rem;
+  }
+  
+  /* -------------- ANIMATION ------------ */
+  .btn__icon.animated{
+    animation: spin 0.6s;
+  }
+  
+  @keyframes spin{
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* -------------- DARKMODE -------------- */
+  .main-content.darkmode{
+    background-color: var(--dark-color);
+  }
+  .darkmode .abajo {
+    background-color: transparent;
+  }
+  .darkmode .abajo .formulario {
+    background-color: transparent
+  }
+  .darkmode .abajo .formulario .formusuarios{
+    background-color: #12171e;
+  }
+  .darkmode .formulario .formarriba h1{
+    color: white;
+  }
+  .darkmode .btn__icon {
+    margin-left: 3.5rem;
+  }
+  
+  .darkmode .logo-help{
+    color: white;
+  }
+  .darkmode .abajo #iconobuscador2 {
+    color: white;
+  }
+  .darkmode .abajo .tabla-buscador {
+    color: white;
+  }
+
+  .darkmode #vista tbody tr:nth-child(even) {
+    background-color: rgba(64, 64, 64, 0.596);
+  }
+  .darkmode #vista thead{
+   background-color: rgb(7, 0, 56);
+  }
+  .darkmode #vista td{
+    border: 1px solid;
+    border-bottom: #d2d2d2;
+    border-right: none;
+    border-left: none;
+    border-bottom: #717171;
+    color: rgb(240, 240, 240);
+  }
+  .darkmode #vista tbody tr:hover{
+    background-color: #717171;
+  }
+  .darkmode #vista-cuerpo input[type=radio]:checked + tr{
+    background-color: #717171;
+  }
+  
+  
+  .darkmode .btn{
+    box-shadow: inset 0 8px 60px rgba(0,0,0, .3),
+                inset 8px 0 8px rgba(0,0,0, .3),
+                inset 0 -4px 4px rgba(0,0,0, .3);
+  }
+  
+  .darkmode .btn__indicator{
+    transform: translateX(7%);
+    background-color: var(--dark-color);
+    box-shadow: 0 8px 40px rgba(0,0,0, .3);
+  }
+  
+  .darkmode .btn__icon{
+    color: var(--dark-icon-color);
   }
