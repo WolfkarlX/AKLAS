@@ -52,7 +52,7 @@ async function cargarNotificaciones() {
             const span = document.createElement("li");
             span.textContent = product.ProductName;
             if(product.Falta) span.textContent += " hace Falta producto";
-            if(product.Sobra) span.textContent += " Sobra producto"
+            if(product.Sobra) span.textContent += " Sobra producto";
             list_noti.appendChild(span);
         }
     }
