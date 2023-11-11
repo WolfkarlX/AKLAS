@@ -99,7 +99,6 @@
                 <i id="claro" class='bx bx-sun' onclick='Claro()'></i>-->
             
                 <button id="UsuarioBoton"> <i class='bx bx-user-circle'></i></button>
-                <button id="notificacion"> <i class='bx bx-bell' ></i></button>
                 <button id="ConfiguracionBoton"> <i class='bx bx-cog' ></i></button>
             </div>
         </div>
@@ -124,12 +123,7 @@
                 <button class="logoutuser"><i class='bx bx-log-out'></i> Cerrar Sesión</button>
             </div>
         </div>
-        <div class="notif_tab" style="display: none" id="notif_tab">
-            <span>Notificaciones</span>
-            <div class="Notif">
-                <span>Ejemplo</span>
-            </div>
-        </div>
+       
         <div class="abajo" id="abajo">
             <div class="opcionesmain">
                 <input class="buscador" type="text" id="myInput" placeholder="Buscar...">

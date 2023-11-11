@@ -50,8 +50,13 @@ async function cargarNotificaciones() {
     for (const product of notifyProducts) {
         if(product.Falta || product.Sobra){
             const li = document.createElement("li");
+            const liError1 = document.createElement("br");
+            li.style.margin = "10";
+            li.style.padding = "0";
+            li.style.textDecoration = "none";
+            li.style.marginBottom = "20px";
             li.textContent = product.ProductName;
-            if(product.Falta) li.textContent += " hace Falta producto";
+            if(product.Falta) li.textContent += "° hace falta producto";
             if(product.Sobra) li.textContent += " Sobra producto";
             list_noti.appendChild(li);
         }

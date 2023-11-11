@@ -254,6 +254,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 
                         </tbody>
                     </table>
+                    <div class="tablabajo">
+                        
+                    </div>
                     </form>
                 </div>
             </div>

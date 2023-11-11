@@ -135,7 +135,12 @@
                 <button id="btn-edit" title="Editar" disabled><i class='bx bx-pencil'></i></button>
                 <button id="btn-tags" title="Administrar Tags" disabled>Administrar Tags</button>
                 <input type="text" id="filter" class="tabla-buscador" placeholder="Filtrar... "><i id="iconobuscador2" class='bx bx-search-alt-2'></i></input>
-                
+                <div class="opcioneselect">
+                    <select name="head-option" id="head-option" required>
+                    </select><br>
+                    <select name="info-option" id="info-option" required>
+                    </select><br>
+                </div>
             </div>
             <div class="tabla">
             <form id="form-table">
@@ -164,6 +169,7 @@
                 </table>
                 </form>
             </div>
+            
         </div>
     </div>
     <div class="formularioproducto" id="form-normal">
