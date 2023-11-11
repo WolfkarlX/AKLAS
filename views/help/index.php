@@ -94,7 +94,6 @@
             <div id="clock"></div>
             <div class="arribaopciones">
                 <button id="UsuarioBoton"> <i class='bx bx-user-circle'></i></button>
-                <button id="notificacion"> <i class='bx bx-bell' ></i></button>
                 <button id="ConfiguracionBoton"> <i class='bx bx-cog' ></i></button>
             </div>
         </div>
