@@ -118,7 +118,7 @@
         <div class="user_tab" style="display: none" id="user_tab">
             <span>Usuario</span>
             <div class="usuario">
-                <span>Alison Gayle</span>
+                <span><?php echo $_SESSION['first_name']; ?> <?php echo $_SESSION['last_name']; ?></span><!--Mostramos el nombte de usuario--->
             </div>
             <div class="user-boton">
                 <button class="logoutuser"><i class='bx bx-log-out'></i> Cerrar Sesión</button>
