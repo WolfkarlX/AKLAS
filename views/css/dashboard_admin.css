@@ -13,7 +13,7 @@
   width: 10%;
   background-color: #1a1a1a;
   padding: 0.4rem 0.8rem;
-  transition: all 0.5s ease;
+  transition: all 0.2s;
   z-index: 8;
 }
 .sidebar.active ~ .main-content {
@@ -151,7 +151,7 @@
   top: 0;
   left: 10%;
   height: 100%; 
-  transition: all 0.5s ease;
+  transition: all 0.2s;
   width: 90%;
   padding: 1rem;
   display: flex;
@@ -223,6 +223,20 @@
   border:none;
   cursor: pointer;
 }
+.arribaopciones .iconoerror {
+  background-color: red;
+  color: white;
+  width: 1.8rem;
+  height: 1.8rem;
+  font-size: 26px;
+  text-align: center;
+  display: flex;
+  border-radius: 1rem;
+  position: absolute;
+  margin-top: -50px;
+  margin-left: 24px;
+}
+
 .arriba .arribaopciones{
   font-size: 4.1rem;
   color: rgb(0, 0, 0);
@@ -1308,6 +1322,7 @@ overflow: hidden;
 .darkmode .btn__icon {
   margin-left: 3.5rem;
 }
+
 
 .darkmode .logo-help{
   color: white;

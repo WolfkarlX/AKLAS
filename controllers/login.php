@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 
     try {
         // Preparamos la consulta para obtener el usuario por su IDKey
-        $consulta = $conn->prepare("SELECT IdKey, Password, rol FROM employees WHERE IdKey = :IdKey");
+        $consulta = $conn->prepare("SELECT IdKey, LastName, FirstName, Password, rol FROM employees WHERE IdKey = :IdKey");
         $consulta->bindParam(':IdKey', $IdKey);
         $consulta->execute();
         $user = $consulta->fetch(PDO::FETCH_ASSOC);
@@ -33,6 +33,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
             if (password_verify($password, $user['Password'])) 
             {
                 $_SESSION['user_id'] = $user['IdKey']; // Almacenamos el ID del usuario en la sesión
+                $_SESSION['first_name'] = $user['FirstName']; // Almacenamos el FirtsName del usuario en la sesión
+                $_SESSION['last_name'] = $user['LastName']; // Almacenamos el LastName del usuario en la sesión
                 if ($user['rol'] == 'root') 
                 {
                     header('Location: ../controllers/register.php');//Redirigimos al panel de control del root

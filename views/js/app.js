@@ -33,6 +33,7 @@ let btn_noti = document.getElementById("notificacion");
 let list_noti = document.querySelector(".Notif");
 const HeaderS = document.getElementById("head-option");
 const selectfrom = document.getElementById("selectfrom"); 
+const notificaIcon = document.getElementById("iconoerror");
 
 async function cargarTabla(){
     tbody.innerHTML = "";
@@ -54,7 +55,7 @@ async function cargarNotificaciones() {
     for (const product of notifyProducts) {
         if(product.Falta || product.Sobra){
             const li = document.createElement("li");
-            const liError1 = document.createElement("br");
+            notificaIcon.style.display = "flex";
             li.style.margin = "10";
             li.style.padding = "0";
             li.style.textDecoration = "none";
@@ -64,6 +65,7 @@ async function cargarNotificaciones() {
             if(product.Sobra) li.textContent += " Sobra producto";
             list_noti.appendChild(li);
         }
+       
     }
 }
 

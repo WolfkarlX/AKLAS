@@ -94,7 +94,6 @@
             <div id="clock"></div>
             <div class="arribaopciones">
                 <button id="UsuarioBoton"> <i class='bx bx-user-circle'></i></button>
-                <button id="notificacion"> <i class='bx bx-bell' ></i></button>
                 <button id="ConfiguracionBoton"> <i class='bx bx-cog' ></i></button>
             </div>
         </div>
@@ -113,7 +112,8 @@
         <div class="user_tab" style="display: none" id="user_tab">
             <span>Usuario</span>
             <div class="usuario">
-                <span>Alison Gayle</span>
+                <!--Mostramos el nombre de usuario--->
+                <span><?php echo $_SESSION['first_name']; ?> <?php echo $_SESSION['last_name']; ?></span>
             </div>
             <div class="user-boton">
                 <button class="logoutuser"><i class='bx bx-log-out'></i> Cerrar Sesión</button>
