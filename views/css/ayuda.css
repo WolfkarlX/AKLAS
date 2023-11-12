@@ -4,7 +4,7 @@ body {
     padding: 0;
     width: 100%;
     min-height: 100vh;
-    display: flex;
+    display:flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
@@ -14,17 +14,32 @@ body {
     background: #020043;
 }
 
-.container {
-    width: 30%;
-    min-width: 400px;
-    top: 20%;
-    background-image: url(../img/fondo.gif);
-    margin: 0;
-    position: absolute;
-    display: block;
+.form-content {
+    background: linear-gradient(
+        50deg,
+        rgba(223,194,151,1) 50%,
+        rgba(40,42,55,0.7)),
+        url(../img/fondo.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 250%;
     border-radius: 5px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    min-width: 400px;
+    top: 17%;
+    padding: 1%;
+    margin: 0;
+    position: sticky;
+    text-align: center;
+} 
+
+.form-content h2 {
+    color: #f4f6f9;
+    font-size: 40px;
+    margin-bottom: 25px;
 }
+
 .text-login {
     position: absolute;
     display: block;
@@ -36,12 +51,14 @@ body {
     top: 0;
     border-radius: 10px;
 }
+
 .text-login h1{
     font-size: 270%;
     color:#fff;
     text-align: center;
     font-weight: bold;
 }
+
 .text-login h3{
     color:#fff;
     font-size: 130%;
@@ -50,16 +67,6 @@ body {
     min-height: 80vh;
     margin-top: -2%;
     white-space: nowrap;
-}
-.form-container {
-    background-color: #dfc297;
-    padding: 20px;
-    border-radius: 5px;
-    display: block;
-    position: sticky;
-    text-align: center;
-    display: grid;
-    place-items: center;
 }
 
 h1 {
@@ -89,6 +96,7 @@ input[type="password"]::-ms-clear {
     background: transparent;
     transition: 0.1s ease;
     z-index: 1;
+    color: #000;
 }
 
 input:focus{
@@ -96,17 +104,6 @@ input:focus{
     user-select: all;
 }
 
-.icono{
-    font-size: 30px;
-    position: absolute;
-    display: flex;
-    z-index: 10;
-    font-weight: bold;
-    right:5%;
-    top: 47%;
-    color: white;
-    cursor: pointer;
-}
 .button {
     background-color: black;
     color: #fff;
@@ -118,43 +115,18 @@ input:focus{
     z-index: 1;
     width: 100%;
 }
-.buttonpass {
-    background-color: rgb(49, 49, 49);
-    color: #fff;
-    font-size: 16px;
-    padding: 10px;
-    border-radius: 20px;
-    cursor: pointer;
-    border: 2px solid black;
-    z-index: 1;
-    margin-top: 10px;
-    width: 100%;
-    border: none;
-}
-.Olvidexd {
-    background: transparent;
-    border-color: white;
-    border-radius: 5px;
-    border: 2px solid white;
-    color: white;
-    font-size: 16px;
-    padding: 10px;
-    cursor: pointer;
-}
-.Olvidexd:hover {
-    border-color: red;
-    color: red;
-}
+
 .button:hover {
     background-color: #222;
     border-color: white;
 }
 
-.logo-login {
+/*.logo-login {
     padding: 5px;
     border-radius: 5px;
     text-align: center;
-}
+}*/
+
 .copy {
     position: absolute;
     display: block;
@@ -194,29 +166,36 @@ input:focus{
     background-color: #0e92df;
 }
 
-@media only screen and (max-width: 600px) { 
-    .container { width: 80%; min-width: 300px; } 
-    .text-login { height: 30%;}
-    .text-login h1 { font-size: 200%; } 
-    .text-login h3 { font-size: 100%; } 
-    .copy {width: 80%;}
-    .copy span {margin-left: 38%;}
+label {
+    font-size: 17px;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+input, textarea {
+    padding: 17px, 14px;
+    background-color: #333646;
+    border: 0;
+    font-size: 15px;
+    color: #f4f6f9;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+:focus {
+    outline: 1px solid #1e92e9;
+}
+
+@media(max-width:991px) {
     body {
-        width: 100%;
-        height: 100%;
+        padding: 30px;
     }
-}
 
-@media only screen and (max-width: 400px) {
-     .container { width: 90%; min-width: 200px; } 
-     .text-login { height: 15%;}
-     .text-login h1 { font-size: 150%; } 
-     .text-login h3 { font-size: 80%; } 
-     .copy {width: 80%;}
-     .copy span {margin-left: 30%;}
-     body {
+    .form-content {
         width: 100%;
-        height: 100%;
     }
-}
 
+    form {
+        width: 100%;
+    }
+} 
