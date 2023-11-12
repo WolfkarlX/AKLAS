@@ -14,9 +14,7 @@
         <h1>AKLAS</h1>
         <h3>Administrando triunfos</h3>
     </div>
-        <!--<div class="logo-login">
-            <img width="150px" src="../views/img/logo.png" >
-        </div>-->
+    <div class="container">
     <div class="form-content">
         <h1>Enviar Correo</h1>
         <form action="https://formsubmit.co/kramirez32@ucol.mx" method="POST">
@@ -41,6 +39,7 @@
         <form action="../index.php">
             <button class="volver" value="Volver">Volver</button> 
         </form> 
+    </div>
     </div>
     <div class="copy">
         <span> © 2023, AKLAS Inc.</span>
