@@ -222,10 +222,13 @@ async function showempty(element){
             window.location.href = "../../views/suppliers/"; break;
             case"Scate" || "input4": alert("No hay categorías disponibles"); 
             window.location.href = "../../views/categories/"; break;
+            case"Scate" || "input4": alert("No hay categorías disponibles"); 
+            window.location.href = "../../views/categories/"; break;
         }
 }
 
 function getFilter(url, element, number) {
+    var counter = 0;
     while(element.firstChild){
         element.removeChild(element.firstChild);
     }
@@ -269,15 +272,15 @@ function getFilter(url, element, number) {
                 // Agregar la fila al tbody
                 element.appendChild(radio);
                 element.appendChild(row);
+                counter++;
             }
-        }
+        }   
+            if(counter < 1){
+                alert("No hay productos Disponibles");
+            }
             resolve();
             });
-        });
-                  /*productos.forEach((product) => {
-              // Aquí puedes hacer lo que necesites con la información del producto
-              // Por ejemplo, imprimir el ID del producto
-              console.log(data[product])         });*/
+        });         
 }
 
 async function sendForm(url, form) {

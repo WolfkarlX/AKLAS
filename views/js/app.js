@@ -44,8 +44,15 @@ async function cargarTabla(){
 
     btnEliminar.setAttribute("disabled", "");
     btnEdit.setAttribute("disabled", "");
-    selectfrom.selectedIndex = 0;
-    HeaderS.selectedIndex = 0;
+    if(selectfrom){
+        selectfrom.selectedIndex = 0;
+        selectfrom.setAttribute("disabled", "");
+    }
+
+    if(HeaderS){
+        HeaderS.selectedIndex = 0;
+    }
+    
     if(btnTags)
         btnTags.setAttribute("disabled", "");
 }
@@ -305,28 +312,45 @@ btnEdit.addEventListener("click", ()=>{
     }
 })
 
-HeaderS.addEventListener("change", (e)=>{
-    e.preventDefault();
-    localStorage.setItem("Filtered", "true");
-    switch(e.target.value){
-        case "1": selectfrom.removeAttribute("disabled"); createSelectors(urlgetSelects_area,selectfrom, false, null, null, null, null, null, null, 1); getFilter(urlFilter_Area, tbody, 0);/*getFilter(,) FILTER DE SOLO AREAS*/ break;
-        case "2": selectfrom.removeAttribute("disabled"); createSelectors(urlgetSelects_category,selectfrom); getFilter(urlFilter_Categoría, tbody, 0);/*getFilter(,) FILTER DE SOLO AREAS*/ break;
-        case "3": selectfrom.removeAttribute("disabled"); createSelectors(urlgetSelects_supplier,selectfrom); getFilter(urlFilter_Supplier, tbody, 0);/*getFilter(,) FILTER DE SOLO AREAS*/ break;
-        case "4 ": selectfrom.removeAttribute("disabled"); createSelectors(urlgetSelects_area,selectfrom); /*getFilter(,) FILTER DE SOLO AREAS*/ break;
+if (HeaderS ) {
+    HeaderS.addEventListener("change", (e)=>{
+        e.preventDefault();
+        while (selectfrom.firstChild) {
+            selectfrom.removeChild(selectfrom.firstChild);
+        }
 
-    }
-})
+        switch(e.target.value){
+            case "1": selectfrom.removeAttribute("disabled"); createSelectors(urlgetSelects_area,selectfrom, false, null, null, null, null, null, null, 1); getFilter(urlFilter_Area, tbody, 0);/*getFilter(,) FILTER DE SOLO AREAS*/ break;
+            case "2": selectfrom.removeAttribute("disabled"); createSelectors(urlgetSelects_category,selectfrom); getFilter(urlFilter_Categoría, tbody, 0);/*getFilter(,) FILTER DE SOLO AREAS*/ break;
+            case "3": selectfrom.removeAttribute("disabled"); createSelectors(urlgetSelects_supplier,selectfrom); getFilter(urlFilter_Supplier, tbody, 0);/*getFilter(,) FILTER DE SOLO AREAS*/ break;
+            case "4": selectfrom.removeAttribute("disabled"); //createSelectors(urlgetSelects_area,selectfrom); getFilter(,) FILTER DE SOLO AREAS break;
+        }
+    })
+}
 
-selectfrom.addEventListener("change", (e) =>{
-    e.preventDefault();
-    let valor = HeaderS.value;
-    localStorage.setItem("Filtered_esp", "true");
-    switch(valor){
-        case "1": getFilter(urlFilter_especeficArea, tbody, e.target.value);break;
-        case "2": getFilter(urlFilter_especeficCategory, tbody, e.target.value);break;
-        case "3": getFilter(urlFilter_especeficSupplier, tbody, e.target.value);break;
-    }
-})
+if (selectfrom ) {
+    selectfrom.addEventListener("click", (e) =>{
+        e.preventDefault();
+        if(selectfrom.length < 2){
+            alert("No hay elementos");
+        }
+    })
+}
+
+if (selectfrom ) {
+    selectfrom.addEventListener("change", (e) =>{
+        e.preventDefault();
+        let valor = HeaderS.value;
+        var count = 1;
+        //localStorage.setItem("Filtered_esp", "true");
+        switch(valor){
+            case "1": count = getFilter(urlFilter_especeficArea, tbody, e.target.value);break;
+            case "2": count = getFilter(urlFilter_especeficCategory, tbody, e.target.value);break;
+            case "3": count = getFilter(urlFilter_especeficSupplier, tbody, e.target.value);break;
+        }
+        
+    })
+}
 
 /*Script para filtrar registros en una tabla*/
     filter.addEventListener("keyup", function(event) {
