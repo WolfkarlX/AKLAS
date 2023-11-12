@@ -2,7 +2,7 @@
 namespace models;
 
 class supplier extends conexion{ //Clase de proveedor que extiende la conexion, aqui se encontraran las funciones para manipular la tabla de proveedores
-    protected $id, $a1, $a2, $a3, $a4, $a5, $a6, $a7;
+    protected $id, $attribute, $a2, $a3, $a4, $a5, $a6, $a7;
     private $name;
     private $contact;
     private $addres;
@@ -15,7 +15,7 @@ class supplier extends conexion{ //Clase de proveedor que extiende la conexion, 
         parent::__construct();
         $this->table = "suppliers";
         $this->id = "SupplierID";
-        $this->a1 = "SupplierName";
+        $this->attribute = "SupplierName";
         $this->a2 = "ContactName";
         $this->a3 = "Address";
         $this->a4 = "City";
@@ -110,7 +110,7 @@ class supplier extends conexion{ //Clase de proveedor que extiende la conexion, 
 
     public function getArray($Vname, $Vcontactn, $Vaddress, $Vcity, $Vpostalcode, $VCountry, $Vphone){
         $array = array(
-        $this->a1 => $Vname,
+        $this->attribute => $Vname,
         $this->a2 => $Vcontactn,
         $this->a3 => $Vaddress,
         $this->a4 => $Vcity,
@@ -121,7 +121,7 @@ class supplier extends conexion{ //Clase de proveedor que extiende la conexion, 
     }
 
     public function getSelectors(){
-        $array = array($this->id, $this->a1);
+        $array = array($this->id, $this->attribute);
         $selectors = $this->select($array);
         return $selectors;
     }

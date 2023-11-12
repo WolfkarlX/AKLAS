@@ -225,6 +225,61 @@ async function showempty(element){
         }
 }
 
+function getFilter(url, element, number) {
+    while(element.firstChild){
+        element.removeChild(element.firstChild);
+    }
+
+    return new Promise((resolve, reject) => {
+        // Hacer una petición fetch al servidor
+        fetch(url)
+        .then(response => response.json())
+        .then(datos => {
+        // Iterar por la lista de productos
+        if (datos.hasOwnProperty(number)){
+            var productos = datos[number];
+            for (const dato of productos) {
+                // Crear una nueva fila
+                const row = document.createElement("tr");
+    
+                // Crear celdas con su contenido y añadirlas a la fila
+                for (const campo of Object.values(dato)) {
+                    const cell = document.createElement("td");
+                    cell.textContent = `${campo}`;
+                    row.appendChild(cell);
+                }
+    
+                // Se crea radiobutton con id = "rbtn-" + Object.values(dato)[0] y valor Object.values(dato)[0]
+                let id = Object.values(dato)[0];
+                const radio = document.createElement("input");
+                radio.setAttribute("type", "radio");
+                radio.setAttribute("name", "registro");
+                radio.setAttribute("id", "rbtn-" + id);
+                radio.value = id;
+                radio.style.display = "none";
+    
+                row.onclick = () => {
+                    focusRadio("rbtn-" + id);
+                    enableButton("btn-delete", "rbtn-" + id);
+                    enableButton("btn-edit", "rbtn-" + id);
+                    if(document.getElementById("btn-tags"))
+                        enableButton("btn-tags", "rbtn-" + id);
+                };
+                
+                // Agregar la fila al tbody
+                element.appendChild(radio);
+                element.appendChild(row);
+            }
+        }
+            resolve();
+            });
+        });
+                  /*productos.forEach((product) => {
+              // Aquí puedes hacer lo que necesites con la información del producto
+              // Por ejemplo, imprimir el ID del producto
+              console.log(data[product])         });*/
+}
+
 async function sendForm(url, form) {
     try{
         const formData = new FormData(form);
@@ -239,4 +294,4 @@ async function sendForm(url, form) {
     }
 }
 
-export { getTable, sendForm, createSelectors, LimitInputs, getData, sendData };
+export { getTable, sendForm, createSelectors, LimitInputs, getData, sendData, getFilter };

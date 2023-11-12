@@ -1,5 +1,5 @@
 // Importar funciones de API
-import { getTable, sendForm, createSelectors, LimitInputs , getData } from "./fetchAPI.js";
+import { getTable, sendForm, createSelectors, LimitInputs , getData, getFilter } from "./fetchAPI.js";
 import { getTags } from "./tags-controlls.js";
 
 // Elementos DOM
@@ -31,6 +31,8 @@ let formforarea = document.getElementById("getnrackA");
 let btnTags = document.getElementById("btn-tags");
 let btn_noti = document.getElementById("notificacion");
 let list_noti = document.querySelector(".Notif");
+const HeaderS = document.getElementById("head-option");
+const selectfrom = document.getElementById("selectfrom"); 
 
 async function cargarTabla(){
     tbody.innerHTML = "";
@@ -149,19 +151,44 @@ form_edit.addEventListener("submit", function(event){
         res.then( data => {
             if(data){
                 alert("Se edito correctamente");
-                        //Recargar la tabla
-                        cargarTabla();
-                        event.target.style.display = "none";
-                        difuminado.style.display = "none";
-                        formNormal.style.display = "block";
-                        formeditado.style.display = "block";
-                        sidebar.style.zIndex = "8";
-                    } else {
-                        alert("No se pudo editar el registro");
+                //Recargar la tabla
+                //if(localStorage.getItem("Filtered") === "true" && localStorage.getItem("Filtered_esp") !== "true"){
+                if(HeaderS.value !== "" && selectfrom.value === ""){
+                    let valor = HeaderS.value;
+                    console.log(valor);
+                    switch(valor){
+                        case "1": 
+                        getFilter(urlFilter_Area, tbody, 0);
+                        break;
+                        case "2": 
+                        getFilter(urlFilter_Categoría, tbody, 0);
+                        break;
+                        case "3": getFilter(urlFilter_Supplier, tbody, 0);
+                        break;
                     }
+                }//if(localStorage.getItem("Filtered") === "true" && localStorage.getItem("Filtered_esp") === "true"){
+                else if(HeaderS.value !== "" && selectfrom.value !== ""){
+                    let valor = HeaderS.value;
+                    console.log(valor)
+                    console.log(selectfrom.value);
+                    switch(valor){
+                        case "1": getFilter(urlFilter_especeficArea, tbody, selectfrom.value);break;
+                        case "2": getFilter(urlFilter_especeficCategory, tbody, selectfrom.value);break;
+                        case "3": getFilter(urlFilter_especeficSupplier, tbody, selectfrom.value);break;
+                    }   
+                }else{
+                    cargarTabla();
+                }
+                event.target.style.display = "none";
+                difuminado.style.display = "none";
+                formNormal.style.display = "block";
+                formeditado.style.display = "block";
+                sidebar.style.zIndex = "8";
+            } else {
+                alert("No se pudo editar el registro");
             }
-
-        )
+            
+        });
     }
 })
 
@@ -202,16 +229,29 @@ btnEdit.addEventListener("click", ()=>{
             }
         }
     }
-    /*if(Sarea){
-        if(Sarea.tagName === "SELECT"){
-            if(Sarea.name === "area"){
-                    let value = Sarea.value;
-                    inputForarea.value = value;
-                    LimitInputs(formforarea, nracksE, urlGetnracks);
-                    LimitInputs(formforarea, nfilesE, urlGetnfiles);
-            }
-        }
-    }*/
+})
+
+HeaderS.addEventListener("change", (e)=>{
+    e.preventDefault();
+    localStorage.setItem("Filtered", "true");
+    switch(e.target.value){
+        case "1": selectfrom.removeAttribute("disabled"); createSelectors(urlgetSelects_area,selectfrom, false, null, null, null, null, null, null, 1); getFilter(urlFilter_Area, tbody, 0);/*getFilter(,) FILTER DE SOLO AREAS*/ break;
+        case "2": selectfrom.removeAttribute("disabled"); createSelectors(urlgetSelects_category,selectfrom); getFilter(urlFilter_Categoría, tbody, 0);/*getFilter(,) FILTER DE SOLO AREAS*/ break;
+        case "3": selectfrom.removeAttribute("disabled"); createSelectors(urlgetSelects_supplier,selectfrom); getFilter(urlFilter_Supplier, tbody, 0);/*getFilter(,) FILTER DE SOLO AREAS*/ break;
+        case "4 ": selectfrom.removeAttribute("disabled"); createSelectors(urlgetSelects_area,selectfrom); /*getFilter(,) FILTER DE SOLO AREAS*/ break;
+
+    }
+})
+
+selectfrom.addEventListener("change", (e) =>{
+    e.preventDefault();
+    let valor = HeaderS.value;
+    localStorage.setItem("Filtered_esp", "true");
+    switch(valor){
+        case "1": getFilter(urlFilter_especeficArea, tbody, e.target.value);break;
+        case "2": getFilter(urlFilter_especeficCategory, tbody, e.target.value);break;
+        case "3": getFilter(urlFilter_especeficSupplier, tbody, e.target.value);break;
+    }
 })
 
 /*Script para filtrar registros en una tabla*/
@@ -226,23 +266,4 @@ btnEdit.addEventListener("click", ()=>{
         })        
     })
 
-/*Script para eliminar espacios en blanco del html */ 
-    function eliminarEspacios() {
-        // Obtén el contenido del textarea
-        var input = document.getElementById("Desc")
-        var textarea = document.getElementById("Name");
-        var contenido = textarea.value;
-        var content = input.value;
 
-        // Reemplaza todos los espacios en blanco con una cadena vacía
-        var contenidoSinEspacios = contenido.replace(/\s+/g, '');
-        var contentwithouthspace = content.replace(/\s+/g, '');
-        // Verifica si el contenido después de quitar los espacios es vacío
-        if (contenidoSinEspacios === '') {
-        // Si es vacío, establece el contenido del textarea como vacío
-            textarea.value = '';
-        }
-        if(contentwithouthspace === ''){
-            input.value = '';
-        }
-    }

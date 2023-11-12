@@ -67,5 +67,42 @@
             }
             return $stmt->execute();
         }
+
+        public function filterEachProducts($word){
+            // Obtener las IDs de la base de datos y guardarlas en un array
+            $query = "SELECT {$this->id} FROM {$this->table}";
+            $statement = $this->prepare($query);
+            $statement->execute();
+            $ids = $statement->fetchAll(PDO::FETCH_COLUMN);
+    
+            // Inicializar el array para almacenar los resultados de las consultas SELECT
+            $resultados = array();
+            // Iterar sobre cada ID y realizar una consulta SELECT
+            foreach ($ids as $id) {
+                $consulta = "select p.ProductID, p.ProductName, s.SupplierName, c.CategoryName, a.NameArea, a.Storaget as Storagetype, p.StorageR, p.StorageRF, p.Price, p.Quantity, p.Description, p.MinQuantityLimit, p.MaxQuantityLimit from products p  
+                left join area a on p.AreaID = a.AreaID
+                left join  suppliers s on p.SupplierID = s.SupplierID
+                left join Categories c on p.CategoryID = c.CategoryID WHERE {$word}.{$this->id} = ? ORDER BY p.ProductID;";
+                $stmt = $this->prepare($consulta);
+                $stmt->bindParam(1, $id, PDO::PARAM_INT);
+                $stmt->execute();
+                // Almacenar el resultado en el array de resultados
+                $resultados[$id] = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                $stmt->closeCursor();
+            }
+            return $resultados;
+        }
+
+        public function filter(){
+            $consulta = "select p.ProductID, p.ProductName, s.SupplierName, c.CategoryName, a.NameArea, a.Storaget as Storagetype, p.StorageR, p.StorageRF, p.Price, p.Quantity, p.Description, p.MinQuantityLimit, p.MaxQuantityLimit from products p  
+                left join area a on p.AreaID = a.AreaID
+                left join  suppliers s on p.SupplierID = s.SupplierID
+                left join Categories c on p.CategoryID = c.CategoryID ORDER BY p.{$this->id};";
+                $stmt = $this->prepare($consulta);
+                $stmt->execute();
+                // Almacenar el resultado en el array de resultados
+                $resultados[0] = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                return $resultados;
+        }
     }
 ?>

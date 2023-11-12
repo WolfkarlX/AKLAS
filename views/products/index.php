@@ -137,9 +137,15 @@
                 <input type="text" id="filter" class="tabla-buscador" placeholder="Filtrar... "><i id="iconobuscador2" class='bx bx-search-alt-2'></i></input>
                 <div class="opcioneselect">
                     <select name="head-option" id="head-option" required>
+                        <option value="" disabled selected>Filtrar por...</option>
+                        <option value="1">Area</option>
+                        <option value="2">Categoría</option>
+                        <option value="3">Proovedor</option>
+                        <option value="4">Etiqueta</option>
                     </select><br>
-                    <select name="info-option" id="info-option" required>
-                    </select><br>
+                    <select name="" id="selectfrom" disabled>
+                        <option value="" selected>Elemento Especifico</option>
+                    </select>
                 </div>
             </div>
             <div class="tabla">
@@ -164,12 +170,11 @@
                         </tr>
                     </thead>
                     <tbody id="vista-cuerpo">
-
+                    
                     </tbody>
                 </table>
                 </form>
             </div>
-            
         </div>
     </div>
     <div class="formularioproducto" id="form-normal">

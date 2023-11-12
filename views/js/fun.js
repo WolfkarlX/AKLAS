@@ -60,13 +60,6 @@ function closeForm(form, difuminado) {
     nracks.setAttribute("disabled", "true");
     nfilas.setAttribute("disabled", "true");
   }
-
-  /*if(nracksE && nfilesE){
-    if(nracksE.getAttribute("name") === "rackn" && nfilesE.getAttribute("name") === "fila"){
-      nracksE.setAttribute("disabled", "true");
-      nfilesE.setAttribute("disabled", "true");
-    }
-  }*/
 }
 
 //funcion que abre y muestra el formulario que se desee
@@ -194,16 +187,6 @@ if(selectorforarea){
     });
 
 }
-
-/*Sarea.addEventListener("click", function (event){
-  if (event.target.value !== "") {
-    alert("Se clickeo");
-    let value = event.target.value;
-    inputForarea.value = value;
-    LimitInputs(formforarea, nracksE, urlGetnracks);
-    LimitInputs(formforarea, nfilesE, urlGetnfiles);
-  }
-});*/
 
 if(Sarea){
   if(Sarea.tagName === "SELECT"){
