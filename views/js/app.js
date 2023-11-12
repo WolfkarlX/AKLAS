@@ -42,6 +42,8 @@ async function cargarTabla(){
 
     btnEliminar.setAttribute("disabled", "");
     btnEdit.setAttribute("disabled", "");
+    selectfrom.selectedIndex = 0;
+    HeaderS.selectedIndex = 0;
     if(btnTags)
         btnTags.setAttribute("disabled", "");
 }
@@ -101,7 +103,32 @@ form.addEventListener("submit", function(event) {
             if(data){
                 alert("El registro se agrego exitosamente");
                 //Recargar la tabla
-                cargarTabla();
+                if(HeaderS.value !== "" && selectfrom.value === ""){
+                    let valor = HeaderS.value;
+                    console.log(valor);
+                    switch(valor){
+                        case "1": 
+                        getFilter(urlFilter_Area, tbody, 0);
+                        break;
+                        case "2": 
+                        getFilter(urlFilter_Categoría, tbody, 0);
+                        break;
+                        case "3": getFilter(urlFilter_Supplier, tbody, 0);
+                        break;
+                    }
+                }
+                else if(HeaderS.value !== "" && selectfrom.value !== ""){
+                    let valor = HeaderS.value;
+                    console.log(valor)
+                    console.log(selectfrom.value);
+                    switch(valor){
+                        case "1": getFilter(urlFilter_especeficArea, tbody, selectfrom.value);break;
+                        case "2": getFilter(urlFilter_especeficCategory, tbody, selectfrom.value);break;
+                        case "3": getFilter(urlFilter_especeficSupplier, tbody, selectfrom.value);break;
+                    }   
+                }else{
+                    cargarTabla();
+                }
                 //Limpia el formulario
                 event.target.reset();
                 event.target.style.display = "none";
@@ -127,7 +154,29 @@ formTable.addEventListener("submit", function(event) {
                 if(data){
                     alert("Se elimino el registro correctamente");
                     //Recargar la tabla
-                    cargarTabla();
+                    if(HeaderS.value !== "" && selectfrom.value === ""){
+                        let valor = HeaderS.value;
+                        switch(valor){
+                            case "1": 
+                            getFilter(urlFilter_Area, tbody, 0);
+                            break;
+                            case "2": 
+                            getFilter(urlFilter_Categoría, tbody, 0);
+                            break;
+                            case "3": getFilter(urlFilter_Supplier, tbody, 0);
+                            break;
+                        }
+                    }
+                    else if(HeaderS.value !== "" && selectfrom.value !== ""){
+                        let valor = HeaderS.value;
+                        switch(valor){
+                            case "1": getFilter(urlFilter_especeficArea, tbody, selectfrom.value);break;
+                            case "2": getFilter(urlFilter_especeficCategory, tbody, selectfrom.value);break;
+                            case "3": getFilter(urlFilter_especeficSupplier, tbody, selectfrom.value);break;
+                        }   
+                    }else{
+                        cargarTabla();
+                    }
                 } else {
                     alert("No se pudo eliminar el registro");
                 }
