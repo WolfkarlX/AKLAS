@@ -30,6 +30,7 @@ let nracksE = document.getElementById("input7");
 let nfilesE = document.getElementById("input8");
 let btn_user = document.getElementById("UsuarioBoton");
 let btn_noti = document.getElementById("notificacion");
+let btn_config = document.getElementById("ConfiguracionBoton");
 let btn_tags = document.getElementById("btn-tags");
 let tagsForm = document.getElementById("tagsForm");
 
@@ -132,11 +133,16 @@ if(btn_fondo){
     var cuadronoti = document.getElementById("notif_tab");
     if(cuadro.style.display === "none") {
       cuadro.style.display = "block";
+      btn_config.style.backgroundColor = "rgba(128, 128, 128, 0.301)";
+      btn_user.style.backgroundColor = "transparent";
+      btn_noti.style.backgroundColor = "transparent";
       cuadrouser.style.display = "none";
       cuadronoti.style.display = "none";
+      
     }
     else {
       cuadro.style.display = "none"
+      btn_config.style.backgroundColor = "transparent";
     }
     
   })
@@ -150,9 +156,13 @@ if(btn_user){
       cuadrouser.style.display = "block";
       cuadro.style.display = "none";
       cuadronoti.style.display = "none";
+      btn_user.style.backgroundColor = "rgba(128, 128, 128, 0.301)";
+      btn_config.style.backgroundColor = "transparent";
+      btn_noti.style.backgroundColor = "transparent";
     }
     else {
       cuadrouser.style.display = "none";
+      btn_user.style.backgroundColor = "transparent";
     }
   } )
 }
@@ -163,11 +173,15 @@ if(btn_noti){
     var cuadro = document.getElementById("config_tab");
     if(cuadronoti.style.display === "none") {
       cuadronoti.style.display = "block";
+      btn_noti.style.backgroundColor = "rgba(128, 128, 128, 0.301)";
+      btn_config.style.backgroundColor = "transparent";
+      btn_user.style.backgroundColor = "transparent";
       cuadro.style.display = "none";
       cuadrouser.style.display = "none";
     }
     else {
       cuadronoti.style.display = "none";
+      btn_noti.style.backgroundColor = "transparent";
     }
   } )
 }

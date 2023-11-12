@@ -34,6 +34,7 @@ let list_noti = document.querySelector(".Notif");
 const HeaderS = document.getElementById("head-option");
 const selectfrom = document.getElementById("selectfrom"); 
 const notificaIcon = document.getElementById("iconoerror");
+const listaNotif = document.querySelector("li");
 
 async function cargarTabla(){
     tbody.innerHTML = "";
@@ -52,10 +53,11 @@ async function cargarTabla(){
 async function cargarNotificaciones() {
     const notifyProducts = await getData("../../controllers/notify-products.php");
     list_noti.innerHTML = "";
+    let hasLi = false;
     for (const product of notifyProducts) {
         if(product.Falta || product.Sobra){
             const li = document.createElement("li");
-            notificaIcon.style.display = "flex";
+          
             li.style.margin = "10";
             li.style.padding = "0";
             li.style.textDecoration = "none";
@@ -64,12 +66,33 @@ async function cargarNotificaciones() {
             if(product.Falta) li.textContent += "° hace falta producto";
             if(product.Sobra) li.textContent += " Sobra producto";
             list_noti.appendChild(li);
+            hasLi = true;
         }
        
     }
+    if(hasLi) {
+        notificaIcon.style.display = "flex";
+    } else {
+        notificaIcon.style.display = "none";
+    }
 }
+const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+        if (mutation.type === 'childList') {
+            if (list_noti.children.length > 0) {
+                notificaIcon.style.display = "flex";
+            } else {
+                notificaIcon.style.display = "none";
+            }
+        }
+    });
+});
+
+observer.observe(list_noti, { childList: true });
 
 var celdas = "";
+
+
 
 // Agregar evento para ejecutar la función getTable al cargar la página
 document.addEventListener("DOMContentLoaded", ()=>{
