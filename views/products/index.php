@@ -138,7 +138,7 @@
                 <button id="btn-actualizar" title="Actualizar"><i class='bx bx-refresh'></i></button>
                 <button id="btn-delete" form="form-table" title="Eliminar" disabled><i class='bx bx-trash'></i></button>
                 <button id="btn-edit" title="Editar" disabled><i class='bx bx-pencil'></i></button>
-                <button id="btn-tags" title="Administrar Tags" disabled>Administrar Tags</button>
+                <button id="btn-tags" title="Administrar Tags" disabled>Etiquetas</button>
                 <input type="text" id="filter" class="tabla-buscador" placeholder="Filtrar... "><i id="iconobuscador2" class='bx bx-search-alt-2'></i></input>
                 <div class="opcioneselect">
                     <select name="head-option" id="head-option" required>
@@ -309,18 +309,22 @@
     <div class="formulario-tags" id="form-tags">
         <form class="formu-tags" id="tagsForm" style="display: none;">
             <div class="formarriba">
-                <h1 class="tituloform">Administrar Tags</h1>
+                <h1 class="tituloform">Etiquetas</h1>
                 <input id="Cerrar_form" type="button" value="X" class="CancelX">
             </div>
-            <fieldset>
-                <ol id="tag-list">
+            <fieldset id="tag-list">
+                <select name="tag-select">
+
+                </select>
+                <select name="tag-select">
                     
-                </ol>
+                </select>
+                <select name="tag-select">
+                    
+                </select>
             </fieldset> 
-            <form>
-            <input type="button" value="Agregar" class="submitir" id="submit"/>
+            <input type="submit" value="Confirmar" class="submitir" id="submit-tag"/>
             <input type="button" id="Cancelar_registro" value="Cancelar" class="Cancelar">
-            </form>
         </form>
     </div>
     <div id="difuminado"></div>

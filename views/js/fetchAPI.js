@@ -297,4 +297,16 @@ async function sendForm(url, form) {
     }
 }
 
-export { getTable, sendForm, createSelectors, LimitInputs, getData, sendData, getFilter };
+async function setOptions(url, select) {
+    const options = await getData(url);
+    select.innerHTML = "";
+    options.forEach(option => {
+        let opt = document.createElement('option');
+        let data = Object.values(option);
+        opt.value = data[0];
+        opt.text = data[1];
+        select.appendChild(opt);
+    });
+}
+
+export { getTable, sendForm, createSelectors, LimitInputs, getData, sendData, getFilter, setOptions };

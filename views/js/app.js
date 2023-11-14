@@ -1,5 +1,5 @@
 // Importar funciones de API
-import { getTable, sendForm, createSelectors, LimitInputs , getData, getFilter } from "./fetchAPI.js";
+import { getTable, sendForm, createSelectors, LimitInputs , getData, getFilter, setOptions } from "./fetchAPI.js";
 import { getTags } from "./tags-controlls.js";
 
 // Elementos DOM
@@ -29,6 +29,9 @@ let sidebar = document.getElementById("sidebarid");
 let inputForarea = document.getElementById("ar");
 let formforarea = document.getElementById("getnrackA");
 let btnTags = document.getElementById("btn-tags");
+let tagList = document.getElementById("tag-list");
+let tagSelects = document.getElementsByName("tag-select");
+let tagForm = document.getElementById("tagsForm");
 let btn_noti = document.getElementById("notificacion");
 let list_noti = document.querySelector(".Notif");
 const HeaderS = document.getElementById("head-option");
@@ -135,29 +138,33 @@ form.addEventListener("submit", function(event) {
             if(data){
                 alert("El registro se agrego exitosamente");
                 //Recargar la tabla
-                if(HeaderS.value !== "" && selectfrom.value === ""){
-                    let valor = HeaderS.value;
-                    console.log(valor);
-                    switch(valor){
-                        case "1": 
-                        getFilter(urlFilter_Area, tbody, 0);
-                        break;
-                        case "2": 
-                        getFilter(urlFilter_Categoría, tbody, 0);
-                        break;
-                        case "3": getFilter(urlFilter_Supplier, tbody, 0);
-                        break;
+                if(HeaderS && selectfrom ){
+                    if(HeaderS.value !== "" && selectfrom.value === ""){
+                        let valor = HeaderS.value;
+                        switch(valor){
+                            case "1": 
+                            getFilter(urlFilter_Area, tbody, 0);
+                            break;
+                            case "2": 
+                            getFilter(urlFilter_Categoría, tbody, 0);
+                            break;
+                            case "3": getFilter(urlFilter_Supplier, tbody, 0);
+                            break;
+                        }
                     }
-                }
-                else if(HeaderS.value !== "" && selectfrom.value !== ""){
-                    let valor = HeaderS.value;
-                    console.log(valor)
-                    console.log(selectfrom.value);
-                    switch(valor){
-                        case "1": getFilter(urlFilter_especeficArea, tbody, selectfrom.value);break;
-                        case "2": getFilter(urlFilter_especeficCategory, tbody, selectfrom.value);break;
-                        case "3": getFilter(urlFilter_especeficSupplier, tbody, selectfrom.value);break;
-                    }   
+                    else if(HeaderS.value !== "" && selectfrom.value !== ""){
+                        let valor = HeaderS.value;
+                        console.log(valor)
+                        console.log(selectfrom.value);
+                        switch(valor){
+                            case "1": getFilter(urlFilter_especeficArea, tbody, selectfrom.value);break;
+                            case "2": getFilter(urlFilter_especeficCategory, tbody, selectfrom.value);break;
+                            case "3": getFilter(urlFilter_especeficSupplier, tbody, selectfrom.value);break;
+                        }
+                        
+                    }else{
+                        cargarTabla();
+                    }
                 }else{
                     cargarTabla();
                 }
@@ -186,26 +193,31 @@ formTable.addEventListener("submit", function(event) {
                 if(data){
                     alert("Se elimino el registro correctamente");
                     //Recargar la tabla
-                    if(HeaderS.value !== "" && selectfrom.value === ""){
-                        let valor = HeaderS.value;
-                        switch(valor){
-                            case "1": 
-                            getFilter(urlFilter_Area, tbody, 0);
-                            break;
-                            case "2": 
-                            getFilter(urlFilter_Categoría, tbody, 0);
-                            break;
-                            case "3": getFilter(urlFilter_Supplier, tbody, 0);
-                            break;
+                    if(HeaderS && selectfrom ){
+                        if(HeaderS.value !== "" && selectfrom.value === ""){
+                            let valor = HeaderS.value;
+                            switch(valor){
+                                case "1": 
+                                getFilter(urlFilter_Area, tbody, 0);
+                                break;
+                                case "2": 
+                                getFilter(urlFilter_Categoría, tbody, 0);
+                                break;
+                                case "3": getFilter(urlFilter_Supplier, tbody, 0);
+                                break;
+                            }
                         }
-                    }
-                    else if(HeaderS.value !== "" && selectfrom.value !== ""){
-                        let valor = HeaderS.value;
-                        switch(valor){
-                            case "1": getFilter(urlFilter_especeficArea, tbody, selectfrom.value);break;
-                            case "2": getFilter(urlFilter_especeficCategory, tbody, selectfrom.value);break;
-                            case "3": getFilter(urlFilter_especeficSupplier, tbody, selectfrom.value);break;
-                        }   
+                        else if(HeaderS.value !== "" && selectfrom.value !== ""){
+                            let valor = HeaderS.value;
+                            switch(valor){
+                                case "1": getFilter(urlFilter_especeficArea, tbody, selectfrom.value);break;
+                                case "2": getFilter(urlFilter_especeficCategory, tbody, selectfrom.value);break;
+                                case "3": getFilter(urlFilter_especeficSupplier, tbody, selectfrom.value);break;
+                            } 
+                        }
+                        else{
+                            cargarTabla();
+                        }  
                     }else{
                         cargarTabla();
                     }
@@ -234,29 +246,33 @@ form_edit.addEventListener("submit", function(event){
                 alert("Se edito correctamente");
                 //Recargar la tabla
                 //if(localStorage.getItem("Filtered") === "true" && localStorage.getItem("Filtered_esp") !== "true"){
-                if(HeaderS.value !== "" && selectfrom.value === ""){
-                    let valor = HeaderS.value;
-                    console.log(valor);
-                    switch(valor){
-                        case "1": 
-                        getFilter(urlFilter_Area, tbody, 0);
-                        break;
-                        case "2": 
-                        getFilter(urlFilter_Categoría, tbody, 0);
-                        break;
-                        case "3": getFilter(urlFilter_Supplier, tbody, 0);
-                        break;
+                if(HeaderS && selectfrom ){
+                    if(HeaderS.value !== "" && selectfrom.value === ""){
+                        let valor = HeaderS.value;
+                        console.log(valor);
+                        switch(valor){
+                            case "1": 
+                            getFilter(urlFilter_Area, tbody, 0);
+                            break;
+                            case "2": 
+                            getFilter(urlFilter_Categoría, tbody, 0);
+                            break;
+                            case "3": getFilter(urlFilter_Supplier, tbody, 0);
+                            break;
+                        }
+                    }//if(localStorage.getItem("Filtered") === "true" && localStorage.getItem("Filtered_esp") === "true"){
+                    else if(HeaderS.value !== "" && selectfrom.value !== ""){
+                        let valor = HeaderS.value;
+                        console.log(valor)
+                        console.log(selectfrom.value);
+                        switch(valor){
+                            case "1": getFilter(urlFilter_especeficArea, tbody, selectfrom.value);break;
+                            case "2": getFilter(urlFilter_especeficCategory, tbody, selectfrom.value);break;
+                            case "3": getFilter(urlFilter_especeficSupplier, tbody, selectfrom.value);break;
+                        }   
+                    }else{
+                        cargarTabla();
                     }
-                }//if(localStorage.getItem("Filtered") === "true" && localStorage.getItem("Filtered_esp") === "true"){
-                else if(HeaderS.value !== "" && selectfrom.value !== ""){
-                    let valor = HeaderS.value;
-                    console.log(valor)
-                    console.log(selectfrom.value);
-                    switch(valor){
-                        case "1": getFilter(urlFilter_especeficArea, tbody, selectfrom.value);break;
-                        case "2": getFilter(urlFilter_especeficCategory, tbody, selectfrom.value);break;
-                        case "3": getFilter(urlFilter_especeficSupplier, tbody, selectfrom.value);break;
-                    }   
                 }else{
                     cargarTabla();
                 }
@@ -353,15 +369,32 @@ if (selectfrom ) {
 }
 
 /*Script para filtrar registros en una tabla*/
-    filter.addEventListener("keyup", function(event) {
-        if (event.key == "Escape") event.target.value = "";
-        const registers = document.querySelectorAll("#vista-cuerpo tr");
-        registers.forEach(data => {
-            let rawContent = data.innerHTML.replaceAll("<td>", "").replaceAll("</td>", "");
-            rawContent.toLowerCase().includes(event.target.value.toLowerCase())
-            ?data.style.display = ""
-            :data.style.display = "none";
-        })        
-    })
+filter.addEventListener("keyup", function(event) {
+    if (event.key == "Escape") event.target.value = "";
+    const registers = document.querySelectorAll("#vista-cuerpo tr");
+    registers.forEach(data => {
+        let rawContent = data.innerHTML.replaceAll("<td>", "").replaceAll("</td>", "");
+        rawContent.toLowerCase().includes(event.target.value.toLowerCase())
+        ?data.style.display = ""
+        :data.style.display = "none";
+    })        
+})
 
-
+if (btnTags) {
+    btnTags.addEventListener("click", (event) => {
+        tagSelects.forEach(select => {
+            setOptions(urlgetSelects_tags, select);
+        });
+        let formDataProduct = new FormData(formTable);
+        for (const val of formDataProduct.entries()) {
+            console.log(val);
+        }
+    });
+    tagForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        let tagFormData = new FormData(event.target);
+        for (const val of tagFormData.entries()) {
+            console.log(val);
+        }
+    });
+}
