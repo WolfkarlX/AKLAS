@@ -132,11 +132,12 @@ if(btn_fondo){
     var cuadronoti = document.getElementById("notif_tab");
     if(cuadro.style.display === "none") {
       cuadro.style.display = "block";
-      btn_config.style.borderBottomColor = "#f7f7f8";
-      btn_user.style.borderBottomColor = "transparent";
-      btn_noti.style.borderBottomColor = "transparent";
       cuadrouser.style.display = "none";
       cuadronoti.style.display = "none";
+      
+      btn_user.style.borderBottomColor = "transparent";
+      btn_noti.style.borderBottomColor = "transparent";
+      btn_config.style.borderBottomColor = "#f7f7f8";
     }
     else {
       cuadro.style.display = "none";
@@ -158,9 +159,10 @@ if(btn_user){
       cuadrouser.style.display = "block";
       cuadro.style.display = "none";
       cuadronoti.style.display = "none";
-      btn_user.style.borderBottomColor = "#f7f7f8";
+      
       btn_config.style.borderBottomColor = "transparent";
       btn_noti.style.borderBottomColor = "transparent";
+      btn_user.style.borderBottomColor = "#f7f7f8";
     }
     else {
       cuadrouser.style.display = "none";
@@ -179,9 +181,10 @@ if(btn_noti){
     var cuadro = document.getElementById("config_tab");
     if(cuadronoti.style.display === "none") {
       cuadronoti.style.display = "block";
-      btn_noti.style.borderBottomColor = "#f7f7f8";
+      
       btn_config.style.borderBottomColor = "transparent";
       btn_user.style.borderBottomColor = "transparent";
+      btn_noti.style.borderBottomColor = "#f7f7f8";
       cuadro.style.display = "none";
       cuadrouser.style.display = "none";
     }

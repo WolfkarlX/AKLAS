@@ -191,6 +191,11 @@ input, textarea {
     margin-bottom: 20px;
     border-radius: 10px;
 }
+textarea {
+  resize:vertical;
+  max-height: 15vh;
+  min-height: 10vh;
+}
 
 :focus {
     outline: 1px solid #1e92e9;
