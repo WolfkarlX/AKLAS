@@ -313,17 +313,13 @@
                 <input id="Cerrar_form" type="button" value="X" class="CancelX">
             </div>
             <fieldset id="tag-list">
-                <select name="tag-select">
-
-                </select>
-                <select name="tag-select">
-                    
-                </select>
-                <select name="tag-select">
-                    
-                </select>
+                <input type="hidden" name="product_id" id="hid_product_id">
+                <select name="tag-select1" class="tag-select"></select>
+                <select name="tag-select2" class="tag-select"></select>
+                <select name="tag-select3" class="tag-select"></select>
+                <select name="tag-select4" class="tag-select"></select>
             </fieldset> 
-            <input type="submit" value="Confirmar" class="submitir" id="submit-tag"/>
+            <input type="submit" value="Confirmar" class="submitir" id="submit"/>
             <input type="button" id="Cancelar_registro" value="Cancelar" class="Cancelar">
         </form>
     </div>

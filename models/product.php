@@ -78,6 +78,35 @@ class product extends conexion{
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function getTagsByProduct($id) {
+        //SQL para obtener las etiquetas de cada producto
+        $sql = "select TagID, TagName from products_tags natural join tags where ProductID = ?";
+        $stmt = $this->prepare($sql);
+        //Enlaza el identificador
+        $stmt->bindParam(1, $id);
+        // Ejecuta la sentencia
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function setTags($id, $tags) {
+        //SQL para eliminar las etiquetas de un producto
+        $delete_sql = "DELETE FROM `products_tags` WHERE `ProductID` = ?";
+        $delete_stmt = $this->prepare($delete_sql);
+        $delete_stmt->bindValue(1, $id);
+        $delete_stmt->execute();
+        //SQL para establecer las etiquetas de un producto
+        $insert_sql = "INSERT INTO `products_tags`(`ProductID`, `TagID`) VALUES (?, ?)";
+        $insert_stmt = $this->prepare($insert_sql);
+        foreach ($tags as $tag) {
+            if($tag != 0){
+                $insert_stmt->bindValue(1, $id);
+                $insert_stmt->bindValue(2, $tag);
+                $insert_stmt->execute();
+            }
+        }
+    }
+
     public function getNotify() {
         //SQL para obtener las si falta y sobre cantidad de los productos
         $sql = "select ProductID, ProductName, (Quantity < MinQuantityLimit) as Falta, (Quantity > MaxQuantityLimit) as Sobra from $this->table";
