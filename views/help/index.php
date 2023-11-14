@@ -144,12 +144,12 @@
                     dirección, teléfono y fecha de nacimiento. La Unidad Administrativa responsable del Sistema de datos personales 
                     es la <strong>Dirección General Adjunta de Aklas</strong>, el interesado podrá ejercer los derechos de acceso, rectificación, 
                     corrección, oposición y cancelación de sus datos a través del <strong>SISTEMA DE ATENCIÓN AL EMPLEADO de AKLAS,</strong> 
-                    esto <a target="_black" href="http://localhost/AKLAS/controllers/forgotpass.php?" title="Enviar correo"> HACIENDO CLICK AQUÍ</a>,
+                    esto <a href="http://localhost/AKLAS/controllers/forgotpass.php?" title="Enviar correo"> HACIENDO CLICK AQUÍ</a>,
                     donde se deberá dirigir para enviar su solicitud si desea dar de baja sus datos del registro correspondiente.
                 </i><br><br>
                 <i>
                     Si tiene alguna duda o comentario, puede contactar directamente a la Ing. Karla Ramírez Marquéz, al correo 
-                    <a target="_black" href="mailto:kramirez32@ucol.mx" title="Enviar correo a la Ing. Karla Ramírez Marquéz">kramirez32@ucol.mx</a> 
+                    <a href="mailto:kramirez32@ucol.mx" title="Enviar correo a la Ing. Karla Ramírez Marquéz">kramirez32@ucol.mx</a> 
                     o al número telefónico: 314 352 0638, de igual manera puede asistir de forma presencial a la dirección general de la 
                     <strong>Facultad de Ingeniería Electromecánica</strong> en el domicilio El Naranjo, Carretera Manzanillo-Cihuatlan Km. 20, 
                     28860 Manzanillo, Colima. Teléfono: 314 331 1207.
