@@ -64,7 +64,7 @@ async function cargarNotificaciones() {
     for (const product of notifyProducts) {
         if(product.Falta || product.Sobra){
             const li = document.createElement("li");
-          
+            li.id = "listanoti";
             li.style.margin = "10";
             li.style.padding = "0";
             li.style.textDecoration = "none";

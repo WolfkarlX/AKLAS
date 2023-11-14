@@ -22,6 +22,7 @@ let Sarea = document.getElementById("input5");
 let Scategory = document.getElementById("input4");
 let Ssupplier = document.getElementById("input3");
 let logout_link = document.getElementById("logout-link");
+let logout_link2 = document.getElementById("logout-link2");
 let formforarea = document.getElementById("getnrackA");
 let inputForarea = document.getElementById("ar");
 let nracks = document.getElementById("RN");
@@ -38,17 +39,15 @@ if(reloj){
   setInterval(updateTime, 1000); //Se actualiza el tiempo
 }
 
-if(btn_sidebar) {
-btn_sidebar.onclick = function () { //Funcion para abrir sidebar xD
-    sidebar.classList.toggle('active'); // C abre
-    localStorage.setItem("sidebar", sidebar.classList.contains('active'));
-};
-}
-
 document.addEventListener("DOMContentLoaded", () => {
   if (localStorage.getItem("sidebar") === "true") {
-    sidebar.classList.toggle('active');
+    sidebar.classList.add('active');
   }
+
+  btn_sidebar.onclick = function () {
+    sidebar.classList.toggle('active');
+    localStorage.setItem("sidebar", sidebar.classList.contains('active'));
+  };
 });
 
 function closeForm(form, difuminado) {
@@ -133,16 +132,19 @@ if(btn_fondo){
     var cuadronoti = document.getElementById("notif_tab");
     if(cuadro.style.display === "none") {
       cuadro.style.display = "block";
-      btn_config.style.backgroundColor = "rgba(128, 128, 128, 0.301)";
-      btn_user.style.backgroundColor = "transparent";
-      btn_noti.style.backgroundColor = "transparent";
+      btn_config.style.borderBottomColor = "#f7f7f8";
+      btn_user.style.borderBottomColor = "transparent";
+      btn_noti.style.borderBottomColor = "transparent";
       cuadrouser.style.display = "none";
       cuadronoti.style.display = "none";
-      
     }
     else {
-      cuadro.style.display = "none"
-      btn_config.style.backgroundColor = "transparent";
+      cuadro.style.display = "none";
+      cuadrouser.style.display = "none";
+      cuadronoti.style.display = "none";
+      btn_config.style.borderBottomColor = "transparent";
+      btn_user.style.borderBottomColor = "transparent";
+      btn_noti.style.borderBottomColor = "transparent";
     }
     
   })
@@ -156,13 +158,17 @@ if(btn_user){
       cuadrouser.style.display = "block";
       cuadro.style.display = "none";
       cuadronoti.style.display = "none";
-      btn_user.style.backgroundColor = "rgba(128, 128, 128, 0.301)";
-      btn_config.style.backgroundColor = "transparent";
-      btn_noti.style.backgroundColor = "transparent";
+      btn_user.style.borderBottomColor = "#f7f7f8";
+      btn_config.style.borderBottomColor = "transparent";
+      btn_noti.style.borderBottomColor = "transparent";
     }
     else {
       cuadrouser.style.display = "none";
-      btn_user.style.backgroundColor = "transparent";
+      cuadro.style.display = "none";
+      cuadronoti.style.display = "none";
+      btn_user.style.borderBottomColor = "transparent";
+      btn_config.style.borderBottomColor = "transparent";
+      btn_noti.style.borderBottomColor = "transparent";
     }
   } )
 }
@@ -173,15 +179,19 @@ if(btn_noti){
     var cuadro = document.getElementById("config_tab");
     if(cuadronoti.style.display === "none") {
       cuadronoti.style.display = "block";
-      btn_noti.style.backgroundColor = "rgba(128, 128, 128, 0.301)";
-      btn_config.style.backgroundColor = "transparent";
-      btn_user.style.backgroundColor = "transparent";
+      btn_noti.style.borderBottomColor = "#f7f7f8";
+      btn_config.style.borderBottomColor = "transparent";
+      btn_user.style.borderBottomColor = "transparent";
       cuadro.style.display = "none";
       cuadrouser.style.display = "none";
     }
     else {
       cuadronoti.style.display = "none";
-      btn_noti.style.backgroundColor = "transparent";
+      cuadro.style.display = "none";
+      cuadrouser.style.display = "none";
+      btn_noti.style.borderBottomColor = "transparent";
+      btn_config.style.borderBottomColor = "transparent";
+      btn_user.style.borderBottomColor = "transparent";
     }
   } )
 }
@@ -247,6 +257,11 @@ input.onkeyup = function search() {
 
 //Función para preguntar el cierre de sesión
 logout_link.addEventListener("click", function(event){
+  let res = confirm("¿Seguro que quiere cerrar sesión?");
+  if(!res)
+    event.preventDefault();
+});
+logout_link2.addEventListener("click", function(event){
   let res = confirm("¿Seguro que quiere cerrar sesión?");
   if(!res)
     event.preventDefault();

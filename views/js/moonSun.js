@@ -61,7 +61,7 @@ btn.addEventListener('click', () => {
     icon.classList.add('fa-sun');
     opcion.innerHTML = "Modo Oscuro";
   }
-
+ 
   setTimeout( () => {
     icon.classList.remove('animated');
   }, 500)

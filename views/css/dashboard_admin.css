@@ -13,7 +13,7 @@
   width: 10%;
   background-color: #1a1a1a;
   padding: 0.4rem 0.8rem;
-  transition: all 0.2s;
+
   z-index: 8;
 }
 .sidebar.active ~ .main-content {
@@ -67,6 +67,7 @@
   margin: 0.8rem auto;
   line-height: 50px;
 }
+
 .sidebar ul li a {
   color: white;
   display: flex;
@@ -77,10 +78,11 @@
   display: flex;
   width: 100%;
 }
-.sidebar ul li a:hover {
-  background-color: white;
-  color: #12171e;
+.sidebar ul li a:hover{
+  background-color: rgba(255, 255, 255, 0.749);
+  color: #1361ce;
 }
+
 .sidebar ul li a i {
   min-width: 100px;
   text-align: center;
@@ -151,7 +153,7 @@
   top: 0;
   left: 10%;
   height: 100%; 
-  transition: all 0.2s;
+  
   width: 90%;
   padding: 1rem;
   display: flex;
@@ -196,26 +198,39 @@
 .arribaopciones #UsuarioBoton {
   background-color: none;
   background-color:transparent;
+  border-bottom-color: none;
   color:white;
+  border-top: none;
+  border-left: none;
+  border-right: none;
   width:60%;
-  border:none;
   height: 100%;
   margin: 15px;
   font-size:3.2rem;
   cursor: pointer;  
   border-radius: 2rem;
 }
+.arribaopciones #UsuarioBoton:hover {
+  background-color: rgba(128, 128, 128, 0.301);
+}
 .arribaopciones #ConfiguracionBoton {
   background-color: none;
   background-color:transparent;
   color:white;
+  border-bottom-color: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
   width:60%;
   font-size:3.2rem;
   height: 100%;
   margin: 15px;
-  border:none;
+  
   cursor: pointer;
   border-radius: 2rem;
+}
+.arribaopciones #ConfiguracionBoton:hover {
+  background-color: rgba(128, 128, 128, 0.301);
 }
 .arribaopciones #notificacion {
   background-color: none;
@@ -225,9 +240,15 @@
   font-size:3.2rem;
   height: 100%;
   margin: 15px;
-  border:none;
+  border-bottom-color: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
   cursor: pointer;
   border-radius: 2rem;
+}
+.arribaopciones #notificacion:hover {
+  background-color: rgba(128, 128, 128, 0.301);
 }
 .arribaopciones .iconoerror {
   background-color: red;
@@ -1243,17 +1264,17 @@ overflow: hidden;
 }
 .user_tab .usuario {
   width: 100%;
-  height: 60%;
+  height: 40%;
+  margin: 20px;
 }
 .user_tab .user-boton{
-  width: 100%;
+  width: 10%;
   height: 30%;
   margin-bottom: 1px;
   text-align: center;
-  justify-content: center;
-  align-items: center;
+  
 }
-.user-boton button {
+.user-boton a {
   width: 80%;
   height: 40px;
   border-radius: 2rem;
@@ -1264,6 +1285,19 @@ overflow: hidden;
   color: white;
   font-weight: bold;
   cursor: pointer;
+  position:absolute;
+  overflow:none;
+  margin:5px;
+  padding:5px;
+  text-decoration:none;
+}
+.user-boton a span {
+  font-size: 17px;
+}
+.user_boton a i {
+  font-size: 15px;
+  position:absolute;
+  margin:10px;
 }
 .notif_tab {
   background-color: rgb(50, 49, 49);
