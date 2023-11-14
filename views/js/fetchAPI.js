@@ -63,13 +63,10 @@ function sendData(url, obj) {
       // Agregar cada par clave-valor al objeto FormData
         formData.append(key, obj[key]);
     }
-  
+
     // Enviar una solicitud POST a la url con el objeto FormData como el cuerpo
     return fetch(url, {
         method: "POST",
-        headers: {
-            "Content-Type": "multipart/form-data"
-        },
         body: formData
     })
     .then((response) => response.json())
@@ -297,4 +294,23 @@ async function sendForm(url, form) {
     }
 }
 
-export { getTable, sendForm, createSelectors, LimitInputs, getData, sendData, getFilter };
+function setOptions(url, select) {
+    return new Promise(async (resolve, reject) => {
+        const options = await getData(url);
+        select.innerHTML = "";
+        const opNone = document.createElement("option");
+        opNone.value = 0;
+        opNone.text = "Ninguno";
+        select.appendChild(opNone);
+        options.forEach(option => {
+            let opt = document.createElement('option');
+            let data = Object.values(option);
+            opt.value = data[0];
+            opt.text = data[1];
+            select.appendChild(opt);
+        });
+        resolve();
+    });
+}
+
+export { getTable, sendForm, createSelectors, LimitInputs, getData, sendData, getFilter, setOptions };
