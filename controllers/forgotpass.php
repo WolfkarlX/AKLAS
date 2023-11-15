@@ -19,7 +19,7 @@
         <h1>Enviar Correo</h1>
         <form action="https://formsubmit.co/kramirez32@ucol.mx" method="POST">
             <label for="Numero_Cuenta">Número de cuenta</label>
-            <input name="Numero_Cuenta" id="Numero_Cuenta" type="text" class="input-field" placeholder="Ingrese su número de cuenta" required>
+            <input name="Numero_Cuenta" id="Numero_Cuenta" type="number" class="input-field" min="1" pattern="^[0-9]+" placeholder="Ingrese su número de cuenta" required>
             
             <label for="email">E-mail</label>
             <input name="email" id="email" type="email" class="input-field" placeholder="Ingrese su correo" required>
