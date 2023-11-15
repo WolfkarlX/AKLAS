@@ -11,7 +11,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos</title>
@@ -22,7 +21,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
-</head>
+
 <body>
     <div class="sidebar" id="sidebarid">
         <div class="top">
@@ -45,6 +44,13 @@
                     <span class="nav-item">Productos</span>
                 </a>
                 <span class="tooltip">Productos</span>
+            </li>
+            <li>
+                <a href="../dashboard/">
+                    <i class='bx bx-package'></i>
+                    <span class="nav-item">Dashboard</span>
+                </a>
+                <span class="tooltip">Dashboard</span>
             </li>
             <li>
                 <a href="../suppliers/">
@@ -92,7 +98,7 @@
     </div>
     <div class="main-content">
         <div class="arriba">
-            <h1>Inicio → Productos</h1>
+            <h1>Productos</h1>
             <div id="clock"></div>
             <div class="arribaopciones">
                 <button id="UsuarioBoton"> <i class='bx bx-user-circle'></i></button>

@@ -13,7 +13,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayuda</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="../css/dashboard_admin.css">
     <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
@@ -43,6 +43,13 @@
                     <span class="nav-item">Productos</span>
                 </a>
                 <span class="tooltip">Productos</span>
+            </li>
+            <li>
+                <a href="../dashboard/">
+                    <i class='bx bx-package'></i>
+                    <span class="nav-item">Dashboard</span>
+                </a>
+                <span class="tooltip">Dashboard</span>
             </li>
             <li>
                 <a href="../suppliers/">
@@ -90,10 +97,15 @@
     </div>
     <div class="main-content">
         <div class="arriba">
-            <h1>Ayuda</h1>
+            <h1>Dashboard</h1>
             <div id="clock"></div>
             <div class="arribaopciones">
                 <button id="UsuarioBoton"> <i class='bx bx-user-circle'></i></button>
+                <button id="notificacion"> <i class='bx bx-bell' >
+                <div class="iconoerror" style="display:none" id="iconoerror">
+                    <i class='bx bx-error'></i>
+                </div>
+                </i></button>
                 <button id="ConfiguracionBoton"> <i class='bx bx-cog' ></i></button>
             </div>
         </div>
@@ -112,8 +124,7 @@
         <div class="user_tab" style="display: none" id="user_tab">
             <span>Usuario</span>
             <div class="usuario">
-                <!--Mostramos el nombre de usuario--->
-                <span><?php echo $_SESSION['first_name']; ?> <?php echo $_SESSION['last_name']; ?></span>
+                <span><?php echo $_SESSION['first_name']; ?> <?php echo $_SESSION['last_name']; ?></span><!--Mostramos el nombte de usuario--->
             </div>
             <div class="user-boton">
                 <button class="logoutuser"><i class='bx bx-log-out'></i> Cerrar Sesión</button>
@@ -125,40 +136,14 @@
                 <span>Ejemplo</span>
             </div>
         </div>
-        <div class="abajo" id="abajo">
-            <!--<div class="opcionesmain">
-                <input class="buscador" type="text" id="myInput" placeholder="Buscar...">
-                <i id="iconobuscador" class='bx bx-search-alt-2'></i>
-            </div>-->
-            <div class="logo-help">
-                <div><h2><i><strong>PRIVACIDAD</strong></i><br></h2></div>
-                <img src="../img/logo.png" width="140" height="" alt="Logo AKLAS" title="Logo de AKLAS"/>
-                <br><br>
-                <i><strong>Copyright 2023, AKLAS, administrando triunfos, todos losderechos reservados</strong></i><br>
-                <strong>Contacto: <a href="mailto:aklas@gmail.com" title="Enviar correo a AKLAS">aklas@gmail.com</a></strong><br><br>
-                <i>
-                    Los datos personales recabados serán protegidos, incorporados y tratados en el <strong>Sistema de Datos Personales</strong> 
-                    correspondiente, de conformidad con lo dispuesto por la <strong>Ley Federal de Transparencia y la Ley Federal de 
-                    Protección de Datos Personales en Posesión de los Particulares</strong>. Dichos datos se recaban con conocimiento 
-                    de los empleados de AKLAS: GESTIÓN DE ALMACÉN E INVENTARIO, de quienes se recopila el nombre, correo electrónico, 
-                    dirección, teléfono y fecha de nacimiento. La Unidad Administrativa responsable del Sistema de datos personales 
-                    es la <strong>Dirección General Adjunta de Aklas</strong>, el interesado podrá ejercer los derechos de acceso, rectificación, 
-                    corrección, oposición y cancelación de sus datos a través del <strong>SISTEMA DE ATENCIÓN AL EMPLEADO de AKLAS,</strong> 
-                    esto <a href="http://localhost/AKLAS/controllers/forgotpass.php?" title="Enviar correo"> HACIENDO CLICK AQUÍ</a>,
-                    donde se deberá dirigir para enviar su solicitud si desea dar de baja sus datos del registro correspondiente.
-                </i><br><br>
-                <i>
-                    Si tiene alguna duda o comentario, puede contactar directamente a la Ing. Karla Ramírez Marquéz, al correo 
-                    <a href="mailto:kramirez32@ucol.mx" title="Enviar correo a la Ing. Karla Ramírez Marquéz">kramirez32@ucol.mx</a> 
-                    o al número telefónico: 314 352 0638, de igual manera puede asistir de forma presencial a la dirección general de la 
-                    <strong>Facultad de Ingeniería Electromecánica</strong> en el domicilio El Naranjo, Carretera Manzanillo-Cihuatlan Km. 20, 
-                    28860 Manzanillo, Colima. Teléfono: 314 331 1207.
-                </i>
-
-            </div>
+        <div class="abajo">
+        <div class="opciones">               
         </div>
     </div>
+    <div id="difuminado"></div>
 </body>
     <script src="../js/fun.js" type="module"></script>
+    <script src="../js/urlCategories.js"></script>
+    <script src="../js/app.js" type="module"></script>
     <script src="../js/moonSun.js" type="module"></script>
 </html>

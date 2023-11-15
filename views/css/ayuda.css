@@ -106,6 +106,7 @@ input[type="password"]::-ms-clear {
     transition: 0.1s ease;
     z-index: 1;
     color: #000;
+    resize: none;
 }
 
 input:focus{

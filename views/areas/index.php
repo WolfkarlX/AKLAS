@@ -116,7 +116,7 @@ try {
     </div>
     <div class="main-content">
         <div class="arriba">
-            <h1>Inicio → Áreas</h1>
+            <h1>Áreas</h1>
             <div id="clock"></div>
             <div class="arribaopciones">
                 <button id="UsuarioBoton"> <i class='bx bx-user-circle'></i></button>
