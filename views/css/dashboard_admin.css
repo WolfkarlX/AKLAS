@@ -747,9 +747,6 @@ overflow: hidden;
   border-radius: 1.2rem;
   background: transparent;
   font-size: 16px;
-  resize:vertical;
-  max-height: 15vh;
-  min-height: 10vh;
   color: white;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-weight: bold;
@@ -964,6 +961,23 @@ overflow: hidden;
   font-weight: bold;
   cursor: pointer;
 }
+.formulario-tags .formu-tags #tag-list {
+  text-align: center;
+}
+.formulario-tags .formu-tags .tag-select {
+  position: relative;
+  display: inline-block;
+  width: 80%;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-weight: bold;
+  height: 30px;
+  background-color: #f6f6f6;
+  border: 1px solid #cccccc00;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 3px;
+}
 
 .formulario-tags .formu-tags .submitir {
   display: block;
@@ -1120,7 +1134,9 @@ overflow: hidden;
   border: 1px solid #d2d2d2;
   font-weight: bold;
   border: none;
-  max-height: 20px;
+  max-height: 2rem;
+  max-width: 7.5rem;
+  overflow: hidden;
 }
 
 /* Estilos de la cabecera */
@@ -1141,12 +1157,12 @@ overflow: hidden;
 }
 #vista #vista-cuerpo {
   top: 1%;
-  max-height: 100px;
+  max-height: 10px;
 }
 #vista tbody tr{
   overflow-y: auto;
-  height: 20px;
-  max-height: 20px;
+  height: 10px;
+  max-height: 10px;
 }
 
 /* Estilos de las filas alternas */

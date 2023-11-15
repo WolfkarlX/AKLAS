@@ -156,6 +156,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
             <div class="usuario">
                 <!--Mostramos el nombre de usuario--->
                 <span>Usuario <?php echo $_SESSION['first_name']; ?></span>
+               
             </div>
             <div class="user-boton">
                 <a href="logout.php" id="logout-link2">
