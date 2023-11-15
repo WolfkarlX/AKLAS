@@ -48,7 +48,7 @@
             </li>
             <li>
                 <a href="#">
-                    <i class='bx bx-package'></i>
+                    <i class='bx bxs-doughnut-chart'></i>
                     <span class="nav-item">Dashboard</span>
                 </a>
                 <span class="tooltip">Dashboard</span>
@@ -68,7 +68,7 @@
                 <span class="tooltip">Categorías</span>
             </li>
             <li>
-                <a href="../transactions/">
+                <a href="./transactions/">
                     <i class='bx bx-cylinder'></i>
                     <span class="nav-item">Transacciones</span>
                 </a>
@@ -162,6 +162,18 @@
                         <a href="./categories/">
                             <i class='bx bx-category'></i>
                             <span class="bloque-item">Categorías</span>
+                        </a>
+                    </div>
+                    <div class="homebutton">
+                        <a href="./products/">
+                            <i class='bx bxs-doughnut-chart'></i>
+                            <span class="bloque-item">Dashboard<span>
+                        </a>
+                    </div>
+                    <div class="homebutton">
+                        <a href="./transactions/">
+                            <i class='bx bx-cylinder'></i>
+                            <span class="bloque-item">Transacciones<span>
                         </a>
                     </div>
                     <div class="homebutton">

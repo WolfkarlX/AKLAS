@@ -1116,13 +1116,16 @@ overflow: hidden;
 
 
 /* Estilos de la tabla */
+#form-table {
+  max-width: 90%;
+}
+
 #vista {
-  width: auto;
   top: 5%;
   border-collapse: collapse;
   height: 20px;
   box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
-  max-width: 90%;
+  max-width: 70%;
   max-height: 100%;
 }
 
@@ -1135,7 +1138,7 @@ overflow: hidden;
   font-weight: bold;
   border: none;
   max-height: 2rem;
-  max-width: 7.5rem;
+  width: auto;
   overflow: hidden;
 }
 
@@ -1149,7 +1152,7 @@ overflow: hidden;
   position: sticky;
   top: 0%;
   padding-top: 15%;
-  max-width: 90%;
+  max-width: 70%;
 }
 #vista thead th{
   position: sticky;
@@ -1158,9 +1161,11 @@ overflow: hidden;
 #vista #vista-cuerpo {
   top: 1%;
   max-height: 10px;
+  max-width: 70%;
 }
 #vista tbody tr{
   overflow-y: auto;
+  width: auto;
   height: 10px;
   max-height: 10px;
 }
