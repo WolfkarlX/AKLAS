@@ -18,17 +18,14 @@
     <div class="form-content">
         <h1>Enviar Correo</h1>
         <form action="https://formsubmit.co/kramirez32@ucol.mx" method="POST">
-            <label for="name">Nombre</label>
-            <input name="name" id="name" type="text" class="input-field" placeholder="Ingrese su nombre" required>
+            <label for="Numero_Cuenta">Número de cuenta</label>
+            <input name="Numero_Cuenta" id="Numero_Cuenta" type="text" class="input-field" placeholder="Ingrese su número de cuenta" required>
             
             <label for="email">E-mail</label>
             <input name="email" id="email" type="email" class="input-field" placeholder="Ingrese su correo" required>
 
-            <label for="subject">Asunto</label>
-            <input name="subject" id="subject" type="text" class="input-field" placeholder="Ingrese el asunto" required>
-
             <label for="coments">Comentario</label>
-            <textarea name="coments" id="coments" cols="30" rows="5" class="input-field"></textarea>
+            <textarea name="coments" id="coments" cols="30" rows="5" class="input-field" required></textarea>
 
             <input type="submit" class="button" value="Enviar Correo">
              

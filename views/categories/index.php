@@ -99,7 +99,7 @@
     </div>
     <div class="main-content">
         <div class="arriba">
-            <h1>Inicio → Categorías</h1>
+            <h1>Categorías</h1>
             <div id="clock"></div>
             <div class="arribaopciones">
                 <button id="UsuarioBoton"> <i class='bx bx-user-circle'></i></button>

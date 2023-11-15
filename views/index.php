@@ -47,6 +47,13 @@
                 <span class="tooltip">Productos</span>
             </li>
             <li>
+                <a href="#">
+                    <i class='bx bx-package'></i>
+                    <span class="nav-item">Dashboard</span>
+                </a>
+                <span class="tooltip">Dashboard</span>
+            </li>
+            <li>
                 <a href="./suppliers/">
                     <i class='bx bxs-hand'></i>
                     <span class="nav-item">Proveedores</span>
