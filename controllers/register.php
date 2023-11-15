@@ -131,12 +131,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 </head>
 <body>
 <div class="main-content">
-        <div class="arriba">
-            <h1>Visualización de cuentas</h1>
+<div class="arriba">
+            <h1>Administrador de Usuarios</h1>
             <div id="clock"></div>
             <div class="arribaopciones">
                 <button id="UsuarioBoton"> <i class='bx bx-user-circle'></i></button>
-                <button id="notificacion"> <i class='bx bx-bell' ></i></button>
                 <button id="ConfiguracionBoton"> <i class='bx bx-cog' ></i></button>
             </div>
         </div>
@@ -153,18 +152,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
                 <span id="opcion"></span>
         </div>
         <div class="user_tab" style="display: none" id="user_tab">
-            <span>Usuario</span>
+            <span>Cuenta</span>
             <div class="usuario">
-                <span>Alison Gayle</span>
+                <!--Mostramos el nombre de usuario--->
+                <span>Usuario <?php echo $_SESSION['first_name']; ?></span>
             </div>
             <div class="user-boton">
-                <button class="logoutuser"><i class='bx bx-log-out'></i> Cerrar Sesión</button>
-            </div>
-        </div>
-        <div class="notif_tab" style="display: none" id="notif_tab">
-            <span>Notificaciones</span>
-            <div class="Notif">
-                <span>Ejemplo</span>
+                <a href="logout.php" id="logout-link2">
+                    <i class='bx bx-log-out'></i>
+                    <span>Cerrar Sesión</span>
+                </a>
             </div>
         </div>
         <div class="abajo">

@@ -1,5 +1,5 @@
 // Importar funciones de API
-import { getTable, sendForm, createSelectors, LimitInputs , getData, getFilter, setOptions } from "./fetchAPI.js";
+import { getTable, sendForm, createSelectors, LimitInputs , getData, sendData, getFilter, setOptions } from "./fetchAPI.js";
 import { getTags } from "./tags-controlls.js";
 
 // Elementos DOM
@@ -30,7 +30,8 @@ let inputForarea = document.getElementById("ar");
 let formforarea = document.getElementById("getnrackA");
 let btnTags = document.getElementById("btn-tags");
 let tagList = document.getElementById("tag-list");
-let tagSelects = document.getElementsByName("tag-select");
+let product_id = document.getElementById("hid_product_id");
+let tagSelects = document.querySelectorAll(".tag-select");
 let tagForm = document.getElementById("tagsForm");
 let btn_noti = document.getElementById("notificacion");
 let list_noti = document.querySelector(".Notif");
@@ -67,7 +68,7 @@ async function cargarNotificaciones() {
     for (const product of notifyProducts) {
         if(product.Falta || product.Sobra){
             const li = document.createElement("li");
-          
+            li.id = "listanoti";
             li.style.margin = "10";
             li.style.padding = "0";
             li.style.textDecoration = "none";
@@ -381,20 +382,27 @@ filter.addEventListener("keyup", function(event) {
 })
 
 if (btnTags) {
-    btnTags.addEventListener("click", (event) => {
-        tagSelects.forEach(select => {
-            setOptions(urlgetSelects_tags, select);
-        });
+    btnTags.addEventListener("click", async (event) => {
         let formDataProduct = new FormData(formTable);
-        for (const val of formDataProduct.entries()) {
-            console.log(val);
-        }
+        let productTags = await sendData(urlgetTagByProduct, {registro : formDataProduct.get('registro')});
+        tagSelects.forEach(async (select, index) => {
+            await setOptions(urlgetSelects_tags, select);
+            if(typeof productTags[index] !== "undefined") select.value = productTags[index].TagID;
+        });
+        product_id.value = formDataProduct.get('registro');
     });
-    tagForm.addEventListener("submit", (event) => {
+    tagForm.addEventListener("submit", async (event) => {
         event.preventDefault();
-        let tagFormData = new FormData(event.target);
-        for (const val of tagFormData.entries()) {
-            console.log(val);
+        let json = await sendForm(urlsetProductTags, event.target);
+        let data = await json;
+        if(data){
+            alert("Se establecieron correctamente las etiquetas");
+            cargarTabla();
+            event.target.reset();
+            event.target.style.display = "none";
+            difuminado.style.display = "none"
+        } else {
+            alert("No se pudo establecer las etiquetas");
         }
     });
 }

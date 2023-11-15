@@ -85,6 +85,13 @@ try {
                 <span class="tooltip">Categorías</span>
             </li>
             <li>
+                <a href="../transactions/">
+                    <i class='bx bx-cylinder'></i>
+                    <span class="nav-item">Transacciones</span>
+                </a>
+                <span class="tooltip">Transacciones</span>
+            </li>
+            <li>
                 <a href="../tags/">
                     <i class='bx bx-purchase-tag-alt'></i>
                     <span class="nav-item">Etiquetas</span>
@@ -146,7 +153,10 @@ try {
                 <span><?php echo $_SESSION['first_name']; ?> <?php echo $_SESSION['last_name']; ?></span><!--Mostramos el nombte de usuario--->
             </div>
             <div class="user-boton">
-                <button class="logoutuser"><i class='bx bx-log-out'></i> Cerrar Sesión</button>
+            <a href="../../controllers/logout.php" id="logout-link2">
+                    <i class='bx bx-log-out'></i>
+                    <span>Cerrar Sesión</span>
+                </a>
             </div>
         </div>
         <div class="notif_tab" style="display: none" id="notif_tab">
