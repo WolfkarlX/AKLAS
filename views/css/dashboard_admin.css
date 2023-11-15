@@ -314,7 +314,7 @@
 .tabla {
   /*background-color: yellowgreen;*/
   display: block;
-  width: auto;
+  width: 90%;
   position: absolute;
   height: 70%;
   max-height: 70%;
@@ -327,7 +327,7 @@
   margin-bottom: 5px;
   margin-left: 125px;
   overflow-y: auto; 
-  max-width: 95%;
+  max-width: 90%;
 }
 .opciones .BotonRegistro {
   width: calc(15% - 5px);
@@ -1117,7 +1117,8 @@ overflow: hidden;
 
 /* Estilos de la tabla */
 #form-table {
-  max-width: 90%;
+  max-width: 100%;
+  width: 100%;
 }
 
 #vista {
@@ -1125,8 +1126,10 @@ overflow: hidden;
   border-collapse: collapse;
   height: 20px;
   box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
-  max-width: 70%;
+  max-width: 100%;
+  width: 100%;
   max-height: 100%;
+  table-layout: fixed;
 }
 
 /* Estilos de las celdas */
@@ -1138,7 +1141,8 @@ overflow: hidden;
   font-weight: bold;
   border: none;
   max-height: 2rem;
-  width: auto;
+  width: 30%;
+  max-width: 30%;
   overflow: hidden;
 }
 
@@ -1152,20 +1156,24 @@ overflow: hidden;
   position: sticky;
   top: 0%;
   padding-top: 15%;
-  max-width: 70%;
+  max-width: 100%;
+  width: 100%;
 }
 #vista thead th{
   position: sticky;
   top: 0;
+  font-size: 15px;
+  max-width: 100%;
+  font-weight: bold;
 }
 #vista #vista-cuerpo {
   top: 1%;
   max-height: 10px;
-  max-width: 70%;
+  max-width: 30%;
 }
 #vista tbody tr{
   overflow-y: auto;
-  width: auto;
+  width: 30%;
   height: 10px;
   max-height: 10px;
 }
