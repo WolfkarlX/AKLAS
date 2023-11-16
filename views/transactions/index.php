@@ -14,12 +14,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Etiquetas</title>
+    <title>Categorías</title>
     <link rel="stylesheet" href="../css/dashboard_admin.css">
     <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 </head>
 <body>
@@ -98,7 +99,7 @@
     </div>
     <div class="main-content">
         <div class="arriba">
-            <h1>Etiquetas</h1>
+            <h1>Inicio → Transacciones</h1>
             <div id="clock"></div>
             <div class="arribaopciones">
                 <button id="UsuarioBoton"> <i class='bx bx-user-circle'></i></button>
@@ -141,28 +142,24 @@
             </div>
         </div>
         <div class="abajo">
-            <div class="opciones">
-                <button class="BotonRegistro" id="btn-registro" title="Hacer un registro nuevo">Nuevo registro</button>
-                <button id="btn-actualizar" title="Actualizar"><i class='bx bx-refresh'></i></button>
-                <button id="btn-delete" form="form-table" title="Eliminar" disabled><i class='bx bx-trash'></i></button>
-                <button id="btn-edit" title="Editar" disabled><i class='bx bx-pencil'></i></button>
-                <input type="text" id="filter" class="tabla-buscador" placeholder="Filtrar... "><i id="iconobuscador2" class='bx bx-search-alt-2'></i></input>
-                
-            </div>
-            <div class="tabla">
+        <div class="opciones">
+        <button class="BotonRegistro" id="btn-registro" title="Hacer un registro nuevo">Generar Transacción</button>
+        </div>
+        <div class="tabla">
                 <form id="form-table">
-                <table id="vista">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Nombre</th>
-                            <th>Descripción</th>
-                        </tr>
-                    </thead>
-                    <tbody id="vista-cuerpo">
+                    <table id="vista">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Empleado</th>
+                                <th>Fecha</th>
+                                <th>Razón</th>
+                            </tr>
+                        </thead>
+                        <tbody id="vista-cuerpo">
 
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
                 </form>
             </div>
         </div>
@@ -170,40 +167,21 @@
     <div class="formulario" id="form-normal">
         <form class="formu" id="myForm" style="display: none;">
             <div class="formarriba">
-                <h1 class="tituloform">NUEVA ETIQUETA</h1>
+                <h1 class="tituloform">NUEVA TRANSACCIÓN</h1>
                 <input id="Cerrar_form" type="button" value="X" class="CancelX">
             </div>
             <fieldset>
                 <label for="name">Nombre: </label>
-                <input id="name" type="text" name="name" placeholder="Nombre" required minlength="2" maxlength="30"pattern="^[^\s].*$"/>
+                <input id="name" type="text" name="name" placeholder="Nombre" required minlength="2" maxlength="30" pattern="^[^\s].*$"/>
                 <label for="description">Descripción: </label><br>
-                <textarea id="description" name="description" placeholder="Descripción" minlength="5" maxlength="100" pattern="^[^\s].*$"></textarea>
+                <textarea id="description" name="description" placeholder="Descripción" minlenght="5" pattern="^[^\s].*$"></textarea>
             </fieldset>
             <input type="submit" value="Registrar" class="submitir" id="submit"/>
             <input type="button" id="Cancelar_registro" value="Cancelar Registro" class="Cancelar">
         </form>
     </div>
-    <div class="formulario" id="form-editado">
-        <form class="formu" id="edit-form" style="display: none;">
-            <div class="formarriba">
-                <h1 class="tituloform">EDITAR ETIQUETAS</h1>
-                <input id="Cerrar_form" type="button" value="X" class="CancelX">
-            </div>
-            <fieldset>
-                <input type="hidden" id="input1" name="Key">
-                <label for="name">Nombre: </label>
-                <input id="input2" type="text" name="name" placeholder="Nombre" required minlength="2" maxlength="30" pattern="^[^\s].*$"/>
-                <label for="description">Descripción: </label><br>
-                <textarea id="input3" name="description" placeholder="Descripción" minlenght="5" pattern="^[^\s].*$"></textarea>
-            </fieldset>
-            <input type="submit" value="Editar" class="submitir" id="submit"/>
-            <input type="button" id="Cancelar_registro" value="Cancelar Edicion" class="Cancelar">
-        </form>
-    </div>
     <div id="difuminado"></div>
 </body>
 <script src="../js/fun.js" type="module"></script>
-<script src="../js/urlTags.js"></script>
-<script src="../js/app.js" type="module"></script>
 <script src="../js/moonSun.js" type="module"></script>
 </html>

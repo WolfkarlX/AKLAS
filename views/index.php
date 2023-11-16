@@ -47,6 +47,13 @@
                 <span class="tooltip">Productos</span>
             </li>
             <li>
+                <a href="#">
+                    <i class='bx bxs-doughnut-chart'></i>
+                    <span class="nav-item">Dashboard</span>
+                </a>
+                <span class="tooltip">Dashboard</span>
+            </li>
+            <li>
                 <a href="./suppliers/">
                     <i class='bx bxs-hand'></i>
                     <span class="nav-item">Proveedores</span>
@@ -59,6 +66,13 @@
                     <span class="nav-item">Categorías</span>
                 </a>
                 <span class="tooltip">Categorías</span>
+            </li>
+            <li>
+                <a href="./transactions/">
+                    <i class='bx bx-cylinder'></i>
+                    <span class="nav-item">Transacciones</span>
+                </a>
+                <span class="tooltip">Transacciones</span>
             </li>
             <li>
                 <a href="./tags/">
@@ -95,9 +109,6 @@
             <h1>Inicio</h1>
             <div id="clock"></div>
             <div class="arribaopciones">
-                <!--<i id="oscuro" class='bx bx-moon' onclick='Oscuro()'></i>
-                <i id="claro" class='bx bx-sun' onclick='Claro()'></i>-->
-            
                 <button id="UsuarioBoton"> <i class='bx bx-user-circle'></i></button>
                 <button id="ConfiguracionBoton"> <i class='bx bx-cog' ></i></button>
             </div>
@@ -115,13 +126,17 @@
                 <span id="opcion"></span>
         </div>
         <div class="user_tab" style="display: none" id="user_tab">
-            <span>Usuario</span>
+            <span>Cuenta</span>
             <div class="usuario">
                 <!--Mostramos el nombre de usuario--->
-                <span><?php echo $_SESSION['first_name']; ?> <?php echo $_SESSION['last_name']; ?></span>
+                <span>Usuario: <?php echo $_SESSION['first_name']; ?> <?php echo $_SESSION['last_name']; ?></span>
+                <span>Rol: 
             </div>
             <div class="user-boton">
-                <button class="logoutuser"><i class='bx bx-log-out'></i> Cerrar Sesión</button>
+            <a href="/controllers/logout.php" id="logout-link2">
+                    <i class='bx bx-log-out'></i>
+                    <span>Cerrar Sesión</span>
+                </a>
             </div>
         </div>
        
@@ -147,6 +162,18 @@
                         <a href="./categories/">
                             <i class='bx bx-category'></i>
                             <span class="bloque-item">Categorías</span>
+                        </a>
+                    </div>
+                    <div class="homebutton">
+                        <a href="./products/">
+                            <i class='bx bxs-doughnut-chart'></i>
+                            <span class="bloque-item">Dashboard<span>
+                        </a>
+                    </div>
+                    <div class="homebutton">
+                        <a href="./transactions/">
+                            <i class='bx bx-cylinder'></i>
+                            <span class="bloque-item">Transacciones<span>
                         </a>
                     </div>
                     <div class="homebutton">

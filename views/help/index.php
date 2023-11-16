@@ -59,6 +59,13 @@
                 <span class="tooltip">Categorías</span>
             </li>
             <li>
+                <a href="../transactions/">
+                    <i class='bx bx-cylinder'></i>
+                    <span class="nav-item">Transacciones</span>
+                </a>
+                <span class="tooltip">Transacciones</span>
+            </li>
+            <li>
                 <a href="../tags/">
                     <i class='bx bx-purchase-tag-alt'></i>
                     <span class="nav-item">Etiquetas</span>
@@ -90,7 +97,7 @@
     </div>
     <div class="main-content">
         <div class="arriba">
-            <h1>Inicio → Ayuda</h1>
+            <h1>Ayuda</h1>
             <div id="clock"></div>
             <div class="arribaopciones">
                 <button id="UsuarioBoton"> <i class='bx bx-user-circle'></i></button>
@@ -116,7 +123,10 @@
                 <span><?php echo $_SESSION['first_name']; ?> <?php echo $_SESSION['last_name']; ?></span>
             </div>
             <div class="user-boton">
-                <button class="logoutuser"><i class='bx bx-log-out'></i> Cerrar Sesión</button>
+                <a href="../../controllers/logout.php" id="logout-link2">
+                    <i class='bx bx-log-out'></i>
+                    <span>Cerrar Sesión</span>
+                </a>
             </div>
         </div>
         <div class="notif_tab" style="display: none" id="notif_tab">
