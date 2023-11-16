@@ -97,7 +97,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     
                     // Redireccionamos a la pagina principal
                     echo "<script>alert('Cuenta creada correctamente');</script>";
-                    header('Location:register.php');
+                    header('Location:../views/employees/');
                     exit();
                 } catch (PDOException $e) 
                 {
@@ -251,7 +251,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
                             </tr>
                         </thead>
                         <tbody id="vista-cuerpo">
-
+                            
                         </tbody>
                     </table>
                     <div class="tablabajo">

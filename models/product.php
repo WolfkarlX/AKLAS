@@ -1,5 +1,7 @@
 <?php
-
+require_once('../models/conexion.php');
+use models\conexion;
+$conn = new conexion();
 namespace models;
 
 use PDO;
