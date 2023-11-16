@@ -47,7 +47,7 @@
                 <span class="tooltip">Productos</span>
             </li>
             <li>
-                <a href="#">
+                <a href="./dashboard/">
                     <i class='bx bxs-doughnut-chart'></i>
                     <span class="nav-item">Dashboard</span>
                 </a>

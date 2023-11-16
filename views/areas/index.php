@@ -71,6 +71,13 @@ try {
                 <span class="tooltip">Productos</span>
             </li>
             <li>
+                <a href="../dashboard/">
+                    <i class='bx bxs-doughnut-chart'></i>
+                    <span class="nav-item">Dashboard</span>
+                </a>
+                <span class="tooltip">Dashboard</span>
+            </li>
+            <li>
                 <a href="../suppliers/">
                     <i class='bx bxs-hand'></i>
                     <span class="nav-item">Proveedor</span>

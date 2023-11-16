@@ -47,7 +47,7 @@
             </li>
             <li>
                 <a href="../dashboard/">
-                    <i class='bx bx-package'></i>
+                    <i class='bx bxs-doughnut-chart'></i>
                     <span class="nav-item">Dashboard</span>
                 </a>
                 <span class="tooltip">Dashboard</span>
