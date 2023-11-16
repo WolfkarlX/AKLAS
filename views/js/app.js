@@ -46,8 +46,10 @@ async function cargarTabla(){
     if(typeof urlGetTags !== 'undefined')
         getTags();
 
-    btnEliminar.setAttribute("disabled", "");
-    btnEdit.setAttribute("disabled", "");
+    if(btnEliminar)
+        btnEliminar.setAttribute("disabled", "");
+    if(btnEdit)
+        btnEdit.setAttribute("disabled", "");
     if(selectfrom){
         selectfrom.selectedIndex = 0;
         selectfrom.setAttribute("disabled", "");

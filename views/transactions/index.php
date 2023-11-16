@@ -143,7 +143,7 @@
         </div>
         <div class="abajo">
         <div class="opciones">
-        <button class="BotonRegistro" id="btn-registro" title="Hacer un registro nuevo">Nuevo registro</button>
+        <button class="BotonRegistro" id="btn-registro" title="Hacer un registro nuevo">Generar Transacción</button>
         </div>
         <div class="tabla">
                 <form id="form-table">
@@ -151,8 +151,9 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Nombre</th>
-                                <th>Descripción</th>
+                                <th>Empleado</th>
+                                <th>Fecha</th>
+                                <th>Razón</th>
                             </tr>
                         </thead>
                         <tbody id="vista-cuerpo">
@@ -182,7 +183,5 @@
     <div id="difuminado"></div>
 </body>
 <script src="../js/fun.js" type="module"></script>
-<script src="../js/urlCategories.js"></script>
-<script src="../js/app.js" type="module"></script>
 <script src="../js/moonSun.js" type="module"></script>
 </html>
