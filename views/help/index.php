@@ -161,7 +161,7 @@
                     dirección, teléfono y fecha de nacimiento. La Unidad Administrativa responsable del Sistema de datos personales 
                     es la <strong>Dirección General Adjunta de Aklas</strong>, el interesado podrá ejercer los derechos de acceso, rectificación, 
                     corrección, oposición y cancelación de sus datos a través del <strong>SISTEMA DE ATENCIÓN AL EMPLEADO de AKLAS,</strong> 
-                    esto <a href="http://localhost/AKLAS/controllers/forgotpass.php?" title="Enviar correo"> HACIENDO CLICK AQUÍ</a>,
+                    esto <a href="../../controllers/forgotpass.php?" title="Enviar correo"> HACIENDO CLICK AQUÍ</a>,
                     donde se deberá dirigir para enviar su solicitud si desea dar de baja sus datos del registro correspondiente.
                 </i><br><br>
                 <i>
