@@ -178,12 +178,10 @@
                 <input id="Cerrar_form" type="button" value="X" class="CancelX">
             </div>
             <fieldset>
-                <label for="name">Nombre: </label>
-                <input id="name" type="text" name="name" placeholder="Nombre" required minlength="2" maxlength="30" pattern="^[^\s].*$"/>
-                <label for="description">Descripción: </label><br>
-                <textarea id="description" name="description" placeholder="Descripción" minlenght="5" pattern="^[^\s].*$"></textarea>
+                <label for="reason">Razón: </label><br>
+                <textarea id="reason" name="reason" placeholder="Razón" minlenght="3" pattern="^[^\s].*$"></textarea>
             </fieldset>
-            <input type="submit" value="Registrar" class="submitir" id="submit"/>
+            <input type="submit" value="Generar" class="submitir" id="submit"/>
             <input type="button" id="Cancelar_registro" value="Cancelar Registro" class="Cancelar">
         </form>
     </div>
