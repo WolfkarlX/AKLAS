@@ -39,6 +39,10 @@ const HeaderS = document.getElementById("head-option");
 const selectfrom = document.getElementById("selectfrom"); 
 const notificaIcon = document.getElementById("iconoerror");
 const listaNotif = document.querySelector("li");
+let maxInput = document.getElementById("maxq");
+let minInput = document.getElementById("minq");
+let maxInputE = document.getElementById("input13");
+let minInputE = document.getElementById("input12");
 
 async function cargarTabla(){
     tbody.innerHTML = "";
@@ -178,6 +182,12 @@ form.addEventListener("submit", function(event) {
                 formNormal.style.display = "block";
                 formeditado.style.display = "block";
                 sidebar.style.zIndex = "8";
+                if(maxInput || maxInputE){
+                    maxInput.removeAttribute("max");
+                    minInput.removeAttribute("max");
+                    maxInputE.removeAttribute("max");
+                    minInputE.removeAttribute("max");
+                }
             } else {
                 alert("No se pudo añadir el registro");
             }
@@ -284,6 +294,13 @@ form_edit.addEventListener("submit", function(event){
                 formNormal.style.display = "block";
                 formeditado.style.display = "block";
                 sidebar.style.zIndex = "8";
+                
+                if(maxInput || maxInputE){
+                    maxInput.removeAttribute("max");
+                    minInput.removeAttribute("max");
+                    maxInputE.removeAttribute("max");
+                    minInputE.removeAttribute("max");
+                }
             } else {
                 alert("No se pudo editar el registro");
             }

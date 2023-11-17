@@ -34,6 +34,10 @@ let btn_noti = document.getElementById("notificacion");
 let btn_config = document.getElementById("ConfiguracionBoton");
 let btn_tags = document.getElementById("btn-tags");
 let tagsForm = document.getElementById("tagsForm");
+let maxInput = document.getElementById("maxq");
+let minInput = document.getElementById("minq");
+let maxInputE = document.getElementById("input13");
+let minInputE = document.getElementById("input12");
 
 if(reloj){
   setInterval(updateTime, 1000); //Se actualiza el tiempo
@@ -269,3 +273,41 @@ logout_link2.addEventListener("click", function(event){
   if(!res)
     event.preventDefault();
 });
+
+//Codigo para condicionar elementos de minima cantidad y maxima en productos
+if(maxInput || maxInputE){
+
+  maxInput.addEventListener('click', (e)=>{
+    e.preventDefault();
+    if(e.target.value !== ""){
+      let max = e.target.value;
+      minInput.setAttribute("max", max - 1);
+    }
+  })
+
+  minInput.addEventListener('click', (e)=>{
+    e.preventDefault();
+    if(e.target.value !== ""){
+      let max = maxInput.value;
+      e.target.setAttribute("max", max - 1);
+    }
+  })
+  
+  if(maxInputE.name === "max" && minInputE.name === "min"){
+    maxInputE.addEventListener("click" , (e)=> {
+      e.preventDefault();
+      if(e.target.value !== ""){
+        let max = e.target.value;
+        minInputE.setAttribute("max", max -1);
+      }
+    })
+
+    minInputE.addEventListener('click', (e)=>{
+      e.preventDefault();
+      if(e.target.value !== ""){
+        let max = maxInputE.value;
+        e.target.setAttribute("max", max - 1);
+      }
+    })
+  }
+}
