@@ -47,7 +47,7 @@
             </li>
             <li>
                 <a href="../dashboard/">
-                    <i class='bx bx-package'></i>
+                    <i class='bx bxs-doughnut-chart'></i>
                     <span class="nav-item">Dashboard</span>
                 </a>
                 <span class="tooltip">Dashboard</span>
@@ -246,7 +246,7 @@
                 </div>
                 <div class="campo">
                     <label for="min">Cantidad Minima: </label>
-                    <input id="minq" type="number" name="min" placeholder="Cantidad" required minlength="2" maxlength="30"/>
+                    <input id="minq" type="number" name="min" placeholder="Cantidad"  required minlength="2" maxlength="30"/>
                 </div>
                 <div class="campo">
                     <label for="description">Descripción: </label><br>
