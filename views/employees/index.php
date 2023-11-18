@@ -159,6 +159,7 @@ try {
                                 <th>Nombre</th>
                                 <th>Apellidos</th>
                                 <th>Descripción</th>
+                                <th>Rol</th>
                                 <th>Num. Cuenta</th>
                                 <th>E-mail</th>
                             </tr>
