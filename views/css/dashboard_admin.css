@@ -81,6 +81,7 @@
 .sidebar ul li a:hover{
   background-color: rgba(255, 255, 255, 0.749);
   color: #1361ce;
+  width: 100%;
 }
 
 .sidebar ul li a i {
@@ -305,8 +306,8 @@
   right: 0;
   height: 20%;
   left: 0;
-  width: 100%;
-  max-width: 100%;
+  width: 90%;
+  max-width: 90%;
   margin-top: 10px;
   margin-bottom: 5px;
  
@@ -419,7 +420,8 @@
 .abajo .tabla-buscador {
   background-color: transparent;
   display: inline-block;
-  width: calc(12% - 5px);
+  width: 15%;
+  max-width: 15%;
   height: 30px;
   align-items: center;
   border-bottom-color: #000000;
@@ -427,12 +429,12 @@
   border-left: none;
   border-right: none;
   padding: 10px 10px;
-  margin: 10px;
+  margin: 40px;
   font-size: 20px;
   font-weight: bold;
   color:#000000;
   outline: none;
-  margin-left: 200px;
+  
 }
 .abajo #iconobuscador2{
   font-size: 30px;
@@ -532,7 +534,7 @@ overflow: hidden;
   padding: 20px;
   position: relative;
   display: block;
-  margin-left: 25rem;
+  margin-left: 25%;
   justify-content: center;
 }
 .formulario-tags {
@@ -541,7 +543,7 @@ overflow: hidden;
   position: relative;
   display: block;
   max-width: 60vh;
-  margin-left: 35rem;
+  margin-left: 35%;
 }
 
 .formulario .formu {
@@ -1418,7 +1420,12 @@ overflow: hidden;
 .darkmode .btn__icon {
   margin-left: 3.5rem;
 }
-
+.darkmode .buscador {
+  color: white;
+}
+.darkmode #iconobuscador {
+  color: white;
+}
 
 .darkmode .logo-help{
   color: white;
@@ -1485,20 +1492,19 @@ overflow: hidden;
     transform: translateX(-15%);
    
   }
+  .sidebar.active ~ .main-content {
+    left: 0%;
+    width: 100%;
+  }
+  .main-content {
+    max-width: 100%;
+    left: 0%;
+    width: 100%;
+  }
   .sidebar.active ul li a i {
     text-align: center;
     justify-content: center;
   }
-  /*
-  .sidebar.active .nav-item {
-    opacity: 1;
-    transform: translate(40px);
-    white-space: nowrap;
-    margin-left: 10px;
-    padding-left: 10px;
-    display: flex;
-    
-  }*/
   
 
   .sidebar ul li a {
@@ -1555,33 +1561,124 @@ overflow: hidden;
     display: flex;
     padding: 10px 10px;
     margin: 2px;
-    margin-right: 1.2%;
-  
+    margin-right: 5.2%;
+    margin-left: -2%;
   }
-
+  .formulario-tags {
+    margin-left: 25%;
+  }
 }
+@media only screen and (max-height:700px) { 
+  .sidebar {
+    height: 100%;
+    max-height: 100%;
+
+  }
+  .logo-help {
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    overflow: auto;
+    width: 95%;
+    max-height: 80%;
+    top: 20%;
+    margin: 0;
+  }
+  .sidebar ul li {
+    line-height: 5px;
+    height: 40px;
+  }
+}
+
 
 @media only screen and (max-width: 800px) { 
   .sidebar.active .nav-item {
     transform: translateX(-35%);
     display: flex;
+    color: white;
+  }
+  .formularioproducto {
+    margin-left: 10%;
   }
   .arriba .arribaopciones {
     margin-left: 65%;
+  }
+  .main-content {
+    max-width: 100%;
+    left: 0%;
+    width: 100%;
+  }
+  .sidebar.active ~ .main-content {
+    left: 0%;
+    width: 100%;
+  }
+  .sidebar {
+    background-color: transparent;
+  }
+  .sidebar .top {
+    background-color: #09006b;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 1rem;
+    max-width: 3rem;
+    min-width: 3rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: fixed;
+  }
+  .sidebar.active .top {
+    position: initial;
+  }
+  .sidebar.active .top #btn_menu {
+    top:3%;
+  }
+  .sidebar .top #btn_menu {
+    top: 0;
+  }
+  .sidebar.active .top {
+    background-color: initial;
+  }
+  .darkmode .sidebar {
+    background-color: #2b2b2b;
+  }
+  body {
+    background-color: #ffffff;
+  }
+  .sidebar ul {
+    display: none;
+  }
+
+  .sidebar.active ul{
+      display: initial;
+      width: 100%;
+      overflow-y: auto;
+  }
+  .sidebar.active {
+    background-color: #12171e;
+    width: 50%;
+  }
+  .abajo #iconobuscador {
+    margin-left: -4%;
   }
 
 }
 @media only screen and (max-width: 750px) { 
   .sidebar.active .nav-item {
-    opacity: 0;
+    opacity: 1;
   }
   .sidebar ul li a i {
     position: flex;
     transform: translateX(-25%);
   }
-  .sidebar.active ul li a i {
-    position: flex;
-    transform: translateX(20%);
+  .main-content {
+    max-width: 100%;
+    left: 0%;
+    width: 100%;
+  }
+  .sidebar.active ~ .main-content {
+    left: 0%;
+    width: 100%;
   }
   .abajo .homebutton a {
     font-size: 15px;
@@ -1604,7 +1701,7 @@ overflow: hidden;
     display: flex;
     padding: 10px 10px;
     margin: 2px;
-    margin-right: -10.2%;
+    margin-left: -6%;
   
   }
   .arriba .arribaopciones {
@@ -1619,6 +1716,9 @@ overflow: hidden;
   .opciones #btn-delete {
     width: 10%;
   }
+  .opciones #btn-delete:enabled {
+    width: 10%;
+  }
   .opciones .BotonRegistro {
     width: 15%;
   }
@@ -1631,10 +1731,25 @@ overflow: hidden;
     left: 16%;
     top: 2%;
   }
-  
+  .main-content {
+    max-width: 100%;
+    left: 0%;
+    width: 100%;
+    max-height: 100%;
+  }
+  .arriba .arribaopciones {
+    margin-left: 55%;
+  }
+  .sidebar.active ~ .main-content {
+    left: 0%;
+    width: 100%;
+    max-height: 100%;
+  }
   .sidebar.active .nav-item {
-    opacity: 0;
+    opacity: 1;
     white-space: nowrap;
+    margin-left: 40px;
+    padding-left: 50px;
   }
   .sidebar.active .top .logo {
     opacity: 0;
@@ -1647,12 +1762,14 @@ overflow: hidden;
     transform: translateX(-35%);
   }
   .sidebar.active ul li a i {
-    position: absolute;
-    transform: translateX(0%);
+    min-width: 100px;
+    text-align: center;
+    height: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+    transform: translateX(-35%);
   }
-  .arriba .arribaopciones {
-    margin-left: 60%;
-  }
+  
   .abajo .gridcontainer {
     grid-template-columns: repeat(2,1fr);
   }
@@ -1693,7 +1810,7 @@ overflow: hidden;
 }
 @media only screen and (max-width: 570px) {
   .main-content {
-    width: 90%;
+    width: 100%;
     height: 100%;
     display: flex;
     position: absolute;
@@ -1725,8 +1842,6 @@ overflow: hidden;
     opacity: 1;
     pointer-events: none;
     white-space: nowrap;
-    transform: translateX(-45%);
-    left: 0;
     margin-left: 20px;
     padding-left: 30px;
   }
@@ -1888,32 +2003,34 @@ overflow: hidden;
   .arriba #clock {
     font-size: 15pxs;
   }
+  .sidebar.active {
+    max-width: 50%;
+    max-height: 100%;
+  }
   .arriba .arribaopciones {
-    width:5%;
-    max-width: 5%;
     margin-top: 2px;
     height: 100%;
     display: flex;
-    margin-left: 50%;
+    margin-left: 42%;
     font-size: 8px;
   }
   .arribaopciones #UsuarioBoton {
     color:white;
     width:30%;
-    margin: 18px;
-    font-size:2.8rem; 
+    font-size:3.2rem; 
+    margin: 25px;
   }
   .arribaopciones #ConfiguracionBoton {
     color:white;
     width:30%;
-    font-size:2.8rem;
-    margin: 18px;
+    font-size:3.2rem;
+    margin: 25px;
   }
   .arribaopciones #notificacion {
     color:white;
     width:30%;
-    font-size:2.8rem;
-    margin: 18px;
+    font-size:3.2rem;
+    margin: 25px;
   }
   .arribaopciones .iconoerror {
     background-color: red;
@@ -1950,6 +2067,7 @@ overflow: hidden;
   padding: 5px;
   border-radius: 5px;
   text-align: center;
+  overflow: auto;
   width: 95%;
   top: 20%;
   margin: 0;
