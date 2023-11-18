@@ -161,8 +161,6 @@ form.addEventListener("submit", function(event) {
                     }
                     else if(HeaderS.value !== "" && selectfrom.value !== ""){
                         let valor = HeaderS.value;
-                        console.log(valor)
-                        console.log(selectfrom.value);
                         switch(valor){
                             case "1": getFilter(urlFilter_especeficArea, tbody, selectfrom.value);break;
                             case "2": getFilter(urlFilter_especeficCategory, tbody, selectfrom.value);break;
@@ -348,6 +346,7 @@ btnEdit.addEventListener("click", ()=>{
     }
 })
 
+//codigo para realizar la filtracion desde el boton de filtrado principal
 if (HeaderS ) {
     HeaderS.addEventListener("change", (e)=>{
         e.preventDefault();
@@ -363,7 +362,7 @@ if (HeaderS ) {
         }
     })
 }
-
+// codigo que muestra si no hay elementos en el filtro especifico
 if (selectfrom ) {
     selectfrom.addEventListener("click", (e) =>{
         e.preventDefault();
@@ -373,6 +372,7 @@ if (selectfrom ) {
     })
 }
 
+// código que filtra especificamente 
 if (selectfrom ) {
     selectfrom.addEventListener("change", (e) =>{
         e.preventDefault();

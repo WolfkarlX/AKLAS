@@ -98,10 +98,9 @@ try {
             <input type="text" class="input-field" placeholder="Ingrese el apellido" name="LastName" required>
             </div>
             <div class="campo">
-            <label>Numero de Empleado: </label>
             </div>
             <div class="campo">
-            <input type="text" class="input-field" placeholder="Numero de empleado" name="IdKey" required>
+            <input type="hidden" class="input-field" id="employeN" placeholder="Numero de empleado" name="IdKey" required>
             </div>
             <div class="campo">
             <label>Descripción: </label>
@@ -137,7 +136,7 @@ try {
             <option value="empleado">Empleado</option>
             </select>
             </div>
-            <input type="submit" value="Crear" class="submit"><!--Boton para enviar los datos-->
+            <input type="submit" value="Crear" id="send" class="submit"><!--Boton para enviar los datos-->
             </div>
             </form>
             </div>
