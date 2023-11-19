@@ -157,6 +157,8 @@ form.addEventListener("submit", function(event) {
                             break;
                             case "3": getFilter(urlFilter_Supplier, tbody, 0);
                             break;
+                            case "4": getFilter(urlFilter_Tag, tbody, 0);
+                            break;
                         }
                     }
                     else if(HeaderS.value !== "" && selectfrom.value !== ""){
@@ -165,6 +167,8 @@ form.addEventListener("submit", function(event) {
                             case "1": getFilter(urlFilter_especeficArea, tbody, selectfrom.value);break;
                             case "2": getFilter(urlFilter_especeficCategory, tbody, selectfrom.value);break;
                             case "3": getFilter(urlFilter_especeficSupplier, tbody, selectfrom.value);break;
+                            case "4": getFilter(urlFilter_especeficTag, tbody, selectfrom.value);break;
+
                         }
                         
                     }else{
@@ -216,6 +220,8 @@ formTable.addEventListener("submit", function(event) {
                                 break;
                                 case "3": getFilter(urlFilter_Supplier, tbody, 0);
                                 break;
+                                case "4": getFilter(urlFilter_Tag, tbody, 0);
+                                break;
                             }
                         }
                         else if(HeaderS.value !== "" && selectfrom.value !== ""){
@@ -224,6 +230,7 @@ formTable.addEventListener("submit", function(event) {
                                 case "1": getFilter(urlFilter_especeficArea, tbody, selectfrom.value);break;
                                 case "2": getFilter(urlFilter_especeficCategory, tbody, selectfrom.value);break;
                                 case "3": getFilter(urlFilter_especeficSupplier, tbody, selectfrom.value);break;
+                                case "4": getFilter(urlFilter_especeficTag, tbody, selectfrom.value);break;
                             } 
                         }
                         else{
@@ -270,6 +277,8 @@ form_edit.addEventListener("submit", function(event){
                             break;
                             case "3": getFilter(urlFilter_Supplier, tbody, 0);
                             break;
+                            case "4": getFilter(urlFilter_Tag, tbody, 0);
+                            break;
                         }
                     }//if(localStorage.getItem("Filtered") === "true" && localStorage.getItem("Filtered_esp") === "true"){
                     else if(HeaderS.value !== "" && selectfrom.value !== ""){
@@ -280,6 +289,7 @@ form_edit.addEventListener("submit", function(event){
                             case "1": getFilter(urlFilter_especeficArea, tbody, selectfrom.value);break;
                             case "2": getFilter(urlFilter_especeficCategory, tbody, selectfrom.value);break;
                             case "3": getFilter(urlFilter_especeficSupplier, tbody, selectfrom.value);break;
+                            case "4": getFilter(urlFilter_especeficTag, tbody, selectfrom.value);break;
                         }   
                     }else{
                         cargarTabla();
@@ -358,7 +368,7 @@ if (HeaderS ) {
             case "1": selectfrom.removeAttribute("disabled"); createSelectors(urlgetSelects_area,selectfrom, false, null, null, null, null, null, null, 1); getFilter(urlFilter_Area, tbody, 0);/*getFilter(,) FILTER DE SOLO AREAS*/ break;
             case "2": selectfrom.removeAttribute("disabled"); createSelectors(urlgetSelects_category,selectfrom); getFilter(urlFilter_Categoría, tbody, 0);/*getFilter(,) FILTER DE SOLO AREAS*/ break;
             case "3": selectfrom.removeAttribute("disabled"); createSelectors(urlgetSelects_supplier,selectfrom); getFilter(urlFilter_Supplier, tbody, 0);/*getFilter(,) FILTER DE SOLO AREAS*/ break;
-            case "4": selectfrom.removeAttribute("disabled"); //createSelectors(urlgetSelects_area,selectfrom); getFilter(,) FILTER DE SOLO AREAS break;
+            case "4": selectfrom.removeAttribute("disabled"); createSelectors(urlgetSelects_tags,selectfrom); getFilter(urlFilter_Tag, tbody, 0); break;
         }
     })
 }
@@ -383,6 +393,7 @@ if (selectfrom ) {
             case "1": count = getFilter(urlFilter_especeficArea, tbody, e.target.value);break;
             case "2": count = getFilter(urlFilter_especeficCategory, tbody, e.target.value);break;
             case "3": count = getFilter(urlFilter_especeficSupplier, tbody, e.target.value);break;
+            case "4": count = getFilter(urlFilter_especeficTag, tbody, e.target.value);break;
         }
         
     })
@@ -416,7 +427,38 @@ if (btnTags) {
         let data = await json;
         if(data){
             alert("Se establecieron correctamente las etiquetas");
-            cargarTabla();
+            if(HeaderS && selectfrom ){
+                if(HeaderS.value !== "" && selectfrom.value === ""){
+                    let valor = HeaderS.value;
+                    switch(valor){
+                        case "1": 
+                        getFilter(urlFilter_Area, tbody, 0);
+                        break;
+                        case "2": 
+                        getFilter(urlFilter_Categoría, tbody, 0);
+                        break;
+                        case "3": getFilter(urlFilter_Supplier, tbody, 0);
+                        break;
+                        case "4": getFilter(urlFilter_Tag, tbody, 0);
+                        break;
+                    }
+                }
+                else if(HeaderS.value !== "" && selectfrom.value !== ""){
+                    let valor = HeaderS.value;
+                    switch(valor){
+                        case "1": getFilter(urlFilter_especeficArea, tbody, selectfrom.value);break;
+                        case "2": getFilter(urlFilter_especeficCategory, tbody, selectfrom.value);break;
+                        case "3": getFilter(urlFilter_especeficSupplier, tbody, selectfrom.value);break;
+                        case "4": getFilter(urlFilter_especeficTag, tbody, selectfrom.value);break;
+
+                    }
+                    
+                }else{
+                    cargarTabla();
+                }
+            }else{
+                cargarTabla();
+            }
             event.target.reset();
             event.target.style.display = "none";
             difuminado.style.display = "none"
