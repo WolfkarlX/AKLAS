@@ -103,6 +103,19 @@
             </li>
         </ul>
     </div>
+    <div class="configuracion_tab" style="display: none" id="config_tab">
+        <span>Configuración de la página</span>    
+                <div class="btn">
+                    <div class="btn__indicator">
+                        <div class="btn__icon-container">
+                            <i class="btn__icon fa-solid" id="btm_fondoscolor"></i>
+                        </div>
+                    </div>
+                   
+                </div>
+                <span id="opcion"></span>
+                <button class="cerrarmenu" id="cerrarcosa">Cerrar</button>
+        </div>
     <div class="main-content">
         <div class="arriba">
             <h1>Etiquetas</h1>
@@ -116,18 +129,6 @@
                 </i></button>
                 <button id="ConfiguracionBoton"> <i class='bx bx-cog' ></i></button>
             </div>
-        </div>
-        <div class="configuracion_tab" style="display: none" id="config_tab">
-        <span>Configuración de la página</span>    
-                <div class="btn">
-                    <div class="btn__indicator">
-                        <div class="btn__icon-container">
-                            <i class="btn__icon fa-solid" id="btm_fondoscolor"></i>
-                        </div>
-                    </div>
-                   
-                </div>
-                <span id="opcion"></span>
         </div>
         <div class="user_tab" style="display: none" id="user_tab">
             <span>Usuario</span>
@@ -208,6 +209,7 @@
         </form>
     </div>
     <div id="difuminado"></div>
+    <div class="difuminado2" id="difuminado2">
 </body>
 <script src="../js/fun.js" type="module"></script>
 <script src="../js/urlTags.js"></script>
