@@ -165,7 +165,7 @@
                         </a>
                     </div>
                     <div class="homebutton">
-                        <a href="./products/">
+                        <a href="./dashboard/">
                             <i class='bx bxs-doughnut-chart'></i>
                             <span class="bloque-item">Dashboard<span>
                         </a>
