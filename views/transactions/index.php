@@ -85,9 +85,9 @@
             <li>
                 <a href="../help/">
                     <i class='bx bx-question-mark'></i>
-                    <span class="nav-item">Ayuda</span>
+                    <span class="nav-item">Ayuda y Privacidad</span>
                 </a>
-                <span class="tooltip">Ayuda</span>
+                <span class="tooltip">Ayuda y Privacidad</span>
             </li>
             <li>
                 <a href="../../controllers/logout.php" id="logout-link">
@@ -175,7 +175,7 @@
             </div>
             <fieldset>
                 <label for="reason">Razón: </label><br>
-                <textarea id="reason" name="reason" placeholder="Razón" minlenght="3" pattern="^[^\s].*$"></textarea>
+                <textarea id="reason" class="textarea-categori" name="reason" placeholder="Razón" minlenght="3" pattern="^[^\s].*$"></textarea>
             </fieldset>
             <input type="submit" value="Generar" class="submitir" id="submit"/>
             <input type="button" id="Cancelar_registro" value="Cancelar Registro" class="Cancelar">

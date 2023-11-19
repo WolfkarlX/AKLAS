@@ -115,9 +115,9 @@ try {
             <li>
                 <a href="../help/">
                     <i class='bx bx-question-mark'></i>
-                    <span class="nav-item">Ayuda</span>
+                    <span class="nav-item">Ayuda y Privacidad</span>
                 </a>
-                <span class="tooltip">Ayuda</span>
+                <span class="tooltip">Ayuda y Privacidad</span>
             </li>
             <li>
                 <a href="../../controllers/logout.php" id="logout-link">
@@ -221,7 +221,7 @@ try {
                         <option value="STOCK">STOCK</option>
                     </select><br>
                 <label for="description">Descripción: </label><br>
-                <textarea id="description" name="description" placeholder="Descripción" minlenght="5" pattern="^[^\s].*$"></textarea>
+                <textarea id="description" class="textarea-categori" name="description" placeholder="Descripción" minlenght="5" pattern="^[^\s].*$"></textarea>
             </fieldset>
             <input type="submit" value="Registrar" class="submitir" id="submit"/>
             <input type="button" id="Cancelar_registro" value="Cancelar Registro" class="Cancelar">
@@ -247,7 +247,7 @@ try {
                         <option value="STOCK">STOCK</option>
                     </select><br>
                 <label for="description">Descripción: </label><br>
-                <textarea id="input6" name="description" placeholder="Descripción" minlenght="5" pattern="^[^\s].*$"></textarea>
+                <textarea id="input6" class="textarea-categori" name="description" placeholder="Descripción" minlenght="5" pattern="^[^\s].*$"></textarea>
             </fieldset>
             <input type="submit" value="Editar" class="submitir" id="submit"/>
             <input type="button" id="Cancelar_registro" value="Cancelar edicion" class="Cancelar">

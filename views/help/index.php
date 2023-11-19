@@ -13,7 +13,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayuda</title>
+    <title>Ayuda y Privacidad</title>
     <link rel="stylesheet" href="../css/dashboard_admin.css">
     <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
@@ -89,9 +89,9 @@
             <li>
                 <a href="../help/">
                     <i class='bx bx-question-mark'></i>
-                    <span class="nav-item">Ayuda</span>
+                    <span class="nav-item">Ayuda y Privacidad</span>
                 </a>
-                <span class="tooltip">Ayuda</span>
+                <span class="tooltip">Ayuda y Privacidad</span>
             </li>
             <li>
                 <a href="../../controllers/logout.php" id="logout-link">
@@ -104,7 +104,7 @@
     </div>
     <div class="main-content">
         <div class="arriba">
-            <h1>Ayuda</h1>
+            <h1>Ayuda y Privacidad</h1>
             <div id="clock"></div>
             <div class="arribaopciones">
                 <button id="UsuarioBoton"> <i class='bx bx-user-circle'></i></button>

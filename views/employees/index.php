@@ -148,7 +148,7 @@ try {
                     <button id="btn-actualizar" title="Actualizar"><i class='bx bx-refresh'></i></button>
                     <button id="btn-delete" form="form-table" title="Eliminar" disabled><i class='bx bx-trash'></i></button>
                     <button id="btn-edit" title="Editar" disabled><i class='bx bx-pencil'></i></button>
-                    <input type="text" id="filter" class="tabla-buscadoruser" placeholder="Filtrar... "><i id="iconobuscador2" class='bx bx-search-alt-2'></i></input>
+                    <input type="text" id="filter" class="tabla-buscadoruser" placeholder="Buscar usuario "><i id="iconobuscador2" class='bx bx-search-alt-2'></i></input>
                 </div>
                 <div class="tabla">
                 <form id="form-table">

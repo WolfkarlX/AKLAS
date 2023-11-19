@@ -91,9 +91,9 @@
             <li>
                 <a href="./help/">
                     <i class='bx bx-question-mark'></i>
-                    <span class="nav-item">Ayuda</span>
+                    <span class="nav-item">Ayuda y Privacidad</span>
                 </a>
-                <span class="tooltip">Ayuda</span>
+                <span class="tooltip">Ayuda y Privacidad</span>
             </li>
             <li>
                 <a href="../controllers/logout.php" id="logout-link">
@@ -191,7 +191,7 @@
                     <div class="homebutton">
                         <a href="./help/">
                             <i class='bx bx-question-mark'></i>
-                            <span class="bloque-item">Ayuda</span>
+                            <span class="bloque-item">Ayuda y Privacidad</span>
                         </a>
                     </div>
             </div>
