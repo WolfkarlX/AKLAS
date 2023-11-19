@@ -66,16 +66,19 @@ try {
         <div class="user_tab" style="display: none" id="user_tab">
             <span>Usuario</span>
             <div class="usuario">
-                <span>Alison Gayle</span>
+            <span><?php echo $_SESSION['first_name']; ?> <?php echo $_SESSION['last_name']; ?></span><!--Mostramos el nombte de usuario--->
             </div>
             <div class="user-boton">
-                <button class="logoutuser"><i class='bx bx-log-out'></i> Cerrar Sesión</button>
+            <a href="../../controllers/logout.php" id="logout-link2">
+                    <i class='bx bx-log-out'></i>
+                    <span>Cerrar Sesión</span>
+                </a>
             </div>
         </div>
         <div class="notif_tab" style="display: none" id="notif_tab">
             <span>Notificaciones</span>
             <div class="Notif">
-                <span>Ejemplo</span>
+                
             </div>
         </div>
         <div class="abajo">
@@ -98,10 +101,9 @@ try {
             <input type="text" class="input-field" placeholder="Ingrese el apellido" name="LastName" required>
             </div>
             <div class="campo">
-            <label>Numero de Empleado: </label>
             </div>
             <div class="campo">
-            <input type="text" class="input-field" placeholder="Numero de empleado" name="IdKey" required>
+            <input type="hidden" class="input-field" id="employeN" placeholder="Numero de empleado" name="IdKey" required>
             </div>
             <div class="campo">
             <label>Descripción: </label>
@@ -137,7 +139,7 @@ try {
             <option value="empleado">Empleado</option>
             </select>
             </div>
-            <input type="submit" value="Crear" class="submit"><!--Boton para enviar los datos-->
+            <input type="submit" value="Crear" id="send" class="submit"><!--Boton para enviar los datos-->
             </div>
             </form>
             </div>
@@ -153,10 +155,11 @@ try {
                     <table id="vista">
                         <thead>
                             <tr>
-                                <th>ID</th>
+                                <th colspan="1">ID</th>
                                 <th>Nombre</th>
                                 <th>Apellidos</th>
                                 <th>Descripción</th>
+                                <th>Rol</th>
                                 <th>Num. Cuenta</th>
                                 <th>E-mail</th>
                             </tr>
@@ -165,9 +168,7 @@ try {
                             
                         </tbody>
                     </table>
-                    <div class="tablabajo">
-                        
-                    </div>
+                   
                     </form>
                 </div>
             </div>

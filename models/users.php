@@ -21,7 +21,7 @@ class users extends conexion
     }
 
     public function getUsers() {
-        $campos = implode(", ", array($this->id, $this->name, $this->lastname, $this->description, $this->IdKey, $this->email));
+        $campos = implode(", ", array($this->id, $this->name, $this->lastname, $this->description, $this->rol, $this->IdKey, $this->email));
         $sql = "SELECT " . $campos . " FROM {$this->table} WHERE {$this->id} <> 1";
         $stmt = $this->prepare($sql);
         $stmt->execute();

@@ -60,12 +60,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     // Comprobamos si el email ya existe
     if($email_existente > 0)
     {
-        echo "<script>alert('Este email ya esta registrado. Por favor utilize otro');</script>";
+        echo "<script>
+            alert('Este email ya esta registrado. Por favor utilize otro');
+            window.location.href = '../views/employees/';
+        </script>";
     }
     // Comprobamos si el IdKey ya existe
     else if($IdKey_existente > 0)
     {
-        echo "<script>alert('Numero de trabajador ya en uso.');</script>";
+        echo "<script>
+            alert('Numero de trabajador ya en uso.');
+            window.location.href = '../views/employees/';
+        </script>";
     }
     else
     {
@@ -96,22 +102,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
                     $consulta->execute();
     
                     // Redireccionamos a la pagina principal
-                    echo "<script>alert('Cuenta creada correctamente');</script>";
-                    header('Location:../views/employees/');
+                    echo "<script>
+                        alert('Cuenta creada correctamente');
+                        window.location.href = '../views/employees/';
+                    </script>";
                     exit();
                 } catch (PDOException $e) 
                 {
                     // En caso de error, muestra un mensaje de error
                     echo "Error de registro: " . $e->getMessage();
+                    header('Location:../views/employees/');
                 }
             }else
             {
-                echo "<script>alert('La contraseña es demasiado corta (debe tener al menos 6 caracteres)');</script>";
+                echo "<script>alert('La contraseña es demasiado corta (debe tener al menos 6 caracteres)');
+                window.location.href = '../views/employees/'
+                </script>";  
+
             }
             
         } else 
         {
-            echo "<script>alert('Las contraseñas no coinciden.');</script>";
+            echo "<script>
+            alert('Las contraseñas no coinciden.');
+            window.location.href = '../views/employees/'
+            </script>";
+            
         }
     }
 }

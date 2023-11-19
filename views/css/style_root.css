@@ -237,11 +237,12 @@
     height: 40%;
     margin: 20px;
   }
-  .user_tab .user-boton {
+  .user_tab .user-boton{
     width: 10%;
     height: 30%;
     margin-bottom: 1px;
     text-align: center;
+    
   }
   .user-boton a {
     width: 80%;
@@ -283,6 +284,14 @@
     z-index: 2;
     color: white;
     font-weight: bold;
+    overflow-y: auto;
+    border-radius: 1rem;
+  }
+  .notif_tab .Notif {
+    position: absolute;
+    display: block;
+    margin: 10px;
+    line-height: 1rem;
   }
   .alado {
     display: block;
@@ -386,7 +395,7 @@
     margin: 10px;
     font-size: 20px;
     font-weight: bold;
-    color:#000000;
+    color:#ffffff;
     outline: none;
     margin-left: 50px;
   }
@@ -412,15 +421,17 @@
     margin-top: 8rem;
     overflow-y: auto; 
     max-width: 100%;
+    display: block;
   }
   #vista {
-    width: auto;
+    width: 98%;
     top: 5%;
     border-collapse: collapse;
     height: 20px;
     box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
-    max-width: 90%;
+    max-width: 98%;
     max-height: 100%;
+    table-layout: fixed;
   }
   
   /* Estilos de las celdas */
@@ -432,6 +443,7 @@
     font-weight: bold;
     border: none;
     max-height: 20px;
+    overflow: hidden;
   }
   
   /* Estilos de la cabecera */
@@ -474,6 +486,9 @@
   #vista tbody tr::selection,
   #vista tbody tr:active {
     background-color: aquamarine;
+  }
+  #vista tbody td:first-child {
+    max-width: 10%;
   }
   
   /* Estilo para fila seleccionada */
@@ -571,6 +586,9 @@
   .darkmode .btn__icon {
     margin-left: 3.5rem;
   }
+  .darkmode .tabla-buscadoruser {
+    color: white;
+  }
   
   .darkmode .logo-help{
     color: white;
@@ -618,4 +636,47 @@
   
   .darkmode .btn__icon{
     color: var(--dark-icon-color);
+  }
+
+  @media only screen and (max-width: 900px) { 
+     
+      .abajo {
+        display: flex;
+        height: 100%;
+        place-items: center;
+        overflow: auto;
+      }
+    
+      .abajo.formulario {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        z-index: 1;
+        width: 100%;
+        top: 0;
+        max-height: 30%;
+      }
+      .arriba .arribaopciones {
+        margin-left: 70%;
+      }
+      .abajo.formulario.formusuarios {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        top: 0;
+      }
+      .abajo.alado {
+        max-width: 100%;
+        max-height: 60%;
+        display: flex;
+        flex-direction: column;
+        z-index: 1;
+        width: 100%;
+      }
+      .abajo.tabla {
+        position: relative;
+      }
+
+
   }
