@@ -276,7 +276,7 @@
   height:50%;
   padding:3px;
   margin: 25px;
-  margin-left: 76%;
+  left: -2%;
 }
 
 
@@ -321,7 +321,7 @@
   max-height: 70%;
   bottom: 0;
   right: 0;
-  top: 0;
+  top: 1%;
   left: -95px;
   margin-top: 100px;
   margin-right: 25px;
@@ -358,6 +358,7 @@
   height: 65px;
   padding: 10px;
   display: inline-block;
+  margin-bottom: 20px;
   margin-top: 20px;
   font-size: 2.1rem;
   align-items: center;
@@ -374,6 +375,7 @@
 .opciones #btn-delete {
  background-color: gray;
  width: calc(7% - 5px);
+ margin-bottom: 20px;
  display: inline-block;
  height: 65px;
  color: white;
@@ -432,6 +434,7 @@
   margin: 40px;
   font-size: 20px;
   font-weight: bold;
+  margin-left: 2%;
   color:#000000;
   outline: none;
   
@@ -442,7 +445,7 @@
   display: inline-block;
   padding: 10px 10px;
   margin: 2px;
-  margin-left: -1.1rem;
+  margin-left: -6%;
 
 }
 .opciones #btn-delete:enabled {
@@ -469,22 +472,22 @@
   background-color: gray;
 width: calc(13% - 5px);
 display: inline-block;
-position: absolute;
-height: 65px;
-padding: 10px;
-color: white;
-font-weight: bold;
-cursor: pointer; 
-font-size: 1.1rem;
-align-items: center;
-border: none;
-margin: 10px;
-border-radius: 0.6rem;
-justify-content: center;
-box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
-overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  height: 65px;
+  margin-top: 20px;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer; 
+  font-size: 1.8rem;
+  align-items: center;
+  border: none;
+  margin: 10px;
+  border-radius: 0.6rem;
+  justify-content: center;
+  box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .opciones #btn-tags:enabled {
   background-color: #00329d;
@@ -493,7 +496,7 @@ overflow: hidden;
   display: inline-block;
   position: absolute;
   background-color: transparent;
-  width: calc(13% - 5px);
+  width: calc(17% - 5px);
   height: 65px;
   margin: 10px;
   align-items: center;
@@ -1195,6 +1198,25 @@ overflow: hidden;
 #vista tbody tr:active {
   background-color: aquamarine;
 }
+#vista th:first-child,
+#vista td:first-child {
+  width: 15%;
+}
+#vista td {
+  overflow-x: auto;
+}
+::-webkit-scrollbar {
+  width: 2px;
+  height: 4px;
+  background-color: transparent;
+}
+
+/* Change the scrollbar thumb color */
+::-webkit-scrollbar-thumb {
+  background-color: #6d6d6d;
+  border-radius: 1rem;
+
+}
 
 /* Estilo para fila seleccionada */
 #vista-cuerpo input[type=radio]:checked + tr {
@@ -1479,9 +1501,26 @@ overflow: hidden;
 /*-----------------------------------------------------------------------------------------*/
 
 /*RESPONSIVE*/
+@media only screen and (max-width: 1500px) {
+  .arriba .arribaopciones {
+    margin-left: 90%;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  #vista{
+    table-layout: auto;
+  }
+}
+
 @media only screen and (max-width: 1155px) {
   .arriba .arribaopciones {
     margin-left: 70%;
+  }
+  .sidebar ul li a i {
+   
+    transform: translateX(-10%);
+   
   }
 }
 
@@ -1492,15 +1531,7 @@ overflow: hidden;
     transform: translateX(-15%);
    
   }
-  .sidebar.active ~ .main-content {
-    left: 0%;
-    width: 100%;
-  }
-  .main-content {
-    max-width: 100%;
-    left: 0%;
-    width: 100%;
-  }
+  
   .sidebar.active ul li a i {
     text-align: center;
     justify-content: center;
@@ -1567,6 +1598,12 @@ overflow: hidden;
   .formulario-tags {
     margin-left: 25%;
   }
+}
+@media only screen and (max-height:920px) { 
+  .arriba .arribaopciones {
+    margin-left: 65%;
+  }
+
 }
 @media only screen and (max-height:700px) { 
   .sidebar {
@@ -1683,6 +1720,10 @@ overflow: hidden;
   .abajo .homebutton a {
     font-size: 15px;
   }
+  .tabla {
+    top: 15%;
+  }
+  
   .abajo .homebutton {
     padding: 30px;
     place-items: center;
@@ -1723,7 +1764,12 @@ overflow: hidden;
     width: 15%;
   }
   .opciones .tabla-buscador {
-    width: 15%;
+    width: 19%;
+  max-width: 19%;
+  min-width: 19%;
+  }
+  .abajo #iconobuscador2 {
+    margin-right: 0;
   }
 }
 @media only screen and (max-width: 600px) { 
@@ -1781,16 +1827,16 @@ overflow: hidden;
     width: 100%;
   }
   .opciones #btn-actualizar {
-    width: 10%;
+    width: 15%;
   }
   .opciones #btn-edit {
-    width: 10%;
+    width: 15%;
   }
   .opciones #btn-delete {
-    width: 10%;
+    width: 15%;
   }
   .opciones .BotonRegistro {
-    width: 10%;
+    width: 15%;
   }
   .opciones .tabla-buscador {
     width: 25%;
