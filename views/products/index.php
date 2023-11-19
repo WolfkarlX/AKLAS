@@ -150,12 +150,12 @@
         </div>
         <div class="abajo">
         <div class="opciones">
-        <button class="BotonRegistro" id="btn-registro" title="Hacer un registro nuevo">Nuevo registro</button>
+                <button class="BotonRegistro" id="btn-registro" title="Hacer un registro nuevo">Nuevo registro</button>
                 <button id="btn-actualizar" title="Actualizar"><i class='bx bx-refresh'></i></button>
                 <button id="btn-delete" form="form-table" title="Eliminar" disabled><i class='bx bx-trash'></i></button>
                 <button id="btn-edit" title="Editar" disabled><i class='bx bx-pencil'></i></button>
-                <button id="btn-tags" title="Administrar Tags" disabled>Etiquetas</button>
-                <input type="text" id="filter" class="tabla-buscador" placeholder="Filtrar... "><i id="iconobuscador2" class='bx bx-search-alt-2'></i></input>
+                <button id="btn-tags" title="Administrar Tags" disabled>Etiquetas</button>       
+                <input type="text" id="filter" class="tabla-buscador" placeholder="Filtrar... "><i id="iconobuscador2" class='bx bx-search-alt-2'></i></input> 
                 <div class="opcioneselect">
                     <select name="head-option" id="head-option" required>
                         <option value="" disabled selected>Filtrar por...</option>
@@ -168,7 +168,8 @@
                         <option value="" selected>Elemento Especifico</option>
                     </select>
                 </div>
-            </div>
+        </div>  
+       
             <div class="tabla">
             <form id="form-table">
                 <table id="vista">
