@@ -102,15 +102,6 @@
             </li>
         </ul>
     </div>
-    <div class="main-content">
-        <div class="arriba">
-            <h1>Ayuda y Privacidad</h1>
-            <div id="clock"></div>
-            <div class="arribaopciones">
-                <button id="UsuarioBoton"> <i class='bx bx-user-circle'></i></button>
-                <button id="ConfiguracionBoton"> <i class='bx bx-cog' ></i></button>
-            </div>
-        </div>
         <div class="configuracion_tab" style="display: none" id="config_tab">
         <span>Configuración de la página</span>    
                 <div class="btn">
@@ -126,7 +117,7 @@
         </div>
     <div class="main-content">
         <div class="arriba">
-            <h1>Ayuda</h1>
+            <h1>Ayuda y Privacidad</h1>
             <div id="clock"></div>
             <div class="arribaopciones">
                 <button id="UsuarioBoton"> <i class='bx bx-user-circle'></i></button>
