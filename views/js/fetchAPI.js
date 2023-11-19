@@ -5,42 +5,49 @@ function getTable(url, element) {
         fetch(url)
         .then(response => response.json())
         .then(datos => {
-        // Iterar por la lista de productos
-        for (const dato of datos) {
-            // Crear una nueva fila
-            const row = document.createElement("tr");
-
-            // Crear celdas con su contenido y añadirlas a la fila
-            for (const campo of Object.values(dato)) {
-                const cell = document.createElement("td");
-                cell.textContent = `${campo}`;
-                row.appendChild(cell);
-            }
-
-            // Se crea radiobutton con id = "rbtn-" + Object.values(dato)[0] y valor Object.values(dato)[0]
-            let id = Object.values(dato)[0];
-            const radio = document.createElement("input");
-            radio.setAttribute("type", "radio");
-            radio.setAttribute("name", "registro");
-            radio.setAttribute("id", "rbtn-" + id);
-            radio.value = id;
-            radio.style.display = "none";
-
-            row.onclick = () => {
-                focusRadio("rbtn-" + id);
-                enableButton("btn-delete", "rbtn-" + id);
-                enableButton("btn-edit", "rbtn-" + id);
-                if(document.getElementById("btn-tags"))
-                    enableButton("btn-tags", "rbtn-" + id);
-            };
-            
-            // Agregar la fila al tbody
-            element.appendChild(radio);
-            element.appendChild(row);
-        }
-        resolve();
+            createRows(datos, element);
+            resolve();
         });
     });
+}
+
+function createRows(datos, table) {
+    for (const dato of datos) {
+        // Crear una nueva fila
+        const row = document.createElement("tr");
+
+        // Crear celdas con su contenido y añadirlas a la fila
+        for (const campo of Object.values(dato)) {
+            const cell = document.createElement("td");
+            cell.textContent = `${campo}`;
+            row.appendChild(cell);
+        }
+
+        // Se crea radiobutton con id = "rbtn-" + Object.values(dato)[0] y valor Object.values(dato)[0]
+        let id = Object.values(dato)[0];
+        const radio = document.createElement("input");
+        radio.setAttribute("type", "radio");
+        radio.setAttribute("name", "registro");
+        radio.setAttribute("id", "rbtn-" + id);
+        radio.value = id;
+        radio.style.display = "none";
+
+        row.onclick = () => {
+            focusRadio("rbtn-" + id);
+            if(document.getElementById("btn-delete"))
+                enableButton("btn-delete", "rbtn-" + id);
+            if(document.getElementById("btn-edit"))
+                enableButton("btn-edit", "rbtn-" + id);
+            if(document.getElementById("btn-tags"))
+                enableButton("btn-tags", "rbtn-" + id);
+            if(document.getElementById("btn-history"))
+                enableButton("btn-history", "rbtn-" + id)
+        };
+        
+        // Agregar la fila al tbody
+        table.appendChild(radio);
+        table.appendChild(row);
+    }
 }
 
 function getData(url) {
@@ -313,4 +320,4 @@ function setOptions(url, select) {
     });
 }
 
-export { getTable, sendForm, createSelectors, LimitInputs, getData, sendData, getFilter, setOptions };
+export { getTable, createRows, sendForm, createSelectors, LimitInputs, getData, sendData, getFilter, setOptions };

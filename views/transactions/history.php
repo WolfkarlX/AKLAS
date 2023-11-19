@@ -10,7 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transacciones</title>
+    <title>Historial De Transacciones</title>
     <link rel="stylesheet" href="../css/dashboard_admin.css">
     <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
@@ -100,7 +100,7 @@
     </div>
     <div class="main-content">
         <div class="arriba">
-            <h1>Transacciones</h1>
+            <h1>Historial De Transacción</h1>
             <div id="clock"></div>
             <div class="arribaopciones">
                 <button id="UsuarioBoton"> <i class='bx bx-user-circle'></i></button>
@@ -143,20 +143,18 @@
             </div>
         </div>
         <div class="abajo">
-        <div class="opciones">
-        <button class="BotonRegistro" id="btn-registro" title="Hacer un registro nuevo">Generar Transacción</button>
-        <button id="btn-actualizar" title="Actualizar"><i class='bx bx-refresh'></i></button>
-        <button class="" id="btn-history" title="Ver historial de la transacción" form="form-table" disabled>Ver historial</button>
-        </div>
-        <div class="tabla">
-                <form id="form-table" action="./history.php" method="GET">
+            <div class="opciones">
+                <button id="btn-actualizar" title="Actualizar"><i class='bx bx-refresh'></i></button>
+                <button class=""><a href="./">Volver</a></button>
+            </div>
+            <div class="tabla">
+                <form id="form-table">
                     <table id="vista">
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Empleado</th>
-                                <th>Fecha</th>
-                                <th>Razón</th>
+                                <th>Producto</th>
+                                <th>Entrada</th>
+                                <th>Salida</th>
                             </tr>
                         </thead>
                         <tbody id="vista-cuerpo">
@@ -167,24 +165,9 @@
             </div>
         </div>
     </div>
-    <div class="formulario" id="form-normal" style="display: none;">
-        <form class="formu" id="myForm" action="./details.php" method="POST">
-            <div class="formarriba">
-                <h1 class="tituloform">TRANSACCIÓN</h1>
-                <input id="Cerrar_form" type="button" value="X" class="CancelX">
-            </div>
-            <fieldset>
-                <label for="reason">Razón: </label><br>
-                <textarea id="reason" name="reason" placeholder="Razón" minlenght="3" pattern="^[^\s].*$"></textarea>
-            </fieldset>
-            <input type="submit" value="Generar" class="submitir" id="submit"/>
-            <input type="button" id="Cancelar_registro" value="Cancelar Registro" class="Cancelar">
-        </form>
-    </div>
-    <div id="difuminado"></div>
 </body>
 <script src="../js/fun-transaction.js" type="module"></script>
 <script src="../js/moonSun.js" type="module"></script>
 <script src="../js/urlTransactions.js"></script>
-<script type="module" src="../js/app-transactions.js"></script>
+<script src="../js/app-history.js" type="module"></script>
 </html>
