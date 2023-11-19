@@ -133,7 +133,7 @@
                 <span>Rol: 
             </div>
             <div class="user-boton">
-            <a href="/controllers/logout.php" id="logout-link2">
+            <a href="../controllers/logout.php" id="logout-link2">
                     <i class='bx bx-log-out'></i>
                     <span>Cerrar Sesión</span>
                 </a>
