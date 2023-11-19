@@ -200,7 +200,7 @@
                 <label for="nation">País:</label>
                 <input id="nation" type="text" name="nation" placeholder="Region"  required minlength="2" maxlength="100" pattern="^[^\s].*$"/>
                 <label for="phone">Teléfono: </label>
-                <input id="phone" type="text" required name="phone" pattern="\d{8,}" title="Ingrese al menos 8 digitos en su número " oninput="this.value = this.value.replace(/[^0-9]/g, '');" maxlength="13" placeholder="+..."/>
+                <input id="phone" type="number" required name="phone" pattern="\d{8,}" title="Ingrese al menos 8 dígitos en su número " oninput="this.value = this.value.replace(/[^0-9]/g, '');" maxlength="13" placeholder="+..."/>
             </fieldset> 
             <input type="submit" value="Registrar" class="submitir" id="submit"/>
             <input type="button" id="Cancelar_registro" value="Cancelar Registro" class="Cancelar">
