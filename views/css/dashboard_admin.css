@@ -276,7 +276,7 @@
   height:50%;
   padding:3px;
   margin: 25px;
-  left: -2%;
+  margin-left: 76%;
 }
 
 
@@ -1288,7 +1288,7 @@ display: inline-block;
   display: block;
   width: 15rem;
   height: 12rem;
-  right: 0%;
+  right: 8rem;
   top: 7rem;
   padding: 10px;
   margin: 20px;
@@ -1305,7 +1305,7 @@ display: inline-block;
   display: block;
   width: 15rem;
   height: 12rem;
-  right: 8rem;
+  right: 18rem;
   top: 7rem;
   padding: 10px;
   margin: 20px;
@@ -1358,7 +1358,7 @@ display: inline-block;
   display: block;
   width: 15rem;
   height: 12rem;
-  right: 5.2rem;
+  right: 13.2rem;
   top: 7rem;
   padding: 10px;
   margin: 20px;
@@ -1503,7 +1503,7 @@ display: inline-block;
 /*RESPONSIVE*/
 @media only screen and (max-width: 1500px) {
   .arriba .arribaopciones {
-    margin-left: 90%;
+    margin-left: 80%;
   }
 }
 
@@ -2050,11 +2050,11 @@ display: inline-block;
     font-size: 15pxs;
   }
   .sidebar.active {
-    max-width: 50%;
+    max-width: 60%;
     max-height: 100%;
   }
   .arriba .arribaopciones {
-    margin-top: 2px;
+    margin-top: -20px;
     height: 100%;
     display: flex;
     margin-left: 42%;
@@ -2062,21 +2062,33 @@ display: inline-block;
   }
   .arribaopciones #UsuarioBoton {
     color:white;
-    width:30%;
-    font-size:3.2rem; 
-    margin: 25px;
+    width:60%;
+    min-width: 60%;
+    max-width: 60%;
+    font-size:3.2rem;
+    margin-top: 60px;
+    max-height: 50%;
+    min-height: 50%;
   }
   .arribaopciones #ConfiguracionBoton {
     color:white;
-    width:30%;
+    width:60%;
+    min-width: 60%;
+    max-width: 60%;
     font-size:3.2rem;
-    margin: 25px;
+    margin-top: 60px;
+    max-height: 50%;
+    min-height: 50%;
   }
   .arribaopciones #notificacion {
     color:white;
-    width:30%;
+    width:60%;
+    min-width: 60%;
+    max-width: 60%;
     font-size:3.2rem;
-    margin: 25px;
+    margin-top: 60px;
+    max-height: 50%;
+    min-height: 50%;
   }
   .arribaopciones .iconoerror {
     background-color: red;
@@ -2106,6 +2118,21 @@ display: inline-block;
   .notif_tab {
     right: 1rem;
     margin: 20px;
+  }
+  .opciones #btn-actualizar {
+    width: 20%;
+  }
+  .opciones #btn-edit {
+    width: 20%;
+  }
+  .opciones #btn-delete {
+    width: 20%;
+  }
+  .opciones .BotonRegistro {
+    width: 30%;
+  }
+  .opciones .tabla-buscador {
+    width: 35%;
   }
 }
 
