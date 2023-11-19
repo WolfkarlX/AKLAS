@@ -79,10 +79,14 @@
             $resultados = array();
             // Iterar sobre cada ID y realizar una consulta SELECT
             foreach ($ids as $id) {
-                $consulta = "select p.ProductID, p.ProductName, s.SupplierName, c.CategoryName, a.NameArea, a.Storaget as Storagetype, p.StorageR, p.StorageRF, p.Price, p.Quantity, p.Description, p.MinQuantityLimit, p.MaxQuantityLimit from products p  
+                $consulta = "
+                select p.ProductID, p.ProductName, s.SupplierName, c.CategoryName, a.NameArea, a.Storaget as Storagetype, p.StorageR, p.StorageRF, p.Price, p.Quantity, p.Description, p.MinQuantityLimit, p.MaxQuantityLimit, IFNULL(group_concat(distinct t.TagName), 'no hay elementos') as 'Etiquetas' from products p  
                 left join area a on p.AreaID = a.AreaID
                 left join  suppliers s on p.SupplierID = s.SupplierID
-                left join Categories c on p.CategoryID = c.CategoryID WHERE {$word}.{$this->id} = ? ORDER BY p.ProductID;";
+                left join Categories c on p.CategoryID = c.CategoryID
+                left join products_tags pt on p.ProductID = pt.ProductID
+				left join tags t on pt.TagID = t.TagID
+                WHERE {$word}.{$this->id} = ? GROUP BY p.ProductID, p.ProductName ORDER BY p.ProductID;";
                 $stmt = $this->prepare($consulta);
                 $stmt->bindParam(1, $id, PDO::PARAM_INT);
                 $stmt->execute();
@@ -94,15 +98,19 @@
         }
 
         public function filter(){
-            $consulta = "select p.ProductID, p.ProductName, s.SupplierName, c.CategoryName, a.NameArea, a.Storaget as Storagetype, p.StorageR, p.StorageRF, p.Price, p.Quantity, p.Description, p.MinQuantityLimit, p.MaxQuantityLimit from products p  
-                left join area a on p.AreaID = a.AreaID
-                left join  suppliers s on p.SupplierID = s.SupplierID
-                left join Categories c on p.CategoryID = c.CategoryID ORDER BY p.{$this->id};";
-                $stmt = $this->prepare($consulta);
-                $stmt->execute();
-                // Almacenar el resultado en el array de resultados
-                $resultados[0] = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                return $resultados;
+            $consulta = "select p.ProductID, p.ProductName, s.SupplierName, c.CategoryName, a.NameArea, a.Storaget as Storagetype, p.StorageR, p.StorageRF, p.Price, p.Quantity, p.Description, p.MinQuantityLimit, p.MaxQuantityLimit, IFNULL(group_concat(distinct t.TagName), 'no hay elementos') as 'Etiquetas' from products p  
+            left join area a on p.AreaID = a.AreaID
+            left join  suppliers s on p.SupplierID = s.SupplierID
+            left join Categories c on p.CategoryID = c.CategoryID
+            left join products_tags pt on p.ProductID = pt.ProductID
+            left join tags t on pt.TagID = t.TagID
+            GROUP BY p.ProductID, p.ProductName
+            ORDER BY p.{$this->id};";
+            $stmt = $this->prepare($consulta);
+            $stmt->execute();
+            // Almacenar el resultado en el array de resultados
+            $resultados[0] = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $resultados;
         }
     }
 ?>

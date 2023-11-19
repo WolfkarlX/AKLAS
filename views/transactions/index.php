@@ -1,27 +1,21 @@
 <?php
     session_start();
-    if(empty($_SESSION['user_id']))
-    {
+    if(empty($_SESSION['user_id'])){
         header("Location:../../");
-
     }
-    
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Categorías</title>
+    <title>Transacciones</title>
     <link rel="stylesheet" href="../css/dashboard_admin.css">
     <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-</head>
 </head>
 <body>
     <div class="sidebar" id="sidebarid">
@@ -91,9 +85,9 @@
             <li>
                 <a href="../help/">
                     <i class='bx bx-question-mark'></i>
-                    <span class="nav-item">Ayuda</span>
+                    <span class="nav-item">Ayuda y Privacidad</span>
                 </a>
-                <span class="tooltip">Ayuda</span>
+                <span class="tooltip">Ayuda y Privacidad</span>
             </li>
             <li>
                 <a href="../../controllers/logout.php" id="logout-link">
@@ -152,9 +146,11 @@
         <div class="abajo">
         <div class="opciones">
         <button class="BotonRegistro" id="btn-registro" title="Hacer un registro nuevo">Generar Transacción</button>
+        <button id="btn-actualizar" title="Actualizar"><i class='bx bx-refresh'></i></button>
+        <button class="" id="btn-history" title="Ver historial de la transacción" form="form-table" disabled>Ver historial</button>
         </div>
         <div class="tabla">
-                <form id="form-table">
+                <form id="form-table" action="./history.php" method="GET">
                     <table id="vista">
                         <thead>
                             <tr>
@@ -172,15 +168,15 @@
             </div>
         </div>
     </div>
-    <div class="formulario" id="form-normal">
-        <form class="formu" id="myForm" style="display: none;">
+    <div class="formulario" id="form-normal" style="display: none;">
+        <form class="formu" id="myForm" action="./details.php" method="POST">
             <div class="formarriba">
-                <h1 class="tituloform">NUEVA TRANSACCIÓN</h1>
+                <h1 class="tituloform">TRANSACCIÓN</h1>
                 <input id="Cerrar_form" type="button" value="X" class="CancelX">
             </div>
             <fieldset>
                 <label for="reason">Razón: </label><br>
-                <textarea id="reason" name="reason" placeholder="Razón" minlenght="3" pattern="^[^\s].*$"></textarea>
+                <textarea id="reason" class="textarea-categori" name="reason" placeholder="Razón" minlenght="3" pattern="^[^\s].*$"></textarea>
             </fieldset>
             <input type="submit" value="Generar" class="submitir" id="submit"/>
             <input type="button" id="Cancelar_registro" value="Cancelar Registro" class="Cancelar">
@@ -189,6 +185,8 @@
     <div id="difuminado"></div>
     <div class="difuminado2" id="difuminado2">
 </body>
-<script src="../js/fun.js" type="module"></script>
+<script src="../js/fun-transaction.js" type="module"></script>
 <script src="../js/moonSun.js" type="module"></script>
+<script src="../js/urlTransactions.js"></script>
+<script type="module" src="../js/app-transactions.js"></script>
 </html>

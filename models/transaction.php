@@ -23,5 +23,13 @@ class transaction extends conexion {
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function getTransactionsDetails($id) {
+        $sql = "SELECT p.ProductName as Producto, td.PInput as Entrada, td.POutput as Salida FROM {$this->table_details} td NATURAL JOIN products p WHERE TransactionID = ?";
+        $stmt = $this->prepare($sql);
+        $stmt->bindParam(1, $id);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
 ?>

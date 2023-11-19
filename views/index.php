@@ -91,9 +91,9 @@
             <li>
                 <a href="./help/">
                     <i class='bx bx-question-mark'></i>
-                    <span class="nav-item">Ayuda</span>
+                    <span class="nav-item">Ayuda y Privacidad</span>
                 </a>
-                <span class="tooltip">Ayuda</span>
+                <span class="tooltip">Ayuda y Privacidad</span>
             </li>
             <li>
                 <a href="../controllers/logout.php" id="logout-link">
@@ -134,7 +134,7 @@
                 <span>Rol: 
             </div>
             <div class="user-boton">
-            <a href="/controllers/logout.php" id="logout-link2">
+            <a href="../controllers/logout.php" id="logout-link2">
                     <i class='bx bx-log-out'></i>
                     <span>Cerrar Sesión</span>
                 </a>
@@ -166,7 +166,7 @@
                         </a>
                     </div>
                     <div class="homebutton">
-                        <a href="./products/">
+                        <a href="./dashboard/">
                             <i class='bx bxs-doughnut-chart'></i>
                             <span class="bloque-item">Dashboard<span>
                         </a>
@@ -192,7 +192,7 @@
                     <div class="homebutton">
                         <a href="./help/">
                             <i class='bx bx-question-mark'></i>
-                            <span class="bloque-item">Ayuda</span>
+                            <span class="bloque-item">Ayuda y Privacidad</span>
                         </a>
                     </div>
             </div>
