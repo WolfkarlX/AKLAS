@@ -15,7 +15,10 @@ let btn_user = document.getElementById("UsuarioBoton");
 let btn_noti = document.getElementById("notificacion");
 let btn_config = document.getElementById("ConfiguracionBoton");
 const list_noti = document.querySelector(".Notif");
+let cerrartab = document.getElementById("cerrarcosa");
 const notificaIcon = document.getElementById("iconoerror");
+let cuadro = document.getElementById("config_tab");
+let difuminado2 = document.getElementById("difuminado2");
 
 if(reloj){
   setInterval(updateTime, 1000); //Se actualiza el tiempo
@@ -76,19 +79,12 @@ if(btn_fondo){
       cuadro.style.display = "block";
       cuadrouser.style.display = "none";
       cuadronoti.style.display = "none";
-      
-      btn_user.style.borderBottomColor = "transparent";
-      btn_noti.style.borderBottomColor = "transparent";
-      btn_config.style.borderBottomColor = "#f7f7f8";
+      difuminado2.style.display = "flex";
+      difuminado2.style.zIndex = "2";
+      sidebar.style.zIndex = "-1";
     }
-    else {
-      cuadro.style.display = "none";
-      cuadrouser.style.display = "none";
-      cuadronoti.style.display = "none";
-      btn_config.style.borderBottomColor = "transparent";
-      btn_user.style.borderBottomColor = "transparent";
-      btn_noti.style.borderBottomColor = "transparent";
-    }
+ 
+    
   })
 }
 if(btn_user){
@@ -100,7 +96,7 @@ if(btn_user){
       cuadrouser.style.display = "block";
       cuadro.style.display = "none";
       cuadronoti.style.display = "none";
-      
+      sidebar.style.zIndex = "-1";
       btn_config.style.borderBottomColor = "transparent";
       btn_noti.style.borderBottomColor = "transparent";
       btn_user.style.borderBottomColor = "#f7f7f8";
@@ -138,6 +134,14 @@ if(btn_noti){
       btn_user.style.borderBottomColor = "transparent";
     }
   } )
+}
+if(cerrartab) {
+  cerrartab.addEventListener("click", (event)=>{
+    cuadro.style.display = "none";
+    difuminado2.style.display = "none";
+    difuminado2.style.zIndex = "-1";
+    sidebar.style.zIndex = "8";
+  })
 }
 
 //Funcion para reloj

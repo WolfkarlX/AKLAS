@@ -109,6 +109,7 @@
                    
                 </div>
                 <span id="opcion"></span>
+                <button class="cerrarmenu" id="cerrarcosa">Cerrar</button>
         </div>
     <div class="main-content">
         <div class="arriba">

@@ -23,8 +23,12 @@ function store(value){
   localStorage.setItem('darkmode', value);
 }
 
+
+
+
 //Función que indica si existe la propiedad "darkmode". Carga la página como la habíamos dejado 
-function load(){
+document.addEventListener('DOMContentLoaded', function(){
+  function load(){
   const darkmode = localStorage.getItem('darkmode');
 
   //si el modo oscuro nunca fue activado
@@ -42,9 +46,9 @@ function load(){
     opcion.innerHTML = "Modo Oscuro";
   }
 }
-
-
 load();
+});
+
 
 btn.addEventListener('click', () => {
 

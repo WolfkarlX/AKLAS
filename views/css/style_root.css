@@ -521,8 +521,17 @@
   }
   #vista th:nth-child(5),
   #vista td:nth-child(5) {
-    width: 5%;
+    width: 9%;
   }
+  #vista th:nth-child(2),
+  #vista td:nth-child(2) {
+    width: 9%;
+  }
+  #vista th:nth-child(3),
+  #vista td:nth-child(3) {
+    width: 11%;
+  }
+  
   #vista th:nth-child(6),
   #vista td:nth-child(6) {
     width: 8%;
@@ -635,6 +644,9 @@
     margin-left: 3.5rem;
   }
   .darkmode .tabla-buscadoruser {
+    color: white;
+  }
+  .darkmode .abajo .formulario .formusuarios .datos .campo input{
     color: white;
   }
   

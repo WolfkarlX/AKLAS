@@ -131,7 +131,7 @@
             <div class="usuario">
                 <!--Mostramos el nombre de usuario--->
                 <span>Usuario: <?php echo $_SESSION['first_name']; ?> <?php echo $_SESSION['last_name']; ?></span>
-                <span>Rol: 
+             
             </div>
             <div class="user-boton">
             <a href="../controllers/logout.php" id="logout-link2">
@@ -201,6 +201,6 @@
     </div>
     <div class="difuminado2" id="difuminado2">
 </body>
-<script src="./js/fun.js" type="module"></script>
+<script src="js/fun.js" type="module"></script>
 <script src="js/moonSun.js" type="module"></script>
 </html>
