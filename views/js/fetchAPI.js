@@ -307,7 +307,7 @@ function setOptions(url, select) {
         select.innerHTML = "";
         const opNone = document.createElement("option");
         opNone.value = 0;
-        opNone.text = "Ninguno";
+        opNone.text = "";
         select.appendChild(opNone);
         options.forEach(option => {
             let opt = document.createElement('option');

@@ -3,6 +3,9 @@
     if(empty($_SESSION['user_id'])){
         header("Location:../../");
     }
+    if ($_SERVER['REQUEST_METHOD'] != 'POST'){
+        header("Location:./");
+    }
 ?>
 
 <!DOCTYPE html>
@@ -32,11 +35,16 @@
             </div>
             <form id="main-form">
                 <input type="hidden" name="reason" value="<?php echo $_POST['reason'] ?>">
-                <select name="producto1" id=""></select>
-                <input type="number" name="inputP1" id="" min="1">
-                <input type="number" name="outputP1" id="" min="1">
+                <div class="line-form">
+                    <label>Producto: <select name="producto" class="select-product"></select></label>
+                    <label>Entrada: <input type="number" class="inputP" name="inputP" min="0" value="0"></label>
+                    <label>Salida: <input type="number" class="outputP" name="outputP" min="0" value="0"></label>
+                </div>
             </form>
         </div>
     </div>
 </body>
+<script src="../js/moonSun.js" type="module"></script>
+<script src="../js/urlTransactions.js"></script>
+<script src="../js/app-TD.js" type="module"></script>
 </html>
