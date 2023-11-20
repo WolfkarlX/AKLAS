@@ -1355,8 +1355,9 @@ position: absolute;
   background-color:rgba(0, 0, 0, 0.578);
   display: none;
   z-index: -1;
-  position: absolute;
+  position: fixed;
   width: 100%;
+  left: 0;
   top: 0;
   height:100%;
   opacity: 0;
@@ -1482,6 +1483,18 @@ position: absolute;
   top: 20%;
   justify-content:center;
 }
+.abajo canvas{
+  position: relative; 
+  height: 40%; 
+  max-height: 40%;
+  width: 80%;
+  max-width: 80%;
+  justify-content: center;
+  text-align: center;
+  margin-left: 10%;
+  margin-top: 2%;
+}
+
 
 /* -------------- BUTTON - PARA EL CAMBIO DE TEMA ENTRE CLARO Y OSCURO -------------- */
 .btn{
@@ -1555,6 +1568,9 @@ position: absolute;
   color: white;
 }
 .darkmode #iconobuscador {
+  color: white;
+}
+.darkmode .abajo canvas #texto {
   color: white;
 }
 

@@ -205,8 +205,10 @@
         </div>
         
     </div>
-    <div class="difuminado2" id="difuminado2"></div>
+    <div id="difuminado"></div>
+    <div class="difuminado2" id="difuminado2">
 </body>
+<script src="js/app.js" type="module"></script>
 <script src="js/fun.js" type="module"></script>
 <script src="js/moonSun.js" type="module"></script>
 </html>
