@@ -226,9 +226,9 @@ try {
                 <label for="name">Nombre: </label>
                 <input id="name" type="text" name="name" placeholder="Nombre" required minlength="2" maxlength="30" pattern="^[^\s].*$"/>
                 <label for="racksn">Cantidad Total De Racks: </label>
-                <input id="racksn" type="number" name="racksn" placeholder="Numero De Racks" required minlength="2" maxlength="30" pattern="^[^\s].*$"/>
+                <input id="racksn" type="number" name="racksn" placeholder="Numero De Racks" required minlength="2" maxlength="30" min="1" pattern="^[0-9]+"/>
                 <label for="racksf">Cantidad Total De Filas Por Cada Rack: </label>
-                <input id="racksf" type="number" name="racksf" placeholder="Numero De Filas Por Rack" required minlength="2" maxlength="30" pattern="^[^\s].*$"/>
+                <input id="racksf" type="number" name="racksf" placeholder="Numero De Filas Por Rack" required minlength="2" maxlength="30" min="1" pattern="^[0-9]+"/>
                 <label for="tipo">Tipo De Area:</label><br>
                     <select name="type" id="tipo">
                         <option value="BODEGA">BODEGA</option>
