@@ -299,7 +299,7 @@
   margin-bottom: 15px;
   margin-left: 125px;
   justify-content: center;
-  /* overflow: auto; */
+  overflow: auto;
 }
 .opciones {
   /* background-color: red; */
@@ -1492,6 +1492,7 @@ position: absolute;
   justify-content: center;
   text-align: center;
   margin-left: 10%;
+  overflow: hidden;
   margin-top: 2%;
 }
 .abajo .noencontrado {

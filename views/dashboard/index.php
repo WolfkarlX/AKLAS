@@ -157,9 +157,9 @@
             </div>
         </div>
         <div class="abajo">
-        <canvas id="myChart" style="position: relative; height: 40vh; width: 80vw;"></canvas>
-        <canvas id="myChart2" style="position: relative; height: 40vh; width: 80vw;"></canvas>
-        <canvas id="myChart3" style="position: relative; height: 40vh; width: 80vw;"></canvas>
+        <canvas id="myChart"></canvas>
+        <canvas id="myChart2"></canvas>
+        <canvas id="myChart3"></canvas>
 
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
