@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-11-2023 a las 01:38:58
+-- Tiempo de generación: 21-11-2023 a las 00:46:47
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -36,6 +36,15 @@ CREATE TABLE `area` (
   `Description` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `area`
+--
+
+INSERT INTO `area` (`AreaID`, `NameArea`, `RacksQ`, `Rackf`, `Storaget`, `Description`) VALUES
+(1, 'Alimentos', 10, 10, 'BODEGA', 'Área donde se almacenan los comestibles y bebibles'),
+(2, 'Electrónica', 10, 10, 'BODEGA', 'Área donde se almacena lo electrónico'),
+(3, 'Salud y Belleza', 10, 10, 'BODEGA', 'Área donde se almacenan aquellos productos que sirven para el cuidado del cuerpo y para acicalarse ');
+
 -- --------------------------------------------------------
 
 --
@@ -44,9 +53,19 @@ CREATE TABLE `area` (
 
 CREATE TABLE `categories` (
   `CategoryID` int(11) NOT NULL,
-  `CategoryName` varchar(25) NOT NULL,
+  `CategoryName` varchar(100) NOT NULL,
   `Description` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `categories`
+--
+
+INSERT INTO `categories` (`CategoryID`, `CategoryName`, `Description`) VALUES
+(1, 'LÁCTEOS Y HUEVO', 'Los lácteos son productos alimenticios que se elaboran con la leche de animales mamíferos, principalmente vacas, ovejas, cabras y búfalas.'),
+(3, 'BEBIDAS', 'Se denomina bebida a la sustancia que puede beberse. Esta acción (beber) alude a la ingesta de un líquido. El agua, la gaseosa, el vino, el café y la cerveza son algunas de las bebidas más populares.'),
+(4, 'ELECTRÓNICOS', 'Aparatos electrónicos como computadoras, celulares, relojes digitales, televisores, circuitos electrónicos, entre muchos otros.'),
+(5, 'CUIDADO PERSONAL', 'La autoprotección, velar por el bienestar propio y la imagen que transmitimos a los demás, hacen parte del cuidado personal. Muchos lo asocian con aseo e higiene que permite que el cuerpo y la mente se encuentren saludables.');
 
 -- --------------------------------------------------------
 
@@ -99,6 +118,13 @@ CREATE TABLE `products` (
   `MinQuantityLimit` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `products`
+--
+
+INSERT INTO `products` (`ProductID`, `ProductName`, `SupplierID`, `CategoryID`, `AreaID`, `StorageR`, `StorageRF`, `Price`, `Quantity`, `Description`, `MaxQuantityLimit`, `MinQuantityLimit`) VALUES
+(1, 'Leche entera', 1, 1, 1, 1, 5, 0, 10, 'Leche entera de vaca, Lala 1 L', 10, 4);
+
 -- --------------------------------------------------------
 
 --
@@ -111,6 +137,13 @@ CREATE TABLE `products_tags` (
   `TagID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `products_tags`
+--
+
+INSERT INTO `products_tags` (`ProductsTagsID`, `ProductID`, `TagID`) VALUES
+(1, 1, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -121,12 +154,24 @@ CREATE TABLE `suppliers` (
   `SupplierID` int(11) NOT NULL,
   `SupplierName` varchar(50) DEFAULT NULL,
   `ContactName` varchar(50) DEFAULT NULL,
-  `Address` varchar(50) DEFAULT NULL,
-  `City` varchar(20) DEFAULT NULL,
+  `Address` varchar(130) DEFAULT NULL,
+  `City` varchar(100) DEFAULT NULL,
   `PostalCode` varchar(10) DEFAULT NULL,
   `Country` varchar(15) DEFAULT NULL,
   `Phone` varchar(15) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `suppliers`
+--
+
+INSERT INTO `suppliers` (`SupplierID`, `SupplierName`, `ContactName`, `Address`, `City`, `PostalCode`, `Country`, `Phone`) VALUES
+(1, 'Grupo LALA', 'Arquímedes Adriano Celis Ordaz', 'Calz. Carlos Herrera Araluce No. 185, Parque Industrial Carlos Herrera A.', 'Gómez Palacio, Durango', '35079', 'México', '7797969600'),
+(2, 'Cocal Cola', 'Ian Craig García', 'Rubén Darío 115 Col. Bosque de Chapultepec', 'Ciudad de México', '11580', 'México', '8007044400'),
+(3, 'Pepsico México', 'Isaías Martínez Cuevas', 'Calzada Vallejo 734 Colonia Coltongo', 'Ciudad de México', '02630', 'México', '8009172273'),
+(4, 'Samsung', 'Marcelo Lago', 'Calz. Gral. Mariano Escobedo 476-piso 8, Chapultep', 'Ciudad de México', '11590', 'México', '5592628333'),
+(5, 'Lenovo', 'Marco Jimenez', 'Antonio Dovali Jaime #70, Torre A Piso 14, colonia Zedec Santa Fe, Alcaldía Álvaro Obregón', 'Ciudad de México', '01219', 'México', '5557989520'),
+(6, 'Nivea', 'Perez Griselda', 'Torre Mapfre, Piso 10 Av. Paseo de la Reforma No. 243 Col. Juárez, Del. Cuauhtémoc', 'Ciudad de México', '06600', 'México', '5557290296');
 
 -- --------------------------------------------------------
 
@@ -139,6 +184,13 @@ CREATE TABLE `tags` (
   `TagName` varchar(50) NOT NULL,
   `Description` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `tags`
+--
+
+INSERT INTO `tags` (`TagID`, `TagName`, `Description`) VALUES
+(1, 'Alto en grasas', 'Tiene una alta cantidad de grasas, lo que puede ser perjudicial para la salud');
 
 -- --------------------------------------------------------
 
@@ -256,13 +308,13 @@ ALTER TABLE `transactiondetails`
 -- AUTO_INCREMENT de la tabla `area`
 --
 ALTER TABLE `area`
-  MODIFY `AreaID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `AreaID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `CategoryID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `CategoryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `employees`
@@ -274,25 +326,25 @@ ALTER TABLE `employees`
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `ProductID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ProductID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `products_tags`
 --
 ALTER TABLE `products_tags`
-  MODIFY `ProductsTagsID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ProductsTagsID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `suppliers`
 --
 ALTER TABLE `suppliers`
-  MODIFY `SupplierID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `SupplierID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `tags`
 --
 ALTER TABLE `tags`
-  MODIFY `TagID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `TagID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `transaction`
