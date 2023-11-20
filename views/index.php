@@ -130,8 +130,9 @@
             <span>Cuenta</span>
             <div class="usuario">
                 <!--Mostramos el nombre de usuario--->
-                <span>Usuario: <?php echo $_SESSION['first_name']; ?> <?php echo $_SESSION['last_name']; ?></span>
-                <span>Rol: 
+                <span>Usuario: <br>
+                <?php echo $_SESSION['first_name']; ?> <br> <?php echo $_SESSION['last_name']; ?></span> <br><br>
+                <span>Rol:
             </div>
             <div class="user-boton">
             <a href="../controllers/logout.php" id="logout-link2">
