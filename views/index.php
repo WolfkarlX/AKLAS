@@ -148,6 +148,10 @@
         </div>
        
         <div class="abajo" id="abajo">
+            <div class="noencontrado" id="nohubo">
+                <i class='bx bx-message-alt-x'></i>
+                <span>No se encontró tu busqueda</span>
+            </div>
             <div class="opcionesmain">
                 <input class="buscador" type="text" id="myInput" placeholder="Buscar...">
                 <i id="iconobuscador" class='bx bx-search-alt-2'></i>
@@ -205,8 +209,10 @@
         </div>
         
     </div>
-    <div class="difuminado2" id="difuminado2"></div>
+    <div id="difuminado"></div>
+    <div class="difuminado2" id="difuminado2">
 </body>
+<script src="js/app.js" type="module"></script>
 <script src="js/fun.js" type="module"></script>
 <script src="js/moonSun.js" type="module"></script>
 </html>

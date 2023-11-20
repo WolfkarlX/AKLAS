@@ -41,6 +41,7 @@ let minInputE = document.getElementById("input12");
 let difuminado2 = document.getElementById("difuminado2");
 let cerrartab = document.getElementById("cerrarcosa");
 let cuadro = document.getElementById("config_tab");
+let errorbusqueda = document.getElementById("nohubo");
 
 if(reloj){
   setInterval(updateTime, 1000); //Se actualiza el tiempo
@@ -252,20 +253,29 @@ function updateTime() {
 }
 
 //Funcion para buscar
-if(input) {
-input.onkeyup = function search() {
-  var filter, i, txtValue, homebutton;
-  filter = input.value.toUpperCase();
-  homebutton = gridcontainer.getElementsByClassName("homebutton");
-  for (i = 0; i < homebutton.length; i++) {
-    txtValue = homebutton[i].textContent || homebutton[i].innerText;
-    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-      homebutton[i].style.display = "";
-    } else {
-      homebutton[i].style.display = "none";
+if (input) {
+  input.onkeyup = function search() {
+    var filter, i, txtValue, homebutton, count;
+    filter = input.value.toUpperCase();
+    homebutton = gridcontainer.getElementsByClassName("homebutton");
+    count = 0;
+    for (i = 0; i < homebutton.length; i++) {
+      txtValue = homebutton[i].textContent || homebutton[i].innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        homebutton[i].style.display = "";
+        errorbusqueda.style.display = "none";
+        count++;
+      } else {
+        homebutton[i].style.display = "none";
+        errorbusqueda.style.display = "none";
+      }
     }
-  }
-}
+    if (count === 0) {
+      errorbusqueda.style.display = "flex";
+    } else {
+      errorbusqueda.style.display = "none";
+    }
+  };
 }
 
 //Función para preguntar el cierre de sesión

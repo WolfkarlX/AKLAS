@@ -183,6 +183,10 @@ try {
             </div>
         </div>
         <div class="abajo">
+        <div class="noencontrado" id="nohubo">
+                <i class='bx bx-message-alt-x'></i>
+                <span>No se encontró tu busqueda</span>
+            </div>
             <div class="opciones">
             <button class="BotonRegistro" id="btn-registro" title="Hacer un registro nuevo">Nuevo registro</button>
                 <button id="btn-actualizar" title="Actualizar"><i class='bx bx-refresh'></i></button>

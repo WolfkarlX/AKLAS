@@ -157,9 +157,9 @@
             </div>
         </div>
         <div class="abajo">
-        <canvas id="myChart" style="position: relative; height: 40vh; width: 80vw;"></canvas>
-        <canvas id="myChart2" style="position: relative; height: 40vh; width: 80vw;"></canvas>
-        <canvas id="myChart3" style="position: relative; height: 40vh; width: 80vw;"></canvas>
+        <canvas id="myChart"></canvas>
+        <canvas id="myChart2"></canvas>
+        <canvas id="myChart3"></canvas>
 
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -173,6 +173,44 @@
                     datasets: [{
                         label: 'Stock de Productos',
                         backgroundColor: ['#6bf1ab','#93f64f', '#438c6c', '#509c7f', '#1f794e', '#34444c', '#90CAF9', '#64B5F6', '#42A5F5', '#2196F3', '#0D47A1'],
+                        borderColor: ['black'],
+                        borderWidth:1,
+                    }]
+                },
+                options:{
+                    scales:{
+                        y:{
+                            beginAtZero:true
+                        }
+                    }
+                }
+            })
+
+            var myChart2 = new Chart(ctx2, {
+                type:'bar',
+                data:{
+                    datasets: [{
+                        label: 'TOP Productos',
+                        backgroundColor: ['#0D47A1', '#2196F3', '#42A5F5', '#64B5F6', '#6bf1ab','#93f64f', '#438c6c', '#509c7f', '#1f794e', '#34444c', '#90CAF9'],
+                        borderColor: ['black'],
+                        borderWidth:1
+                    }]
+                },
+                options:{
+                    scales:{
+                        y:{
+                            beginAtZero:true
+                        }
+                    }
+                }
+            })
+
+            var myChart3 = new Chart(ctx3, {
+                type:'bar',
+                data:{
+                    datasets: [{
+                        label: 'Less Productos',
+                        backgroundColor: ['#6bf1ab','#93f64f', '#438c6c', '#509c7f', '#0D47A1', '#2196F3', '#42A5F5', '#64B5F6', '#1f794e', '#34444c', '#90CAF9'],
                         borderColor: ['black'],
                         borderWidth:1
                     }]

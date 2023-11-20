@@ -299,7 +299,7 @@
   margin-bottom: 15px;
   margin-left: 125px;
   justify-content: center;
-  /* overflow: auto; */
+  overflow: auto;
 }
 .opciones {
   /* background-color: red; */
@@ -1355,8 +1355,9 @@ position: absolute;
   background-color:rgba(0, 0, 0, 0.578);
   display: none;
   z-index: -1;
-  position: absolute;
+  position: fixed;
   width: 100%;
+  left: 0;
   top: 0;
   height:100%;
   opacity: 0;
@@ -1482,6 +1483,47 @@ position: absolute;
   top: 20%;
   justify-content:center;
 }
+.abajo canvas{
+  position: relative; 
+  height: 40%; 
+  max-height: 40%;
+  width: 80%;
+  max-width: 80%;
+  justify-content: center;
+  text-align: center;
+  margin-left: 10%;
+  overflow: hidden;
+  margin-top: 2%;
+}
+.abajo .noencontrado {
+  position: absolute;
+  display: none;
+  width: 30%;
+  max-width: 30%;
+  margin-left: 34%;
+  height: 40%;
+  max-height: 40%;
+  font-size: 90px;
+  color: gray;
+  margin-top: 18%;
+  padding-left: 12%;
+}
+.abajo .noencontrado i {
+  position: absolute;
+  max-height: 70%;
+  height: 70%;
+  top: 0;
+}
+.abajo .noencontrado span {
+  font-size: 18px;
+  text-align: left;
+  left: 25%;
+  position: absolute;
+  max-height: 20%;
+  text-wrap: nowrap;
+  height: 20%;
+  bottom: 30%;
+}
 
 /* -------------- BUTTON - PARA EL CAMBIO DE TEMA ENTRE CLARO Y OSCURO -------------- */
 .btn{
@@ -1555,6 +1597,9 @@ position: absolute;
   color: white;
 }
 .darkmode #iconobuscador {
+  color: white;
+}
+.darkmode .abajo canvas #texto {
   color: white;
 }
 
