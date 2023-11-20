@@ -205,16 +205,32 @@
     display: block;
     width: 15rem;
     height: 12rem;
-    right: 0%;
-    top: 7rem;
+    top: 7em;
     padding: 10px;
     margin: 20px;
+    margin-left: 40%;
     justify-content: center;
-    z-index: 2;
+    z-index: 9;
     color: white;
     font-weight: bold;
     border-radius: 1rem;
     
+  }
+  .configuracion_tab button{
+    position: relative;
+    width: 90%;
+    max-width: 90%;
+    min-width: 90%;
+    background-color: #12171e;
+    color: white;
+    font-weight: bold;
+    border: none;
+    height: 30px;
+    text-align: center;
+    border-radius: 1rem;
+    margin-left: 5%;
+    cursor: pointer;
+    margin-top: 20%;
   }
   .user_tab {
     background-color: rgb(50, 49, 49);
@@ -268,6 +284,15 @@
     font-size: 15px;
     position:absolute;
     margin:10px;
+  }
+  .difuminado2 {
+    backdrop-filter: blur(5px);
+    display: none;
+    z-index: -1;
+    position: absolute;
+    width: 98%;
+    top: 0;
+    height:100%;
   }
 
   .notif_tab {
@@ -471,6 +496,9 @@
     height: 20px;
     max-height: 20px;
   }
+  #vista td {
+    overflow-x: auto;
+  }
   
   /* Estilos de las filas alternas */
   #vista tbody tr:nth-child(even) {
@@ -487,15 +515,35 @@
   #vista tbody tr:active {
     background-color: aquamarine;
   }
-  #vista tbody td:first-child {
-    max-width: 10%;
+  #vista th:first-child,
+  #vista td:first-child {
+    width: 5%;
+  }
+  #vista th:nth-child(5),
+  #vista td:nth-child(5) {
+    width: 5%;
+  }
+  #vista th:nth-child(6),
+  #vista td:nth-child(6) {
+    width: 8%;
   }
   
   /* Estilo para fila seleccionada */
   #vista-cuerpo input[type=radio]:checked + tr {
     background-color: rgb(183, 230, 255);
   }
+  ::-webkit-scrollbar {
+    width: 2px;
+    height: 4px;
+    background-color: transparent;
+  }
   
+  /* Change the scrollbar thumb color */
+  ::-webkit-scrollbar-thumb {
+    background-color: #6d6d6d;
+    border-radius: 1rem;
+  
+  }
 
 
 
