@@ -60,6 +60,7 @@
         
     </div>
 </body>
+<script src="./js/fun.js" type="module"></script>
 <script src="../js/moonSun.js" type="module"></script>
 <script src="../js/urlTransactions.js"></script>
 <script src="../js/app-TD.js" type="module"></script>
