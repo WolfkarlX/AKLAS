@@ -226,7 +226,6 @@
   font-size:3.2rem;
   height: 100%;
   margin: 15px;
-  
   cursor: pointer;
   border-radius: 2rem;
 }
@@ -531,6 +530,10 @@ display: inline-block;
   padding: 20px;
   position: relative;
   display: block;
+}
+
+.textarea-categori {
+  resize: none;
 }
 .formularioproducto {
   z-index: 3;
@@ -1288,16 +1291,32 @@ display: inline-block;
   display: block;
   width: 15rem;
   height: 12rem;
-  right: 8rem;
-  top: 7rem;
+  top: 7em;
   padding: 10px;
   margin: 20px;
+  margin-left: 45%;
   justify-content: center;
-  z-index: 2;
+  z-index: 9;
   color: white;
   font-weight: bold;
   border-radius: 1rem;
   
+}
+.configuracion_tab button{
+  position: relative;
+  width: 90%;
+  max-width: 90%;
+  min-width: 90%;
+  background-color: #12171e;
+  color: white;
+  font-weight: bold;
+  border: none;
+  height: 30px;
+  text-align: center;
+  border-radius: 1rem;
+  margin-left: 5%;
+  cursor: pointer;
+  margin-top: 20%;
 }
 .user_tab {
   background-color: rgb(50, 49, 49);
@@ -1310,10 +1329,19 @@ display: inline-block;
   padding: 10px;
   margin: 20px;
   justify-content: center;
-  z-index: 2;
+  z-index: 3;
   color: white;
   border-radius: 1rem;
   font-weight: bold;
+}
+.difuminado2 {
+  backdrop-filter: blur(5px);
+  display: none;
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  height:100%;
 }
 .user_tab .usuario {
   width: 100%;
@@ -1356,14 +1384,14 @@ display: inline-block;
   background-color: rgb(50, 49, 49);
   position: absolute;
   display: block;
-  width: 15rem;
+  width: 16rem;
   height: 12rem;
   right: 13.2rem;
   top: 7rem;
   padding: 10px;
   margin: 20px;
   justify-content: center;
-  z-index: 2;
+  z-index: 3;
   color: white;
   font-weight: bold;
   overflow-y: auto;
@@ -1476,10 +1504,10 @@ display: inline-block;
   color: rgb(240, 240, 240);
 }
 .darkmode #vista tbody tr:hover{
-  background-color: #717171;
+  background-color: #474747;
 }
 .darkmode #vista-cuerpo input[type=radio]:checked + tr{
-  background-color: #717171;
+  background-color: #474747;
 }
 
 

@@ -11,6 +11,7 @@ function Claro() {
 } */
 
 const body = document.querySelector('.main-content');
+const config_tab = document.querySelector('.configuracion_tab');
 const btn = document.querySelector('.btn');
 const icon = document.querySelector('.btn__icon');
 const opcion = document.getElementById("opcion");
@@ -33,6 +34,7 @@ function load(){
     opcion.innerHTML = "Modo Oscuro";
   } else if( darkmode == 'true'){ //si el modo oscuro está activado
     body.classList.add('darkmode');
+    config_tab.classList.add('darkmode');
     icon.classList.add('fa-moon');
     opcion.innerHTML = "Modo Claro";
   } else if(darkmode == 'false'){ //si el modo oscuro existe pero está deshabilitado
@@ -48,7 +50,7 @@ btn.addEventListener('click', () => {
 
   body.classList.toggle('darkmode');
   icon.classList.add('animated');
-
+  config_tab.classList.toggle('darkmode');
   //Guardar verdadero o falso
   store(body.classList.contains('darkmode'));
 

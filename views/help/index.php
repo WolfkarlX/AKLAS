@@ -13,7 +13,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayuda</title>
+    <title>Ayuda y Privacidad</title>
     <link rel="stylesheet" href="../css/dashboard_admin.css">
     <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
@@ -89,9 +89,9 @@
             <li>
                 <a href="../help/">
                     <i class='bx bx-question-mark'></i>
-                    <span class="nav-item">Ayuda</span>
+                    <span class="nav-item">Ayuda y Privacidad</span>
                 </a>
-                <span class="tooltip">Ayuda</span>
+                <span class="tooltip">Ayuda y Privacidad</span>
             </li>
             <li>
                 <a href="../../controllers/logout.php" id="logout-link">
@@ -102,15 +102,6 @@
             </li>
         </ul>
     </div>
-    <div class="main-content">
-        <div class="arriba">
-            <h1>Ayuda</h1>
-            <div id="clock"></div>
-            <div class="arribaopciones">
-                <button id="UsuarioBoton"> <i class='bx bx-user-circle'></i></button>
-                <button id="ConfiguracionBoton"> <i class='bx bx-cog' ></i></button>
-            </div>
-        </div>
         <div class="configuracion_tab" style="display: none" id="config_tab">
         <span>Configuración de la página</span>    
                 <div class="btn">
@@ -122,6 +113,16 @@
                    
                 </div>
                 <span id="opcion"></span>
+                <button class="cerrarmenu" id="cerrarcosa">Cerrar</button>
+        </div>
+    <div class="main-content">
+        <div class="arriba">
+            <h1>Ayuda y Privacidad</h1>
+            <div id="clock"></div>
+            <div class="arribaopciones">
+                <button id="UsuarioBoton"> <i class='bx bx-user-circle'></i></button>
+                <button id="ConfiguracionBoton"> <i class='bx bx-cog' ></i></button>
+            </div>
         </div>
         <div class="user_tab" style="display: none" id="user_tab">
             <span>Usuario</span>
@@ -175,6 +176,7 @@
             </div>
         </div>
     </div>
+    <div class="difuminado2" id="difuminado2">
 </body>
     <script src="../js/fun.js" type="module"></script>
     <script src="../js/moonSun.js" type="module"></script>

@@ -45,7 +45,7 @@
         </div>
     </div>
     <div class="copy">
-        <span> © 2023, AKLAS Inc.</span>
+        <span> © Copyright 2023, AKLAS Inc. Administrando triunfos, todos los derechos reservados</span>
     </div>
 </body>
     <script src="./views/js/loginfun.js" type="module"></script>

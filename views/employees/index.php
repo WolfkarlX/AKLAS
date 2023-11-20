@@ -41,17 +41,7 @@ try {
     <title>Root - Cuentas</title>
 </head>
 <body>
-<div class="main-content">
-        <div class="arriba">
-            <h1>Visualización de cuentas</h1>
-            <div id="clock"></div>
-            <div class="arribaopciones">
-                <button id="UsuarioBoton"> <i class='bx bx-user-circle'></i></button>
-                <button id="notificacion"> <i class='bx bx-bell' ></i></button>
-                <button id="ConfiguracionBoton"> <i class='bx bx-cog' ></i></button>
-            </div>
-        </div>
-        <div class="configuracion_tab" style="display: none" id="config_tab">
+<div class="configuracion_tab" style="display: none" id="config_tab">
         <span>Configuración de la página</span>    
                 <div class="btn">
                     <div class="btn__indicator">
@@ -62,7 +52,19 @@ try {
                    
                 </div>
                 <span id="opcion"></span>
+                <button class="cerrarmenu" id="cerrarcosa">Cerrar</button>
         </div>
+<div class="main-content">
+        <div class="arriba">
+            <h1>Visualización de cuentas</h1>
+            <div id="clock"></div>
+            <div class="arribaopciones">
+                <button id="UsuarioBoton"> <i class='bx bx-user-circle'></i></button>
+                <button id="notificacion"> <i class='bx bx-bell' ></i></button>
+                <button id="ConfiguracionBoton"> <i class='bx bx-cog' ></i></button>
+            </div>
+        </div>
+        
         <div class="user_tab" style="display: none" id="user_tab">
             <span>Usuario</span>
             <div class="usuario">
@@ -149,7 +151,7 @@ try {
                     <button id="btn-actualizar" title="Actualizar"><i class='bx bx-refresh'></i></button>
                     <button id="btn-delete" form="form-table" title="Eliminar" disabled><i class='bx bx-trash'></i></button>
                     <button id="btn-edit" title="Editar" disabled><i class='bx bx-pencil'></i></button>
-                    <input type="text" id="filter" class="tabla-buscadoruser" placeholder="Filtrar... "><i id="iconobuscador2" class='bx bx-search-alt-2'></i></input>
+                    <input type="text" id="filter" class="tabla-buscadoruser" placeholder="Buscar usuario "><i id="iconobuscador2" class='bx bx-search-alt-2'></i></input>
                 </div>
                 <div class="tabla">
                 <form id="form-table">
@@ -175,6 +177,7 @@ try {
             </div>
         </div>
 </div>
+<div class="difuminado2" id="difuminado2">
    
 </body>
 <script src="../js/fun.js" type="module"></script>

@@ -91,9 +91,9 @@
             <li>
                 <a href="./help/">
                     <i class='bx bx-question-mark'></i>
-                    <span class="nav-item">Ayuda</span>
+                    <span class="nav-item">Ayuda y Privacidad</span>
                 </a>
-                <span class="tooltip">Ayuda</span>
+                <span class="tooltip">Ayuda y Privacidad</span>
             </li>
             <li>
                 <a href="../controllers/logout.php" id="logout-link">
@@ -104,6 +104,19 @@
             </li>
         </ul>
     </div>
+    <div class="configuracion_tab" style="display: none" id="config_tab">
+        <span>Configuración de la página</span>    
+                <div class="btn">
+                    <div class="btn__indicator">
+                        <div class="btn__icon-container">
+                            <i class="btn__icon fa-solid" id="btm_fondoscolor"></i>
+                        </div>
+                    </div>
+                   
+                </div>
+                <span id="opcion"></span>
+                <button class="cerrarmenu" id="cerrarcosa">Cerrar</button>
+        </div>
     <div class="main-content">
         <div class="arriba">
             <h1>Inicio</h1>
@@ -112,18 +125,6 @@
                 <button id="UsuarioBoton"> <i class='bx bx-user-circle'></i></button>
                 <button id="ConfiguracionBoton"> <i class='bx bx-cog' ></i></button>
             </div>
-        </div>
-        <div class="configuracion_tab" style="display: none" id="config_tab">
-        <span>Configuración de la página</span>    
-                <div class="btn">
-                    <div class="btn__indicator">
-                        <div class="btn__icon-container">
-                            <div class="btn__icon fa-solid" id="btm_fondoscolor"></div>
-                        </div>
-                    </div>
-                   
-                </div>
-                <span id="opcion"></span>
         </div>
         <div class="user_tab" style="display: none" id="user_tab">
             <span>Cuenta</span>
@@ -165,7 +166,7 @@
                         </a>
                     </div>
                     <div class="homebutton">
-                        <a href="./products/">
+                        <a href="./dashboard/">
                             <i class='bx bxs-doughnut-chart'></i>
                             <span class="bloque-item">Dashboard<span>
                         </a>
@@ -191,12 +192,15 @@
                     <div class="homebutton">
                         <a href="./help/">
                             <i class='bx bx-question-mark'></i>
-                            <span class="bloque-item">Ayuda</span>
+                            <span class="bloque-item">Ayuda y Privacidad</span>
                         </a>
                     </div>
             </div>
         </div>
+        
     </div>
+    <div class="difuminado2" id="difuminado2">
+    <div id="difuminado"></div>
 </body>
 <script src="./js/fun.js" type="module"></script>
 <script src="js/moonSun.js" type="module"></script>
