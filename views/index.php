@@ -137,9 +137,7 @@
                 <span>Nombre:</span> <br>
                 <h4><?php echo $_SESSION['first_name']; ?> <br> <?php echo $_SESSION['last_name']; ?></h4> <br>
                 <span>Número de cuenta:</span><br>
-                <h4>23</h4><br>
-                <span>Rol:<br>
-                <h4>Jefe</h4>
+                <h4><?php echo $_SESSION['user_id']; ?></h4><br>  
             </div>
             <div class="user-boton">
             <a href="../controllers/logout.php" id="logout-link2">
