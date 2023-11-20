@@ -324,13 +324,24 @@
   }
 
   .difuminado2 {
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(1px);
+    background-color:rgba(0, 0, 0, 0.578);
     display: none;
     z-index: -1;
     position: absolute;
-    width: 98%;
+    width: 100%;
     top: 0;
     height:100%;
+    opacity: 0;
+    animation: appear 0.2s forwards;
+  }
+  @keyframes appear {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 
   .notif_tab {

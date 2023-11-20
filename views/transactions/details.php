@@ -51,7 +51,11 @@
         <div class="user_tab" style="display: none" id="user_tab">
             <span>Usuario</span>
             <div class="usuario">
-                <span><?php echo $_SESSION['first_name']; ?> <?php echo $_SESSION['last_name']; ?></span><!--Mostramos el nombte de usuario--->
+                <!--Mostramos el nombre de usuario--->
+                <span>Nombre:</span> <br>
+                <h4><?php echo $_SESSION['first_name']; ?> <br> <?php echo $_SESSION['last_name']; ?></h4> <br>
+                <span>Número de cuenta:</span><br>
+                <h4><?php echo $_SESSION['user_id']; ?></h4><br>
             </div>
             <div class="user-boton">
             <a href="../../controllers/logout.php" id="logout-link2">
@@ -60,6 +64,7 @@
                 </a>
             </div>
         </div>
+        
         <div class="notif_tab" style="display: none" id="notif_tab">
             <span>Notificaciones</span>
             <div class="Notif">
@@ -84,7 +89,7 @@
             </form>
             </div>
             <div class="alado">
-            
+                <div class="img imagen" width="100%" src="/views/img/edit.png)"></div>
             </div>
             </div>
         </div>

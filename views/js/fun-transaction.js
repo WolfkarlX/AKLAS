@@ -46,7 +46,7 @@ function showForm(form, difuminado){
   form.style.zIndex = "11";
   difuminado.style.display = "flex";
   difuminado.style.zIndex = "10";
-  difuminado.style.backdropFilter = "blur(5px)";
+  difuminado.style.backdropFilter = "blur(1px)";
   difuminado.style.position = "absolute";
   difuminado.style.width = "100%";
   difuminado.style.top = "0";
@@ -82,6 +82,9 @@ if(btn_fondo){
       difuminado2.style.display = "flex";
       difuminado2.style.zIndex = "2";
       sidebar.style.zIndex = "-1";
+      btn_user.style.borderBottomColor = "transparent";
+      btn_config.style.borderBottomColor = "transparent";
+      btn_noti.style.borderBottomColor = "transparent";
     }
  
     

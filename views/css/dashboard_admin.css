@@ -105,16 +105,19 @@
 .sidebar ul li .tooltip {
   position: absolute;
   text-align: left;
-  left: 185px;
+  justify-content: left;
+  align-items: left;
+  align-self: left;
+  left: 170px;
   top: 50%;
-  transform: translate(-45%, -50%);
+  transform: translate(-35%, -50%);
   box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
   border-radius: 0.6rem;
   padding: .4rem 1.2rem;
   line-height: 1.8rem;
   z-index: 20;
   opacity: 0;
-  margin-left: 1rem;
+  margin-left: 2rem;
   white-space: nowrap;
   pointer-events: none;
   -webkit-touch-callout: none;
@@ -1344,6 +1347,9 @@ position: absolute;
   border-radius: 1rem;
   font-weight: bold;
 }
+#difuminado {
+  background-color:rgba(0, 0, 0, 0.578);
+}
 .difuminado2 {
   backdrop-filter: blur(1px);
   background-color:rgba(0, 0, 0, 0.578);
@@ -2012,23 +2018,23 @@ position: absolute;
   .sidebar ul li {
     position: relative;
     list-style-type: none;
-    height: 50px;
+    height: 40px;
     width: 90%;
-    line-height: 50px;
+    line-height: 30px;
   }
   .sidebar.active ul li {
     position: relative;
     list-style-type: none;
-    height: 50px;
+    height: 40px;
     width: 90%;
-    line-height: 50px;
+    line-height: 30px;
   }
   .sidebar ul li a i {
     min-width: 100px;
     text-align: center;
-    height: 50px;
+    height: 40px;
     border-radius: 12px;
-    line-height: 50px;
+    line-height: 30px;
     transform: translateX(-45%);
     
   }
@@ -2210,8 +2216,10 @@ position: absolute;
     font-size: 22px;
   }
   .configuracion_tab {
-    right: 1rem;
+    right: 1.2rem;
     margin: 20px;
+    width: 70%;
+    max-width: 70%;
     
   }
   .user_tab {
