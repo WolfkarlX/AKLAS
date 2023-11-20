@@ -472,15 +472,15 @@
  }
  .opciones #btn-tags {
   background-color: gray;
-width: calc(13% - 5px);
-display: inline-block;
+  width: calc(13% - 5px);
+  display: inline-block;
   height: 65px;
   margin-top: 20px;
   padding: 10px;
   color: white;
   font-weight: bold;
   cursor: pointer; 
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   align-items: center;
   border: none;
   margin: 10px;

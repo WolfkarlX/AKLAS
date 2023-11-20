@@ -166,7 +166,7 @@
                 <button id="btn-actualizar" title="Actualizar"><i class='bx bx-refresh'></i></button>
                 <button id="btn-delete" form="form-table" title="Eliminar" disabled><i class='bx bx-trash'></i></button>
                 <button id="btn-edit" title="Editar" disabled><i class='bx bx-pencil'></i></button>
-                <button id="btn-tags" title="Administrar Tags" disabled>Etiquetas</button>       
+                <button id="btn-tags" title="Administrar etiquetas" disabled>Etiquetas</button>       
                 <input type="text" id="filter" class="tabla-buscador" placeholder="Filtrar... "><i id="iconobuscador2" class='bx bx-search-alt-2'></i></input> 
                 <div class="opcioneselect">
                     <select name="head-option" id="head-option" required>
