@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
                 $_SESSION['EmployeID'] = $user['EmployeID'];
                 if ($user['rol'] == 'root') 
                 {
-                    header('Location: ../views/employees/');//Redirigimos al panel de control del root
+                    header('Location: ../views/');//Redirigimos al panel de control del root
                 } else 
                 {
                     header('Location: ../views/'); // Redireccionamos al panel de control

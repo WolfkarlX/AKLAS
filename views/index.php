@@ -112,9 +112,12 @@
                             <i class="btn__icon fa-solid" id="btm_fondoscolor"></i>
                         </div>
                     </div>
-                   
                 </div>
                 <span id="opcion"></span>
+                <!--Condicional para poder mostrar solo al root si ir a gestionar los empleados -->
+                <?php if($_SESSION['user_id'] == "12345678"){?>   
+                    <a class="cerrarmenu" href="../views/employees/"> Gestionar Empleados</a>                        
+                <?php } ?>
                 <button class="cerrarmenu" id="cerrarcosa">Cerrar</button>
     </div>
     <div class="main-content">

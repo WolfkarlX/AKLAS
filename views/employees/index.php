@@ -51,6 +51,7 @@ try {
                     </div>
                    
                 </div>
+                <a href="../../views/">Regresar al gestor de inventario</a>
                 <span id="opcion"></span>
                 <button class="cerrarmenu" id="cerrarcosa">Cerrar</button>
         </div>
