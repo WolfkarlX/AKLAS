@@ -92,6 +92,10 @@ try {
             </div>
         </div>
         <div class="abajo">
+        <div class="noencontrado" id="nohubo">
+                <i class='bx bx-message-alt-x'></i>
+                <span>No se encontró tu busqueda</span>
+            </div>
             <div class="formulario">
             <form id="form-users" action="../../controllers/register.php" method="POST" class="formusuarios"><!--Ingresamos los valores que llevara la cuenta-->
             <div class="formarriba">

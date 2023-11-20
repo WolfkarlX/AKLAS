@@ -43,6 +43,7 @@ let maxInput = document.getElementById("maxq");
 let minInput = document.getElementById("minq");
 let maxInputE = document.getElementById("input13");
 let minInputE = document.getElementById("input12");
+let errorbusqueda = document.getElementById("nohubo");
 
 async function cargarTabla(){
     tbody.innerHTML = "";
@@ -403,13 +404,20 @@ if (selectfrom ) {
 filter.addEventListener("keyup", function(event) {
     if (event.key == "Escape") event.target.value = "";
     const registers = document.querySelectorAll("#vista-cuerpo tr");
+    let count = 0;
     registers.forEach(data => {
-        let rawContent = data.innerHTML.replaceAll("<td>", "").replaceAll("</td>", "");
-        rawContent.toLowerCase().includes(event.target.value.toLowerCase())
-        ?data.style.display = ""
-        :data.style.display = "none";
-    })        
-})
+      let rawContent = data.innerHTML.replaceAll("<td>", "").replaceAll("</td>", "");
+      rawContent.toLowerCase().includes(event.target.value.toLowerCase())
+        ? (data.style.display = "", count++)
+        : (data.style.display = "none");
+    });
+    if (count === 0) {
+      // Hide the element when there is no more data displaying
+      errorbusqueda.style.display = "flex";
+    } else {
+      errorbusqueda.style.display = "none";
+    }
+  });
 
 if (btnTags) {
     btnTags.addEventListener("click", async (event) => {

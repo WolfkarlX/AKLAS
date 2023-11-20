@@ -148,6 +148,10 @@
         </div>
        
         <div class="abajo" id="abajo">
+            <div class="noencontrado" id="nohubo">
+                <i class='bx bx-message-alt-x'></i>
+                <span>No se encontró tu busqueda</span>
+            </div>
             <div class="opcionesmain">
                 <input class="buscador" type="text" id="myInput" placeholder="Buscar...">
                 <i id="iconobuscador" class='bx bx-search-alt-2'></i>

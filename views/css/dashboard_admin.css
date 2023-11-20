@@ -1494,7 +1494,35 @@ position: absolute;
   margin-left: 10%;
   margin-top: 2%;
 }
-
+.abajo .noencontrado {
+  position: absolute;
+  display: none;
+  width: 30%;
+  max-width: 30%;
+  margin-left: 34%;
+  height: 40%;
+  max-height: 40%;
+  font-size: 90px;
+  color: gray;
+  margin-top: 18%;
+  padding-left: 12%;
+}
+.abajo .noencontrado i {
+  position: absolute;
+  max-height: 70%;
+  height: 70%;
+  top: 0;
+}
+.abajo .noencontrado span {
+  font-size: 18px;
+  text-align: left;
+  left: 25%;
+  position: absolute;
+  max-height: 20%;
+  text-wrap: nowrap;
+  height: 20%;
+  bottom: 30%;
+}
 
 /* -------------- BUTTON - PARA EL CAMBIO DE TEMA ENTRE CLARO Y OSCURO -------------- */
 .btn{

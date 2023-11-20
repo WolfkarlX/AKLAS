@@ -20,6 +20,8 @@ var celdas = "";
 const title = document.getElementById("title");
 const secret = document.getElementById("secret");
 const formusers = document.getElementById("form-users");
+const filter = document.getElementById("filter");
+let errorbusqueda = document.getElementById("nohubo");
 
 async function cargarTabla(){
     tbody.innerHTML = "";
@@ -132,3 +134,20 @@ function createId(){
     let key = year + month + randomN;
     return key;
 }
+filter.addEventListener("keyup", function(event) {
+    if (event.key == "Escape") event.target.value = "";
+    const registers = document.querySelectorAll("#vista-cuerpo tr");
+    let count = 0;
+    registers.forEach(data => {
+      let rawContent = data.innerHTML.replaceAll("<td>", "").replaceAll("</td>", "");
+      rawContent.toLowerCase().includes(event.target.value.toLowerCase())
+        ? (data.style.display = "", count++)
+        : (data.style.display = "none");
+    });
+    if (count === 0) {
+      // Hide the element when there is no more data displaying
+      errorbusqueda.style.display = "flex";
+    } else {
+      errorbusqueda.style.display = "none";
+    }
+  });
