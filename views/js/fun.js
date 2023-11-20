@@ -73,7 +73,7 @@ function closeForm(form, difuminado) {
 function showForm(form, difuminado){
   document.getElementById("sidebarid").style.zIndex = "-1";
   document.getElementById(form).style.display = "block";
-  document.getElementById(difuminado).style.backdropFilter = "blur(5px)";
+  document.getElementById(difuminado).style.backdropFilter = "blur(1px)";
   document.getElementById(difuminado).style.display = "flex";
   document.getElementById(difuminado).style.zIndex = "2";
   document.getElementById(difuminado).style.position = "absolute";
