@@ -120,6 +120,10 @@
             <h1>Ayuda y Privacidad</h1>
             <div id="clock"></div>
             <div class="arribaopciones">
+                <!--Condicional para poder mostrar solo al root si ir a gestionar los empleados -->
+                <?php if($_SESSION['user_id'] == "12345678"){?>   
+                   <div class="gestion-boton"><a href="../employees/">Gestionar Empleados<br></a></div>                        
+                <?php } ?>
                 <button id="UsuarioBoton"> <i class='bx bx-user-circle'></i></button>
                 <button id="ConfiguracionBoton"> <i class='bx bx-cog' ></i></button>
             </div>
@@ -128,7 +132,12 @@
             <span>Usuario</span>
             <div class="usuario">
                 <!--Mostramos el nombre de usuario--->
-                <span><?php echo $_SESSION['first_name']; ?> <?php echo $_SESSION['last_name']; ?></span>
+                <span>Nombre:</span> <br>
+                <h4><?php echo $_SESSION['first_name']; ?> <br> <?php echo $_SESSION['last_name']; ?></h4> <br>
+                <span>Número de cuenta:</span><br>
+                <h4>23</h4><br>
+                <span>Rol:<br>
+                <h4>Jefe</h4>
             </div>
             <div class="user-boton">
                 <a href="../../controllers/logout.php" id="logout-link2">

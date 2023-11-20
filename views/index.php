@@ -114,10 +114,6 @@
                     </div>
                 </div>
                 <span id="opcion"></span>
-                <!--Condicional para poder mostrar solo al root si ir a gestionar los empleados -->
-                <?php if($_SESSION['user_id'] == "12345678"){?>   
-                    <a class="cerrarmenu" href="../views/employees/"> Gestionar Empleados</a>                        
-                <?php } ?>
                 <button class="cerrarmenu" id="cerrarcosa">Cerrar</button>
     </div>
     <div class="main-content">
@@ -125,17 +121,25 @@
             <h1>Inicio</h1>
             <div id="clock"></div>
             <div class="arribaopciones">
+                <!--Condicional para poder mostrar solo al root si ir a gestionar los empleados -->
+                <?php if($_SESSION['user_id'] == "12345678"){?>   
+                   <div class="gestion-boton"><a href="../views/employees/">Gestionar Empleados<br></a></div>                        
+                <?php } ?>
                 <button id="UsuarioBoton"> <i class='bx bx-user-circle'></i></button>
                 <button id="ConfiguracionBoton"> <i class='bx bx-cog' ></i></button>
             </div>
         </div>
+
         <div class="user_tab" style="display: none" id="user_tab">
             <span>Cuenta</span>
             <div class="usuario">
                 <!--Mostramos el nombre de usuario--->
-                <span>Usuario: <br>
-                <?php echo $_SESSION['first_name']; ?> <br> <?php echo $_SESSION['last_name']; ?></span> <br><br>
-                <span>Rol:
+                <span>Nombre:</span> <br>
+                <h4><?php echo $_SESSION['first_name']; ?> <br> <?php echo $_SESSION['last_name']; ?></h4> <br>
+                <span>Número de cuenta:</span><br>
+                <h4>23</h4><br>
+                <span>Rol:<br>
+                <h4>Jefe</h4>
             </div>
             <div class="user-boton">
             <a href="../controllers/logout.php" id="logout-link2">
