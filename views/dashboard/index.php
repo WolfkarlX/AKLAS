@@ -168,7 +168,7 @@
                 data:{
                     datasets: [{
                         label: 'Stock de Productos',
-                        backgroundColor: ['#6bf1ab','#63d69f', '#438c6c', '#509c7f', '#1f794e', '#34444c', '#90CAF9', '#64B5F6', '#42A5F5', '#2196F3', '#0D47A1'],
+                        backgroundColor: ['#6bf1ab','#93f64f', '#438c6c', '#509c7f', '#1f794e', '#34444c', '#90CAF9', '#64B5F6', '#42A5F5', '#2196F3', '#0D47A1'],
                         borderColor: ['black'],
                         borderWidth:1,
                     }]
@@ -182,7 +182,7 @@
                 }
             })
 
-            let url = '../../controllers/each-area-dashboard.php'
+            let url = '../../controllers/each-area-dashboard.php';
             fetch(url)
                 .then( response => response.json() )
                 .then( datos => mostrar(datos) )
