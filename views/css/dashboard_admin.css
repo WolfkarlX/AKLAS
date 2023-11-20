@@ -361,7 +361,7 @@
   margin-top: 20px;
   font-size: 2.1rem;
   align-items: center;
-  background-color: rgb(30, 0, 255);
+  background-color: #1e00ff;
   box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
   color: #eee;
   border: none;
@@ -1277,56 +1277,6 @@ position: absolute;
   background-color: rgb(183, 230, 255);
 }
 
-/*
-.abajo .tablabajo {
-  background-color: rgb(7, 0, 56);
-  position: absolute;
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  height: 50px;
-  bottom: 30px;
-  text-align: center;
-  font-size: 30px;
-  color: white;
-  font-weight: bold;
-  padding: 10px -30px;
-}
-.tablabajo button {
-  background-color: #00329d;
-  width: 120px;
-  height: 35px;
-  color: white;
-  font-weight: bold;
-  cursor: pointer; 
-  font-size: 1.1rem;
-  align-items: center;
-  border: none;
-  margin: 10px;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  border-radius: 0.6rem;
-  justify-content: center;
-  box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-*/
-
-/* Cambiar tema claro y oscuro */
-/*.oscuro {
-  cursor: pointer;
-  background-color: black;
-  color: white;
-}
-
-.claro {
-  cursor: pointer;
-  background-color: white;
-  color: black;
-} */
-
 /* ------------ VARIABLES ------------ */
 :root{
   /* COLORS */
@@ -1373,9 +1323,9 @@ position: absolute;
   background-color: rgb(50, 49, 49);
   position: absolute;
   display: block;
-  width: 15rem;
-  height: 12rem;
-  right: 18rem;
+  width: 17rem;
+  height: 15rem;
+  right: 15rem;
   top: 7rem;
   padding: 10px;
   margin: 20px;
@@ -1396,9 +1346,14 @@ position: absolute;
 }
 .user_tab .usuario {
   width: 100%;
-  height: 40%;
-  margin: 20px;
+  height: 55%;
+  margin: 10px;
 }
+
+.user_tab h4 {
+  font: 1em sans-serif;
+}
+
 .user_tab .user-boton{
   width: 10%;
   height: 30%;
@@ -1406,6 +1361,7 @@ position: absolute;
   text-align: center;
   
 }
+
 .user-boton a {
   width: 80%;
   height: 40px;
@@ -1453,6 +1409,52 @@ position: absolute;
   display: block;
   margin: 10px;
   line-height: 1rem;
+}
+
+.gestion-boton a {
+  width: 65%;
+  height: 65px;
+  border-radius: 2rem;
+  /*background-color: #1e00ff;*/
+  background-image: linear-gradient(to right, rgb(1, 0, 63), rgb(255, 115, 0));
+  border-color: #eee;
+  border-width: 2px;
+  font-size: 30%;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  position:absolute;
+  overflow:none;
+  margin:5px;
+  padding:5px;
+  text-decoration:none;
+  text-align: center;
+  right: 100%;
+  top: 20%;
+  justify-content:center;
+}
+
+.gesti-boton a {
+  width: 65%;
+  height: 65px;
+  border-radius: 2rem;
+  /*background-color: #1e00ff;*/
+  background-image: linear-gradient(to right, rgb(1, 0, 63), rgb(30, 0, 255));
+  border-color: #eee;
+  border-width: 2px;
+  font-size: 30%;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  position:absolute;
+  overflow:none;
+  margin:5px;
+  padding:5px;
+  text-decoration:none;
+  text-align: center;
+  right: 100%;
+  top: 20%;
+  justify-content:center;
 }
 
 /* -------------- BUTTON - PARA EL CAMBIO DE TEMA ENTRE CLARO Y OSCURO -------------- */

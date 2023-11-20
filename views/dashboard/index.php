@@ -120,6 +120,10 @@
             <h1>Dashboard</h1>
             <div id="clock"></div>
             <div class="arribaopciones">
+                <!--Condicional para poder mostrar solo al root si ir a gestionar los empleados -->
+                <?php if($_SESSION['user_id'] == "12345678"){?>   
+                   <div class="gestion-boton"><a href="../employees/">Gestionar Empleados<br></a></div>                        
+                <?php } ?>
                 <button id="UsuarioBoton"> <i class='bx bx-user-circle'></i></button>
                 <button id="notificacion"> <i class='bx bx-bell' >
                 <div class="iconoerror" style="display:none" id="iconoerror">
@@ -133,10 +137,17 @@
         <div class="user_tab" style="display: none" id="user_tab">
             <span>Usuario</span>
             <div class="usuario">
-                <span><?php echo $_SESSION['first_name']; ?> <?php echo $_SESSION['last_name']; ?></span><!--Mostramos el nombte de usuario--->
+                <!--Mostramos el nombre de usuario--->
+                <span>Nombre:</span> <br>
+                <h4><?php echo $_SESSION['first_name']; ?> <br> <?php echo $_SESSION['last_name']; ?></h4> <br>
+                <span>Número de cuenta:</span><br>
+                <h4><?php echo $_SESSION['user_id']; ?></h4><br>
             </div>
             <div class="user-boton">
-                <button class="logoutuser"><i class='bx bx-log-out'></i> Cerrar Sesión</button>
+            <a href="../../controllers/logout.php" id="logout-link2">
+                    <i class='bx bx-log-out'></i>
+                    <span>Cerrar Sesión</span>
+                </a>
             </div>
         </div>
         <div class="notif_tab" style="display: none" id="notif_tab">

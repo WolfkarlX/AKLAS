@@ -112,7 +112,6 @@
                             <i class="btn__icon fa-solid" id="btm_fondoscolor"></i>
                         </div>
                     </div>
-                   
                 </div>
                 <span id="opcion"></span>
                 <button class="cerrarmenu" id="cerrarcosa">Cerrar</button>
@@ -122,16 +121,23 @@
             <h1>Inicio</h1>
             <div id="clock"></div>
             <div class="arribaopciones">
+                <!--Condicional para poder mostrar solo al root si ir a gestionar los empleados -->
+                <?php if($_SESSION['user_id'] == "12345678"){?>   
+                   <div class="gestion-boton"><a href="../views/employees/">Gestionar Empleados<br></a></div>                        
+                <?php } ?>
                 <button id="UsuarioBoton"> <i class='bx bx-user-circle'></i></button>
                 <button id="ConfiguracionBoton"> <i class='bx bx-cog' ></i></button>
             </div>
         </div>
+
         <div class="user_tab" style="display: none" id="user_tab">
             <span>Cuenta</span>
             <div class="usuario">
                 <!--Mostramos el nombre de usuario--->
-                <span>Usuario: <?php echo $_SESSION['first_name']; ?> <?php echo $_SESSION['last_name']; ?></span>
-             
+                <span>Nombre:</span> <br>
+                <h4><?php echo $_SESSION['first_name']; ?> <br> <?php echo $_SESSION['last_name']; ?></h4> <br>
+                <span>Número de cuenta:</span><br>
+                <h4><?php echo $_SESSION['user_id']; ?></h4><br>  
             </div>
             <div class="user-boton">
             <a href="../controllers/logout.php" id="logout-link2">

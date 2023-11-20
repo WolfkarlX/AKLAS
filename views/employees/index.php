@@ -59,6 +59,10 @@ try {
             <h1>Visualización de cuentas</h1>
             <div id="clock"></div>
             <div class="arribaopciones">
+                <!--Condicional para poder mostrar solo al root si ir a gestionar los empleados -->
+                <?php if($_SESSION['user_id'] == "12345678"){?>   
+                   <div class="gesti-boton"><a href="../../">Ir a Inicio</a></div>                        
+                <?php } ?>
                 <button id="UsuarioBoton"> <i class='bx bx-user-circle'></i></button>
                 <button id="notificacion"> <i class='bx bx-bell' ></i></button>
                 <button id="ConfiguracionBoton"> <i class='bx bx-cog' ></i></button>
@@ -68,7 +72,11 @@ try {
         <div class="user_tab" style="display: none" id="user_tab">
             <span>Usuario</span>
             <div class="usuario">
-            <span><?php echo $_SESSION['first_name']; ?> <?php echo $_SESSION['last_name']; ?></span><!--Mostramos el nombte de usuario--->
+                <!--Mostramos el nombre de usuario--->
+                <span>Nombre:</span> 
+                <h4><?php echo $_SESSION['first_name']; ?> <br> <?php echo $_SESSION['last_name']; ?></h4> 
+                <span>Número de cuenta:</span>
+                <h4><?php echo $_SESSION['user_id']; ?></h4>
             </div>
             <div class="user-boton">
             <a href="../../controllers/logout.php" id="logout-link2">
