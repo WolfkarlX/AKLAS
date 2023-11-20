@@ -146,7 +146,7 @@
         <div class="abajo">
             <div class="opciones">
                 <button id="btn-actualizar" title="Actualizar"><i class='bx bx-refresh'></i></button>
-                <button class=""><a href="./">Volver</a></button>
+                <button id="btn-volver" class=""><a href="./">Volver</a></button>
             </div>
             <div class="tabla">
                 <form id="form-table">

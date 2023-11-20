@@ -237,9 +237,9 @@
     max-height: 15%;
   }
   #main-form input {
-    width: 30%;
+    width: 20%;
     margin-left: 15px;
-    max-width: 30%;
+    max-width: 20%;
     height: 60%;
     max-height: 60%;
     border-width: 1px;
@@ -249,12 +249,18 @@
     font-weight: bold;
     padding-left: 10px;
   }
+  #main-form label {
+    margin-right: 10px;
+    width: 10%;
+    max-width: 10%;
+    min-width: 10%;
+  }
   #main-form select {
-    width: 30%;
+    width: 20%;
     margin-left: 15px;
     color: black;
     font-weight: bold;
-    max-width: 30%;
+    max-width: 20%;
     height: 60%;
     max-height: 60%;
     border-width: 1px;
