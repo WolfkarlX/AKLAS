@@ -200,14 +200,15 @@
     outline-color: #00329d;
   }
   .configuracion_tab {
-    background-color: rgb(50, 49, 49);
+    background-color: rgb(72, 71, 71);
     position: absolute;
     display: block;
-    width: 15rem;
+    width: 20rem;
     height: 12rem;
-    top: 7em;
+    top: 12em;
     padding: 10px;
     margin: 20px;
+    padding: 10px 10px;
     margin-left: 40%;
     justify-content: center;
     z-index: 9;
@@ -217,20 +218,28 @@
     
   }
   .configuracion_tab button{
-    position: relative;
-    width: 90%;
-    max-width: 90%;
-    min-width: 90%;
+    position: absolute;
+    width: 60%;
+    max-width: 60%;
+    min-width: 60%;
+    margin-left: 18%;
     background-color: #12171e;
     color: white;
     font-weight: bold;
     border: none;
-    height: 30px;
+    height: 35px;
+    margin-right: 19%;
     text-align: center;
     border-radius: 1rem;
-    margin-left: 5%;
     cursor: pointer;
-    margin-top: 20%;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 28%;
+  }
+  .configuracion_tab span {
+    position: absolute;
+    margin-bottom: 40%;
   }
   .user_tab {
     background-color: rgb(50, 49, 49);
@@ -599,6 +608,8 @@
     background-color: #fff;
     width: 2em;
     height: 2em;
+    top: 20%;
+  left: 35%;
     margin: 0.4rem;
     border-radius: 10em;
     padding: 0 0.9em;

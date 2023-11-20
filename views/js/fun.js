@@ -144,6 +144,9 @@ if(btn_fondo){
       difuminado2.style.display = "flex";
       difuminado2.style.zIndex = "2";
       sidebar.style.zIndex = "-1";
+      btn_user.style.borderBottomColor = "transparent";
+      btn_config.style.borderBottomColor = "transparent";
+      btn_noti.style.borderBottomColor = "transparent";
     }
  
     

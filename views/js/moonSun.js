@@ -35,15 +35,15 @@ document.addEventListener('DOMContentLoaded', function(){
   if(!darkmode){
     store(false);
     icon.classList.add('fa-sun');
-    opcion.innerHTML = "Modo Oscuro";
+    opcion.innerHTML = "Tema Oscuro";
   } else if( darkmode == 'true'){ //si el modo oscuro está activado
     body.classList.add('darkmode');
     config_tab.classList.add('darkmode');
     icon.classList.add('fa-moon');
-    opcion.innerHTML = "Modo Claro";
+    opcion.innerHTML = "Tema Claro";
   } else if(darkmode == 'false'){ //si el modo oscuro existe pero está deshabilitado
     icon.classList.add('fa-sun');
-    opcion.innerHTML = "Modo Oscuro";
+    opcion.innerHTML = "Tema Oscuro";
   }
 }
 load();
@@ -61,11 +61,11 @@ btn.addEventListener('click', () => {
   if(body.classList.contains('darkmode')){
     icon.classList.remove('fa-sun');
     icon.classList.add('fa-moon');
-    opcion.innerHTML = "Modo Claro";
+    opcion.innerHTML = "Tema Claro";
   }else{
     icon.classList.remove('fa-moon');
     icon.classList.add('fa-sun');
-    opcion.innerHTML = "Modo Oscuro";
+    opcion.innerHTML = "Tema Oscuro";
   }
  
   setTimeout( () => {
