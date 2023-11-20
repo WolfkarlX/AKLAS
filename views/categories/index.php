@@ -124,7 +124,7 @@
             <div class="arribaopciones">
                 <!--Condicional para poder mostrar solo al root si ir a gestionar los empleados -->
                 <?php if($_SESSION['user_id'] == "12345678"){?>   
-                   <div class="gesti-boton"><a href="../employees/">Gestionar Empleados<br></a></div>                        
+                   <div class="gesti-boton"><a href="../employees/">Gestionar Cuentas<br></a></div>                        
                 <?php } ?>
                 <button id="UsuarioBoton"> <i class='bx bx-user-circle'></i></button>
                 <button id="notificacion"> <i class='bx bx-bell' >
