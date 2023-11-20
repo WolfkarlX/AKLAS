@@ -158,11 +158,15 @@
         </div>
         <div class="abajo">
         <canvas id="myChart" style="position: relative; height: 40vh; width: 80vw;"></canvas>
+        <canvas id="myChart2" style="position: relative; height: 40vh; width: 80vw;"></canvas>
+        <canvas id="myChart3" style="position: relative; height: 40vh; width: 80vw;"></canvas>
 
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
         <script>
             var ctx = document.getElementById('myChart')
+            var ctx2 = document.getElementById('myChart2')
+            var ctx3 = document.getElementById('myChart3')
             var myChart = new Chart(ctx, {
                 type:'bar',
                 data:{
@@ -182,22 +186,85 @@
                 }
             })
 
+            var myChart2 = new Chart(ctx2, {
+                type:'bar',
+                data:{
+                    datasets: [{
+                        label: 'TOP Productos',
+                        backgroundColor: ['#0D47A1', '#2196F3', '#42A5F5', '#64B5F6', '#6bf1ab','#93f64f', '#438c6c', '#509c7f', '#1f794e', '#34444c', '#90CAF9'],
+                        borderColor: ['black'],
+                        borderWidth:1
+                    }]
+                },
+                options:{
+                    scales:{
+                        y:{
+                            beginAtZero:true
+                        }
+                    }
+                }
+            })
+
+            var myChart3 = new Chart(ctx3, {
+                type:'bar',
+                data:{
+                    datasets: [{
+                        label: 'Less Productos',
+                        backgroundColor: ['#6bf1ab','#93f64f', '#438c6c', '#509c7f', '#0D47A1', '#2196F3', '#42A5F5', '#64B5F6', '#1f794e', '#34444c', '#90CAF9'],
+                        borderColor: ['black'],
+                        borderWidth:1
+                    }]
+                },
+                options:{
+                    scales:{
+                        y:{
+                            beginAtZero:true
+                        }
+                    }
+                }
+            })
+
             let url = '../../controllers/each-area-dashboard.php';
+            let url2 = '../../controllers/each-productTop-dashboard.php';
+            let url3 = '../../controllers/each-productLess-dashboard.php';
+
             fetch(url)
                 .then( response => response.json() )
-                .then( datos => mostrar(datos) )
+                .then( datos => {
+                    mostrar(datos)
+                })
                 .catch( error => console.log(error) )
 
-
+            fetch(url2)
+                .then( response => response.json() )
+                .then( datos => {
+                    mostrarProducto(myChart2, datos)
+                })
+                .catch( error => console.log(error) )
+            
+            fetch(url3)
+                .then( response => response.json() )
+                .then( datos => {
+                    mostrarProducto(myChart3, datos)
+                })
+                .catch( error => console.log(error) )
+ 
             const mostrar = (articulos) =>{
                 articulos.forEach(element => {
                     myChart.data['labels'].push(element.area_nombre)
                     myChart.data['datasets'][0].data.push(element.porcentaje)
                     myChart.update()
                 });
-                console.log(myChart.data)
-            }    
-
+            }
+            
+            const mostrarProducto = (chart, articulos) =>{
+                articulos.forEach(element => {
+                    chart.data['labels'].push(element.ProductName)
+                    chart.data['datasets'][0].data.push(element.Quantity)
+                    chart.update()
+                });
+            }  
+            
         </script>
         <div class="opciones">               
         </div>
