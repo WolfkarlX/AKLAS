@@ -116,7 +116,7 @@
                 </div>
                 <span id="opcion"></span>
                 <button class="cerrarmenu" id="cerrarcosa">Cerrar</button>
-        </div>
+    </div>
     <div class="main-content">
         <div class="arriba">
             <h1>Inicio</h1>
@@ -200,7 +200,6 @@
         
     </div>
     <div class="difuminado2" id="difuminado2">
-    <div id="difuminado"></div>
 </body>
 <script src="./js/fun.js" type="module"></script>
 <script src="js/moonSun.js" type="module"></script>

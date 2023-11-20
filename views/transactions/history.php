@@ -98,6 +98,18 @@
             </li>
         </ul>
     </div>
+    <div class="configuracion_tab" style="display: none" id="config_tab">
+        <span>Configuración de la página</span>    
+                <div class="btn">
+                    <div class="btn__indicator">
+                        <div class="btn__icon-container">
+                            <i class="btn__icon fa-solid" id="btm_fondoscolor"></i>
+                        </div>
+                    </div>
+                   
+                </div>
+                <span id="opcion"></span>
+        </div>
     <div class="main-content">
         <div class="arriba">
             <h1>Historial De Transacción</h1>
@@ -112,18 +124,7 @@
                 <button id="ConfiguracionBoton"> <i class='bx bx-cog' ></i></button>
             </div>
         </div>
-        <div class="configuracion_tab" style="display: none" id="config_tab">
-        <span>Configuración de la página</span>    
-                <div class="btn">
-                    <div class="btn__indicator">
-                        <div class="btn__icon-container">
-                            <i class="btn__icon fa-solid" id="btm_fondoscolor"></i>
-                        </div>
-                    </div>
-                   
-                </div>
-                <span id="opcion"></span>
-        </div>
+       
         <div class="user_tab" style="display: none" id="user_tab">
             <span>Usuario</span>
             <div class="usuario">
@@ -165,6 +166,7 @@
             </div>
         </div>
     </div>
+    <div class="difuminado2" id="difuminado2">
 </body>
 <script src="../js/fun-transaction.js" type="module"></script>
 <script src="../js/moonSun.js" type="module"></script>

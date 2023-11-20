@@ -280,7 +280,7 @@ logout_link2.addEventListener("click", function(event){
 //Codigo para condicionar elementos de minima cantidad y maxima en productos
 if(maxInput || maxInputE){
 
-  maxInput.addEventListener('input', (e)=>{
+  maxInput.addEventListener('click', (e)=>{
     e.preventDefault();
     if(e.target.value !== ""){
       let max = e.target.value;
@@ -288,23 +288,7 @@ if(maxInput || maxInputE){
     }
   })
 
-  maxInput.addEventListener("click", (e)=>{
-    e.preventDefault();
-    if(e.target.value !== ""){
-      let max = e.target.value;
-      minInput.setAttribute("max", max - 1);
-    }
-  })
-
-  minInput.addEventListener('input', (e)=>{
-    e.preventDefault();
-    if(e.target.value !== ""){
-      let max = maxInput.value;
-      e.target.setAttribute("max", max - 1);
-    }
-  })
-
-  minInput.addEventListener("click", (e)=>{
+  minInput.addEventListener('click', (e)=>{
     e.preventDefault();
     if(e.target.value !== ""){
       let max = maxInput.value;
@@ -320,14 +304,6 @@ if(maxInput || maxInputE){
         minInputE.setAttribute("max", max -1);
       }
     })
-    
-    maxInputE.addEventListener("input", (event)=>{
-      event.preventDefault();
-      if(event.target.value !== ""){
-        let max = event.target.value;
-        minInputE.setAttribute("max", max -1);
-      }
-    })
 
     minInputE.addEventListener('click', (e)=>{
       e.preventDefault();
@@ -336,14 +312,5 @@ if(maxInput || maxInputE){
         e.target.setAttribute("max", max - 1);
       }
     })
-
-    minInputE.addEventListener("input", (event)=>{
-      event.preventDefault();
-      if(event.target.value !== ""){
-        let max = maxInputE.value;
-        event.target.setAttribute("max", max - 1);
-      }
-    })
-
   }
 }

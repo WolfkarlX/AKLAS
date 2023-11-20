@@ -1,0 +1,263 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .main-content {
+    position: absolute;
+    top: 0;
+    height: 100%; 
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    background-color: var(--light-color);
+  }
+  .arriba {
+    display: flex;
+    top: 0;
+    position: absolute;
+    right: 0;
+    z-index: 2;
+    height: 20%;
+    width: 95%;
+    /*background-color: yellowgreen;*/
+    border-radius: 0.6rem;
+    box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+    margin-right: 25px;
+    margin-bottom: 15px;
+    margin-left: 125px;
+    background-color: #12171e;
+  }
+  .arriba #clock {
+    font-size: 38px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 45px;
+    position: absolute;
+    display: flex;
+    color: white;
+    padding: 20px;
+    margin-left: 10px;
+  }
+  .arriba h1{
+    position: absolute;
+    display: flex;
+    color: white;
+    padding: 10px 10px;
+    margin-left: 20px;
+    font-size: 3.2rem;
+  }
+  .arribaopciones #UsuarioBoton {
+    background-color: none;
+    background-color:transparent;
+    border-bottom-color: none;
+    color:white;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width:60%;
+    height: 100%;
+    margin: 15px;
+    font-size:3.2rem;
+    cursor: pointer;  
+    border-radius: 2rem;
+  }
+  .arribaopciones #UsuarioBoton:hover {
+    background-color: rgba(128, 128, 128, 0.301);
+  }
+  .arribaopciones #ConfiguracionBoton {
+    background-color: none;
+    background-color:transparent;
+    color:white;
+    border-bottom-color: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width:60%;
+    font-size:3.2rem;
+    height: 100%;
+    margin: 15px;
+    cursor: pointer;
+    border-radius: 2rem;
+  }
+  .arribaopciones #ConfiguracionBoton:hover {
+    background-color: rgba(128, 128, 128, 0.301);
+  }
+  .arribaopciones #notificacion {
+    background-color: none;
+    background-color:transparent;
+    color:white;
+    width:60%;
+    font-size:3.2rem;
+    height: 100%;
+    margin: 15px;
+    border-bottom-color: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    cursor: pointer;
+    border-radius: 2rem;
+  }
+  .arribaopciones #notificacion:hover {
+    background-color: rgba(128, 128, 128, 0.301);
+  }
+  .arribaopciones .iconoerror {
+    background-color: red;
+    color: white;
+    width: 1.8rem;
+    height: 1.8rem;
+    font-size: 26px;
+    text-align: center;
+    display: flex;
+    border-radius: 1rem;
+    position: absolute;
+    margin-top: -50px;
+    margin-left: 24px;
+  }
+  
+  .arriba .arribaopciones{
+    font-size: 4.1rem;
+    color: rgb(0, 0, 0);
+    display: flex;
+    position:absolute;
+    z-index: 2;
+    width:20%;
+    max-width: 20%;
+    height:50%;
+    padding:3px;
+    margin: 25px;
+    margin-left: 76%;
+  }
+  
+  
+  .abajo {
+    display: flex;
+    position: absolute;
+    width: 95%;
+    max-width: 95%;
+    min-width: 95%;
+    z-index: 1;
+    max-height: 70%;
+    height: 70%;
+
+   bottom: 0;
+
+   top: 8%;
+   border-radius: 0.6rem;
+   box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
+   /*background-color: red;*/
+   margin-top: 120px;
+   margin-left: 2%;
+
+   margin-bottom: 15px;
+    justify-content: center;
+    /* overflow: auto; */
+  }
+  .tienda {
+
+    width: 60%;
+    max-width: 60%;
+    min-width: 60%;
+    height: 100%;
+    max-height: 100%;
+    margin-left: 10%;
+    min-height: 100%;
+    float: left;
+  }
+  .alado {
+    background-image: url(/views/img/edit.png);
+    width: 40%;
+    float: right;
+    max-width: 40%;
+    min-width: 40%;
+    height: 100%;
+    margin-right: 10%;
+    max-height: 100%;
+    min-height: 100%;
+   
+  }
+ .tienda #opciones {
+    background-color: #12171e;
+    position: relative;
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    min-width: 100%;
+    height: 15%;
+    max-height: 15%;
+    padding: 10px 10px;
+    border-radius: 0.6rem;
+    box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
+  }
+  #opciones input + button {
+    width: 20%;
+    background-color: gray;
+    color: white;
+    font-weight: bold;
+    margin: 10px;
+    height: 30px;
+    border: none;
+    border-radius: 1rem;
+  }
+  #opciones button a {
+    text-decoration: none;
+    color: aliceblue;
+    font-weight: bold;
+  }
+  #opciones input {
+    height: 80%;
+    border: none;
+    border-radius: 10px;
+    margin-left: 20px;
+    padding: 10px 10px;
+    width: 20%;
+    font-weight: bold;
+    overflow: hidden;
+  text-overflow: ellipsis;
+  color: white;
+    background-color: rgb(0, 0, 156);
+  }
+  #opciones input[type=number] {
+    background-color: aliceblue;
+    text-align: center;
+    font-size: 13px;
+    color: black;
+  }
+  .tienda #main-form {
+    padding: 10px 10px;
+    position: relative;
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    min-width: 100%;
+    height: 15%;
+    max-height: 15%;
+  }
+  #main-form input {
+    width: 30%;
+    margin-left: 15px;
+    max-width: 30%;
+    height: 60%;
+    max-height: 60%;
+    border-width: 1px;
+    border-color: #000000;
+    border-radius: 1rem;
+    color: black;
+    font-weight: bold;
+    padding-left: 10px;
+  }
+  #main-form select {
+    width: 30%;
+    margin-left: 15px;
+    color: black;
+    font-weight: bold;
+    max-width: 30%;
+    height: 60%;
+    max-height: 60%;
+    border-width: 1px;
+    border-color: #000000;
+    border-radius: 1rem;
+  }

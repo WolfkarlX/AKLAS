@@ -314,7 +314,7 @@
 .tabla {
   /*background-color: yellowgreen;*/
   display: block;
-  width: 90%;
+  width: 99%;
   position: absolute;
   height: 70%;
   max-height: 70%;
@@ -489,6 +489,30 @@ display: inline-block;
     white-space: nowrap;
 }
 .opciones #btn-tags:enabled {
+  background-color: #00329d;
+}
+.opciones #btn-history {
+  background-color: gray;
+width: calc(13% - 5px);
+display: inline-block;
+position: absolute;
+  height: 65px;
+  margin: 10px;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer; 
+  font-size: 1.2rem;
+  align-items: center;
+  border: none;
+  border-radius: 0.6rem;
+  justify-content: center;
+  box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.opciones #btn-history:enabled {
   background-color: #00329d;
 }
 .opciones .opcioneselect {
@@ -1148,7 +1172,8 @@ display: inline-block;
   border: 1px solid #d2d2d2;
   font-weight: bold;
   border: none;
-  max-height: 2rem;
+  height: auto;
+  max-height: 4rem;
   width: 30%;
   max-width: 30%;
   overflow: hidden;
@@ -1176,8 +1201,8 @@ display: inline-block;
 }
 #vista #vista-cuerpo {
   top: 1%;
-  max-height: 10px;
-  max-width: 30%;
+  max-height: 30px;
+  max-width: 60%;
 }
 #vista tbody tr{
   overflow-y: auto;
@@ -1749,7 +1774,7 @@ display: inline-block;
     font-size: 15px;
   }
   .tabla {
-    top: 15%;
+    top: 19%;
   }
   
   .abajo .homebutton {
