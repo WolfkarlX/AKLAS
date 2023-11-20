@@ -335,7 +335,7 @@ btnEdit.addEventListener("click", ()=>{
     // Recorre las celdas para obtener los valores
     for (let i = 0; i < celdas.length; i++) {
         let valor = celdas[i].textContent;
-        if(celdas[4]){
+        if(celdas[4]){ //condiciona si existen 5 elementos o celdas
             var indxA = celdas[4].textContent.toString();
             var indxC = celdas[3].textContent.toString();
             var indxS = celdas[2].textContent.toString();
@@ -343,7 +343,7 @@ btnEdit.addEventListener("click", ()=>{
         //se obtienen los objetos y se rellenan con sus respectivos campos
         let object = document.getElementById("input" + (i+1));
         if(object){
-            object.value = valor;
+            object.value = valor; // se rellenan los valores de los inputs
             if(object.tagName === "SELECT"){
                 let objectid = object.id;
                 switch(objectid){

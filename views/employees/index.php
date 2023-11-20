@@ -85,57 +85,58 @@ try {
         </div>
         <div class="abajo">
             <div class="formulario">
-            <form action="../../controllers/register.php" method="POST" class="formusuarios"><!--Ingresamos los valores que llevara la cuenta-->
+            <form id="form-users" action="../../controllers/register.php" method="POST" class="formusuarios"><!--Ingresamos los valores que llevara la cuenta-->
             <div class="formarriba">
-                <h1 class="tituloform">Nuevo Empleado</h1>
+                <h1 class="tituloform" id="title">Nuevo Empleado</h1>
             </div>
             <div class="datos">
             <div class="campo">
             <label>Nombres: </label>
             </div>
+            <input type="hidden" class="input-field" id="input1" name="Key" required>
             <div class="campo">
-            <input type="text" class="input-field" placeholder="Ingrese los nombres" name="FirstName" required>
+            <input type="text" class="input-field" placeholder="Ingrese los nombres" id="input2" name="FirstName" required>
             </div>
             <div class="campo">
             <label>Apellidos: </label>
             </div>
             <div class="campo">
-            <input type="text" class="input-field" placeholder="Ingrese el apellido" name="LastName" required>
+            <input type="text" class="input-field" id="input3" placeholder="Ingrese el apellido" name="LastName" required>
             </div>
             <div class="campo">
             </div>
             <div class="campo">
-            <input type="hidden" class="input-field" id="employeN" placeholder="Numero de empleado" name="IdKey" required>
+            <input type="hidden" class="input-field" id="input6" placeholder="Numero de empleado" name="IdKey" required>
             </div>
             <div class="campo">
             <label>Descripción: </label>
             </div>
             <div class="campo">
-            <input type="text" class="input-field" placeholder="Descripción del empleado" name="description">
+            <input type="text" id="input4"  class="input-field" placeholder="Descripción del empleado" name="description">
             </div>
             <div class="campo">
-            <label>E-mail: </label>
+            <label id="Nemail">E-mail: </label>
             </div>
             <div class="campo">
-            <input type="text" class="input-field" placeholder="Correo electronico" name="email" required>
+            <input type="text" class="input-field" id="imail" placeholder="Correo electronico" name="email" required>
             </div>
             <div class="campo">
-            <label>Contraseña:</label>
+            <label id="secret">Contraseña:</label>
             </div>
             <div class="campo">
-            <input type="password" class="input-field" placeholder="Ingrese la contraseña" name="password" required>
+            <input type="password" class="input-field" id="passw" placeholder="Ingrese la contraseña" name="password" required>
             </div>
             <div class="campo">
             <label>Confirmar Contraseña: </label>
             </div>
             <div class="campo">
-            <input type="password" class="input-field" placeholder="Confirme la contraseña" name="confirm_password" required>
+            <input type="password" class="input-field" id="passw1" placeholder="Confirme la contraseña" name="confirm_password" required>
             </div>
             <div class="campo">
             <label>Puesto de Empleado: </label>
             </div>
             <div class="campo">
-            <select id="puesto" name="puesto">
+            <select id="input5" name="puesto">
             <option value="" disabled selected hidden>Seleccione el puesto</option>
             <option value="jefe">Jefe de área</option>
             <option value="empleado">Empleado</option>
