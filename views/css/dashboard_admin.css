@@ -317,7 +317,9 @@
 .tabla {
   /*background-color: yellowgreen;*/
   display: block;
-  width: 99%;
+  width: 95%;
+  max-width: 95%;
+  min-width: 95%;
   position: absolute;
   height: 70%;
   max-height: 70%;
