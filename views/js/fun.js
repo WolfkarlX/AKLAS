@@ -165,7 +165,7 @@ if(btn_user){
     if(cuadrouser.style.display === "none") {
       cuadrouser.style.display = "block";
       cuadro.style.display = "none";
-      if(cuadronoti) {
+      if(cuadronoti && btn_noti) {
         cuadronoti.style.display = "none"; 
         btn_noti.style.borderBottomColor = "transparent";}
       sidebar.style.zIndex = "-1";
@@ -176,7 +176,7 @@ if(btn_user){
     else {
       cuadrouser.style.display = "none";
       cuadro.style.display = "none";
-      if(cuadronoti) {
+      if(cuadronoti && btn_noti) {
         cuadronoti.style.display = "none"; 
         btn_noti.style.borderBottomColor = "transparent";}
       btn_user.style.borderBottomColor = "transparent";
