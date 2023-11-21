@@ -330,6 +330,7 @@
     z-index: -1;
     position: absolute;
     width: 100%;
+    left: 0;
     top: 0;
     height:100%;
     opacity: 0;
@@ -585,6 +586,7 @@
   #vista td:nth-child(6) {
     width: 8%;
   }
+
   
   /* Estilo para fila seleccionada */
   #vista-cuerpo input[type=radio]:checked + tr {
@@ -592,7 +594,7 @@
   }
   ::-webkit-scrollbar {
     width: 2px;
-    height: 4px;
+    height: 6px;
     background-color: transparent;
   }
   

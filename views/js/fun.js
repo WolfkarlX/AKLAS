@@ -39,6 +39,7 @@ let minInput = document.getElementById("minq");
 let maxInputE = document.getElementById("input13");
 let minInputE = document.getElementById("input12");
 let difuminado2 = document.getElementById("difuminado2");
+let difuminado3 = document.getElementById("difuminado3");
 let cerrartab = document.getElementById("cerrarcosa");
 let cuadro = document.getElementById("config_tab");
 let errorbusqueda = document.getElementById("nohubo");
@@ -141,13 +142,16 @@ if(btn_fondo){
     if(cuadro.style.display === "none") {
       cuadro.style.display = "block";
       cuadrouser.style.display = "none";
-      cuadronoti.style.display = "none";
+      if(cuadronoti && btn_noti) {
+      cuadronoti.style.display = "none"; 
+      btn_noti.style.borderBottomColor = "transparent";
+      }
       difuminado2.style.display = "flex";
       difuminado2.style.zIndex = "2";
       sidebar.style.zIndex = "-1";
       btn_user.style.borderBottomColor = "transparent";
       btn_config.style.borderBottomColor = "transparent";
-      btn_noti.style.borderBottomColor = "transparent";
+      
     }
  
     
@@ -161,19 +165,23 @@ if(btn_user){
     if(cuadrouser.style.display === "none") {
       cuadrouser.style.display = "block";
       cuadro.style.display = "none";
-      cuadronoti.style.display = "none";
+      if(cuadronoti) {
+        cuadronoti.style.display = "none"; 
+        btn_noti.style.borderBottomColor = "transparent";}
       sidebar.style.zIndex = "-1";
       btn_config.style.borderBottomColor = "transparent";
-      btn_noti.style.borderBottomColor = "transparent";
+      
       btn_user.style.borderBottomColor = "#f7f7f8";
     }
     else {
       cuadrouser.style.display = "none";
       cuadro.style.display = "none";
-      cuadronoti.style.display = "none";
+      if(cuadronoti) {
+        cuadronoti.style.display = "none"; 
+        btn_noti.style.borderBottomColor = "transparent";}
       btn_user.style.borderBottomColor = "transparent";
       btn_config.style.borderBottomColor = "transparent";
-      btn_noti.style.borderBottomColor = "transparent";
+      
     }
   } )
 }

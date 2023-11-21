@@ -1259,12 +1259,19 @@ position: absolute;
 #vista td:first-child {
   width: 15%;
 }
+#vista th:nth-child(10),
+#vista td:nth-child(10) {
+  width: 30%;
+  min-width: 30%;
+}
+
+
 #vista td {
   overflow-x: auto;
 }
 ::-webkit-scrollbar {
   width: 2px;
-  height: 4px;
+  height: 8px;
   background-color: transparent;
 }
 

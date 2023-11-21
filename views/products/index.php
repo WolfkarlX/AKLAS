@@ -201,7 +201,7 @@
                             <th>Fila</th>
                             <th>Precio</th>
                             <th>Cantidad</th>
-                            <th>Descripción</th>
+                            <th>Resumen Producto</th>
                             <th>Cantidad Míninima</th>
                             <th>Cantidad Máxima</th>
                             <th>Etiquetas</th>
