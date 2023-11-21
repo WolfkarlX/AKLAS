@@ -52,11 +52,12 @@ document.addEventListener("DOMContentLoaded", () => {
   if (localStorage.getItem("sidebar") === "true") {
     sidebar.classList.add('active');
   }
-
+  if(btn_sidebar) {
   btn_sidebar.onclick = function () {
     sidebar.classList.toggle('active');
     localStorage.setItem("sidebar", sidebar.classList.contains('active'));
   };
+  }
 });
 
 function closeForm(form, difuminado) {
@@ -148,7 +149,8 @@ if(btn_fondo){
       }
       difuminado2.style.display = "flex";
       difuminado2.style.zIndex = "2";
-      sidebar.style.zIndex = "-1";
+      if(sidebar) {
+      sidebar.style.zIndex = "-1"; }
       btn_user.style.borderBottomColor = "transparent";
       btn_config.style.borderBottomColor = "transparent";
       
@@ -168,7 +170,9 @@ if(btn_user){
       if(cuadronoti && btn_noti) {
         cuadronoti.style.display = "none"; 
         btn_noti.style.borderBottomColor = "transparent";}
+      if(sidebar){
       sidebar.style.zIndex = "-1";
+      }
       btn_config.style.borderBottomColor = "transparent";
       
       btn_user.style.borderBottomColor = "#f7f7f8";
@@ -214,7 +218,9 @@ if(cerrartab) {
     cuadro.style.display = "none";
     difuminado2.style.display = "none";
     difuminado2.style.zIndex = "-1";
+    if(sidebar){
     sidebar.style.zIndex = "8";
+    }
   })
 }
 
@@ -287,11 +293,13 @@ if (input) {
 }
 
 //Función para preguntar el cierre de sesión
+if(logout_link){
 logout_link.addEventListener("click", function(event){
   let res = confirm("¿Seguro que quiere cerrar sesión?");
   if(!res)
     event.preventDefault();
 });
+}
 logout_link2.addEventListener("click", function(event){
   let res = confirm("¿Seguro que quiere cerrar sesión?");
   if(!res)
