@@ -490,6 +490,19 @@
     color: white;
   
   }
+  .arribaopciones .iconoerror {
+    background-color: red;
+    color: white;
+    width: 1.8rem;
+    height: 1.8rem;
+    font-size: 26px;
+    text-align: center;
+    display: flex;
+    border-radius: 1rem;
+    position: absolute;
+    margin-top: -50px;
+    margin-left: 24px;
+  }
   .opciones #btn-delete:enabled {
     background-color: rgb(255, 0, 0);
 

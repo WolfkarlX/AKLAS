@@ -1,4 +1,4 @@
-import { getTable, sendForm } from "./fetchAPI.js";
+import { getTable, sendForm, getData } from "./fetchAPI.js";
 
 // Elementos DOM
 const tbody = document.getElementById("vista-cuerpo");
@@ -22,6 +22,10 @@ const secret = document.getElementById("secret");
 const formusers = document.getElementById("form-users");
 const filter = document.getElementById("filter");
 let errorbusqueda = document.getElementById("nohubo");
+const notificaIcon = document.getElementById("iconoerror");
+const listaNotif = document.querySelector("li");
+let btn_noti = document.getElementById("notificacion");
+let list_noti = document.querySelector(".Notif");
 
 async function cargarTabla(){
     tbody.innerHTML = "";
@@ -31,6 +35,7 @@ async function cargarTabla(){
 // Agregar evento para ejecutar la función getTable al cargar la página
 document.addEventListener("DOMContentLoaded", ()=>{
     cargarTabla();
+    cargarNotificaciones();
 });
 // al clickear el boton de actualizar se cambian los nombres de los botones y valores del formulario
 botonActualizar.addEventListener("click", () => {
@@ -151,3 +156,30 @@ filter.addEventListener("keyup", function(event) {
       errorbusqueda.style.display = "none";
     }
   });
+  async function cargarNotificaciones() {
+    const notifyProducts = await getData("../../controllers/notify-products.php");
+    list_noti.innerHTML = "";
+    let hasLi = false;
+    for (const product of notifyProducts) {
+        if(product.Falta || product.Sobra){
+            const li = document.createElement("li");
+            li.id = "listanoti";
+            li.style.margin = "10";
+            li.style.padding = "0";
+            li.style.textDecoration = "none";
+            li.style.marginBottom = "20px";
+            li.textContent = product.ProductName;
+            if(product.Falta) li.textContent += " hace falta producto";
+            if(product.Sobra) li.textContent += " Sobra producto";
+            list_noti.appendChild(li);
+            hasLi = true;
+        }
+       
+    }
+    if(hasLi) {
+        notificaIcon.style.display = "flex";
+    } else {
+        notificaIcon.style.display = "none";
+    }
+}
+

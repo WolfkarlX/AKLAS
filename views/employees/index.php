@@ -64,7 +64,11 @@ try {
                    <div class="gesti-boton"><a href="../../">Ir a Inicio</a></div>                        
                 <?php } ?>
                 <button id="UsuarioBoton"> <i class='bx bx-user-circle'></i></button>
-                <button id="notificacion"> <i class='bx bx-bell' ></i></button>
+                <button id="notificacion"> <i class='bx bx-bell' >
+                <div class="iconoerror" style="display:none" id="iconoerror">
+                    <i class='bx bx-error'></i>
+                </div>
+                </i></button>
                 <button id="ConfiguracionBoton"> <i class='bx bx-cog' ></i></button>
             </div>
         </div>
