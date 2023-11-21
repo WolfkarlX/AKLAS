@@ -50,7 +50,7 @@ async function cargarNotificaciones() {
             li.style.textDecoration = "none";
             li.style.marginBottom = "20px";
             li.textContent = product.ProductName;
-            if(product.Falta) li.textContent += "° hace falta producto";
+            if(product.Falta) li.textContent += " hace falta producto";
             if(product.Sobra) li.textContent += " Sobra producto";
             list_noti.appendChild(li);
             hasLi = true;
