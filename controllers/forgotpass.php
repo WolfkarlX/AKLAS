@@ -17,7 +17,7 @@
     <div class="container">
     <div class="form-content">
         <h1>Enviar Correo</h1>
-        <form action="https://formsubmit.co/kramirez32@ucol.mx" method="POST">
+        <form action="https://formsubmit.co/lramirez68@ucol.mx" method="POST">
             <label for="Numero_Cuenta">Número de cuenta</label>
             <input name="Numero_Cuenta" id="Numero_Cuenta" type="number" class="input-field" min="1" pattern="^[0-9]+" placeholder="Ingrese su número de cuenta" required>
             
