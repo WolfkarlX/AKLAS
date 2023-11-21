@@ -521,7 +521,7 @@ position: absolute;
   background-color: #00329d;
 }
 .opciones #btn-volver {
-  background-color: gray;
+  background-color: #00329d;
 width: calc(13% - 5px);
 display: inline-block;
 position: absolute;
