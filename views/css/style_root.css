@@ -300,6 +300,10 @@
     position:absolute;
     margin:10px;
   }
+  .gesti-boton {
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
 
   .gesti-boton a {
     width: 50%;
@@ -319,6 +323,7 @@
     padding:5px;
     text-decoration:none;
     text-align: center;
+    text-overflow: ellipsis;
     right: 100%;
     top: 20%;
     justify-content:center;
@@ -635,6 +640,7 @@
     height: 20%;
     bottom: 30%;
   }
+  
 
   /* ------------ VARIABLES ------------ */
 :root{
@@ -779,7 +785,32 @@
   .darkmode .btn__icon{
     color: var(--dark-icon-color);
   }
-
+  @media only screen and (max-width: 1250px) {
+    .abajo {
+      top: 7rem;
+    }
+    .campo label {
+      font-size: 12px;
+    }
+    .tabla {
+      margin-top: 7rem;
+    }
+    .gesti-boton a {
+      font-size: 22px;
+    }
+    .arriba .arribaopciones {
+      margin-left: 70%;
+    }
+    .opciones #btn-actualizar{
+      width: 10%;
+    }
+    .opciones #btn-edit{
+      width: 10%;
+    }
+    .opciones #btn-delete{
+      width: 10%;
+    }
+  }
   @media only screen and (max-width: 900px) { 
      
       .abajo {
@@ -822,3 +853,4 @@
 
 
   }
+  

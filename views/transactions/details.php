@@ -68,7 +68,7 @@
         <div class="notif_tab" style="display: none" id="notif_tab">
             <span>Notificaciones</span>
             <div class="Notif">
-                <span>Ejemplo</span>
+                <span></span>
             </div>
         </div>
         <div class="abajo">
@@ -89,7 +89,7 @@
             </form>
             </div>
             <div class="alado">
-                <div class="img imagen" width="100%" src="/views/img/edit.png)"></div>
+                <img src="../img/logo.png" alt="ewew" class="imagen">
             </div>
             </div>
         </div>

@@ -1,4 +1,4 @@
-import { setOptions, sendData } from "./fetchAPI.js";
+import { setOptions, sendData, getData } from "./fetchAPI.js";
 
 const lineForm = document.getElementsByClassName("line-form");
 const productSelects = document.getElementsByClassName("select-product");
@@ -7,6 +7,10 @@ const productOutputs = document.getElementsByClassName("outputP");
 const mainForm = document.getElementById("main-form");
 const btnAddProduct = document.getElementById("btnAgregarProducto");
 const nproduct = document.getElementById("nproductos");
+const notificaIcon = document.getElementById("iconoerror");
+const listaNotif = document.querySelector("li");
+let btn_noti = document.getElementById("notificacion");
+let list_noti = document.querySelector(".Notif");
 
 document.addEventListener("DOMContentLoaded", async function(event){
     for (const select of productSelects) {
@@ -33,3 +37,38 @@ mainForm.addEventListener("submit", async function(event) {
     console.log(datos);
     location.assign("./");
 });
+async function cargarNotificaciones() {
+    const notifyProducts = await getData("../../controllers/notify-products.php");
+    list_noti.innerHTML = "";
+    let hasLi = false;
+    for (const product of notifyProducts) {
+        if(product.Falta || product.Sobra){
+            const li = document.createElement("li");
+            li.id = "listanoti";
+            li.style.margin = "10";
+            li.style.padding = "0";
+            li.style.textDecoration = "none";
+            li.style.marginBottom = "20px";
+            li.textContent = product.ProductName;
+            if(product.Falta) li.textContent += "° hace falta producto";
+            if(product.Sobra) li.textContent += " Sobra producto";
+            list_noti.appendChild(li);
+            hasLi = true;
+        }
+       
+    }
+    if(hasLi) {
+        notificaIcon.style.display = "flex";
+    } else {
+        notificaIcon.style.display = "none";
+    }
+}
+
+
+
+// Agregar evento para ejecutar la función getTable al cargar la página
+document.addEventListener("DOMContentLoaded", ()=>{
+    cargarNotificaciones();
+});
+
+btn_noti.addEventListener("click", cargarNotificaciones);
