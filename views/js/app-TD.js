@@ -49,6 +49,7 @@ async function setMaxProductOutput(event) {
         const select = productSelects[index];
         if(event.target === select){
             const output = productOutputs[index];
+            output.max = "";
             let datos = await getData(urlgetSelect_Products);
             for (const dato of datos)
                 if(dato.ProductID == select.value)
