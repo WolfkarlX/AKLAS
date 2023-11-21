@@ -245,7 +245,7 @@
     background-color: rgb(50, 49, 49);
     position: absolute;
     display: block;
-    width: 14rem;
+    width: 17rem;
     height: 15rem;
     right: 10rem;
     top: 7rem;
@@ -270,7 +270,7 @@
   .user_tab .user-boton{
     width: 10%;
     height: 30%;
-    margin-bottom: 1px;
+    margin-bottom: 3px;
     text-align: center;
     
   }
@@ -288,6 +288,7 @@
     position:absolute;
     overflow:none;
     margin:5px;
+    top: 70%;
     padding:5px;
     text-decoration:none;
   }

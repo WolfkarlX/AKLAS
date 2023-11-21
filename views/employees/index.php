@@ -70,13 +70,12 @@ try {
         </div>
         
         <div class="user_tab" style="display: none" id="user_tab">
-            <span>Usuario</span>
             <div class="usuario">
                 <!--Mostramos el nombre de usuario--->
-                <span>Nombre:</span> 
-                <h4><?php echo $_SESSION['first_name']; ?> <br> <?php echo $_SESSION['last_name']; ?></h4> 
-                <span>Número de cuenta:</span>
-                <h4><?php echo $_SESSION['user_id']; ?></h4>
+                <span>Nombre:</span> <br>
+                <span><?php echo $_SESSION['first_name']; ?> <br> <?php echo $_SESSION['last_name']; ?></span> <br> <br>
+                <span>Número de cuenta:</span><br>
+                <span><?php echo $_SESSION['user_id']; ?></span><br>
             </div>
             <div class="user-boton">
             <a href="../../controllers/logout.php" id="logout-link2">
