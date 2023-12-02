@@ -119,7 +119,7 @@
         </div>
     <div class="main-content">
         <div class="arriba">
-            <h1>Proveedor</h1>
+            <h1>Proveedores</h1>
             <div id="clock"></div>
             <div class="arribaopciones">
                 <!--Condicional para poder mostrar solo al root si ir a gestionar los empleados -->

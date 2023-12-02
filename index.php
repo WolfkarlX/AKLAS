@@ -39,9 +39,9 @@
                 </input>
                 <button type="submit" class="button" value="Iniciar sesión">Iniciar Sesión</button>
             </form>
-            <form action=" controllers/forgotpass.php">
+            <!--<form action=" controllers/forgotpass.php">
               <button type="submit" class="buttonpass" value="Olvide mi pass">Olvidé Mi Contraseña</button>
-            </form>
+            </form>-->
         </div>
     </div>
     <div class="copy">
